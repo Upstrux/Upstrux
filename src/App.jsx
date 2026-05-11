@@ -60,12 +60,11 @@ const SOCIAL_LINKS = {
 };
 
 const heroSlides = [
-  structuralAnalysisDesign,
+  
   buildingTechnology,
   constructionManagement,
   "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=90",
   "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=90",
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=2200&q=90",
 ];
 
 const serviceImages = [
