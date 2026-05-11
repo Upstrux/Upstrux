@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import structuralAnalysisDesign from "./assets/structural-analysis-design.png";
+import structuralAnalysisDesign from "./assets/structural-Analysis-Проектиране.png";
 import buildingTechnology from "./assets/building-technology.jpg";
 import constructionManagement from "./assets/construction-management.jpg";
 
