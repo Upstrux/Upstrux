@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import damstructure from "./assets/Dam-Structure.jpg";
-import structuralVconnection from "./assets/Structural-V-connection.jpg";
+import damstructure from "./assets/Dam-Structure.webp";
+import structuralVconnection from "./assets/Structural-V-connection.webp";
 import structuralAnalysisDesign from "./assets/Structural-Analysis-Design.png";
 import buildingTechnology from "./assets/building-technology.jpg";
 import constructionManagement from "./assets/construction-management.jpg";
