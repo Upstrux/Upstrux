@@ -218,7 +218,7 @@ const translations = {
   en: {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
-    aboutLabel: "Civil engineers, designers and technical managers",
+    aboutLabel: "Civil, structural and site engineers",
     aboutTitle: "About us",
     aboutP1: "At UPSTRUX, we are civil, structural and site engineers. We see our role as a supporting function in every project. We are available to investors, building owners, designers and construction companies not only as a solutions provider, but as a reliable partner committed to the success of all stakeholders through professional expertise and practical engineering solutions.",
     aboutP2: "We understand that a project is successful when it complies with legal and regulatory requirements, meets the client’s expectations and remains economically efficient.",
@@ -235,7 +235,7 @@ const translations = {
   de: {
     nav: { home: "Start", about: "Über uns", solutions: "LÖSUNGEN", contacts: "Kontakt" },
     heroTitle: ["Ingenieurwesen, das Vision", "mit Realität verbindet"],
-    aboutLabel: "Bauingenieure, Planer und technische Projektleiter",
+    aboutLabel: "Bau-, Tragwerksplanungs- und Bauleitungsingenieure",
     aboutTitle: "Über uns",
     aboutP1: "Bei UPSTRUX sind wir Ingenieure für Bauwesen, Tragwerksplanung, Bauleitung und Baustellenmanagement. Wir sehen unsere Rolle als unterstützende und lösungsorientierte Funktion in jedem Projekt. Wir stehen Investoren, Gebäudeeigentümern, Planern und Bauunternehmen nicht nur als Lösungsanbieter zur Seite, sondern als verlässlicher Partner, der zum Erfolg aller Beteiligten beiträgt.",
     aboutP2: "Ein Projekt ist erfolgreich, wenn es rechtliche und technische Anforderungen erfüllt, die Erwartungen des Auftraggebers erreicht und zugleich wirtschaftlich effizient bleibt.",
