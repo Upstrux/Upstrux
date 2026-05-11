@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import industrialstructure from "./assets/industrial-structure.webp";
 import damstructure from "./assets/Dam-Structure.webp";
 import structuralVconnection from "./assets/Structural-V-connection.webp";
 import steelconstruction from "./assets/steel-construction.webp";
@@ -62,6 +63,7 @@ const SOCIAL_LINKS = {
 
 const heroSlides = [
   damstructure,
+  industrialstructure,
   structuralVconnection,
   buildingTechnology,
   constructionManagement,
@@ -70,7 +72,7 @@ const heroSlides = [
 ];
 
 const serviceImages = [
-  steelconstructio,
+  industrialstructure,
   "https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1200&q=90",
   buildingTechnology,
   "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=90",
