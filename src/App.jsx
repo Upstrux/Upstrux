@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import structuralVconnection from "./assets/Structural-V-connection.jpg";
 import structuralAnalysisDesign from "./assets/Structural-Analysis-Design.png";
 import buildingTechnology from "./assets/building-technology.jpg";
 import constructionManagement from "./assets/construction-management.jpg";
@@ -60,7 +60,7 @@ const SOCIAL_LINKS = {
 };
 
 const heroSlides = [
-  
+  structuralVconnection,
   buildingTechnology,
   constructionManagement,
   "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=90",
