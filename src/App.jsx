@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import damstructure from "./assets/Dam-Structure.jpg";
 import structuralVconnection from "./assets/Structural-V-connection.jpg";
 import structuralAnalysisDesign from "./assets/Structural-Analysis-Design.png";
 import buildingTechnology from "./assets/building-technology.jpg";
@@ -60,6 +61,7 @@ const SOCIAL_LINKS = {
 };
 
 const heroSlides = [
+  damstructure,
   structuralVconnection,
   buildingTechnology,
   constructionManagement,
