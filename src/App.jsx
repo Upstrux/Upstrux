@@ -130,7 +130,7 @@ const deProcessSteps = [
 
 const legalPages = {
   bg: {
-    legal: { eyebrow: "Правна информация", title: "Условия за ползване", updated: "Последна актуализация: 10 май 2026 г.", intro: "Тази страница урежда достъпа и използването на уебсайта на UPSTRUX. С използването на този уебсайт Вие приемате настоящите условия. Ако не сте съгласни с тях, моля, не използвайте сайта.", sections: [
+    legal: { eyebrow: "Правна", title: "Условия за ползване", updated: "Последна актуализация: 10 май 2026 г.", intro: "Тази страница урежда достъпа и използването на уебсайта на UPSTRUX. С използването на този уебсайт Вие приемате настоящите условия. Ако не сте съгласни с тях, моля, не използвайте сайта.", sections: [
       { heading: "1. Информация за дружеството", body: "Настоящите Условия за ползване се издават от UPSTRUX, от името на дружеството и неговите свързани партньори и професионални структури, когато е приложимо. „UPSTRUX“ и логото на UPSTRUX представляват търговски обозначения и/или обекти на интелектуална собственост. Данните за дружеството, включително фирмено наименование, ЕИК, ДДС номер, седалище, адрес на управление и законен представител, следва да бъдат добавени тук преди официално публикуване. Можете да се свържете с нас относно тези Условия чрез електронна поща на enquiries@upstrux.bg." },
       { heading: "2. Информационен характер на съдържанието", body: "Съдържанието на този уебсайт има общ информационен характер и представя инженерни, проектантски, строителни и консултантски услуги. То не представлява индивидуална техническа, правна, финансова или инвестиционна консултация." },
       { heading: "3. Интелектуална собственост", body: "Всички текстове, структура, дизайн, графични елементи, търговски обозначения и друго съдържание на сайта са собственост на UPSTRUX или се използват на законно основание. Не се разрешава копиране, възпроизвеждане, изменение, разпространение или използване за търговски цели без предварително писмено съгласие." },
@@ -152,7 +152,7 @@ const legalPages = {
     ]},
   },
   en: {
-    legal: { eyebrow: "Legal information", title: "Terms of Use", updated: "Last updated: 10 May 2026", intro: "This page governs access to and use of the UPSTRUX website. By using this website, you accept these terms. If you do not agree with them, please do not use the website.", sections: [
+    legal: { eyebrow: "Legal", title: "Terms of Use", updated: "Last updated: 10 May 2026", intro: "This page governs access to and use of the UPSTRUX website. By using this website, you accept these terms. If you do not agree with them, please do not use the website.", sections: [
       { heading: "1. Company information", body: "These Terms of Use are issued by UPSTRUX on behalf of the company and, where applicable, its associated partners and professional structures. UPSTRUX and the UPSTRUX logo are trade designations and/or intellectual property assets. Full company details, including legal name, registration number, VAT number, registered office, business address and legal representative, should be added before official publication. You may contact us regarding these Terms by email at enquiries@upstrux.bg." },
       { heading: "2. Informational nature of content", body: "The content of this website is provided for general information purposes and presents engineering, design, construction and consulting services. It does not constitute individual technical, legal, financial or investment advice." },
       { heading: "3. Intellectual property", body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent." },
@@ -174,7 +174,7 @@ const legalPages = {
     ]},
   },
   de: {
-    legal: { eyebrow: "Rechtliche Informationen", title: "Nutzungsbedingungen", updated: "Zuletzt aktualisiert: 10. Mai 2026", intro: "Diese Seite regelt den Zugriff auf und die Nutzung der UPSTRUX-Website. Durch die Nutzung dieser Website akzeptieren Sie diese Bedingungen.", sections: [
+    legal: { eyebrow: "Rechtliche ", title: "Nutzungsbedingungen", updated: "Zuletzt aktualisiert: 10. Mai 2026", intro: "Diese Seite regelt den Zugriff auf und die Nutzung der UPSTRUX-Website. Durch die Nutzung dieser Website akzeptieren Sie diese Bedingungen.", sections: [
       { heading: "1. Unternehmensinformationen", body: "Diese Nutzungsbedingungen werden von UPSTRUX im Namen des Unternehmens und, soweit anwendbar, seiner verbundenen Partner und professionellen Strukturen herausgegeben. Unternehmensdaten wie Firmenname, Registernummer, Umsatzsteuer-Identifikationsnummer, Sitz, Geschäftsadresse und gesetzlicher Vertreter sind vor Veröffentlichung zu ergänzen. Kontakt: enquiries@upstrux.bg." },
       { heading: "2. Informationscharakter", body: "Die Inhalte dieser Website dienen allgemeinen Informationszwecken und stellen keine individuelle technische, rechtliche, finanzielle oder investitionsbezogene Beratung dar." },
       { heading: "3. Geistiges Eigentum", body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte sind Eigentum von UPSTRUX oder werden rechtmäßig verwendet. Eine Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet." },
@@ -203,14 +203,14 @@ const translations = {
     heroTitle: ["Инженерство, което свързва", "визията с реалността"],
     aboutLabel: "Строителни инженери, проектанти и технически ръководители",
     aboutTitle: "За нас",
-    aboutP1: "В UPSTRUX ние сме инженери в областта на проектирането, техническото ръководене и гражданското строителство, които виждат своята роля като подпомагаща функция във всеки проект. Ние сме на разположение на инвеститори, собственици на сгради, проектанти и строителни компании не само като доставчик на решения, но и като надежден партньор, ангажиран с успеха на всички заинтересовани страни чрез професионална компетентност и практически решения.",
+    aboutP1: "В UPSTRUX ние сме инженери в областта на гражданското строителство, проектирането, техническото ръководене и управление на строителството, които виждат своята роля като подпомагаща функция във всеки проект. Ние сме на разположение на инвеститори, собственици на сгради, проектанти и строителни компании не само като доставчик на решения, но и като надежден партньор, ангажиран с успеха на всички заинтересовани страни чрез професионална компетентност и практически решения.",
     aboutP2: "Разбираме, че един проект е успешен, когато отговаря на законовите и нормативните изисквания, очакванията на клиента, като същевременно остава икономически ефективен.",
     aboutHighlight: "Благодарение на високото ниво на специализация на нашите партньори, ние обединяваме експертния им потенциал по начин, който ни позволява успешно да реализираме както по-прости, така и изключително сложни проекти.",
     solutionsEyebrow: "Инженерни, проектантски и експертни решения в строителството",
     solutionsTitle: "Решения",
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
-    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правна информация", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
+    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правна", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
     services: bgServices,
     processSteps: bgProcessSteps,
     legalPages: legalPages.bg,
@@ -220,14 +220,14 @@ const translations = {
     heroTitle: ["Engineering that connects", "vision with reality"],
     aboutLabel: "Civil engineers, designers and technical managers",
     aboutTitle: "About us",
-    aboutP1: "At UPSTRUX, we are engineers in structural design, technical management and civil construction. We see our role as a supporting and enabling function in every project. We work with investors, building owners, designers and construction companies not only as a provider of solutions, but as a reliable partner committed to the success of all stakeholders through professional expertise and practical engineering decisions.",
+    aboutP1: "At UPSTRUX, we are civil, structural, site engineers and construction managers. We see our role as a supporting function in every project. We are available to investors, building owners, designers and construction companies not only as a solutions provider, but as a reliable partner committed to the success of all stakeholders through professional expertise and practical engineering solutions.",
     aboutP2: "We understand that a project is successful when it complies with legal and regulatory requirements, meets the client’s expectations and remains economically efficient.",
     aboutHighlight: "Through the high level of specialization of our partners, we combine expert knowledge in a way that allows us to deliver both straightforward and highly complex projects successfully.",
     solutionsEyebrow: "Engineering, design and expert solutions in construction",
     solutionsTitle: "Solutions",
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
-    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal information", privacy: "Privacy", backHome: "← Back to homepage" },
+    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
     services: enServices,
     processSteps: enProcessSteps,
     legalPages: legalPages.en,
@@ -237,14 +237,14 @@ const translations = {
     heroTitle: ["Ingenieurwesen, das Vision", "mit Realität verbindet"],
     aboutLabel: "Bauingenieure, Planer und technische Projektleiter",
     aboutTitle: "Über uns",
-    aboutP1: "UPSTRUX ist ein Ingenieurpartner in den Bereichen Tragwerksplanung, technische Leitung und Bauwesen. Wir verstehen unsere Rolle als unterstützende und lösungsorientierte Funktion in jedem Projekt. Wir stehen Investoren, Gebäudeeigentümern, Planern und Bauunternehmen nicht nur als Lösungsanbieter zur Seite, sondern als verlässlicher Partner, der zum Erfolg aller Beteiligten beiträgt.",
+    aboutP1: "Bei UPSTRUX sind wir Ingenieure für Bauwesen, Tragwerksplanung, Bauleitung und Baustellenmanagement. Wir sehen unsere Rolle als unterstützende und lösungsorientierte Funktion in jedem Projekt. Wir stehen Investoren, Gebäudeeigentümern, Planern und Bauunternehmen nicht nur als Lösungsanbieter zur Seite, sondern als verlässlicher Partner, der zum Erfolg aller Beteiligten beiträgt.",
     aboutP2: "Ein Projekt ist erfolgreich, wenn es rechtliche und technische Anforderungen erfüllt, die Erwartungen des Auftraggebers erreicht und zugleich wirtschaftlich effizient bleibt.",
-    aboutHighlight: "Durch die hohe Spezialisierung unserer Partner bündeln wir Fachkompetenz so, dass sowohl einfache als auch hochkomplexe Projekte erfolgreich umgesetzt werden können.",
+    aboutHighlight: "Dank des hohen Spezialisierungsgrades unserer Partner bündeln wir ihr Expertenpotenzial auf eine Weise, die es uns ermöglicht, sowohl einfachere als auch äußerst komplexe Projekte erfolgreich umzusetzen.",
     solutionsEyebrow: "Ingenieur-, Planungs- und Expertenlösungen im Bauwesen",
     solutionsTitle: "Lösungen",
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
-    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche Informationen", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
+    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
     services: deServices,
     processSteps: deProcessSteps,
     legalPages: legalPages.de,
