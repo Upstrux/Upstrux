@@ -300,6 +300,10 @@ function ZigZagService({ title, text, image, reverse }) {
           <li key={item} className="flex gap-2.5"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
         ))}
       </ul>
+      <button type="button" className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+      >
+        Learn more
+      </button>
     </div>
   );
   const imageBlock = <div className="overflow-hidden bg-white"><img src={image} alt={title} className="aspect-[1.68/1] w-full object-cover min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]" /></div>;
