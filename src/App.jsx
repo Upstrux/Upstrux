@@ -446,17 +446,38 @@ export default function UpstruxWebsite() {
       </a>
     ) : (
       <a
-        key={item.key}
-        href={item.href}
-        onClick={(e) => {
-          e.preventDefault();
-          setCurrentPage("home");
-          setMobileMenuOpen(false);
-        }}
-        className="transition-colors hover:text-blue-600"
-      >
-        {item.label}
-      </a>
+  key={item.key}
+  href={item.href}
+  onClick={(e) => {
+    e.preventDefault();
+    setCurrentPage("home");
+
+    setTimeout(() => {
+      if (item.key === "home") {
+        document.getElementById("home")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      if (item.key === "about") {
+        document.getElementById("about")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      if (item.key === "contact") {
+        document.getElementById("contact")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }, 50);
+
+    setMobileMenuOpen(false);
+  }}
+  className="transition-colors hover:text-blue-600"
+>
+  {item.label}
+</a>
     )
   )}
 
