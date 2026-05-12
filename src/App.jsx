@@ -445,7 +445,7 @@ export default function UpstruxWebsite() {
         {item.label}
       </a>
     ) : (
-      <a
+<a
   key={item.key}
   href={item.href}
   onClick={(e) => {
@@ -453,23 +453,9 @@ export default function UpstruxWebsite() {
     setCurrentPage("home");
 
     setTimeout(() => {
-      if (item.key === "home") {
-        document.getElementById("home")?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-
-      if (item.key === "about") {
-        document.getElementById("about")?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-
-      if (item.key === "contact") {
-        document.getElementById("contact")?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
+      document.querySelector(item.href)?.scrollIntoView({
+        behavior: "smooth",
+      });
     }, 50);
 
     setMobileMenuOpen(false);
