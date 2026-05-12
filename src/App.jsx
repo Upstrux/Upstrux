@@ -350,13 +350,63 @@ export default function UpstruxWebsite() {
   const navItems = [
     { key: "home", label: t.nav.home, href: "#home" },
     { key: "about", label: t.nav.about, href: "#about" },
-    { key: "solutions", label: t.nav.solutions, href: "#services" },
+    { key: "solutions", label: t.nav.solutions, href: "solutions" },
     { key: "contacts", label: t.nav.contacts, href: "#contact" },
   ];
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
   if (currentPage === "privacy") return <LegalContentPage page={t.legalPages.privacy} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
+  if (currentPage === "solutions") {
+  return (
+    <div className="min-h-screen bg-white text-slate-950">
+      <header className="bg-white px-6 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-4">
+          <button type="button" onClick={() => setCurrentPage("home")}>
+            <Logo footer />
+          </button>
+        </div>
+      </header>
 
+      <div className="mx-auto mt-2 mb-2 flex max-w-7xl items-center justify-center px-6">
+        <div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" />
+      </div>
+
+      <div className="mx-auto flex w-full max-w-7xl justify-start px-0 pt-4">
+        <button
+          type="button"
+          onClick={() => setCurrentPage("home")}
+          className="cursor-pointer text-sm text-blue-600 hover:text-blue-800"
+        >
+          {t.footer.backHome}
+        </button>
+      </div>
+
+      <main className="bg-white px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+            {t.solutionsEyebrow}
+          </p>
+
+          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
+            {t.solutionsTitle}
+          </h1>
+
+          <div className="mt-16 space-y-14">
+            {currentServices.map((service, index) => (
+              <ZigZagService
+                key={service.title}
+                title={service.title}
+                text={service.text}
+                image={service.image}
+                reverse={index % 2 === 1}
+              />
+            ))}
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="absolute left-0 right-0 top-0 z-50 pt-7 text-white"><div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between"><a href="#home" aria-label="UPSTRUX home"><Logo /></a><button
@@ -365,12 +415,11 @@ export default function UpstruxWebsite() {
   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 >
   ☰
-</button><nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>{navItems.map((item) => item.key === "solutions" ? <div key={item.key} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}><button className="flex items-center gap-2 transition-colors hover:text-blue-300">{item.label}<span className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}>▼</span></button>{servicesOpen && <div className="absolute right-0 top-full mt-3 w-[95vw] max-w-[520px] border border-white/10 bg-slate-950/[0.168] p-5 shadow-2xl backdrop-blur-md md:left-1/2 md:right-auto md:w-[520px] md:-translate-x-1/2"><div className="flex flex-col gap-2 text-[13px] normal-case tracking-normal text-white md:h-full md:justify-between md:text-[15px]">{currentServices.map((service) => <a key={service.title} href={`#service-${slugify(service.title)}`} className="block rounded-lg px-2 py-1.5 font-light leading-5 text-slate-100 transition hover:bg-white/10 hover:text-blue-300">{service.title}</a>)}</div></div>}</div> : <a key={item.key} href={item.href} className="transition-colors hover:text-blue-300">{item.label}</a>)}<div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">{["bg", "en", "de"].map((lang) => <button key={lang} type="button" onClick={() => setLanguage(lang)} className={`cursor-pointer uppercase transition hover:text-blue-300 ${language === lang ? "text-blue-300" : "text-white"}`}>{lang}</button>)}</div></nav></div></header>
+</button><nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>{navItems.map((item) => item.key === "solutions" ? (<a key={item.key} href="#" onClick={(e) => { e.preventDefault(); setCurrentPage("solutions");}} className="transition-colors hover:text-blue-300" > {item.label} </a> ) : (<a key={item.key} href={item.href} className="transition-colors hover:text-blue-300">{item.label}</a>)}<div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">{["bg", "en", "de"].map((lang) => <button key={lang} type="button" onClick={() => setLanguage(lang)} className={`cursor-pointer uppercase transition hover:text-blue-300 ${language === lang ? "text-blue-300" : "text-white"}`}>{lang}</button>)}</div></nav></div></header>
       <main>
         <section id="home" className="relative h-[880px] overflow-hidden bg-slate-900"><div className="absolute inset-0">{heroSlides.map((image, index) => <HeroSlide key={String(image)} image={image} index={index} />)}</div><div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent" /><div className="relative mx-auto flex h-full max-w-7xl items-end px-6 pb-16"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl text-white"><h1 className="text-3xl font-light leading-[1.05] tracking-[-0.025em] md:text-5xl">{t.heroTitle.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</h1></motion.div></div></section>
         <section id="about" className="bg-white px-6 py-24"><div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2"><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.aboutLabel}</p><h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.aboutTitle}</h2><p className="mt-8 text-lg leading-8 text-slate-700">{t.aboutP1}</p><p className="mt-6 text-lg leading-8 text-slate-700">{t.aboutP2}</p><div className="mt-4 border-l-4 border-blue-600 bg-white px-8 py-4"><p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">{t.aboutHighlight}</p></div></div><div className="overflow-hidden bg-white w-full max-w-[900px]"><img src={whitearchitecturefacad} alt="UPSTRUX engineering" className="h-[650px] w-full object-cover object-center md:h-[720px]"/></div></div></section>
-        <section id="services" className="bg-white px-6 py-24"><div className="mx-auto mb-16 flex max-w-7xl items-center justify-center"><div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" /></div><div className="mx-auto max-w-7xl"><div className="mb-10 text-left"><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.solutionsEyebrow}</p><h2 className="mt-2 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.solutionsTitle}</h2></div><div className="space-y-14">{currentServices.map((service, index) => <ZigZagService key={service.title} title={service.title} text={service.text} image={service.image} reverse={index % 2 === 1} />)}</div><div className="mt-12 py-8"><div className="mb-16 text-left"><h3 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.methodologyTitle}</h3><p className="mt-6 max-w-5xl text-lg leading-8 text-slate-600">{t.methodologyIntro}</p></div><div className="flex flex-col gap-1.5">{currentProcessSteps.map((step, index) => <ProcessStep key={step.title} step={step} index={index} />)}</div></div></div></section>
-        <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-8"><div className="mx-auto grid max-w-7xl items-start gap-10 pb-8 md:grid-cols-5"><div><Logo footer /></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3><div className="grid gap-1.5 text-[13px] text-slate-700"><a href="#home" className="hover:text-blue-600">{t.nav.home}</a><a href="#about" className="hover:text-blue-600">{t.nav.about}</a><a href="#services" className="hover:text-blue-600">{t.footer.solutions}</a><div className="ml-3 mt-1 grid gap-1 text-[12px] text-slate-500">{currentServices.map((service) => <a key={service.title} href={`#service-${slugify(service.title)}`} className="hover:text-blue-600">{service.title}</a>)}</div></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.legalTitle}</h3><div className="grid gap-1.5 text-[13px] text-slate-700"><button type="button" onClick={() => setCurrentPage("legal")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.legalInfo}</button><button type="button" onClick={() => setCurrentPage("privacy")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.privacy}</button></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.follow}</h3><div className="flex items-center gap-2 pt-1 leading-none"><a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><LinkedInIcon size={24} /></a><a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><FacebookIcon size={24} /></a></div></div><div className="justify-self-start text-left"><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.contacts}</h3><div className="space-y-2 text-[13px] text-slate-700"><div className="flex items-center justify-start gap-2"><PinIcon size={16} className="shrink-0 text-blue-600" /><span>{t.footer.location}</span></div><div className="flex items-center justify-start gap-2"><PhoneIcon size={16} className="shrink-0 text-blue-600" /><span>+359 888 000 000</span></div><div className="flex items-center justify-start gap-2"><MailIcon size={16} className="shrink-0 text-blue-600" /><span>enquiries@upstrux.bg</span></div></div></div></div><div className="border-t border-slate-200 py-4 text-xs text-slate-500">{t.footer.rights}</div></footer>
+        <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-8"><div className="mx-auto grid max-w-7xl items-start gap-10 pb-8 md:grid-cols-5"><div><Logo footer /></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3><div className="grid gap-1.5 text-[13px] text-slate-700"><a href="#home" className="hover:text-blue-600">{t.nav.home}</a><a href="#about" className="hover:text-blue-600">{t.nav.about}</a><a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage("solutions");}} className="hover:text-blue-600"> {t.footer.solutions} </a><div className="ml-3 mt-1 grid gap-1 text-[12px] text-slate-500">{currentServices.map((service) => <a key={service.title} href={`#service-${slugify(service.title)}`} className="hover:text-blue-600">{service.title}</a>)}</div></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.legalTitle}</h3><div className="grid gap-1.5 text-[13px] text-slate-700"><button type="button" onClick={() => setCurrentPage("legal")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.legalInfo}</button><button type="button" onClick={() => setCurrentPage("privacy")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.privacy}</button></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.follow}</h3><div className="flex items-center gap-2 pt-1 leading-none"><a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><LinkedInIcon size={24} /></a><a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><FacebookIcon size={24} /></a></div></div><div className="justify-self-start text-left"><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.contacts}</h3><div className="space-y-2 text-[13px] text-slate-700"><div className="flex items-center justify-start gap-2"><PinIcon size={16} className="shrink-0 text-blue-600" /><span>{t.footer.location}</span></div><div className="flex items-center justify-start gap-2"><PhoneIcon size={16} className="shrink-0 text-blue-600" /><span>+359 888 000 000</span></div><div className="flex items-center justify-start gap-2"><MailIcon size={16} className="shrink-0 text-blue-600" /><span>enquiries@upstrux.bg</span></div></div></div></div><div className="border-t border-slate-200 py-4 text-xs text-slate-500">{t.footer.rights}</div></footer>
       </main>
     </div>
   );
