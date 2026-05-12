@@ -456,7 +456,7 @@ export default function UpstruxWebsite() {
   return (
     <div className="min-h-screen bg-white text-slate-950">
     <header className="absolute left-0 right-0 top-4 z-50 pt-7 text-white">
-  <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between">
+  <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
     <a href="#home" aria-label="UPSTRUX home">
       <Logo />
     </a>
