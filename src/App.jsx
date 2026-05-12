@@ -736,7 +736,7 @@ if (
 
     <button
       type="button"
-      className="mt-6 self-center text-2xl text-white md:hidden"
+      className="mt-0 self-center text-2xl text-white md:hidden"
       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
     >
       ☰
