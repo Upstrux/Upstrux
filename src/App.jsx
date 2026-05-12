@@ -359,13 +359,13 @@ export default function UpstruxWebsite() {
   if (currentPage === "solutions") {
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <header className="absolute left-0 right-0 top-0 z-50 pt-7 text-white">
+      <header className="bg-white px-6 py-8">
   <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between">
-    <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage("home"); }}>
-      <Logo />
-    </a>
+    <button type="button" onClick={() => setCurrentPage("home")}>
+      <Logo footer />
+    </button>
 
-    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>
+    <nav className="flex flex-wrap items-center justify-end gap-3 pt-3 text-xs font-light uppercase tracking-[0.12em] text-slate-900 md:gap-12 md:text-sm md:tracking-[0.18em]">
       {navItems.map((item) =>
         item.key === "solutions" ? (
           <a
@@ -375,21 +375,19 @@ export default function UpstruxWebsite() {
               e.preventDefault();
               setCurrentPage("solutions");
             }}
-            className="transition-colors hover:text-blue-300"
+            className="transition-colors hover:text-blue-600"
           >
             {item.label}
           </a>
         ) : (
           <a
             key={item.key}
-            href={item.href}
+            href="#"
             onClick={(e) => {
-              if (item.key === "home") {
-                e.preventDefault();
-                setCurrentPage("home");
-              }
+              e.preventDefault();
+              setCurrentPage("home");
             }}
-            className="transition-colors hover:text-blue-300"
+            className="transition-colors hover:text-blue-600"
           >
             {item.label}
           </a>
@@ -402,8 +400,8 @@ export default function UpstruxWebsite() {
             key={lang}
             type="button"
             onClick={() => setLanguage(lang)}
-            className={`cursor-pointer uppercase transition hover:text-blue-300 ${
-              language === lang ? "text-blue-300" : "text-white"
+            className={`cursor-pointer uppercase transition hover:text-blue-600 ${
+              language === lang ? "text-blue-600" : "text-slate-900"
             }`}
           >
             {lang}
