@@ -481,7 +481,7 @@ export default function UpstruxWebsite() {
   </div>
 </header>
       
-      <main className="bg-white px-6 py-24">
+      <main className="bg-white px-6 pt-32 pb-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
             {t.solutionsEyebrow}
