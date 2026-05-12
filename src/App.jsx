@@ -421,10 +421,7 @@ export default function UpstruxWebsite() {
 </nav>
   </div>
 </header>
-      <div className="mx-auto mt-2 mb-2 flex max-w-7xl items-center justify-center px-6">
-        <div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" />
-      </div>
-
+      
       <main className="bg-white px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
