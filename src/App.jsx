@@ -300,10 +300,6 @@ function ZigZagService({ title, text, image, reverse }) {
           <li key={item} className="flex gap-2.5"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
         ))}
       </ul>
-      <button type="button" className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-      >
-        Learn more
-      </button>
     </div>
   );
   const imageBlock = <div className="overflow-hidden bg-white"><img src={image} alt={title} className="aspect-[1.68/1] w-full object-cover min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]" /></div>;
@@ -484,6 +480,84 @@ export default function UpstruxWebsite() {
 </div>
   );
 }
+if (
+  currentPage === "service1" ||
+  currentPage === "service2" ||
+  currentPage === "service3" ||
+  currentPage === "service4" ||
+  currentPage === "service5" ||
+  currentPage === "service6"
+) {
+  return (
+    <div className="min-h-screen bg-white text-slate-950">
+      <header className="relative bg-white px-6 pt-12 pb-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+          <button
+            type="button"
+            onClick={() => setCurrentPage("home")}
+          >
+            <Logo footer />
+          </button>
+
+          <button
+            type="button"
+            className="mt-6 self-center text-2xl text-slate-900 md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            ☰
+          </button>
+
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-2 -translate-x-1/2 md:static md:left-auto md:top-auto md:translate-x-0 w-auto flex-col gap-2 p-2 text-sm font-light uppercase tracking-[0.14em] text-slate-900 md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-slate-900`}>
+            {navItems.map((item) =>
+              item.key === "solutions" ? (
+                <a
+                  key={item.key}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCurrentPage("solutions");
+                  }}
+                  className="transition-colors hover:text-blue-600"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a
+                  key={item.key}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCurrentPage("home");
+                  }}
+                  className="transition-colors hover:text-blue-600"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
+          </nav>
+        </div>
+      </header>
+
+      <main className="bg-white px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+            {t.solutionsEyebrow}
+          </p>
+
+          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
+            Service Page
+          </h1>
+        </div>
+      </main>
+
+      <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-8">
+        {/* Same footer as homepage */}
+      </footer>
+    </div>
+  );
+}
+
   return (
     <div className="min-h-screen bg-white text-slate-950">
     <header className="absolute left-0 right-0 top-0 z-50 pt-12 text-white">
