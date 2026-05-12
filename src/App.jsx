@@ -624,7 +624,12 @@ if (
           </p>
 
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
-            Service Page
+            {currentPage === "service1" && "Service Page 1"}
+            {currentPage === "service2" && "Service Page 2"}
+            {currentPage === "service3" && "Service Page 3"}
+            {currentPage === "service4" && "Service Page 4"}
+            {currentPage === "service5" && "Service Page 5"}
+            {currentPage === "service6" && "Service Page 6"}
           </h1>
         </div>
       </main>
@@ -632,6 +637,91 @@ if (
       <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-8">
         {/* Same footer as homepage */}
       </footer>
+      <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-8">
+  <div className="mx-auto grid max-w-7xl items-start gap-10 pb-8 md:grid-cols-5">
+    <div><Logo footer /></div>
+
+    <div>
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3>
+      <div className="grid gap-1.5 text-[13px] text-slate-700">
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("home");
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.nav.home}
+        </a>
+
+        <a
+          href="#about"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("home");
+            setTimeout(() => {
+              document.getElementById("about")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 50);
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.nav.about}
+        </a>
+
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("solutions");
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.footer.solutions}
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.legalTitle}</h3>
+      <div className="grid gap-1.5 text-[13px] text-slate-700">
+        <button type="button" onClick={() => setCurrentPage("legal")} className="cursor-pointer text-left hover:text-blue-600">
+          {t.footer.legalInfo}
+        </button>
+        <button type="button" onClick={() => setCurrentPage("privacy")} className="cursor-pointer text-left hover:text-blue-600">
+          {t.footer.privacy}
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.follow}</h3>
+      <div className="flex items-center gap-2 pt-1 leading-none">
+        <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
+          <LinkedInIcon size={24} />
+        </a>
+        <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
+          <FacebookIcon size={24} />
+        </a>
+      </div>
+    </div>
+
+    <div className="justify-self-start text-left">
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.contacts}</h3>
+      <div className="space-y-2 text-[13px] text-slate-700">
+        <div>{t.footer.location}</div>
+        <div>+359 888 000 000</div>
+        <div>enquiries@upstrux.bg</div>
+      </div>
+    </div>
+  </div>
+
+  <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
+    {t.footer.rights}
+  </div>
+</footer>
     </div>
   );
 }
