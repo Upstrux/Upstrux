@@ -359,14 +359,60 @@ export default function UpstruxWebsite() {
   if (currentPage === "solutions") {
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <header className="bg-white px-6 py-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-4">
-          <button type="button" onClick={() => setCurrentPage("home")}>
-            <Logo footer />
-          </button>
-        </div>
-      </header>
+      <header className="absolute left-0 right-0 top-0 z-50 pt-7 text-white">
+  <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between">
+    <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage("home"); }}>
+      <Logo />
+    </a>
 
+    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>
+      {navItems.map((item) =>
+        item.key === "solutions" ? (
+          <a
+            key={item.key}
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentPage("solutions");
+            }}
+            className="transition-colors hover:text-blue-300"
+          >
+            {item.label}
+          </a>
+        ) : (
+          <a
+            key={item.key}
+            href={item.href}
+            onClick={(e) => {
+              if (item.key === "home") {
+                e.preventDefault();
+                setCurrentPage("home");
+              }
+            }}
+            className="transition-colors hover:text-blue-300"
+          >
+            {item.label}
+          </a>
+        )
+      )}
+
+      <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
+        {["bg", "en", "de"].map((lang) => (
+          <button
+            key={lang}
+            type="button"
+            onClick={() => setLanguage(lang)}
+            className={`cursor-pointer uppercase transition hover:text-blue-300 ${
+              language === lang ? "text-blue-300" : "text-white"
+            }`}
+          >
+            {lang}
+          </button>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>
       <div className="mx-auto mt-2 mb-2 flex max-w-7xl items-center justify-center px-6">
         <div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" />
       </div>
