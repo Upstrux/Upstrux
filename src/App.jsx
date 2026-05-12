@@ -415,16 +415,6 @@ export default function UpstruxWebsite() {
         <div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" />
       </div>
 
-      <div className="mx-auto flex w-full max-w-7xl justify-start px-0 pt-4">
-        <button
-          type="button"
-          onClick={() => setCurrentPage("home")}
-          className="cursor-pointer text-sm text-blue-600 hover:text-blue-800"
-        >
-          {t.footer.backHome}
-        </button>
-      </div>
-
       <main className="bg-white px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
