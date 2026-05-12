@@ -458,16 +458,14 @@ export default function UpstruxWebsite() {
     </a>
 
     <button
-    type="button"
-    className="mt-8 self-center text-2xl text-white md:hidden"
-    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      type="button"
+      className="mt-12 self-center text-2xl text-white md:hidden"
+      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
     >
       ☰
     </button>
 
-    <nav
-      className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full -translate-x-1/2 mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:p-0`}
-    >
+    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>
       {navItems.map((item) =>
         item.key === "solutions" ? (
           <a
