@@ -458,9 +458,9 @@ export default function UpstruxWebsite() {
     </a>
 
     <button
-      type="button"
-      className="absolute left-1/2 -translate-x-1/2 text-2xl text-white md:hidden"
-      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    type="button"
+    className="mt-12 self-center text-2xl text-white md:hidden"
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
     >
       ☰
     </button>
