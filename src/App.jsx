@@ -446,17 +446,21 @@ export default function UpstruxWebsite() {
         </div>
       </main>
 <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-8"><div className="mx-auto grid max-w-7xl items-start gap-10 pb-8 md:grid-cols-5"><div><Logo footer /></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3><div className="grid gap-1.5 text-[13px] text-slate-700">
-  <a
+ <a
   href="#home"
   onClick={(e) => {
     e.preventDefault();
     setCurrentPage("home");
+    setTimeout(() => {
+      document.getElementById("home")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 50);
   }}
   className="hover:text-blue-600"
 >
   {t.nav.home}
 </a>
-
 <a
   href="#about"
   onClick={(e) => {
@@ -466,7 +470,7 @@ export default function UpstruxWebsite() {
       document.getElementById("about")?.scrollIntoView({
         behavior: "smooth",
       });
-    }, 0);
+    }, 50);
   }}
   className="hover:text-blue-600"
 >
