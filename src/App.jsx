@@ -451,7 +451,7 @@ export default function UpstruxWebsite() {
 }
   return (
     <div className="min-h-screen bg-white text-slate-950">
-    <header className="absolute left-0 right-0 top-8 z-50 pt-7 text-white">
+    <header className="absolute left-0 right-0 top-4 z-50 pt-7 text-white">
   <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between">
     <a href="#home" aria-label="UPSTRUX home">
       <Logo />
@@ -465,7 +465,7 @@ export default function UpstruxWebsite() {
       ☰
     </button>
 
-    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>
+    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full -translate-x-1/2 mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>
       {navItems.map((item) =>
         item.key === "solutions" ? (
           <a
