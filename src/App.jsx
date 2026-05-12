@@ -459,7 +459,7 @@ export default function UpstruxWebsite() {
 
     <button
       type="button"
-      className="self-end text-2xl text-white md:hidden"
+      className="absolute left-1/2 -translate-x-1/2 text-2xl text-white md:hidden"
       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
     >
       ☰
