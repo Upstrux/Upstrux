@@ -332,8 +332,6 @@ function LegalContentPage({ page, onBack, backLabel }) {
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="bg-white px-6 py-8"><div className="mx-auto flex max-w-7xl flex-col items-start justify-start gap-4"><button type="button" onClick={onBack} aria-label="Back to homepage" className="text-left"><Logo footer /></button></div></header>
-      <div className="mx-auto mt-2 mb-2 flex max-w-7xl items-center justify-center px-6">
-      <div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" /></div>
       <div className="mx-auto flex w-full max-w-7xl justify-start px-0 pt-4"><button type="button" onClick={onBack} className="cursor-pointer text-sm text-blue-600 hover:text-blue-800">{backLabel}</button></div>
       <main><section className="px-6 py-24"><div className="mx-auto max-w-5xl"><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{page.eyebrow}</p><h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">{page.title}</h1><p className="mt-3 text-sm text-slate-500">{page.updated}</p><p className="mt-8 text-lg leading-8 text-slate-700">{page.intro}</p><div className="mx-auto my-10 flex max-w-5xl items-center justify-center"><div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" /></div><div className="space-y-8 pt-2">{page.sections.map((section) => <article key={section.heading}><h2 className="text-xl font-light tracking-[-0.02em] text-[#111111]">{section.heading}</h2><p className="mt-3 text-base leading-7 text-slate-700">{section.body}</p></article>)}</div></div></section></main>
     </div>
