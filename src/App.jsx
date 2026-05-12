@@ -590,17 +590,23 @@ if (
                   {item.label}
                 </a>
               ) : (
-                <a
-                  key={item.key}
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setCurrentPage("home");
-                  }}
-                  className="transition-colors hover:text-blue-600"
+              <a
+                key={item.key}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage("home");
+                  setTimeout(() => {
+                    document.querySelector(item.href)?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }, 50);
+                  setMobileMenuOpen(false);
+                }}
+                className="transition-colors hover:text-blue-600"
                 >
-                  {item.label}
-                </a>
+                {item.label}
+              </a>
               )
             )}
         <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
