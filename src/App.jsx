@@ -541,6 +541,23 @@ if (
                 </a>
               )
             )}
+        <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
+          {["bg", "en", "de"].map((lang) => (
+          <button
+            key={lang}
+            type="button"
+            onClick={() => {
+            setLanguage(lang);
+            setMobileMenuOpen(false);
+          }}
+          className={`cursor-pointer uppercase transition hover:text-blue-600 ${
+          language === lang ? "text-blue-600" : "text-slate-900"
+          }`}
+          >
+          {lang}
+        </button>
+        ))}
+        </div>
           </nav>
         </div>
       </header>
