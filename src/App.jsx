@@ -65,6 +65,7 @@ const SOCIAL_LINKS = {
 const heroSlides = [
   damstructure,
   industrialstructure,
+  nightshiftconstruction,
   structuralVconnection,
   buildingTechnology,
   constructionManagement,
