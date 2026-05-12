@@ -459,7 +459,7 @@ export default function UpstruxWebsite() {
 
     <button
     type="button"
-    className="mt-12 self-center text-2xl text-white md:hidden"
+    className="mt-8 self-center text-2xl text-white md:hidden"
     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
     >
       ☰
