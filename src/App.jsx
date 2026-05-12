@@ -451,53 +451,14 @@ export default function UpstruxWebsite() {
 }
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <header className="absolute left-0 right-0 top-0 z-50 pt-7 text-white"><div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 md:flex-row md:items-start md:justify-between"><a href="#home" aria-label="UPSTRUX home"><Logo /></a><button
+      <header className="absolute left-0 right-0 top-0 z-50 pt-7 text-white">
+        <button
   type="button"
-  className="md:hidden text-white text-2xl"
+  className="text-2xl text-slate-900 md:hidden"
   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 >
   ☰
 </button>
-<nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute right-6 top-full mt-4 w-auto flex-col gap-4 p-2 text-sm font-light uppercase tracking-[0.14em] text-white md:static md:mt-0 md:flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white`}>
-  {navItems.map((item) =>
-    item.key === "solutions" ? (
-      <a
-        key={item.key}
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          setCurrentPage("solutions");
-        }}
-        className="transition-colors hover:text-blue-300"
-      >
-        {item.label}
-      </a>
-    ) : (
-      <a
-        key={item.key}
-        href={item.href}
-        className="transition-colors hover:text-blue-300"
-      >
-        {item.label}
-      </a>
-    )
-  )}
-
-  <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-    {["bg", "en", "de"].map((lang) => (
-      <button
-        key={lang}
-        type="button"
-        onClick={() => setLanguage(lang)}
-        className={`cursor-pointer uppercase transition hover:text-blue-300 ${
-          language === lang ? "text-blue-300" : "text-white"
-        }`}
-      >
-        {lang}
-      </button>
-    ))}
-  </div>
-</nav>
       </div></header>
       <main>
         <section id="home" className="relative h-[880px] overflow-hidden bg-slate-900"><div className="absolute inset-0">{heroSlides.map((image, index) => <HeroSlide key={String(image)} image={image} index={index} />)}</div><div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent" /><div className="relative mx-auto flex h-full max-w-7xl items-end px-6 pb-16"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl text-white"><h1 className="text-3xl font-light leading-[1.05] tracking-[-0.025em] md:text-5xl">{t.heroTitle.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</h1></motion.div></div></section>
