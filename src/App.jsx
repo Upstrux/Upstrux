@@ -217,6 +217,7 @@ const translations = {
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
+    learnMore: "Научете повече",
     services: bgServices,
     processSteps: bgProcessSteps,
     legalPages: legalPages.bg,
@@ -234,6 +235,7 @@ const translations = {
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
     footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
+    learnMore: "Learn more",
     services: enServices,
     processSteps: enProcessSteps,
     legalPages: legalPages.en,
@@ -251,6 +253,7 @@ const translations = {
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
     footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
+    learnMore: "Mehr erfahren",
     services: deServices,
     processSteps: deProcessSteps,
     legalPages: legalPages.de,
@@ -306,7 +309,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service1")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    Learn more
+    {t.learnMore}
   </button>
 )}
 
@@ -316,7 +319,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service2")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    Learn more
+    {t.learnMore}
   </button>
 )}
 
@@ -326,7 +329,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service3")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    Learn more
+    {t.learnMore}
   </button>
 )}
 
@@ -336,7 +339,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service4")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    Learn more
+    {t.learnMore}
   </button>
 )}
 
@@ -346,7 +349,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service5")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    Learn more
+    {t.learnMore}
   </button>
 )}
 
@@ -356,7 +359,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service6")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    Learn more
+    {t.learnMore}
   </button>
 )}
     </div>
