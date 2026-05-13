@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import whitearchitecturefacad from "./assets/white-architecture-facad.jpg";
 import nightshiftconstruction from "./assets/night-shift-construction.webp";
@@ -402,7 +402,12 @@ function LegalContentPage({ page, onBack, backLabel }) {
 
 export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState("home");
+  const validPages = ["home", "solutions", "legal", "privacy", "service1", "service2", "service3", "service4", "service5", "service6"];
+  const [currentPage, setCurrentPage] = useState(() => {
+    if (typeof window === "undefined") return "home";
+    const hashPage = window.location.hash.replace("#", "");
+    return validPages.includes(hashPage) ? hashPage : "home";
+  });
   const [servicesOpen, setServicesOpen] = useState(false);
   const [language, setLanguage] = useState("bg");
   const t = translations[language];
@@ -414,6 +419,13 @@ export default function UpstruxWebsite() {
     { key: "solutions", label: t.nav.solutions, href: "solutions" },
     { key: "contacts", label: t.nav.contacts, href: "#contact" },
   ];
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const pageHash = currentPage === "home" ? "home" : currentPage;
+    window.history.replaceState(null, "", `#${pageHash}`);
+  }, [currentPage]);
+
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
   if (currentPage === "privacy") return <LegalContentPage page={t.legalPages.privacy} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
