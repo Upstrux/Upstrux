@@ -409,6 +409,7 @@ export default function UpstruxWebsite() {
     return validPages.includes(hashPage) ? hashPage : "home";
   });
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [contactHighlight, setContactHighlight] = useState(false);
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "bg";
     const savedLanguage = window.localStorage.getItem("upstruxLanguage");
@@ -434,6 +435,11 @@ export default function UpstruxWebsite() {
     if (typeof window === "undefined") return;
     window.localStorage.setItem("upstruxLanguage", language);
   }, [language]);
+
+  const highlightContact = () => {
+    setContactHighlight(true);
+    window.setTimeout(() => setContactHighlight(false), 1600);
+  };
 
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
@@ -480,6 +486,9 @@ export default function UpstruxWebsite() {
       document.querySelector(item.href)?.scrollIntoView({
         behavior: "smooth",
       });
+      if (item.key === "contacts") {
+        highlightContact();
+      }
     }, 50);
 
     setMobileMenuOpen(false);
@@ -625,6 +634,9 @@ if (
                     document.querySelector(item.href)?.scrollIntoView({
                       behavior: "smooth",
                     });
+                    if (item.key === "contacts") {
+                      highlightContact();
+                    }
                   }, 50);
                   setMobileMenuOpen(false);
                 }}
@@ -799,7 +811,12 @@ if (
           <a
             key={item.key}
             href={item.href}
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => {
+              if (item.key === "contacts") {
+                window.setTimeout(highlightContact, 450);
+              }
+              setMobileMenuOpen(false);
+            }}
             className="transition-colors hover:text-blue-300"
           >
             {item.label}
