@@ -281,30 +281,6 @@ function runContentChecks() {
 
 runContentChecks();
 
-const contactPulseStyles = `
-@keyframes upstruxContactCircle {
-  0% {
-    transform: translate(-50%, -50%) scale(0.15);
-    opacity: 0;
-  }
-  12% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.9);
-    opacity: 0;
-  }
-}
-.upstrux-contact-circle {
-  animation: upstruxContactCircle 1.45s ease-out forwards;
-}
-`;
-
-function ContactPulseStyle() {
-  return <style>{contactPulseStyles}</style>;
-}
-
-
 function HeroSlide({ image, index }) {
   return (
     <motion.div
@@ -416,7 +392,7 @@ function ProcessStep({ step, index }) {
 
 function LegalContentPage({ page, onBack, backLabel }) {
   return (
-    <div className="min-h-screen bg-white text-slate-950"><ContactPulseStyle /><ContactPulseStyle /><ContactPulseStyle /><ContactPulseStyle />
+    <div className="min-h-screen bg-white text-slate-950">
       <header className="bg-white px-6 pt-12 pb-8"><div className="mx-auto flex max-w-7xl flex-col items-start justify-start gap-4"><button type="button" onClick={onBack} aria-label="Back to homepage" className="text-left"><Logo footer /></button></div></header>
       <div className="mx-auto flex w-full max-w-7xl justify-start px-6 pt-4"><button type="button" onClick={onBack} className="cursor-pointer text-sm text-blue-600 hover:text-blue-800">{backLabel}</button></div>
       <main><section className="px-6 py-24"><div className="mx-auto max-w-5xl"><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{page.eyebrow}</p><h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">{page.title}</h1><p className="mt-3 text-sm text-slate-500">{page.updated}</p><p className="mt-8 text-lg leading-8 text-slate-700">{page.intro}</p><div className="mx-auto my-10 flex max-w-5xl items-center justify-center"><div className="h-[0.5px] w-full max-w-[48rem] bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500" /></div><div className="space-y-8 pt-2">{page.sections.map((section) => <article key={section.heading}><h2 className="text-xl font-light tracking-[-0.02em] text-[#111111]">{section.heading}</h2><p className="mt-3 text-base leading-7 text-slate-700">{section.body}</p></article>)}</div></div></section></main>
@@ -433,7 +409,6 @@ export default function UpstruxWebsite() {
     return validPages.includes(hashPage) ? hashPage : "home";
   });
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [contactHighlight, setContactHighlight] = useState(false);
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "bg";
     const savedLanguage = window.localStorage.getItem("upstruxLanguage");
@@ -459,22 +434,6 @@ export default function UpstruxWebsite() {
     if (typeof window === "undefined") return;
     window.localStorage.setItem("upstruxLanguage", language);
   }, [language]);
-
-  const highlightContact = () => {
-    setContactHighlight(false);
-    window.setTimeout(() => {
-      setContactHighlight(true);
-      window.setTimeout(() => setContactHighlight(false), 1700);
-    }, 80);
-  };
-
-  const goToContact = () => {
-    setCurrentPage("home");
-    window.setTimeout(() => {
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-      window.setTimeout(highlightContact, 650);
-    }, 80);
-  };
 
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
@@ -517,15 +476,11 @@ export default function UpstruxWebsite() {
     e.preventDefault();
     setCurrentPage("home");
 
-    if (item.key === "contacts") {
-      goToContact();
-    } else {
-      setTimeout(() => {
-        document.querySelector(item.href)?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }, 50);
-    }
+    setTimeout(() => {
+      document.querySelector(item.href)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 50);
 
     setMobileMenuOpen(false);
   }}
@@ -666,15 +621,11 @@ if (
                 onClick={(e) => {
                   e.preventDefault();
                   setCurrentPage("home");
-                  if (item.key === "contacts") {
-                    goToContact();
-                  } else {
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }, 50);
-                  }
+                  setTimeout(() => {
+                    document.querySelector(item.href)?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }, 50);
                   setMobileMenuOpen(false);
                 }}
                 className="transition-colors hover:text-blue-600"
@@ -848,12 +799,7 @@ if (
           <a
             key={item.key}
             href={item.href}
-            onClick={() => {
-              if (item.key === "contacts") {
-                window.setTimeout(highlightContact, 650);
-              }
-              setMobileMenuOpen(false);
-            }}
+            onClick={() => setMobileMenuOpen(false)}
             className="transition-colors hover:text-blue-300"
           >
             {item.label}
