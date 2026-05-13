@@ -265,7 +265,7 @@ function slugify(text) {
 }
 
 function runContentChecks() {
-  console.assert(heroSlides.length === 6, "Hero slider should include 6 images.");
+  console.assert(heroSlides.length === 8, "Hero slider should include 8 images.");
   console.assert(serviceImages.length === 6, "There should be 6 service images.");
   console.assert(bgServices.length === 6, "Bulgarian version should include 6 service categories.");
   console.assert(enServices.length === 6, "English version should include 6 service categories.");
