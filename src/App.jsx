@@ -293,7 +293,7 @@ function HeroSlide({ image, index }) {
   );
 }
 
-function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage }) {
+function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
   const bulletItems = text.split(";").map((item) => item.trim()).filter(Boolean);
   const textBlock = (
     <div>
@@ -309,7 +309,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service1")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    {t.learnMore}
+    {learnMoreLabel}
   </button>
 )}
 
@@ -319,7 +319,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service2")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    {t.learnMore}
+    {learnMoreLabel}
   </button>
 )}
 
@@ -329,7 +329,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service3")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    {t.learnMore}
+    {learnMoreLabel}
   </button>
 )}
 
@@ -339,7 +339,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service4")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    {t.learnMore}
+    {learnMoreLabel}
   </button>
 )}
 
@@ -349,7 +349,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service5")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    {t.learnMore}
+    {learnMoreLabel}
   </button>
 )}
 
@@ -359,7 +359,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     onClick={() => setCurrentPage("service6")}
     className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
-    {t.learnMore}
+    {learnMoreLabel}
   </button>
 )}
     </div>
@@ -511,6 +511,7 @@ export default function UpstruxWebsite() {
               reverse={index % 2 === 1}
               servicePage={`service${index + 1}`}
               setCurrentPage={setCurrentPage}
+              learnMoreLabel={t.learnMore}
             />
           ))}
           </div>
