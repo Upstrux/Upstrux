@@ -307,7 +307,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
   <button
     type="button"
     onClick={() => setCurrentPage("service1")}
-    className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
     {learnMoreLabel}
   </button>
@@ -317,7 +317,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
   <button
     type="button"
     onClick={() => setCurrentPage("service2")}
-    className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
     {learnMoreLabel}
   </button>
@@ -327,7 +327,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
   <button
     type="button"
     onClick={() => setCurrentPage("service3")}
-    className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
     {learnMoreLabel}
   </button>
@@ -337,7 +337,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
   <button
     type="button"
     onClick={() => setCurrentPage("service4")}
-    className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
     {learnMoreLabel}
   </button>
@@ -347,7 +347,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
   <button
     type="button"
     onClick={() => setCurrentPage("service5")}
-    className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
     {learnMoreLabel}
   </button>
@@ -357,7 +357,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
   <button
     type="button"
     onClick={() => setCurrentPage("service6")}
-    className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
   >
     {learnMoreLabel}
   </button>
