@@ -409,7 +409,11 @@ export default function UpstruxWebsite() {
     return validPages.includes(hashPage) ? hashPage : "home";
   });
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [language, setLanguage] = useState("bg");
+  const [language, setLanguage] = useState(() => {
+    if (typeof window === "undefined") return "bg";
+    const savedLanguage = window.localStorage.getItem("upstruxLanguage");
+    return ["bg", "en", "de"].includes(savedLanguage) ? savedLanguage : "bg";
+  });
   const t = translations[language];
   const currentServices = t.services.map((service, index) => ({ ...service, image: serviceImages[index] }));
   const currentProcessSteps = t.processSteps;
@@ -425,6 +429,11 @@ export default function UpstruxWebsite() {
     const pageHash = currentPage === "home" ? "home" : currentPage;
     window.history.replaceState(null, "", `#${pageHash}`);
   }, [currentPage]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    window.localStorage.setItem("upstruxLanguage", language);
+  }, [language]);
 
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
