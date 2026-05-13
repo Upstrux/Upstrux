@@ -438,7 +438,7 @@ export default function UpstruxWebsite() {
 
   const highlightContact = () => {
     setContactHighlight(true);
-    window.setTimeout(() => setContactHighlight(false), 1600);
+    window.setTimeout(() => setContactHighlight(false), 2600);
   };
 
 
@@ -813,7 +813,7 @@ if (
             href={item.href}
             onClick={() => {
               if (item.key === "contacts") {
-                window.setTimeout(highlightContact, 450);
+                window.setTimeout(highlightContact, 650);
               }
               setMobileMenuOpen(false);
             }}
