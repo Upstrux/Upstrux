@@ -214,6 +214,21 @@ const translations = {
     aboutHighlight: "Нашият подход съчетава инженерна експертиза, координирано управление на проектната реализация и достъп до специализирани технически мрежи с цел подпомагане на проектите през целия инженерен и строително-жизнен цикъл — от предварително планиране, технически оценка и координация на разрешителни процедури до работен проект, строителен надзор, реализация и последваща техническа поддръжка.",
     solutionsEyebrow: "Инженерни, проектантски и експертни решения в строителството",
     solutionsTitle: "Решения",
+    competenceTitle: "Области на компетентност",
+    competenceIntro: "UPSTRUX обединява инженерна, проектантска, строителна и консултантска експертиза в ключови направления на строително-инвестиционния процес.",
+    competences: [
+    "Архитектура, урбанизъм, пространствено планиране и управление на територията.",
+    "Проектиране на сгради и съоръжения, конструктивно инженерство и строителна механика.",
+    "Обследване, диагностика и изпитване на строителни конструкции, съоръжения и мостове.",
+    "Сеизмична оценка, усилване, реконструкция и възстановяване на строителни конструкции.",
+    "Транспортно строителство, пътна инфраструктура, транспортни съоръжения и железопътно инженерство.",
+    "Геодезия, геоинформатика, кадастър, инженерно заснемане и управление на пространствени данни.",
+    "Геотехническо инженерство, строителна физика, строителни материали, лабораторни изпитвания, технически експертизи и устойчиво строителство.",
+    "Водоснабдяване и канализация, хидротехническо строителство, инженерна хидравлика, хидрология, инженерна екология и опазване на околната среда.",
+    "Технология и механизация на строителството, BIM, дигитализация и информационни технологии в строителството.",
+    "Организация, управление и икономика на строителството, инвестиционно планиране и управление на строителни проекти.",
+    "Нормативно съответствие, технически консултации, експертна дейност и стратегическо консултиране в строително-инвестиционния сектор.",
+    ],
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
@@ -830,6 +845,38 @@ if (
       <main>
         <section id="home" className="relative h-[880px] overflow-hidden bg-slate-900"><div className="absolute inset-0">{heroSlides.map((image, index) => <HeroSlide key={String(image)} image={image} index={index} />)}</div><div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent" /><div className="relative mx-auto flex h-full max-w-7xl items-end px-6 pb-20"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl text-white"><h1 className="text-3xl font-light leading-[1.05] tracking-[-0.025em] md:text-5xl">{t.heroTitle.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</h1></motion.div></div></section>
         <section id="about" className="bg-white px-6 py-28"><div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2"><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.aboutLabel}</p><h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.aboutTitle}</h2><p className="mt-8 text-lg leading-8 text-slate-700">{t.aboutP1}</p><p className="mt-5 text-lg leading-8 text-slate-700">{t.aboutP2}</p><div className="mt-7 border-l-4 border-blue-600 bg-white px-8 py-5"><p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">{t.aboutHighlight}</p></div></div><div className="overflow-hidden bg-white w-full max-w-[900px]"><img src={whitearchitecturefacad} alt="UPSTRUX engineering" className="h-[650px] w-full object-cover object-center md:h-[720px]"/></div></div></section>
+        <section className="bg-white px-6 py-20">
+  <div className="mx-auto max-w-7xl">
+
+    <div className="mb-14 max-w-5xl text-left">
+      <h3 className="text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
+        {t.competenceTitle}
+      </h3>
+
+      <p className="mt-6 text-lg leading-8 text-slate-600">
+        {t.competenceIntro}
+      </p>
+    </div>
+
+    <div className="grid gap-x-16 gap-y-5 md:grid-cols-2">
+      {t.competences.map((item) => (
+        <div
+          key={item}
+          className="flex items-start gap-4 border-b border-slate-200 pb-4"
+        >
+          <span className="mt-[2px] text-lg text-blue-600">
+            ✓
+          </span>
+
+          <p className="text-[15px] leading-7 text-slate-700">
+            {item}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
         <section className="bg-white px-6 py-20">
   <div className="mx-auto max-w-7xl">
     <div className="mb-20 text-left">
