@@ -299,7 +299,7 @@ runContentChecks();
 function SectionDivider({ className = "" }) {
   return (
     <div
-      className={`mx-auto h-[2px] w-full max-w-7xl bg-gradient-to-r from-transparent via-blue-500/50 to-transparent ${className}`}
+      className={`mx-auto h-[2px] w-full max-w-7xl bg-gradient-to-r from-transparent via-blue-500/45 to-transparent ${className}`}
     />
   );
 }
