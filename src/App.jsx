@@ -252,7 +252,7 @@ const translations = {
     competences: [
     "Architecture, urban planning, spatial planning and territorial management.",
     "Structural design and engineering of buildings and facilities.",
-    "Assessment and testing of structures, facilities and bridges."
+    "Assessment and testing of structures, facilities and bridges.",
     "Seismic assessment, strengthening and retrofitting of structures.",
     "Transport and road infrastructure construction, transport facilities and railway engineering.",
     "Geodesy, geoinformatics, cadastre, engineering surveying and spatial data management.",
@@ -293,7 +293,7 @@ const translations = {
     "Wasserversorgung und Abwassertechnik, Wasserbau, Hydrologie, Umwelttechnik und Umweltschutz.",
     "Bautechnologie und Baumechanisierung, BIM, Digitalisierung und Informationstechnologien im Bauwesen.",
     "Bauorganisation, Baumanagement und Bauökonomie, Investitionsplanung sowie Bauprojektmanagement.",
-    "Regulatorische Compliance, technische Beratung, Gutachtertätigkeiten und Consulting im Bau- und Investitionssektor."
+    "Regulatorische Compliance, technische Beratung, Gutachtertätigkeiten und Consulting im Bau- und Investitionssektor.",
     ],
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
