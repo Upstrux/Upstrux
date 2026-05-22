@@ -544,6 +544,9 @@ export default function UpstruxWebsite() {
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
             {t.solutionsTitle}
           </h1>
+          <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
+          Нашата дейност обхваща пълния инженерен и строително-инвестиционен цикъл — от проучване, проектиране и технически анализи до строителство, координация, въвеждане в експлоатация, предаване и последваща експлоатационна поддръжка.
+          </p>
           <SectionDivider className="mt-10 mb-16" />
           <div className="mt-20 space-y-20">
             {currentServices.map((service, index) => (
