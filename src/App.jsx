@@ -544,7 +544,7 @@ export default function UpstruxWebsite() {
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
             {t.solutionsTitle}
           </h1>
-
+          <SectionDivider className="mt-10 mb-16" />
           <div className="mt-20 space-y-20">
             {currentServices.map((service, index) => (
             <ZigZagService
