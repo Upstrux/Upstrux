@@ -858,15 +858,13 @@ if (
       </p>
     </div>
 
-    <div className="grid gap-x-16 gap-y-5 md:grid-cols-2">
+    <div className="grid gap-x-16 gap-y-6 md:grid-cols-2">
       {t.competences.map((item) => (
         <div
           key={item}
-          className="flex items-start gap-4 border-b border-slate-200 pb-4"
+          className="flex items-start gap-4"
         >
-          <span className="mt-[2px] text-lg text-blue-600">
-            ✓
-          </span>
+          <div className="mt-1 h-6 w-[3px] shrink-0 rounded-full bg-blue-600" />
 
           <p className="text-[15px] leading-7 text-slate-700">
             {item}
