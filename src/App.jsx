@@ -296,14 +296,6 @@ function runContentChecks() {
 
 runContentChecks();
 
-function SectionDivider({ className = "" }) {
-  return (
-    <div
-      className={`mx-auto h-px w-full max-w-7xl bg-gradient-to-r from-transparent via-slate-300 to-transparent ${className}`}
-    />
-  );
-}
-
 function HeroSlide({ image, index }) {
   return (
     <motion.div
