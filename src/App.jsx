@@ -183,13 +183,33 @@ const legalPages = {
     ]},
   },
   en: {
-    legal: { eyebrow: "Legal", title: "Terms of Use", updated: "Last updated: 10 May 2026", intro: "This page governs access to and use of the UPSTRUX website. By using this website, you accept these terms. If you do not agree with them, please do not use the website.", sections: [
-      { heading: "1. Company information", body: "These Terms of Use are issued by UPSTRUX on behalf of the company and, where applicable, its associated partners and professional structures. UPSTRUX and the UPSTRUX logo are trade designations and/or intellectual property assets. Full company details, including legal name, registration number, VAT number, registered office, business address and legal representative, should be added before official publication. You may contact us regarding these Terms by email at enquiries@upstrux.bg." },
-      { heading: "2. Informational nature of content", body: "The content of this website is provided for general information purposes and presents engineering, design, construction and consulting services. It does not constitute individual technical, legal, financial or investment advice." },
-      { heading: "3. Intellectual property", body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent." },
-      { heading: "4. External links", body: "The website may contain links to external platforms, including LinkedIn and Facebook. UPSTRUX does not control the content, policies or practices of these external websites and accepts no responsibility for them." },
-      { heading: "5. Limitation of liability", body: "UPSTRUX makes reasonable efforts to keep the information on the website accurate and up to date but does not guarantee completeness, continuous availability or the absence of technical errors. Use of the website is at the user’s own risk to the extent permitted by applicable law." },
-      { heading: "6. Applicable law", body: "These terms are interpreted in accordance with the laws of the Republic of Bulgaria and applicable European Union law. Disputes are resolved by the competent Bulgarian courts unless mandatory legal provisions provide otherwise." },
+  legal: {
+    eyebrow: "Legal", title: "Terms of Use", updated: "Last updated: 10 May 2026", intro: "This page governs access to and use of the UPSTRUX website. By using this website, you accept these terms. If you do not agree with them, please do not use the website.",
+    sections: [
+      {
+        heading: "1. Company information",
+        body: "These Terms of Use are issued by UPSTRUX on behalf of the company and, where applicable, its partner, consulting and professional structures. UPSTRUX and the UPSTRUX logo are trade designations and/or intellectual property assets. Full company details, including legal name, registration number, VAT number, registered office, business address and legal representative, should be added before official publication. You may contact us regarding these Terms by email at enquiries@upstrux.bg."
+      },
+      {
+        heading: "2. Informational nature of content",
+        body: "The content of this website is provided for general information purposes and presents engineering, design, construction and consulting services. It does not constitute individual technical, legal, financial or investment advice."
+      },
+      {
+        heading: "3. Intellectual property",
+        body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Certain visual materials, technical imagery, engineering environments and specialized infrastructure presented on this website may be used with permission within the framework of partner, academic, professional or contractual relationships. The publication of such content shall not be interpreted as a claim of ownership over the respective infrastructure, laboratories or technical facilities unless explicitly stated otherwise. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent."
+      },
+      {
+        heading: "4. External links",
+        body: "The website may contain links to external platforms, including LinkedIn and Facebook. UPSTRUX does not control the content, policies or practices of these external websites and accepts no responsibility for them."
+      },
+      {
+        heading: "5. Limitation of liability",
+        body: "UPSTRUX makes reasonable efforts to keep the information on the website accurate and up to date but does not guarantee completeness, continuous availability or the absence of technical errors. Use of the website is at the user’s own risk to the extent permitted by applicable law."
+      },
+      {
+        heading: "6. Applicable law",
+        body: "These terms are interpreted in accordance with the laws of the Republic of Bulgaria and applicable European Union law. Disputes are resolved by the competent Bulgarian courts unless mandatory legal provisions provide otherwise."
+      }
     ]},
     privacy: { eyebrow: "Privacy", title: "Privacy Policy", updated: "Last updated: 10 May 2026", intro: "This policy explains how UPSTRUX processes personal data in connection with use of the website, communication with us and provision of engineering, design, construction and consulting services.", sections: [
       { heading: "1. Data controller", body: "The data controller is UPSTRUX. Full company details, including legal name, registration number, VAT number, registered office, business address and contact details, should be included before official publication. For personal data questions, contact enquiries@upstrux.bg." },
@@ -205,13 +225,33 @@ const legalPages = {
     ]},
   },
   de: {
-    legal: { eyebrow: "Rechtliche ", title: "Nutzungsbedingungen", updated: "Zuletzt aktualisiert: 10. Mai 2026", intro: "Diese Seite regelt den Zugriff auf und die Nutzung der UPSTRUX-Website. Durch die Nutzung dieser Website akzeptieren Sie diese Bedingungen.", sections: [
-      { heading: "1. Unternehmensinformationen", body: "Diese Nutzungsbedingungen werden von UPSTRUX im Namen des Unternehmens und, soweit anwendbar, seiner verbundenen Partner und professionellen Strukturen herausgegeben. Unternehmensdaten wie Firmenname, Registernummer, Umsatzsteuer-Identifikationsnummer, Sitz, Geschäftsadresse und gesetzlicher Vertreter sind vor Veröffentlichung zu ergänzen. Kontakt: enquiries@upstrux.bg." },
-      { heading: "2. Informationscharakter", body: "Die Inhalte dieser Website dienen allgemeinen Informationszwecken und stellen keine individuelle technische, rechtliche, finanzielle oder investitionsbezogene Beratung dar." },
-      { heading: "3. Geistiges Eigentum", body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte sind Eigentum von UPSTRUX oder werden rechtmäßig verwendet. Eine Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet." },
-      { heading: "4. Externe Links", body: "Die Website kann Links zu externen Plattformen wie LinkedIn und Facebook enthalten. UPSTRUX kontrolliert diese externen Websites nicht und übernimmt keine Verantwortung für deren Inhalte oder Richtlinien." },
-      { heading: "5. Haftungsbeschränkung", body: "UPSTRUX bemüht sich um korrekte und aktuelle Informationen, garantiert jedoch keine Vollständigkeit, ständige Verfügbarkeit oder Fehlerfreiheit. Die Nutzung erfolgt im rechtlich zulässigen Umfang auf eigenes Risiko." },
-      { heading: "6. Anwendbares Recht", body: "Diese Bedingungen unterliegen dem Recht der Republik Bulgarien und dem anwendbaren Recht der Europäischen Union. Streitigkeiten werden vor den zuständigen bulgarischen Gerichten geklärt, sofern zwingendes Recht nichts anderes vorsieht." },
+  legal: {
+    eyebrow: "Rechtliches", title: "Nutzungsbedingungen", updated: "Zuletzt aktualisiert: 10. Mai 2026", intro: "Diese Seite regelt den Zugriff auf und die Nutzung der UPSTRUX-Website. Durch die Nutzung dieser Website akzeptieren Sie diese Bedingungen. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie diese Website bitte nicht.",
+    sections: [
+      {
+        heading: "1. Unternehmensinformationen",
+        body: "Diese Nutzungsbedingungen werden von UPSTRUX im Namen des Unternehmens und, soweit anwendbar, seiner partnerbezogenen, beratenden und professionellen Strukturen herausgegeben. „UPSTRUX“ sowie das UPSTRUX-Logo stellen geschäftliche Kennzeichen und/oder geistige Eigentumsrechte dar. Vollständige Unternehmensdaten, einschließlich Firmenname, Registrierungsnummer, Umsatzsteuer-Identifikationsnummer, Sitz, Geschäftsadresse und gesetzlicher Vertreter, sind vor der offiziellen Veröffentlichung zu ergänzen. Kontakt: enquiries@upstrux.bg."
+      },
+      {
+        heading: "2. Informationscharakter der Inhalte",
+        body: "Die Inhalte dieser Website dienen ausschließlich allgemeinen Informationszwecken und präsentieren Ingenieur-, Planungs-, Bau- und Beratungsleistungen. Sie stellen keine individuelle technische, rechtliche, finanzielle oder investitionsbezogene Beratung dar."
+      },
+      {
+        heading: "3. Geistiges Eigentum",
+        body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte dieser Website sind Eigentum von UPSTRUX oder werden auf rechtmäßiger Grundlage verwendet. Bestimmte visuelle Inhalte, technische Darstellungen, ingenieurtechnische Umgebungen und spezialisierte Infrastrukturen, die auf dieser Website dargestellt werden, können im Rahmen partnerschaftlicher, akademischer, professioneller oder vertraglicher Beziehungen mit Genehmigung verwendet werden. Die Veröffentlichung solcher Inhalte darf nicht als Eigentumsanspruch auf die jeweilige Infrastruktur, Labore oder technischen Einrichtungen ausgelegt werden, sofern nicht ausdrücklich etwas anderes angegeben ist. Eine Vervielfältigung, Verbreitung, Änderung oder kommerzielle Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet."
+      },
+      {
+        heading: "4. Externe Links",
+        body: "Die Website kann Links zu externen Plattformen wie LinkedIn und Facebook enthalten. UPSTRUX kontrolliert diese externen Websites nicht und übernimmt keine Verantwortung für deren Inhalte, Richtlinien oder Praktiken."
+      },
+      {
+        heading: "5. Haftungsbeschränkung",
+        body: "UPSTRUX bemüht sich, die Informationen auf dieser Website korrekt und aktuell zu halten, übernimmt jedoch keine Gewähr für Vollständigkeit, dauerhafte Verfügbarkeit oder Fehlerfreiheit. Die Nutzung der Website erfolgt im gesetzlich zulässigen Umfang auf eigenes Risiko."
+      },
+      {
+        heading: "6. Anwendbares Recht",
+        body: "Diese Bedingungen unterliegen dem Recht der Republik Bulgarien sowie dem anwendbaren Recht der Europäischen Union. Streitigkeiten werden von den zuständigen bulgarischen Gerichten entschieden, sofern zwingende gesetzliche Vorschriften nichts anderes vorsehen."
+      }
     ]},
     privacy: { eyebrow: "Datenschutz", title: "Datenschutzerklärung", updated: "Zuletzt aktualisiert: 10. Mai 2026", intro: "Diese Erklärung erläutert, wie UPSTRUX personenbezogene Daten im Zusammenhang mit der Nutzung der Website, der Kommunikation mit uns und der Erbringung von Ingenieur-, Planungs-, Bau- und Beratungsleistungen verarbeitet.", sections: [
       { heading: "1. Verantwortlicher", body: "Verantwortlicher ist UPSTRUX. Vollständige Unternehmensdaten sind vor offizieller Veröffentlichung zu ergänzen. Für Datenschutzfragen kontaktieren Sie enquiries@upstrux.bg." },
