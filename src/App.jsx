@@ -615,6 +615,7 @@ export default function UpstruxWebsite() {
           <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
           Нашата дейност обхваща пълния инженерен и строително-инвестиционен цикъл — от проучване, проектиране и технически анализи до строителство, координация, въвеждане в експлоатация, предаване и последваща експлоатационна поддръжка.
           </p>
+          <SectionDivider className="my-10"/>
           <div className="mt-20 space-y-20">
             {currentServices.map((service, index) => (
             <ZigZagService
