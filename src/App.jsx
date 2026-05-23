@@ -217,6 +217,7 @@ const translations = {
     aboutHighlight: "Благодарение на високото ниво на специализация на нашите партньори, ние обединяваме инженерна експертиза, координирано управление на проектната реализация и достъп до специализирани технически мрежи с цел подпомагане на проектите през целия инженерен и строително-жизнен цикъл — от предварително планиране, технически оценка и координация на разрешителни процедури до работен проект, строителен надзор, реализация и последваща техническа поддръжка.",
     solutionsEyebrow: "Инженерни, проектантски и експертни решения в строителството",
     solutionsTitle: "Решения",
+    engineeringCycle: "Нашата дейност обхваща пълния инженерен и строително-инвестиционен цикъл — от проучване, проектиране и технически анализи до строителство, координация, въвеждане в експлоатация, предаване и последваща експлоатационна поддръжка.",
     competenceTitle: "Области на компетентност",
     competenceIntro: "UPSTRUX обединява инженерна, проектантска, строителна и консултантска експертиза в ключови направления на строително-инвестиционния процес.",
     competences: [
@@ -250,6 +251,7 @@ const translations = {
     aboutHighlight: "Thanks to the high level of specialization of our partners, we combine engineering expertise, coordinated project delivery and access to specialized technical networks in order to support projects throughout the entire engineering and construction lifecycle — from preliminary planning, technical assessments and permit-stage coordination to detailed execution design, construction supervision, implementation and post-completion technical support.",
     solutionsEyebrow: "Engineering, design and expert solutions in construction",
     solutionsTitle: "Solutions",
+    engineeringCycle: "Our activities cover the full engineering and construction investment lifecycle — from site investigations, design and technical analyses to construction, coordination, commissioning, project handover and subsequent operational maintenance.",
     competenceTitle: "Areas of Competence",
     competenceIntro: "UPSTRUX combines engineering, design, construction and consulting expertise across key areas of the construction investment process.",
     competences: [
@@ -283,6 +285,7 @@ const translations = {
     aboutHighlight: "Dank des hohen Spezialisierungsgrades unserer Partner vereinen wir ingenieurtechnisches Fachwissen, koordinierte Projektabwicklung sowie den Zugang zu spezialisierten technischen Netzwerken, um Projekte über den gesamten Ingenieur- und Baulebenszyklus hinweg zu begleiten — von der Vorplanung, technischen Bewertungen und Genehmigungskoordination bis hin zur detaillierten Ausführungsplanung, Bauüberwachung, Umsetzung und Betreuung nach Projektabschluss.",
     solutionsEyebrow: "Ingenieur-, Planungs- und Expertenlösungen im Bauwesen",
     solutionsTitle: "Lösungen",
+    engineeringCycle: "Unsere Tätigkeiten umfassen den gesamten Ingenieur- und Bauinvestitionszyklus — von Untersuchungen, Planung und technischen Analysen bis hin zu Bauausführung, Koordination, Inbetriebnahme, Übergabe und anschließender technischer Betriebsunterstützung.",
     competenceTitle: "Kompetenzbereiche",
     competenceIntro: "UPSTRUX vereint Ingenieur-, Planungs-, Bau- und Beratungskompetenz in zentralen Bereichen des Bau- und Investitionsprozesses.",
     competences:[ 
@@ -616,7 +619,7 @@ export default function UpstruxWebsite() {
             {t.solutionsTitle}
           </h1>
           <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
-          Нашата дейност обхваща пълния инженерен и строително-инвестиционен цикъл — от проучване, проектиране и технически анализи до строителство, координация, въвеждане в експлоатация, предаване и последваща експлоатационна поддръжка.
+          {t.engineeringCycle}
           </p>
           <SectionDivider className="my-10"/>
           <div className="mt-20 space-y-20">
