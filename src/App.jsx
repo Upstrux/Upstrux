@@ -955,7 +955,6 @@ if (
 
   </div>
 </section>
-<SectionDivider className="mt-10 mb-16" />
 <section className="bg-white px-6 py-20">
   <div className="mx-auto max-w-7xl">
     <div className="mb-20 text-left">
