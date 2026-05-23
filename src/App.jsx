@@ -329,7 +329,7 @@ runContentChecks();
 function SectionDivider({ className = "" }) {
   return (
     <div
-      className={`mx-auto h-[2px] w-full max-w-7xl bg-blue-500/30 ${className}`}
+      className={`mx-auto h-px w-full max-w-7xl bg-blue-600 ${className}`}
     />
   );
 }
