@@ -490,9 +490,27 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     {learnMoreLabel}
   </button>
 )}
+      
+  {servicePage === "service7" && (
+  <button
+    type="button"
+    onClick={() => setCurrentPage("service6")}
+    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+  >
+    {learnMoreLabel}
+  </button>
+)}
     </div>
   );
-  const imageBlock = <div className="overflow-hidden bg-white"><img src={image} alt={title} className="aspect-[1.68/1] w-full object-cover min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]" /></div>;
+  const imageBlock = (
+  <div className="overflow-hidden bg-white">
+    <img
+      src={image}
+      alt={title}
+      className="aspect-[1.68/1] w-full object-cover min-h-[420px] sm:min-h-[520px] lg:min-h-[620px]"
+    />
+  </div>
+);
   return (
     <motion.div id={`service-${slugify(title)}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="scroll-mt-28 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
