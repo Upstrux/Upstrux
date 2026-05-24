@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 //About
-import hero1 from "./assets/hero/hero1.webp";
+
 //hero
 import hero1 from "./assets/hero/hero1.webp";
 import hero2 from "./assets/hero/hero2.webp";
