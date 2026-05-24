@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import whitearchitecturefacad from "./assets/white-architecture-facad.jpg";
-import nightshiftconstruction from "./assets/night-shift-construction.webp";
-import industrialstructure from "./assets/industrial-structure.webp";
-import damstructure from "./assets/Dam-Structure.webp";
-import structuralVconnection from "./assets/Structural-V-connection.webp";
-import steelconstruction from "./assets/steel-construction.webp";
-import buildingTechnology from "./assets/building-technology.jpg";
-import constructionManagement from "./assets/construction-management.jpg";
+
+//About
+
+//hero
+import hero1 from "./assets/white-architecture-facad.jpg";
+import hero2 from "./assets/night-shift-construction.webp";
+import hero3 from "./assets/industrial-structure.webp";
+import hero4 from "./assets/Dam-Structure.webp";
+import hero5 from "./assets/Structural-V-connection.webp";
+
+//Activities
+import activity1 from "./assets/activities/activity1.webp";
+import activity2 from "./assets/activities/activity2.webp";
+import activity3 from "./assets/activities/activity3.webp";
+import activity4 from "./assets/activities/activity4.webp";
+import activity5 from "./assets/activities/activity5.webp";
+import activity6 from "./assets/activities/activity6.webp";
+import activity7 from "./assets/activities/activity7.webp";
 
 function IconBase({ children, className = "", size = 24 }) {
   return (
@@ -64,23 +74,21 @@ const SOCIAL_LINKS = {
 };
 
 const heroSlides = [
-  damstructure,
-  industrialstructure,
-  nightshiftconstruction,
-  structuralVconnection,
-  buildingTechnology,
-  constructionManagement,
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=90",
-  "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=90",
+  hero1,
+  hero2,
+  hero3,
+  hero4,
+  hero5,
 ];
 
 const serviceImages = [
-  industrialstructure,
-  "https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1200&q=90",
-  buildingTechnology,
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=90",
-  constructionManagement,
-  "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=90",
+  activity1,
+  activity2,
+  activity3,
+  activity4,
+  activity5,
+  activity6,
+  activity7,
 ];
 
 const bgServices = [
