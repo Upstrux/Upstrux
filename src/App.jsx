@@ -507,7 +507,7 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
     <img
       src={image}
       alt={title}
-      className="aspect-[1.68/1] w-full object-cover min-h-[420px] sm:min-h-[520px] lg:min-h-[620px]"
+     className="aspect-[1.68/1] w-full object-cover min-h-[340px] sm:min-h-[420px] lg:min-h-[500px]"
     />
   </div>
 );
