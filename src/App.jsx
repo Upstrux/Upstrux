@@ -90,6 +90,7 @@ const serviceImages = [
   activity5,
   activity6,
   activity7,
+  activity8,  
 ];
 
 const bgServices = [
