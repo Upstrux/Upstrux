@@ -18,6 +18,7 @@ import activity4 from "./assets/activities/activity4.webp";
 import activity5 from "./assets/activities/activity5.webp";
 import activity6 from "./assets/activities/activity6.webp";
 import activity7 from "./assets/activities/activity7.webp";
+import activity8 from "./assets/activities/activity8.webp";
 
 function IconBase({ children, className = "", size = 24 }) {
   return (
