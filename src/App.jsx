@@ -685,7 +685,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
             </div>
           </div>
         </div>
-        <SectionDivider className="mt-24" />
+        
        <footer className="px-6 py-16">
   <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-start md:justify-between">
     
