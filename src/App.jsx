@@ -748,20 +748,6 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               >
                 {t.footer.solutions}
               </button>
-              <button
-                type="button"
-                onClick={() => setCurrentPage("contact")}
-                className="text-left hover:text-blue-600"
-              >
-                {t.footer.contacts}
-              </button>
-              <button
-                type="button"
-                onClick={() => setCurrentPage("contact")}
-                className="text-left hover:text-blue-600"
-              >
-                {t.footer.contacts}
-              </button>
             </div>
           </div>
 
@@ -1330,7 +1316,165 @@ if (
     </div>
   </div>
 </section>
-        <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10"><div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5"><div><Logo footer /></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3><div className="grid gap-2 text-[13px] text-slate-700"><a href="#home" className="hover:text-blue-600">{t.nav.home}</a><a href="#about" className="hover:text-blue-600">{t.nav.about}</a><a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage("solutions");}} className="hover:text-blue-600">{t.footer.solutions}</a></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.legalTitle}</h3><div className="grid gap-2 text-[13px] text-slate-700"><button type="button" onClick={() => setCurrentPage("legal")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.legalInfo}</button><button type="button" onClick={() => setCurrentPage("privacy")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.privacy}</button></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.follow}</h3><div className="flex items-center gap-3 pt-1 leading-none"><a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><LinkedInIcon size={24} /></a><a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><FacebookIcon size={24} /></a></div></div><div className="justify-self-start text-left"><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.contacts}</h3><div className="space-y-2.5 text-[13px] text-slate-700"><div className="flex items-center justify-start gap-2.5"><PinIcon size={16} className="shrink-0 text-blue-600" /><span>{t.footer.location}</span></div><div className="flex items-center justify-start gap-2.5"><PhoneIcon size={16} className="shrink-0 text-blue-600" /><span>+359 888 000 000</span></div><div className="flex items-center justify-start gap-2.5"><MailIcon size={16} className="shrink-0 text-blue-600" /><span>info@upstrux.bg</span></div></div></div></div><div className="border-t border-slate-200 py-4 text-xs text-slate-500">{t.footer.rights}</div></footer>
+        <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
+  <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
+
+    <div>
+      <Logo footer />
+    </div>
+
+    <div>
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+        {t.footer.quick}
+      </h3>
+
+      <div className="grid gap-2 text-[13px] text-slate-700">
+
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("home");
+            setTimeout(() => {
+              document.getElementById("home")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 50);
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.nav.home}
+        </a>
+
+        <a
+          href="#about"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("home");
+            setTimeout(() => {
+              document.getElementById("about")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 50);
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.nav.about}
+        </a>
+
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("solutions");
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.footer.solutions}
+        </a>
+
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentPage("contact");
+          }}
+          className="hover:text-blue-600"
+        >
+          {t.footer.contacts}
+        </a>
+
+      </div>
+    </div>
+
+    <div>
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+        {t.footer.legalTitle}
+      </h3>
+
+      <div className="grid gap-2 text-[13px] text-slate-700">
+
+        <button
+          type="button"
+          onClick={() => setCurrentPage("legal")}
+          className="cursor-pointer text-left hover:text-blue-600"
+        >
+          {t.footer.legalInfo}
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setCurrentPage("privacy")}
+          className="cursor-pointer text-left hover:text-blue-600"
+        >
+          {t.footer.privacy}
+        </button>
+
+      </div>
+    </div>
+
+    <div>
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+        {t.footer.follow}
+      </h3>
+
+      <div className="flex items-center gap-3 pt-1 leading-none">
+
+        <a
+          href={SOCIAL_LINKS.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
+        >
+          <LinkedInIcon size={24} />
+        </a>
+
+        <a
+          href={SOCIAL_LINKS.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
+        >
+          <FacebookIcon size={24} />
+        </a>
+
+      </div>
+    </div>
+
+    <div className="justify-self-start text-left">
+
+      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+        {t.footer.contacts}
+      </h3>
+
+      <div className="space-y-2.5 text-[13px] text-slate-700">
+
+        <div className="flex items-center justify-start gap-2.5">
+          <PinIcon size={16} className="shrink-0 text-blue-600" />
+          <span>{t.footer.location}</span>
+        </div>
+
+        <div className="flex items-center justify-start gap-2.5">
+          <PhoneIcon size={16} className="shrink-0 text-blue-600" />
+          <span>+359 888 000 000</span>
+        </div>
+
+        <div className="flex items-center justify-start gap-2.5">
+          <MailIcon size={16} className="shrink-0 text-blue-600" />
+          <span>info@upstrux.bg</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
+    {t.footer.rights}
+  </div>
+</footer>
       </main>
     </div>
   );
