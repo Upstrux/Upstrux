@@ -595,6 +595,98 @@ function LegalContentPage({ page, onBack, backLabel }) {
     </div>
   );
 }
+function SiteFooter({ t, setCurrentPage }) {
+  return (
+    <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
+        <div><Logo footer /></div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+            {t.footer.quick}
+          </h3>
+
+          <div className="grid gap-2 text-[13px] text-slate-700">
+            <button type="button" onClick={() => setCurrentPage("home")} className="text-left hover:text-blue-600">
+              {t.nav.home}
+            </button>
+
+            <button type="button" onClick={() => setCurrentPage("home")} className="text-left hover:text-blue-600">
+              {t.nav.about}
+            </button>
+
+            <button type="button" onClick={() => setCurrentPage("solutions")} className="text-left hover:text-blue-600">
+              {t.footer.solutions}
+            </button>
+
+            <button type="button" onClick={() => setCurrentPage("contact")} className="text-left hover:text-blue-600">
+              {t.footer.contacts}
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+            {t.footer.legalTitle}
+          </h3>
+
+          <div className="grid gap-2 text-[13px] text-slate-700">
+            <button type="button" onClick={() => setCurrentPage("legal")} className="text-left hover:text-blue-600">
+              {t.footer.legalInfo}
+            </button>
+
+            <button type="button" onClick={() => setCurrentPage("privacy")} className="text-left hover:text-blue-600">
+              {t.footer.privacy}
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+            {t.footer.follow}
+          </h3>
+
+          <div className="flex items-center gap-3 pt-1 leading-none">
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
+              <LinkedInIcon size={24} />
+            </a>
+
+            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
+              <FacebookIcon size={24} />
+            </a>
+          </div>
+        </div>
+
+        <div className="justify-self-start text-left">
+          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+            {t.footer.contacts}
+          </h3>
+
+          <div className="space-y-2.5 text-[13px] text-slate-700">
+            <div className="flex items-center gap-2.5">
+              <PinIcon size={16} className="shrink-0 text-blue-600" />
+              <span>{t.footer.location}</span>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <PhoneIcon size={16} className="shrink-0 text-blue-600" />
+              <span>+359 888 000 000</span>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <MailIcon size={16} className="shrink-0 text-blue-600" />
+              <span>info@upstrux.bg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
+        {t.footer.rights}
+      </div>
+    </footer>
+  );
+}
 function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
   return (
     <div className="min-h-screen bg-white text-slate-950">
@@ -704,133 +796,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
           </div>
         </div>
       </main>
-      <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
-        <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
-          <div>
-            <Logo footer />
-          </div>
-          <div>
-            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-              {t.footer.quick}
-            </h3>
-
-            <div className="grid gap-2 text-[13px] text-slate-700">
-              <button
-                type="button"
-                onClick={() => {
-                  setCurrentPage("home");
-                  setTimeout(() => {
-                    document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-                  }, 50);
-                }}
-                className="text-left hover:text-blue-600"
-              >
-                {t.nav.home}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setCurrentPage("home");
-                  setTimeout(() => {
-                    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-                  }, 50);
-                }}
-                className="text-left hover:text-blue-600"
-              >
-                {t.nav.about}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setCurrentPage("solutions")}
-                className="text-left hover:text-blue-600"
-              >
-                {t.footer.solutions}
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-              {t.footer.legalTitle}
-            </h3>
-
-            <div className="grid gap-2 text-[13px] text-slate-700">
-              <button
-                type="button"
-                onClick={() => setCurrentPage("legal")}
-                className="text-left hover:text-blue-600"
-              >
-                {t.footer.legalInfo}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setCurrentPage("privacy")}
-                className="text-left hover:text-blue-600"
-              >
-                {t.footer.privacy}
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-              {t.footer.follow}
-            </h3>
-
-            <div className="flex items-center gap-3 pt-1 leading-none">
-              <a
-                href={SOCIAL_LINKS.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
-              >
-                <LinkedInIcon size={24} />
-              </a>
-
-              <a
-                href={SOCIAL_LINKS.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
-              >
-                <FacebookIcon size={24} />
-              </a>
-            </div>
-          </div>
-
-          <div className="justify-self-start text-left">
-            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-              {t.footer.contacts}
-            </h3>
-
-            <div className="space-y-2.5 text-[13px] text-slate-700">
-              <div className="flex items-center justify-start gap-2.5">
-                <PinIcon size={16} className="shrink-0 text-blue-600" />
-                <span>{t.footer.location}</span>
-              </div>
-
-              <div className="flex items-center justify-start gap-2.5">
-                <PhoneIcon size={16} className="shrink-0 text-blue-600" />
-                <span>+359 888 000 000</span>
-              </div>
-
-              <div className="flex items-center justify-start gap-2.5">
-                <MailIcon size={16} className="shrink-0 text-blue-600" />
-                <span>info@upstrux.bg</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
-          {t.footer.rights}
-        </div>
-      </footer>
+    <SiteFooter t={t} setCurrentPage={setCurrentPage} />
     </div>
   );
 }
@@ -977,221 +943,7 @@ export default function UpstruxWebsite() {
           </div>
         </div>
       </main>
-<footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10"><div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5"><div><Logo footer /></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3><div className="grid gap-2 text-[13px] text-slate-700">
- <a
-  href="#home"
-  onClick={(e) => {
-    e.preventDefault();
-    setCurrentPage("home");
-    setTimeout(() => {
-      document.getElementById("home")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }, 50);
-  }}
-  className="hover:text-blue-600"
->
-  {t.nav.home}
-</a>
-<a
-  href="#about"
-  onClick={(e) => {
-    e.preventDefault();
-    setCurrentPage("home");
-    setTimeout(() => {
-      document.getElementById("about")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }, 50);
-  }}
-  className="hover:text-blue-600"
->
-  {t.nav.about}
-</a>
-  <a href="#" onClick={(e) => {e.preventDefault(); setCurrentPage("solutions");}} className="hover:text-blue-600">{t.footer.solutions}</a></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.legalTitle}</h3><div className="grid gap-2 text-[13px] text-slate-700"><button type="button" onClick={() => setCurrentPage("legal")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.legalInfo}</button><button type="button" onClick={() => setCurrentPage("privacy")} className="cursor-pointer text-left hover:text-blue-600">{t.footer.privacy}</button></div></div><div><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.follow}</h3><div className="flex items-center gap-3 pt-1 leading-none"><a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><LinkedInIcon size={24} /></a><a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"><FacebookIcon size={24} /></a></div></div><div className="justify-self-start text-left"><h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.contacts}</h3><div className="space-y-2.5 text-[13px] text-slate-700"><div className="flex items-center justify-start gap-2.5"><PinIcon size={16} className="shrink-0 text-blue-600" /><span>{t.footer.location}</span></div><div className="flex items-center justify-start gap-2.5"><PhoneIcon size={16} className="shrink-0 text-blue-600" /><span>+359 888 000 000</span></div><div className="flex items-center justify-start gap-2.5"><MailIcon size={16} className="shrink-0 text-blue-600" /><span>info@upstrux.bg</span></div></div></div></div><div className="border-t border-slate-200 py-4 text-xs text-slate-500">{t.footer.rights}</div></footer>
-</div>
-  );
-}
-if (
-  currentPage === "service1" ||
-  currentPage === "service2" ||
-  currentPage === "service3" ||
-  currentPage === "service4" ||
-  currentPage === "service5" ||
-  currentPage === "service6"
-) {
-  return (
-    <div className="min-h-screen bg-white text-slate-950">
-      <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-          <button
-            type="button"
-            onClick={() => setCurrentPage("home")}
-          >
-            <Logo footer />
-          </button>
-
-          <button
-            type="button"
-            className="mt-0 self-center text-2xl text-slate-900 md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            ☰
-          </button>
-
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-          {navItems.map((item) => (
-          <button
-    key={item.key}
-    type="button"
-    onClick={() => {
-      if (item.key === "solutions") {
-        setCurrentPage("solutions");
-      } else if (item.key === "contacts") {
-        setCurrentPage("contact");
-      } else {
-        setCurrentPage("home");
-
-        setTimeout(() => {
-          document.querySelector(item.href)?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 50);
-      }
-
-      setMobileMenuOpen(false);
-    }}
-    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
-  >
-    {item.label}
-  </button>
-))}  
-        <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-          {["bg", "en", "de"].map((lang) => (
-          <button
-            key={lang}
-            type="button"
-            onClick={() => {
-            setLanguage(lang);
-            setMobileMenuOpen(false);
-          }}
-          className={`cursor-pointer uppercase transition hover:text-blue-600 ${
-          language === lang ? "text-blue-600" : "text-slate-900"
-          }`}
-          >
-          {lang}
-        </button>
-        ))}
-        </div>
-          </nav>
-        </div>
-      </header>
-
-      <main className="bg-white px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-            {t.solutionsEyebrow}
-          </p>
-
-          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
-            {currentPage === "service1" && "Service Page 1"}
-            {currentPage === "service2" && "Service Page 2"}
-            {currentPage === "service3" && "Service Page 3"}
-            {currentPage === "service4" && "Service Page 4"}
-            {currentPage === "service5" && "Service Page 5"}
-            {currentPage === "service6" && "Service Page 6"}
-          </h1>
-        </div>
-      </main>
-
-      <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
-        {/* Same footer as homepage */}
-      </footer>
-      <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
-  <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
-    <div><Logo footer /></div>
-
-    <div>
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.quick}</h3>
-      <div className="grid gap-2 text-[13px] text-slate-700">
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("home");
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.nav.home}
-        </a>
-
-        <a
-          href="#about"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("home");
-            setTimeout(() => {
-              document.getElementById("about")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }, 50);
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.nav.about}
-        </a>
-
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("solutions");
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.footer.solutions}
-        </a>
-      </div>
-    </div>
-
-    <div>
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.legalTitle}</h3>
-      <div className="grid gap-2 text-[13px] text-slate-700">
-        <button type="button" onClick={() => setCurrentPage("legal")} className="cursor-pointer text-left hover:text-blue-600">
-          {t.footer.legalInfo}
-        </button>
-        <button type="button" onClick={() => setCurrentPage("privacy")} className="cursor-pointer text-left hover:text-blue-600">
-          {t.footer.privacy}
-        </button>
-      </div>
-    </div>
-
-    <div>
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.follow}</h3>
-      <div className="flex items-center gap-3 pt-1 leading-none">
-        <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
-          <LinkedInIcon size={24} />
-        </a>
-        <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
-          <FacebookIcon size={24} />
-        </a>
-      </div>
-    </div>
-
-    <div className="justify-self-start text-left">
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">{t.footer.contacts}</h3>
-      <div className="space-y-2.5 text-[13px] text-slate-700">
-        <div>{t.footer.location}</div>
-        <div>+359 888 000 000</div>
-        <div>info@upstrux.bg</div>
-      </div>
-    </div>
-  </div>
-
-  <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
-    {t.footer.rights}
-  </div>
-</footer>
+    <SiteFooter t={t} setCurrentPage={setCurrentPage} />
     </div>
   );
 }
@@ -1316,165 +1068,7 @@ if (
     </div>
   </div>
 </section>
-        <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
-  <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
-
-    <div>
-      <Logo footer />
-    </div>
-
-    <div>
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-        {t.footer.quick}
-      </h3>
-
-      <div className="grid gap-2 text-[13px] text-slate-700">
-
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("home");
-            setTimeout(() => {
-              document.getElementById("home")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }, 50);
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.nav.home}
-        </a>
-
-        <a
-          href="#about"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("home");
-            setTimeout(() => {
-              document.getElementById("about")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }, 50);
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.nav.about}
-        </a>
-
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("solutions");
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.footer.solutions}
-        </a>
-
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentPage("contact");
-          }}
-          className="hover:text-blue-600"
-        >
-          {t.footer.contacts}
-        </a>
-
-      </div>
-    </div>
-
-    <div>
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-        {t.footer.legalTitle}
-      </h3>
-
-      <div className="grid gap-2 text-[13px] text-slate-700">
-
-        <button
-          type="button"
-          onClick={() => setCurrentPage("legal")}
-          className="cursor-pointer text-left hover:text-blue-600"
-        >
-          {t.footer.legalInfo}
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setCurrentPage("privacy")}
-          className="cursor-pointer text-left hover:text-blue-600"
-        >
-          {t.footer.privacy}
-        </button>
-
-      </div>
-    </div>
-
-    <div>
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-        {t.footer.follow}
-      </h3>
-
-      <div className="flex items-center gap-3 pt-1 leading-none">
-
-        <a
-          href={SOCIAL_LINKS.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
-        >
-          <LinkedInIcon size={24} />
-        </a>
-
-        <a
-          href={SOCIAL_LINKS.facebook}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
-        >
-          <FacebookIcon size={24} />
-        </a>
-
-      </div>
-    </div>
-
-    <div className="justify-self-start text-left">
-
-      <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
-        {t.footer.contacts}
-      </h3>
-
-      <div className="space-y-2.5 text-[13px] text-slate-700">
-
-        <div className="flex items-center justify-start gap-2.5">
-          <PinIcon size={16} className="shrink-0 text-blue-600" />
-          <span>{t.footer.location}</span>
-        </div>
-
-        <div className="flex items-center justify-start gap-2.5">
-          <PhoneIcon size={16} className="shrink-0 text-blue-600" />
-          <span>+359 888 000 000</span>
-        </div>
-
-        <div className="flex items-center justify-start gap-2.5">
-          <MailIcon size={16} className="shrink-0 text-blue-600" />
-          <span>info@upstrux.bg</span>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
-    {t.footer.rights}
-  </div>
-</footer>
+        <SiteFooter t={t} setCurrentPage={setCurrentPage} />
       </main>
     </div>
   );
