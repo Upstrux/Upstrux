@@ -664,6 +664,17 @@ function LegalContentPage({ page, onBack, backLabel }) {
   );
 }
 function SiteFooter({ t, setCurrentPage }) {
+  const goToSection = useCallback((sectionId) => {
+    setCurrentPage("home");
+
+    setTimeout(() => {
+      document.querySelector(sectionId)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 80);
+  }, [setCurrentPage]);
+
   return (
     <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
       <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
@@ -675,11 +686,11 @@ function SiteFooter({ t, setCurrentPage }) {
           </h3>
 
           <div className="grid gap-2 text-[13px] text-slate-700">
-            <button type="button" onClick={() => setCurrentPage("home")} className="text-left hover:text-blue-600">
+            <button type="button" onClick={() => goToSection("#home")} className="text-left hover:text-blue-600">
               {t.nav.home}
             </button>
 
-            <button type="button" onClick={() => setCurrentPage("home")} className="text-left hover:text-blue-600">
+            <button type="button" onClick={() => goToSection("#about")} className="text-left hover:text-blue-600">
               {t.nav.about}
             </button>
 
