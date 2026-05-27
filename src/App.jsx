@@ -83,7 +83,9 @@ const HERO_TRANSITION = {
   times: [0, 0.04, 0.14, 0.18],
   ease: "linear",
 };
-const LEARN_MORE_BUTTON_CLASS = "mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md";
+const NAV_LINK_BUTTON_CLASS = "inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
+const LEARN_MORE_BUTTON_CLASS = `mt-6 ${NAV_LINK_BUTTON_CLASS}`;
+const BACK_BUTTON_CLASS = `mt-8 ${NAV_LINK_BUTTON_CLASS}`;
 
 const heroSlides = [
   hero1,
@@ -601,7 +603,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
               <button
                 type="button"
                 onClick={() => setCurrentPage("solutions")}
-                className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                className={BACK_BUTTON_CLASS}
               >
                 {t.footer.backHome}
               </button>
@@ -618,7 +620,7 @@ function LegalContentPage({ page, onBack, backLabel }) {
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="bg-white px-6 pt-12 pb-8"><div className="mx-auto flex max-w-7xl flex-col items-start justify-start gap-4"><button type="button" onClick={onBack} aria-label="Back to homepage" className="text-left"><Logo footer /></button></div></header>
-      <div className="mx-auto flex w-full max-w-7xl justify-start px-6 pt-4"><button type="button" onClick={onBack} className="cursor-pointer text-sm text-blue-600 hover:text-blue-800">{backLabel}</button></div>
+      <div className="mx-auto flex w-full max-w-7xl justify-start px-6 pt-4"><button type="button" onClick={onBack} className={NAV_LINK_BUTTON_CLASS}>{backLabel}</button></div>
       <main>
   <section className="px-6 py-24">
     <div className="mx-auto max-w-5xl">
