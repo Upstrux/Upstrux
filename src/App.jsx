@@ -602,20 +602,18 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 
           <button
             type="button"
-            className="self-center text-2xl text-slate-900 md:hidden"
+            className="mt-0 self-center text-2xl text-slate-900 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             ☰
           </button>
 
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:bg-transparent md:p-0 md:shadow-none`}>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.key}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-
+                type="button"
+                onClick={() => {
                   if (item.key === "solutions") {
                     setCurrentPage("solutions");
                   } else if (item.key === "contacts") {
@@ -623,7 +621,9 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                   } else {
                     setCurrentPage("home");
                     setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                      document.querySelector(item.href)?.scrollIntoView({
+                        behavior: "smooth",
+                      });
                     }, 50);
                   }
 
@@ -632,7 +632,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                 className="transition-colors hover:text-blue-600"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
 
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
@@ -640,8 +640,11 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                 <button
                   key={lang}
                   type="button"
-                  onClick={() => setLanguage(lang)}
-                  className={`uppercase transition hover:text-blue-600 ${
+                  onClick={() => {
+                    setLanguage(lang);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`cursor-pointer uppercase transition hover:text-blue-600 ${
                     language === lang ? "text-blue-600" : "text-slate-900"
                   }`}
                 >
@@ -653,144 +656,190 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
         </div>
       </header>
 
-      <main className="px-6 py-24">
+      <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
-          <SectionDivider />
-          <div className="flex flex-col gap-6 py-20 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-                {t.nav.contacts}
-              </p>
-              <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
-                Contact UPSTRUX
-              </h1>
-            </div>
-          </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
-            <a href="mailto:info@upstrux.bg" className="rounded-3xl border border-slate-200 p-8 hover:border-blue-600">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+            {t.nav.contacts}
+          </p>
+
+          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
+            Contact UPSTRUX
+          </h1>
+
+          <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
+            Get in touch with UPSTRUX for engineering, design and project coordination inquiries.
+          </p>
+
+          <SectionDivider className="my-10" />
+
+          <div className="mt-20 grid gap-8 md:grid-cols-3">
+            <a
+              href="mailto:info@upstrux.bg"
+              className="rounded-3xl border border-slate-200 p-8 transition hover:border-blue-600"
+            >
               <MailIcon className="text-blue-600" />
-              <h2 className="mt-6 text-xl font-light">Email</h2>
-              <p className="mt-2 text-slate-600">info@upstrux.bg</p>
+              <h2 className="mt-6 text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">
+                Email
+              </h2>
+              <p className="mt-5 text-[15px] leading-6 text-slate-700">
+                info@upstrux.bg
+              </p>
             </a>
 
-            <a href="tel:+359888000000" className="rounded-3xl border border-slate-200 p-8 hover:border-blue-600">
+            <a
+              href="tel:+359888000000"
+              className="rounded-3xl border border-slate-200 p-8 transition hover:border-blue-600"
+            >
               <PhoneIcon className="text-blue-600" />
-              <h2 className="mt-6 text-xl font-light">Phone</h2>
-              <p className="mt-2 text-slate-600">+359 888 000 000</p>
+              <h2 className="mt-6 text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">
+                Phone
+              </h2>
+              <p className="mt-5 text-[15px] leading-6 text-slate-700">
+                +359 888 000 000
+              </p>
             </a>
+
             <div className="rounded-3xl border border-slate-200 p-8">
               <PinIcon className="text-blue-600" />
-              <h2 className="mt-6 text-xl font-light">Location</h2>
-              <p className="mt-2 text-slate-600">{t.footer.location}</p>
+              <h2 className="mt-6 text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">
+                Location
+              </h2>
+              <p className="mt-5 text-[15px] leading-6 text-slate-700">
+                {t.footer.location}
+              </p>
             </div>
           </div>
         </div>
-        
-       <footer className="px-6 py-16">
-  <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-start md:justify-between">
-    
-    <div className="max-w-md">
-      <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-        {t.nav.contacts}
-      </p>
-
-      <h2 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-5xl">
-        Contact UPSTRUX
-      </h2>
-    </div>
-
-    <div className="grid gap-10 text-sm md:grid-cols-3">
-      
-      <div>
-        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
-          {t.footer.quick}
-        </h4>
-
-        <div className="mt-4 flex flex-col gap-3 text-slate-600">
-          <button
-            type="button"
-            onClick={() => setCurrentPage("home")}
-            className="text-left transition hover:text-blue-600"
-          >
-            {t.nav.home}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setCurrentPage("solutions")}
-            className="text-left transition hover:text-blue-600"
-          >
-            {t.footer.solutions}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setCurrentPage("contact")}
-            className="text-left transition hover:text-blue-600"
-          >
-            {t.footer.contacts}
-          </button>
-        </div>
-      </div>
-
-      <div>
-        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
-          {t.footer.follow}
-        </h4>
-
-        <div className="mt-4 flex items-center gap-4">
-          <a
-            href={SOCIAL_LINKS.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:scale-105"
-          >
-            <LinkedInIcon size={26} />
-          </a>
-
-          <a
-            href={SOCIAL_LINKS.facebook}
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:scale-105"
-          >
-            <FacebookIcon size={26} />
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
-          {t.footer.legalInfo}
-        </h4>
-
-        <div className="mt-4 flex flex-col gap-3 text-slate-600">
-          <button
-            type="button"
-            onClick={() => setCurrentPage("legal")}
-            className="text-left transition hover:text-blue-600"
-          >
-            {t.footer.legalTitle}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setCurrentPage("privacy")}
-            className="text-left transition hover:text-blue-600"
-          >
-            {t.footer.privacy}
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div className="mx-auto mt-14 max-w-7xl border-t border-slate-200 pt-6 text-xs text-slate-500">
-    {t.footer.rights}
-  </div>
-</footer> 
       </main>
+
+      <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
+          <div>
+            <Logo footer />
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+              {t.footer.quick}
+            </h3>
+
+            <div className="grid gap-2 text-[13px] text-slate-700">
+              <button
+                type="button"
+                onClick={() => {
+                  setCurrentPage("home");
+                  setTimeout(() => {
+                    document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+                  }, 50);
+                }}
+                className="text-left hover:text-blue-600"
+              >
+                {t.nav.home}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setCurrentPage("home");
+                  setTimeout(() => {
+                    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+                  }, 50);
+                }}
+                className="text-left hover:text-blue-600"
+              >
+                {t.nav.about}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setCurrentPage("solutions")}
+                className="text-left hover:text-blue-600"
+              >
+                {t.footer.solutions}
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+              {t.footer.legalTitle}
+            </h3>
+
+            <div className="grid gap-2 text-[13px] text-slate-700">
+              <button
+                type="button"
+                onClick={() => setCurrentPage("legal")}
+                className="text-left hover:text-blue-600"
+              >
+                {t.footer.legalInfo}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setCurrentPage("privacy")}
+                className="text-left hover:text-blue-600"
+              >
+                {t.footer.privacy}
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+              {t.footer.follow}
+            </h3>
+
+            <div className="flex items-center gap-3 pt-1 leading-none">
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
+              >
+                <LinkedInIcon size={24} />
+              </a>
+
+              <a
+                href={SOCIAL_LINKS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-8 w-8 cursor-pointer items-center justify-center self-center rounded-xl text-blue-600 transition duration-300 hover:-translate-y-0.5 hover:text-blue-700"
+              >
+                <FacebookIcon size={24} />
+              </a>
+            </div>
+          </div>
+
+          <div className="justify-self-start text-left">
+            <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+              {t.footer.contacts}
+            </h3>
+
+            <div className="space-y-2.5 text-[13px] text-slate-700">
+              <div className="flex items-center justify-start gap-2.5">
+                <PinIcon size={16} className="shrink-0 text-blue-600" />
+                <span>{t.footer.location}</span>
+              </div>
+
+              <div className="flex items-center justify-start gap-2.5">
+                <PhoneIcon size={16} className="shrink-0 text-blue-600" />
+                <span>+359 888 000 000</span>
+              </div>
+
+              <div className="flex items-center justify-start gap-2.5">
+                <MailIcon size={16} className="shrink-0 text-blue-600" />
+                <span>info@upstrux.bg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-slate-200 py-4 text-xs text-slate-500">
+          {t.footer.rights}
+        </div>
+      </footer>
     </div>
   );
 }
