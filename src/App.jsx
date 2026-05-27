@@ -675,7 +675,6 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               <h2 className="mt-6 text-xl font-light">Phone</h2>
               <p className="mt-2 text-slate-600">+359 888 000 000</p>
             </a>
-
             <div className="rounded-3xl border border-slate-200 p-8">
               <PinIcon className="text-blue-600" />
               <h2 className="mt-6 text-xl font-light">Location</h2>
@@ -683,6 +682,109 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
             </div>
           </div>
         </div>
+        <SectionDivider className="mt-24" />
+
+<footer className="px-6 py-16">
+  <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-start md:justify-between">
+    
+    <div className="max-w-md">
+      <Logo footer />
+      <p className="mt-6 text-sm leading-6 text-slate-600">
+        Engineering, design and multidisciplinary project coordination.
+      </p>
+    </div>
+
+    <div className="grid gap-10 text-sm md:grid-cols-3">
+      
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
+          {t.footer.quick}
+        </h4>
+
+        <div className="mt-4 flex flex-col gap-3 text-slate-600">
+          <button
+            type="button"
+            onClick={() => setCurrentPage("home")}
+            className="text-left transition hover:text-blue-600"
+          >
+            {t.nav.home}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCurrentPage("solutions")}
+            className="text-left transition hover:text-blue-600"
+          >
+            {t.footer.solutions}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCurrentPage("contact")}
+            className="text-left transition hover:text-blue-600"
+          >
+            {t.footer.contacts}
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
+          {t.footer.follow}
+        </h4>
+
+        <div className="mt-4 flex items-center gap-4">
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:scale-105"
+          >
+            <LinkedInIcon size={26} />
+          </a>
+
+          <a
+            href={SOCIAL_LINKS.facebook}
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:scale-105"
+          >
+            <FacebookIcon size={26} />
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
+          {t.footer.legalInfo}
+        </h4>
+
+        <div className="mt-4 flex flex-col gap-3 text-slate-600">
+          <button
+            type="button"
+            onClick={() => setCurrentPage("legal")}
+            className="text-left transition hover:text-blue-600"
+          >
+            {t.footer.legalTitle}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCurrentPage("privacy")}
+            className="text-left transition hover:text-blue-600"
+          >
+            {t.footer.privacy}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div className="mx-auto mt-14 max-w-7xl border-t border-slate-200 pt-6 text-xs text-slate-500">
+    {t.footer.rights}
+  </div>
+</footer>
       </main>
     </div>
   );
