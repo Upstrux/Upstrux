@@ -509,6 +509,111 @@ function ProcessStep({ step, index }) {
   );
 }
 
+
+function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
+  const bulletItems = useMemo(
+    () => service.text.split(";").map((item) => item.trim()).filter(Boolean),
+    [service.text]
+  );
+
+  return (
+    <div className="min-h-screen bg-white text-slate-950">
+      <header className="relative bg-white px-6 pt-12 pb-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+          <button type="button" onClick={() => setCurrentPage("home")}>
+            <Logo footer />
+          </button>
+          <button
+            type="button"
+            className="mt-0 self-center text-2xl text-slate-900 md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            ☰
+          </button>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
+            {navItems.map((item) => (
+              <a
+                key={item.key}
+                href={item.key === "contacts" ? "#contact-page" : item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (item.key === "solutions") {
+                    setCurrentPage("solutions");
+                  } else if (item.key === "contacts") {
+                    setCurrentPage("contact");
+                  } else {
+                    setCurrentPage("home");
+                    setTimeout(() => {
+                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                    }, 50);
+                  }
+                  setMobileMenuOpen(false);
+                }}
+                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
+              {LANGUAGE_CODES.map((lang) => (
+                <button
+                  key={lang}
+                  type="button"
+                  onClick={() => {
+                    setLanguage(lang);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`cursor-pointer uppercase transition hover:text-blue-600 ${language === lang ? "text-blue-600" : "text-slate-900"}`}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main className="bg-white px-6 pt-32 pb-28">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+            {t.solutionsTitle}
+          </p>
+          <h1 className="mt-3 max-w-5xl text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
+            {service.title}
+          </h1>
+          <SectionDivider className="my-10" />
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="overflow-hidden bg-white">
+              <img
+                src={service.image}
+                alt={service.title}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px]"
+              />
+            </div>
+            <div className="max-w-[640px]">
+              <ul className="space-y-2 text-[15px] leading-6 text-slate-700">
+                {bulletItems.map((item) => (
+                  <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                onClick={() => setCurrentPage("solutions")}
+                className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+              >
+                {t.footer.backHome}
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <SiteFooter t={t} setCurrentPage={setCurrentPage} />
+    </div>
+  );
+}
+
 function LegalContentPage({ page, onBack, backLabel }) {
   return (
     <div className="min-h-screen bg-white text-slate-950">
@@ -796,6 +901,23 @@ export default function UpstruxWebsite() {
     if (typeof window === "undefined") return;
     window.localStorage.setItem("upstruxLanguage", language);
   }, [language]);
+
+
+  const servicePageIndex = SERVICE_PAGE_KEYS.indexOf(currentPage);
+  if (servicePageIndex !== -1) {
+    return (
+      <ServiceDetailPage
+        service={currentServices[servicePageIndex]}
+        t={t}
+        setCurrentPage={setCurrentPage}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        language={language}
+        setLanguage={setLanguage}
+        navItems={navItems}
+      />
+    );
+  }
 
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
