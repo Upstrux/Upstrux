@@ -755,6 +755,13 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               >
                 {t.footer.contacts}
               </button>
+              <button
+                type="button"
+                onClick={() => setCurrentPage("contact")}
+                className="text-left hover:text-blue-600"
+              >
+                {t.footer.contacts}
+              </button>
             </div>
           </div>
 
