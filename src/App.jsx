@@ -708,7 +708,7 @@ export default function UpstruxWebsite() {
     { key: "home", label: t.nav.home, href: "#home" },
     { key: "about", label: t.nav.about, href: "#about" },
     { key: "solutions", label: t.nav.solutions, href: "solutions" },
-    { key: "contacts", label: t.nav.contacts, href: "#contact" },
+    { key: "contacts", label: t.nav.contacts, href: "contact" },
   ];
 
   useEffect(() => {
@@ -1067,32 +1067,31 @@ if (
     </button>
 
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-4 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
-      {navItems.map((item) =>
-        item.key === "solutions" ? (
-          <a
-            key={item.key}
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              setCurrentPage("solutions");
-              setMobileMenuOpen(false);
-            }}
-            className="transition-colors hover:text-blue-300"
-          >
-            {item.label}
-          </a>
-        ) : (
-          <a
-            key={item.key}
-            href={item.href}
-            onClick={() => setMobileMenuOpen(false)}
-            className="transition-colors hover:text-blue-300"
-          >
-            {item.label}
-          </a>
-        )
-      )}
+    {navItems.map((item) => (
+  <button
+    key={item.key}
+    type="button"
+    onClick={() => {
+      if (item.key === "solutions") {
+        setCurrentPage("solutions");
+      } else if (item.key === "contacts") {
+        setCurrentPage("contact");
+      } else {
+        setCurrentPage("home");
+        setTimeout(() => {
+          document.querySelector(item.href)?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 50);
+      }
 
+      setMobileMenuOpen(false);
+    }}
+    className="transition-colors hover:text-blue-300"
+  >
+    {item.label}
+  </button>
+))}
       <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
         {["bg", "en", "de"].map((lang) => (
           <button
