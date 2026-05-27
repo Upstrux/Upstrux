@@ -591,10 +591,105 @@ function LegalContentPage({ page, onBack, backLabel }) {
     </div>
   );
 }
+function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
+  return (
+    <div className="min-h-screen bg-white text-slate-950">
+      <header className="relative bg-white px-6 pt-12 pb-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+          <button type="button" onClick={() => setCurrentPage("home")}>
+            <Logo footer />
+          </button>
 
+          <button
+            type="button"
+            className="self-center text-2xl text-slate-900 md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            ☰
+          </button>
+
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:bg-transparent md:p-0 md:shadow-none`}>
+            {navItems.map((item) => (
+              <a
+                key={item.key}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  if (item.key === "solutions") {
+                    setCurrentPage("solutions");
+                  } else if (item.key === "contacts") {
+                    setCurrentPage("contact");
+                  } else {
+                    setCurrentPage("home");
+                    setTimeout(() => {
+                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                    }, 50);
+                  }
+
+                  setMobileMenuOpen(false);
+                }}
+                className="transition-colors hover:text-blue-600"
+              >
+                {item.label}
+              </a>
+            ))}
+
+            <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
+              {["bg", "en", "de"].map((lang) => (
+                <button
+                  key={lang}
+                  type="button"
+                  onClick={() => setLanguage(lang)}
+                  className={`uppercase transition hover:text-blue-600 ${
+                    language === lang ? "text-blue-600" : "text-slate-900"
+                  }`}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main className="px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+            {t.nav.contacts}
+          </p>
+
+          <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
+            Contact UPSTRUX
+          </h1>
+
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            <a href="mailto:info@upstrux.bg" className="rounded-3xl border border-slate-200 p-8 hover:border-blue-600">
+              <MailIcon className="text-blue-600" />
+              <h2 className="mt-6 text-xl font-light">Email</h2>
+              <p className="mt-2 text-slate-600">info@upstrux.bg</p>
+            </a>
+
+            <a href="tel:+359888000000" className="rounded-3xl border border-slate-200 p-8 hover:border-blue-600">
+              <PhoneIcon className="text-blue-600" />
+              <h2 className="mt-6 text-xl font-light">Phone</h2>
+              <p className="mt-2 text-slate-600">+359 888 000 000</p>
+            </a>
+
+            <div className="rounded-3xl border border-slate-200 p-8">
+              <PinIcon className="text-blue-600" />
+              <h2 className="mt-6 text-xl font-light">Location</h2>
+              <p className="mt-2 text-slate-600">{t.footer.location}</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
 export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const validPages = ["home", "solutions", "legal", "privacy", "service1", "service2", "service3", "service4", "service5", "service6"];
+  const validPages = ["home", "solutions", "contact", "legal", "privacy", "service1", "service2", "service3", "service4", "service5", "service6"];
   const [currentPage, setCurrentPage] = useState(() => {
     if (typeof window === "undefined") return "home";
     const hashPage = window.location.hash.replace("#", "");
@@ -630,6 +725,19 @@ export default function UpstruxWebsite() {
 
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
   if (currentPage === "privacy") return <LegalContentPage page={t.legalPages.privacy} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
+  if (currentPage === "contact") {
+  return (
+    <ContactPage
+      t={t}
+      setCurrentPage={setCurrentPage}
+      mobileMenuOpen={mobileMenuOpen}
+      setMobileMenuOpen={setMobileMenuOpen}
+      language={language}
+      setLanguage={setLanguage}
+      navItems={navItems}
+    />
+  );
+}
   if (currentPage === "solutions") {
   return (
     <div className="min-h-screen bg-white text-slate-950">
@@ -646,18 +754,30 @@ export default function UpstruxWebsite() {
       ☰
     </button>
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-  {navItems.map((item) =>
-    item.key === "solutions" ? (
-      <a
-        key={item.key}
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          setCurrentPage("solutions");
-          setMobileMenuOpen(false);
-        }}
-        className="transition-colors hover:text-blue-600"
-      >
+  {navItems.map((item) => (
+  <a
+    key={item.key}
+    href={item.href}
+    onClick={(e) => {
+      e.preventDefault();
+
+      if (item.key === "solutions") {
+        setCurrentPage("solutions");
+      } else if (item.key === "contacts") {
+        setCurrentPage("contact");
+      } else {
+        setCurrentPage("home");
+
+        setTimeout(() => {
+          document.querySelector(item.href)?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 50);
+      }
+
+      setMobileMenuOpen(false);
+    }}
+  >
         {item.label}
       </a>
     ) : (
