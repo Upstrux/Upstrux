@@ -655,14 +655,17 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 
       <main className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-            {t.nav.contacts}
-          </p>
-
-          <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
-            Contact UPSTRUX
-          </h1>
-
+          <SectionDivider />
+          <div className="flex flex-col gap-6 py-20 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+                {t.nav.contacts}
+              </p>
+              <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
+                Contact UPSTRUX
+              </h1>
+            </div>
+          </div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             <a href="mailto:info@upstrux.bg" className="rounded-3xl border border-slate-200 p-8 hover:border-blue-600">
               <MailIcon className="text-blue-600" />
@@ -683,15 +686,17 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
           </div>
         </div>
         <SectionDivider className="mt-24" />
-
-<footer className="px-6 py-16">
+       <footer className="px-6 py-16">
   <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-start md:justify-between">
     
     <div className="max-w-md">
-      <Logo footer />
-      <p className="mt-6 text-sm leading-6 text-slate-600">
-        Engineering, design and multidisciplinary project coordination.
+      <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+        {t.nav.contacts}
       </p>
+
+      <h2 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-5xl">
+        Contact UPSTRUX
+      </h2>
     </div>
 
     <div className="grid gap-10 text-sm md:grid-cols-3">
@@ -784,7 +789,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
   <div className="mx-auto mt-14 max-w-7xl border-t border-slate-200 pt-6 text-xs text-slate-500">
     {t.footer.rights}
   </div>
-</footer>
+</footer> 
       </main>
     </div>
   );
