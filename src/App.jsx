@@ -757,7 +757,7 @@ export default function UpstruxWebsite() {
   {navItems.map((item) => (
   <a
     key={item.key}
-    href={item.href}
+    href={item.key === "contacts" ? "#contact-page" : item.href}
     onClick={(e) => {
       e.preventDefault();
 
@@ -767,7 +767,6 @@ export default function UpstruxWebsite() {
         setCurrentPage("contact");
       } else {
         setCurrentPage("home");
-
         setTimeout(() => {
           document.querySelector(item.href)?.scrollIntoView({
             behavior: "smooth",
@@ -777,7 +776,7 @@ export default function UpstruxWebsite() {
 
       setMobileMenuOpen(false);
     }}
-    className="transition-colors hover:text-blue-600"
+    className="transition-colors hover:text-blue-300"
   >
     {item.label}
   </a>
