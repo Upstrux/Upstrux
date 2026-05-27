@@ -496,13 +496,13 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
 function ProcessStep({ step, index }) {
   const isRight = index === 1 || index === 3;
   const isCompact = index > 0;
-  const sizeClass = index === 0 ? "w-full max-w-[620px] min-h-[260px] p-5 sm:min-h-[230px] lg:aspect-[1.618/0.68] lg:min-h-0" : index === 1 ? "w-full max-w-[620px] min-h-[240px] p-5 sm:min-h-[210px] lg:aspect-[1.618/0.6] lg:min-h-0" : "w-full max-w-[620px] min-h-[220px] p-5 sm:min-h-[190px] lg:aspect-[1.618/0.52] lg:min-h-0";
+  const sizeClass = index === 0 ? "w-full max-w-[620px] min-h-[260px] p-5 sm:min-h-[230px] lg:min-h-[230px]" : index === 1 ? "w-full max-w-[620px] min-h-[240px] p-5 sm:min-h-[210px] lg:min-h-[210px]" : "w-full max-w-[620px] min-h-[220px] p-5 sm:min-h-[190px] lg:min-h-[190px]";
   return (
     <div className={`relative flex ${isRight ? "justify-end" : "justify-start"}`}>
       <div className={`pointer-events-none absolute top-1/2 hidden h-px bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500 lg:block ${isRight ? "left-0 right-[78%]" : "left-[78%] right-0"}`} />
       <span className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 whitespace-nowrap text-2xl font-light leading-[1.1] tracking-[-0.025em] text-[#111111] md:text-3xl lg:block ${index === 3 ? "left-[24%]" : isRight ? "left-[28%]" : "right-[28%]"}`}>{step.title}</span>
-      <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className={`${sizeClass} relative z-10 flex flex-col justify-between overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 transition duration-300 hover:-translate-y-1`}>
-        <div className={`flex flex-1 flex-col justify-between text-white/90 ${isCompact ? "mt-1 gap-3" : "mt-2 gap-4"}`}>
+      <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className={`${sizeClass} relative z-10 flex h-auto flex-col justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 transition duration-300 hover:-translate-y-1`}>
+        <div className={`flex flex-1 flex-col justify-center text-white/90 ${isCompact ? "gap-3" : "gap-4"}`}>
           <p className="text-sm leading-5 sm:text-[15px]">{step.body}</p>
           <p className="text-sm leading-5 text-white/95 sm:text-[15px]">{step.focus}</p>
         </div>
