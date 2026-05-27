@@ -310,12 +310,14 @@ const translations = {
     ],
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
+    contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
     footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
     learnMore: "Научете повече",
     services: bgServices,
     processSteps: bgProcessSteps,
     legalPages: legalPages.bg,
   },
+
   en: {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
@@ -345,6 +347,7 @@ const translations = {
     ],
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
+    contactPage: {eyebrow: "Contacts", title: "Contact UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
     footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
     learnMore: "Learn more",
     services: enServices,
@@ -380,6 +383,7 @@ const translations = {
     ],
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
+    contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",}
     footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
     learnMore: "Mehr erfahren",
     services: deServices,
@@ -659,15 +663,15 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-            {t.nav.contacts}
+          {t.contactPage.eyebrow}
           </p>
 
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
-            Contact UPSTRUX
+           {t.contactPage.title}
           </h1>
 
           <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
-            Get in touch with UPSTRUX for engineering, design and project coordination inquiries.
+            {t.contactPage.intro}
           </p>
 
           <SectionDivider className="my-10" />
@@ -678,9 +682,6 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               className="rounded-3xl border border-slate-200 p-8 transition hover:border-blue-600"
             >
               <MailIcon className="text-blue-600" />
-              <h2 className="mt-6 text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">
-                Email
-              </h2>
               <p className="mt-5 text-[15px] leading-6 text-slate-700">
                 info@upstrux.bg
               </p>
@@ -691,9 +692,6 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               className="rounded-3xl border border-slate-200 p-8 transition hover:border-blue-600"
             >
               <PhoneIcon className="text-blue-600" />
-              <h2 className="mt-6 text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">
-                Phone
-              </h2>
               <p className="mt-5 text-[15px] leading-6 text-slate-700">
                 +359 888 000 000
               </p>
@@ -701,9 +699,6 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 
             <div className="rounded-3xl border border-slate-200 p-8">
               <PinIcon className="text-blue-600" />
-              <h2 className="mt-6 text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">
-                Location
-              </h2>
               <p className="mt-5 text-[15px] leading-6 text-slate-700">
                 {t.footer.location}
               </p>
