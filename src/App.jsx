@@ -347,7 +347,7 @@ const translations = {
     ],
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
-    contactPage: {eyebrow: "Contacts", title: "Contact UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
+    contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
     footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
     learnMore: "Learn more",
     services: enServices,
@@ -561,7 +561,7 @@ function LegalContentPage({ page, onBack, backLabel }) {
         {page.eyebrow}
       </p>
 
-      <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
+      <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
         {page.title}
       </h1>
 
