@@ -920,7 +920,7 @@ export default function UpstruxWebsite() {
             {t.solutionsEyebrow}
           </p>
 
-          <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
+          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
             {t.solutionsTitle}
           </h1>
           <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
