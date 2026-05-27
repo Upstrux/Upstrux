@@ -633,7 +633,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 
                   setMobileMenuOpen(false);
                 }}
-                className="transition-colors hover:text-blue-600"
+                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
               >
                 {item.label}
               </button>
@@ -666,7 +666,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
           {t.contactPage.eyebrow}
           </p>
 
-          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
+          <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
            {t.contactPage.title}
           </h1>
 
@@ -679,25 +679,23 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
           <div className="mt-20 grid gap-8 md:grid-cols-3">
             <a
               href="mailto:info@upstrux.bg"
-              className="rounded-3xl border border-slate-200 p-8 transition hover:border-blue-600"
+              className="p-2"
             >
               <MailIcon className="text-blue-600" />
               <p className="mt-5 text-[15px] leading-6 text-slate-700">
                 info@upstrux.bg
               </p>
             </a>
-
             <a
               href="tel:+359888000000"
-              className="rounded-3xl border border-slate-200 p-8 transition hover:border-blue-600"
+              className="p-2"
             >
               <PhoneIcon className="text-blue-600" />
               <p className="mt-5 text-[15px] leading-6 text-slate-700">
                 +359 888 000 000
               </p>
             </a>
-
-            <div className="rounded-3xl border border-slate-200 p-8">
+              className="p-2"
               <PinIcon className="text-blue-600" />
               <p className="mt-5 text-[15px] leading-6 text-slate-700">
                 {t.footer.location}
@@ -927,7 +925,7 @@ export default function UpstruxWebsite() {
 
       setMobileMenuOpen(false);
     }}
-    className="transition-colors hover:text-blue-300"
+    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
   >
     {item.label}
   </a>
@@ -959,7 +957,7 @@ export default function UpstruxWebsite() {
             {t.solutionsEyebrow}
           </p>
 
-          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-5xl">
+          <h1 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#111111] md:text-6xl">
             {t.solutionsTitle}
           </h1>
           <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
@@ -1066,7 +1064,7 @@ if (
 
       setMobileMenuOpen(false);
     }}
-    className="transition-colors hover:text-blue-600"
+    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
   >
     {item.label}
   </button>
@@ -1238,7 +1236,7 @@ if (
 
       setMobileMenuOpen(false);
     }}
-    className="transition-colors hover:text-blue-300"
+    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
   >
     {item.label}
   </button>
