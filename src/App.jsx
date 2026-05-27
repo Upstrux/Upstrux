@@ -659,7 +659,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
           </nav>
         </div>
       </header>
-
+    
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
@@ -695,22 +695,20 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                 +359 888 000 000
               </p>
             </a>
-              className="p-2"
-              <PinIcon className="text-blue-600" />
-              <p className="mt-5 text-[15px] leading-6 text-slate-700">
-                {t.footer.location}
-              </p>
-            </div>
+              <div className="p-2">
+                <PinIcon className="text-blue-600" />
+                <p className="mt-5 text-[15px] leading-6 text-slate-700">
+                  {t.footer.location}
+                </p>
+              </div>
           </div>
         </div>
       </main>
-
       <footer id="contact" className="border-t border-slate-200 bg-white px-6 pt-10">
         <div className="mx-auto grid max-w-7xl items-start gap-12 pb-10 md:grid-cols-5">
           <div>
             <Logo footer />
           </div>
-
           <div>
             <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
               {t.footer.quick}
@@ -950,7 +948,6 @@ export default function UpstruxWebsite() {
 </nav>
   </div>
 </header>
-      
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
