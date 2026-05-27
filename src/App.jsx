@@ -777,10 +777,11 @@ export default function UpstruxWebsite() {
 
       setMobileMenuOpen(false);
     }}
+    className="transition-colors hover:text-blue-600"
   >
-        {item.label}
-      </a>
-    ) : (
+    {item.label}
+  </a>
+))}
 <a
   key={item.key}
   href={item.href}
