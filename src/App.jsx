@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 //About
@@ -73,6 +73,17 @@ const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/",
   facebook: "https://www.facebook.com/",
 };
+
+const LANGUAGE_CODES = ["bg", "en", "de"];
+const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
+const VALID_PAGES = ["home", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
+const HERO_TRANSITION = {
+  duration: 36,
+  repeat: Infinity,
+  times: [0, 0.04, 0.14, 0.18],
+  ease: "linear",
+};
+const LEARN_MORE_BUTTON_CLASS = "hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md";
 
 const heroSlides = [
   hero1,
@@ -397,11 +408,11 @@ function slugify(text) {
 }
 
 function runContentChecks() {
-  console.assert(heroSlides.length === 8, "Hero slider should include 8 images.");
-  console.assert(serviceImages.length === 6, "There should be 6 service images.");
-  console.assert(bgServices.length === 6, "Bulgarian version should include 6 service categories.");
-  console.assert(enServices.length === 6, "English version should include 6 service categories.");
-  console.assert(deServices.length === 6, "German version should include 6 service categories.");
+  console.assert(heroSlides.length === 5, "Hero slider should include 5 images.");
+  console.assert(serviceImages.length === 8, "There should be 8 service images.");
+  console.assert(bgServices.length === serviceImages.length, "Bulgarian services should match service images.");
+  console.assert(enServices.length === serviceImages.length, "English services should match service images.");
+  console.assert(deServices.length === serviceImages.length, "German services should match service images.");
   console.assert(bgProcessSteps.length === 5, "Bulgarian version should include 5 process stages.");
   console.assert(enProcessSteps.length === 5, "English version should include 5 process stages.");
   console.assert(deProcessSteps.length === 5, "German version should include 5 process stages.");
@@ -410,8 +421,9 @@ function runContentChecks() {
   console.assert(SOCIAL_LINKS.linkedin.startsWith("https://www.linkedin.com"), "LinkedIn footer link should point to LinkedIn.");
   console.assert(SOCIAL_LINKS.facebook.startsWith("https://www.facebook.com"), "Facebook footer link should point to Facebook.");
 }
-
-runContentChecks();
+if (process.env.NODE_ENV !== "production") {
+  runContentChecks();
+}
 
 function SectionDivider({ className = "" }) {
   return (
@@ -428,13 +440,18 @@ function HeroSlide({ image, index }) {
       style={{ backgroundImage: `url(${image})` }}
       initial={{ opacity: index === 0 ? 1 : 0 }}
       animate={{ opacity: [0, 1, 1, 0] }}
-      transition={{ duration: 36, repeat: Infinity, times: [0, 0.04, 0.14, 0.18], delay: index * 6, ease: "linear" }}
+      transition={{ ...HERO_TRANSITION, delay: index * 6 }}
     />
   );
 }
 
-function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
-  const bulletItems = text.split(";").map((item) => item.trim()).filter(Boolean);
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
+  const bulletItems = useMemo(
+    () => text.split(";").map((item) => item.trim()).filter(Boolean),
+    [text]
+  );
+  const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
+
   const textBlock = (
     <div className="max-w-[640px]">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
@@ -443,92 +460,36 @@ function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPag
           <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
         ))}
       </ul>
-      {servicePage === "service1" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service1")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
-
-{servicePage === "service2" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service2")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
-
-{servicePage === "service3" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service3")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
-
-{servicePage === "service4" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service4")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
-
-{servicePage === "service5" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service5")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
-
-{servicePage === "service6" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service6")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
-      
-  {servicePage === "service7" && (
-  <button
-    type="button"
-    onClick={() => setCurrentPage("service6")}
-    className="hidden mt-6 inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 px-6 py-2.5 text-sm font-light tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
-  >
-    {learnMoreLabel}
-  </button>
-)}
+      {hasServicePage && (
+        <button
+          type="button"
+          onClick={() => setCurrentPage(servicePage)}
+          className={LEARN_MORE_BUTTON_CLASS}
+        >
+          {learnMoreLabel}
+        </button>
+      )}
     </div>
   );
+
   const imageBlock = (
-  <div className="overflow-hidden bg-white">
-    <img
-      src={image}
-      alt={title}
-     className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px]"
-    />
-  </div>
-);
+    <div className="overflow-hidden bg-white">
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px]"
+      />
+    </div>
+  );
+
   return (
     <motion.div id={`service-${slugify(title)}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="scroll-mt-28 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
   );
-}
+});
 
 function ProcessStep({ step, index }) {
   const isRight = index === 1 || index === 3;
@@ -732,7 +693,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
             ))}
 
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-              {["bg", "en", "de"].map((lang) => (
+              {LANGUAGE_CODES.map((lang) => (
                 <button
                   key={lang}
                   type="button"
@@ -802,27 +763,28 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 }
 export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const validPages = ["home", "solutions", "contact", "legal", "privacy", "service1", "service2", "service3", "service4", "service5", "service6"];
   const [currentPage, setCurrentPage] = useState(() => {
     if (typeof window === "undefined") return "home";
     const hashPage = window.location.hash.replace("#", "");
-    return validPages.includes(hashPage) ? hashPage : "home";
+    return VALID_PAGES.includes(hashPage) ? hashPage : "home";
   });
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "bg";
     const savedLanguage = window.localStorage.getItem("upstruxLanguage");
-    return ["bg", "en", "de"].includes(savedLanguage) ? savedLanguage : "bg";
+    return LANGUAGE_CODES.includes(savedLanguage) ? savedLanguage : "bg";
   });
   const t = translations[language];
-  const currentServices = t.services.map((service, index) => ({ ...service, image: serviceImages[index] }));
+  const currentServices = useMemo(
+    () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
+    [t.services]
+  );
   const currentProcessSteps = t.processSteps;
-  const navItems = [
+  const navItems = useMemo(() => [
     { key: "home", label: t.nav.home, href: "#home" },
     { key: "about", label: t.nav.about, href: "#about" },
     { key: "solutions", label: t.nav.solutions, href: "solutions" },
     { key: "contacts", label: t.nav.contacts, href: "contact" },
-  ];
+  ], [t.nav.about, t.nav.contacts, t.nav.home, t.nav.solutions]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -895,7 +857,7 @@ export default function UpstruxWebsite() {
   </a>
 ))}
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-    {["bg", "en", "de"].map((lang) => (
+    {LANGUAGE_CODES.map((lang) => (
       <button
         key={lang}
         type="button"
@@ -991,7 +953,7 @@ export default function UpstruxWebsite() {
   </button>
 ))}
       <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-        {["bg", "en", "de"].map((lang) => (
+        {LANGUAGE_CODES.map((lang) => (
           <button
             key={lang}
             type="button"
