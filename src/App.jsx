@@ -503,7 +503,7 @@ function ProcessStep({ step, index }) {
       <span className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 whitespace-nowrap text-2xl font-light leading-[1.1] tracking-[-0.025em] text-[#111111] md:text-3xl lg:block ${index === 3 ? "left-[24%]" : isRight ? "left-[28%]" : "right-[28%]"}`}>{step.title}</span>
       <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className={`${sizeClass} relative z-10 flex h-auto flex-col justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 transition duration-300 hover:-translate-y-1`}>
         <div className={`flex flex-1 flex-col justify-center text-white/90 ${isCompact ? "gap-3" : "gap-4"}`}>
-          <p className="text-sm leading-5 sm:text-[17px]">{step.body}</p>
+          <p className="text-sm leading-5 sm:text-[18px]">{step.body}</p>
         </div>
       </motion.div>
     </div>
