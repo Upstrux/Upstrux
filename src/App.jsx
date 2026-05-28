@@ -746,7 +746,7 @@ function SiteFooter({ t, setCurrentPage }) {
               <span>{t.footer.location}</span>
             </div>
 
-            <div className="flex items-center gap-2.5">
+            <div className="hidden flex items-center gap-2.5">
               <PhoneIcon size={16} className="shrink-0 text-blue-600" />
               <span>+359 888 000 000</span>
             </div>
