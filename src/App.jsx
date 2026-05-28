@@ -856,12 +856,9 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                 info@upstrux.bg
               </p>
             </a>
-            <a
-              href="tel:+359888000000"
-              className="p-2"
-            >
-              <PhoneIcon className="text-blue-600" />
-              <p className="mt-5 text-[15px] leading-6 text-slate-700">
+            <a>
+              <PhoneIcon className="hidden text-blue-600" />
+              <p className="hidden mt-5 text-[15px] leading-6 text-slate-700">
                 +359 888 000 000
               </p>
             </a>
