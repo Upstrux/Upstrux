@@ -856,18 +856,18 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                 info@upstrux.bg
               </p>
             </a>
+            <div className="p-2">
+                <PinIcon className="text-blue-600" />
+                <p className="mt-5 text-[15px] leading-6 text-slate-700">
+                  {t.footer.location}
+                </p>
+              </div>
             <a>
               <PhoneIcon className="hidden text-blue-600" />
               <p className="hidden mt-5 text-[15px] leading-6 text-slate-700">
                 +359 888 000 000
               </p>
             </a>
-              <div className="p-2">
-                <PinIcon className="text-blue-600" />
-                <p className="mt-5 text-[15px] leading-6 text-slate-700">
-                  {t.footer.location}
-                </p>
-              </div>
           </div>
         </div>
       </main>
