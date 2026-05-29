@@ -81,7 +81,7 @@ const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy"
 const PAGE_TITLES = {
   bg: {
     home: "Начало | UPSTRUX",
-    about: "За Нас | UPSTRUX",
+    about: "За нас | UPSTRUX",
     solutions: "Решения | UPSTRUX",
     contact: "Контакти | UPSTRUX",
     legal: "Правно | UPSTRUX",
@@ -105,6 +105,24 @@ const PAGE_TITLES = {
   },
 };
 
+
+const SECTION_TITLES = {
+  bg: {
+    about: "За нас | UPSTRUX",
+    competence: "Области на компетентност | UPSTRUX",
+    methodology: "От концепцията до реализация | UPSTRUX",
+  },
+  en: {
+    about: "About Us | UPSTRUX",
+    competence: "Areas of Competence | UPSTRUX",
+    methodology: "From concept to delivery | UPSTRUX",
+  },
+  de: {
+    about: "Über uns | UPSTRUX",
+    competence: "Kompetenzbereiche | UPSTRUX",
+    methodology: "Vom Konzept bis zur Umsetzung | UPSTRUX",
+  },
+};
 const HERO_TRANSITION = {
   duration: 36,
   repeat: Infinity,
@@ -323,10 +341,10 @@ const legalPages = {
 
 const translations = {
   bg: {
-    nav: { home: "Начало", about: "За Нас", solutions: "РЕШЕНИЯ", contacts: "Контакти" },
+    nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", contacts: "Контакти" },
     heroTitle: ["Инженерство, което свързва", "визията с реалността"],
     aboutLabel: "Строителни инженери, проектанти и технически ръководители",
-    aboutTitle: "За Нас",
+    aboutTitle: "За нас",
     aboutP1: "UPSTRUX обединиява инженери в областта на гражданското строителство, проектирането, обследването, техническото ръководене и управлението на проекти, изискващи ефективно взаимодействие между различни технически дисциплини, специализирани експертни екипи и участници в строително-инвестиционния процес през целия жизнен цикъл на проекта — от иницииране и планиране до изпълнение, мониторинг и контрол и финално зактиване на проекта.",
     aboutP2: "Чрез интегриран подход и контрол върху всички етапи на проектната реализация осигуряваме устойчиви инженерни решения, оптимизация на ресурси и ефективно управление на техническите, финансовите и времевите параметри на проекта.",
     aboutP3: "Разбираме, че един проект е успешен, когато отговаря на законовите и нормативните изисквания, очакванията на клиента, като същевременно остава икономически ефективен.",
@@ -363,7 +381,7 @@ const translations = {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
     aboutLabel: "Civil, structural and site engineers",
-    aboutTitle: "About Us",
+    aboutTitle: "About us",
     aboutP1: "UPSTRUX brings together civil, structural, site and project engineers with expertise in coordinating complex projects requiring effective collaboration between multiple technical disciplines, specialized expert teams, and stakeholders throughout the entire project lifecycle — from initiation and planning through execution, monitoring and control, and project close-out.",
     aboutP2: "Through an integrated approach and oversight across all stages of project delivery, we provide sustainable engineering solutions, resource optimization, and effective management of the project’s scope, technical, financial, and schedule parameters.",
     aboutP3: "We understand that a project is successful when it complies with legal and regulatory requirements, meets the client’s expectations and remains economically efficient.",
@@ -960,6 +978,43 @@ export default function UpstruxWebsite() {
     document.title = baseTitle;
   }, [currentPage, language, t]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (currentPage !== "home" && currentPage !== "about") return;
+
+    const sectionIds = ["about", "competence", "methodology"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visibleEntry) return;
+
+        const sectionTitle = SECTION_TITLES[language]?.[visibleEntry.target.id];
+        if (sectionTitle) {
+          document.title = sectionTitle;
+        }
+      },
+      {
+        root: null,
+        threshold: [0.35, 0.5, 0.65],
+        rootMargin: "-25% 0px -45% 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [currentPage, language]);
+
+
   const currentServices = useMemo(
     () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
     [t.services]
@@ -1174,7 +1229,7 @@ export default function UpstruxWebsite() {
       <main>
 <section id="home" className="relative h-[1080px] overflow-hidden bg-slate-900"><div className="absolute inset-0">{heroSlides.map((image, index) => <HeroSlide key={String(image)} image={image} index={index} />)}</div><div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent" /><div className="relative mx-auto flex h-full max-w-7xl items-end px-6 pb-20"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl text-white"><h1 className="text-3xl font-light leading-[1.05] tracking-[-0.025em] md:text-5xl">{t.heroTitle.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</h1></motion.div></div></section>
 <section id="about" className="bg-white px-6 py-28"><div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2"><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.aboutLabel}</p><h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.aboutTitle}</h2><p className="mt-8 text-lg leading-8 text-slate-700">{t.aboutP1}</p><p className="mt-5 text-lg leading-8 text-slate-700">{t.aboutP2}</p><div className="mt-7 border-l-4 border-blue-600 bg-white px-8 py-5"><p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">{t.aboutHighlight}</p></div></div><div className="overflow-hidden bg-white w-full max-w-[900px]"><img src={about1} alt="UPSTRUX engineering" className="h-[650px] w-full object-cover object-center md:h-[720px]"/></div></div></section>
-<section className="bg-white px-6 py-20">
+<section id="competence" className="bg-white px-6 py-20">
   <div className="mx-auto max-w-7xl">
 
     <div className="mb-10 max-w-5xl text-left">
@@ -1206,7 +1261,7 @@ export default function UpstruxWebsite() {
 
   </div>
 </section>
-<section className="bg-white px-6 py-20">
+<section id="methodology" className="bg-white px-6 py-20">
   <div className="mx-auto max-w-7xl">
     <div className="mb-20 text-left">
       <h3 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
