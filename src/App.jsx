@@ -97,7 +97,7 @@ const PAGE_TITLES = {
   },
   de: {
     home: "Start | UPSTRUX",
-    about: "Über uns | UPSTRUX",
+    about: "Über Uns | UPSTRUX",
     solutions: "Lösungen | UPSTRUX",
     contact: "Kontakt | UPSTRUX",
     legal: "Rechtliches | UPSTRUX",
@@ -118,7 +118,7 @@ const SECTION_TITLES = {
     methodology: "From concept to delivery | UPSTRUX",
   },
   de: {
-    about: "Über uns | UPSTRUX",
+    about: "Über Uns | UPSTRUX",
     competence: "Kompetenzbereiche | UPSTRUX",
     methodology: "Vom Konzept bis zur Umsetzung | UPSTRUX",
   },
@@ -414,10 +414,10 @@ const translations = {
     legalPages: legalPages.en,
   },
   de: {
-    nav: { home: "Start", about: "Über uns", solutions: "LÖSUNGEN", contacts: "Kontakt" },
+    nav: { home: "Start", about: "Über Uns", solutions: "LÖSUNGEN", contacts: "Kontakt" },
     heroTitle: ["Ingenieurwesen, das Vision", "mit Realität verbindet"],
     aboutLabel: "Bau-, Tragwerksplanungs- und Bauleitungsingenieure",
-    aboutTitle: "Über uns",
+    aboutTitle: "Über Uns",
     aboutP1: "UPSTRUX vereint Bauingenieure, Tragwerksplaner, Bauleiter und Projektingenieure mit Expertise in der Koordination komplexer Projekte, die eine effiziente Zusammenarbeit zwischen unterschiedlichen technischen Fachdisziplinen, spezialisierten Expertenteams und Projektbeteiligten über den gesamten Projektlebenszyklus hinweg erfordern — von der Projektinitiierung und Planung über Ausführung, Monitoring und Controlling bis hin zum Projektabschluss.",
     aboutP2: "Durch einen integrierten Ansatz sowie die Steuerung und Überwachung sämtlicher Projektphasen bietet UPSTRUX nachhaltige Ingenieurlösungen, Ressourcenoptimierung sowie ein effizientes Management des Projektumfangs, der technischen, finanziellen und terminlichen Projektparameter.",
     aboutP3: "Wir verstehen ein Projekt dann als erfolgreich, wenn es den geltenden gesetzlichen und regulatorischen Anforderungen entspricht, die Erwartungen des Auftraggebers erfüllt und zugleich wirtschaftlich effizient bleibt.",
