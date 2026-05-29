@@ -522,21 +522,18 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     <div className="min-h-screen bg-white text-slate-950">
       <header className="relative bg-white px-6 pt-12 pb-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-          <button
-            type="button"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="mt-0 self-center md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-            <span className="text-[32px] font-light leading-none tracking-tight">
-            <span className="text-slate-900">UPSTRU</span>
-            <span className="text-blue-600 font-normal">X</span>
-            </span>
-            ) : (
-            <span className="text-2xl text-slate-900">☰</span>
-              )}
-          </button>
+    <button
+                type="button"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                className="mt-0 self-center md:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+               {mobileMenuOpen ? (
+                <X size={34} className="text-blue-600" strokeWidth={1.75} />
+                ) : (
+                <Menu size={30} className="text-slate-900" strokeWidth={2.2} />
+                )}
+    </button>
           <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
             {navItems.map((item) => (
               <a
