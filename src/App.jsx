@@ -84,25 +84,67 @@ const LANGUAGE_ROUTE_PREFIXES = {
 };
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
 const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
-const PAGE_ROUTES = {
-  home: "/",
-  about: "/about",
-  solutions: "/solutions",
-  contact: "/contact",
-  legal: "/legal",
-  privacy: "/privacy",
-  service1: "/solutions/structural-assessments-diagnostics-in-situ-and-laboratory-testing",
-  service2: "/solutions/architecture-and-structural-engineering",
-  service3: "/solutions/wss-hydrotechnical-and-hydro-reclamation-engineering",
-  service4: "/solutions/geotechnical-engineering-design",
-  service5: "/solutions/transport-infrastructure-engineering-and-design",
-  service6: "/solutions/geodesy-cadastre-gis-and-photogrammetry",
-  service7: "/solutions/project-management-and-coordination",
-  service8: "/solutions/pre-investment-studies-and-tender-planning",
+const PAGE_ROUTES_BY_LANGUAGE = {
+  en: {
+    home: "/",
+    about: "/about",
+    competence: "/areas-of-competence",
+    methodology: "/from-concept-to-delivery",
+    solutions: "/solutions",
+    contact: "/contact",
+    legal: "/legal",
+    privacy: "/privacy",
+    service1: "/solutions/structural-assessments-diagnostics-in-situ-and-laboratory-testing",
+    service2: "/solutions/architecture-and-structural-engineering",
+    service3: "/solutions/wss-hydrotechnical-and-hydro-reclamation-engineering",
+    service4: "/solutions/geotechnical-engineering-design",
+    service5: "/solutions/transport-infrastructure-engineering-and-design",
+    service6: "/solutions/geodesy-cadastre-gis-and-photogrammetry",
+    service7: "/solutions/project-management-and-coordination",
+    service8: "/solutions/pre-investment-studies-and-tender-planning",
+  },
+  bg: {
+    home: "/",
+    about: "/za-nas",
+    competence: "/oblasti-na-kompetentnost",
+    methodology: "/ot-kontseptsiyata-do-realizatsiya",
+    solutions: "/resheniya",
+    contact: "/kontakti",
+    legal: "/pravno",
+    privacy: "/poveritelnost",
+    service1: "/resheniya/obsledvaniya-in-situ-i-laboratorni-izpitvaniya",
+    service2: "/resheniya/arhitektura-i-proektirane-na-sgradi",
+    service3: "/resheniya/vik-hidrotehnichesko-i-hidromeliorativno-proektirane",
+    service4: "/resheniya/geotehnichesko-proektirane",
+    service5: "/resheniya/proektirane-na-transportnata-infrastruktura",
+    service6: "/resheniya/geodeziya-kadastar-gis-i-fotogrametriya",
+    service7: "/resheniya/upravlenie-i-koordinatsiya-na-proekti",
+    service8: "/resheniya/predinvestitsionni-prouchvaniya-i-ofertno-planirane",
+  },
+  de: {
+    home: "/",
+    about: "/uber-uns",
+    competence: "/kompetenzbereiche",
+    methodology: "/vom-konzept-bis-zur-umsetzung",
+    solutions: "/losungen",
+    contact: "/kontakt",
+    legal: "/rechtliches",
+    privacy: "/datenschutz",
+    service1: "/losungen/bauwerksuntersuchungen-diagnostik-sowie-in-situ-und-laborprufungen",
+    service2: "/losungen/architektur-und-tragwerksplanung",
+    service3: "/losungen/wasserversorgungs-siedlungswasserwirtschafts-wasserbau-und-hydro-meliorationsplanung",
+    service4: "/losungen/geotechnische-planung",
+    service5: "/losungen/planung-von-verkehrsinfrastruktur",
+    service6: "/losungen/geodasie-kataster-gis-und-photogrammetrie",
+    service7: "/losungen/projektmanagement-und-projektkoordination",
+    service8: "/losungen/vorinvestitionsstudien-und-ausschreibungsplanung",
+  },
 };
+const PAGE_ROUTES = PAGE_ROUTES_BY_LANGUAGE.en;
 
 const ROUTE_PAGES = {
   "/": { page: "home" },
+
   "/about": { page: "about", sectionId: "about" },
   "/areas-of-competence": { page: "about", sectionId: "competence" },
   "/from-concept-to-delivery": { page: "about", sectionId: "methodology" },
@@ -110,6 +152,23 @@ const ROUTE_PAGES = {
   "/contact": { page: "contact" },
   "/legal": { page: "legal" },
   "/privacy": { page: "privacy" },
+
+  "/za-nas": { page: "about", sectionId: "about" },
+  "/oblasti-na-kompetentnost": { page: "about", sectionId: "competence" },
+  "/ot-kontseptsiyata-do-realizatsiya": { page: "about", sectionId: "methodology" },
+  "/resheniya": { page: "solutions" },
+  "/kontakti": { page: "contact" },
+  "/pravno": { page: "legal" },
+  "/poveritelnost": { page: "privacy" },
+
+  "/uber-uns": { page: "about", sectionId: "about" },
+  "/kompetenzbereiche": { page: "about", sectionId: "competence" },
+  "/vom-konzept-bis-zur-umsetzung": { page: "about", sectionId: "methodology" },
+  "/losungen": { page: "solutions" },
+  "/kontakt": { page: "contact" },
+  "/rechtliches": { page: "legal" },
+  "/datenschutz": { page: "privacy" },
+
   "/solutions/structural-assessments-diagnostics-in-situ-and-laboratory-testing": { page: "service1" },
   "/solutions/architecture-and-structural-engineering": { page: "service2" },
   "/solutions/wss-hydrotechnical-and-hydro-reclamation-engineering": { page: "service3" },
@@ -118,6 +177,24 @@ const ROUTE_PAGES = {
   "/solutions/geodesy-cadastre-gis-and-photogrammetry": { page: "service6" },
   "/solutions/project-management-and-coordination": { page: "service7" },
   "/solutions/pre-investment-studies-and-tender-planning": { page: "service8" },
+
+  "/resheniya/obsledvaniya-in-situ-i-laboratorni-izpitvaniya": { page: "service1" },
+  "/resheniya/arhitektura-i-proektirane-na-sgradi": { page: "service2" },
+  "/resheniya/vik-hidrotehnichesko-i-hidromeliorativno-proektirane": { page: "service3" },
+  "/resheniya/geotehnichesko-proektirane": { page: "service4" },
+  "/resheniya/proektirane-na-transportnata-infrastruktura": { page: "service5" },
+  "/resheniya/geodeziya-kadastar-gis-i-fotogrametriya": { page: "service6" },
+  "/resheniya/upravlenie-i-koordinatsiya-na-proekti": { page: "service7" },
+  "/resheniya/predinvestitsionni-prouchvaniya-i-ofertno-planirane": { page: "service8" },
+
+  "/losungen/bauwerksuntersuchungen-diagnostik-sowie-in-situ-und-laborprufungen": { page: "service1" },
+  "/losungen/architektur-und-tragwerksplanung": { page: "service2" },
+  "/losungen/wasserversorgungs-siedlungswasserwirtschafts-wasserbau-und-hydro-meliorationsplanung": { page: "service3" },
+  "/losungen/geotechnische-planung": { page: "service4" },
+  "/losungen/planung-von-verkehrsinfrastruktur": { page: "service5" },
+  "/losungen/geodasie-kataster-gis-und-photogrammetrie": { page: "service6" },
+  "/losungen/projektmanagement-und-projektkoordination": { page: "service7" },
+  "/losungen/vorinvestitionsstudien-und-ausschreibungsplanung": { page: "service8" },
 };
 
 function normalizePath(pathname) {
@@ -148,8 +225,9 @@ function getLanguageAndPath(pathname) {
   };
 }
 
-function getLocalizedPath(pathname, language) {
-  const normalizedPath = normalizePath(pathname);
+function getLocalizedPath(page, language) {
+  const routes = PAGE_ROUTES_BY_LANGUAGE[language] || PAGE_ROUTES_BY_LANGUAGE.en;
+  const normalizedPath = routes[page] || PAGE_ROUTES_BY_LANGUAGE.en[page] || "/";
   const prefix = LANGUAGE_ROUTE_PREFIXES[language] || "";
 
   if (!prefix) return normalizedPath;
@@ -1057,11 +1135,10 @@ export default function UpstruxWebsite() {
     setScrollTarget(null);
 
     if (typeof window !== "undefined") {
-      const pagePath = PAGE_ROUTES[page] || "/";
       window.history.pushState(
         { page, language },
         "",
-        getLocalizedPath(pagePath, language)
+        getLocalizedPath(page, language)
       );
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1074,11 +1151,10 @@ export default function UpstruxWebsite() {
 
     if (typeof window !== "undefined") {
       window.localStorage.setItem("upstruxLanguage", nextLanguage);
-      const pagePath = PAGE_ROUTES[currentPage] || "/";
       window.history.pushState(
         { page: currentPage, language: nextLanguage },
         "",
-        getLocalizedPath(pagePath, nextLanguage)
+        getLocalizedPath(currentPage, nextLanguage)
       );
     }
   }, [currentPage]);
