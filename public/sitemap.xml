@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- English -->
   <url><loc>https://upstrux.bg/</loc></url>
   <url><loc>https://upstrux.bg/about</loc></url>
   <url><loc>https://upstrux.bg/areas-of-competence</loc></url>
@@ -9,4 +11,25 @@
   <url><loc>https://upstrux.bg/contact</loc></url>
   <url><loc>https://upstrux.bg/legal</loc></url>
   <url><loc>https://upstrux.bg/privacy</loc></url>
+
+  <!-- Bulgarian -->
+  <url><loc>https://upstrux.bg/bg</loc></url>
+  <url><loc>https://upstrux.bg/bg/za-nas</loc></url>
+  <url><loc>https://upstrux.bg/bg/oblasti-na-kompetentnost</loc></url>
+  <url><loc>https://upstrux.bg/bg/ot-kontseptsiyata-do-realizatsiya</loc></url>
+  <url><loc>https://upstrux.bg/bg/resheniya</loc></url>
+  <url><loc>https://upstrux.bg/bg/kontakti</loc></url>
+  <url><loc>https://upstrux.bg/bg/pravno</loc></url>
+  <url><loc>https://upstrux.bg/bg/poveritelnost</loc></url>
+
+  <!-- German -->
+  <url><loc>https://upstrux.bg/de</loc></url>
+  <url><loc>https://upstrux.bg/de/uber-uns</loc></url>
+  <url><loc>https://upstrux.bg/de/kompetenzbereiche</loc></url>
+  <url><loc>https://upstrux.bg/de/vom-konzept-bis-zur-umsetzung</loc></url>
+  <url><loc>https://upstrux.bg/de/losungen</loc></url>
+  <url><loc>https://upstrux.bg/de/kontakt</loc></url>
+  <url><loc>https://upstrux.bg/de/rechtliches</loc></url>
+  <url><loc>https://upstrux.bg/de/datenschutz</loc></url>
+
 </urlset>
