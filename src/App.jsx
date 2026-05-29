@@ -524,18 +524,30 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
     <button
   type="button"
-  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-  className="mt-0 self-center md:hidden"
+  className="cursor-pointer p-2 md:hidden"
   onClick={() => setMobileMenuOpen((open) => !open)}
 >
   {mobileMenuOpen ? (
-    <span className="text-[42px] font-light leading-none text-blue-600">
+    <span className="text-[34px] font-light leading-none text-blue-600">
       X
     </span>
   ) : (
-    <span className="text-2xl text-slate-900">
-      ☰
-    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-slate-900"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
   )}
 </button>
           <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
