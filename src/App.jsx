@@ -77,7 +77,7 @@ const SOCIAL_LINKS = {
 
 const LANGUAGE_CODES = ["bg", "en", "de"];
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
-const VALID_PAGES = ["home", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
+const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
 const PAGE_TITLES = {
   bg: {
     home: "Начало | UPSTRUX",
@@ -1043,7 +1043,7 @@ export default function UpstruxWebsite() {
       } else if (item.key === "contacts") {
         setCurrentPage("contact");
       } else {
-        setCurrentPage("home");
+        setCurrentPage(item.key === "about" ? "about" : "home");
         setTimeout(() => {
           document.querySelector(item.href)?.scrollIntoView({
             behavior: "smooth",
@@ -1136,7 +1136,7 @@ export default function UpstruxWebsite() {
       } else if (item.key === "contacts") {
         setCurrentPage("contact");
       } else {
-        setCurrentPage("home");
+        setCurrentPage(item.key === "about" ? "about" : "home");
         setTimeout(() => {
           document.querySelector(item.href)?.scrollIntoView({
             behavior: "smooth",
