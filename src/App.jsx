@@ -992,7 +992,7 @@ export default function UpstruxWebsite() {
     <button type="button" onClick={() => setCurrentPage("home")}>
       <Logo footer />
     </button>
-   <button>
+   <button
   type="button"
   className="cursor-pointer p-2 md:hidden"
   onClick={() => setMobileMenuOpen((open) => !open)}
