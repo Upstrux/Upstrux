@@ -76,6 +76,12 @@ const SOCIAL_LINKS = {
 };
 
 const LANGUAGE_CODES = ["bg", "en", "de"];
+const DEFAULT_LANGUAGE = "en";
+const LANGUAGE_ROUTE_PREFIXES = {
+  en: "",
+  bg: "/bg",
+  de: "/de",
+};
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
 const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
 const PAGE_ROUTES = {
@@ -119,9 +125,44 @@ function normalizePath(pathname) {
   return normalized || "/";
 }
 
-function getRouteInfo(pathname) {
+function getLanguageAndPath(pathname) {
   const normalizedPath = normalizePath(pathname);
-  return ROUTE_PAGES[normalizedPath] || { page: "home" };
+
+  if (normalizedPath === "/bg" || normalizedPath.startsWith("/bg/")) {
+    return {
+      language: "bg",
+      path: normalizePath(normalizedPath.replace(/^\/bg/, "") || "/"),
+    };
+  }
+
+  if (normalizedPath === "/de" || normalizedPath.startsWith("/de/")) {
+    return {
+      language: "de",
+      path: normalizePath(normalizedPath.replace(/^\/de/, "") || "/"),
+    };
+  }
+
+  return {
+    language: DEFAULT_LANGUAGE,
+    path: normalizedPath,
+  };
+}
+
+function getLocalizedPath(pathname, language) {
+  const normalizedPath = normalizePath(pathname);
+  const prefix = LANGUAGE_ROUTE_PREFIXES[language] || "";
+
+  if (!prefix) return normalizedPath;
+  if (normalizedPath === "/") return prefix;
+  return `${prefix}${normalizedPath}`;
+}
+
+function getRouteInfo(pathname) {
+  const { language, path } = getLanguageAndPath(pathname);
+  return {
+    language,
+    ...(ROUTE_PAGES[path] || { page: "home" }),
+  };
 }
 
 const PAGE_TITLES = {
@@ -1002,26 +1043,46 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const initialRouteInfo = useMemo(() => {
-    if (typeof window === "undefined") return { page: "home" };
+    if (typeof window === "undefined") {
+      return { page: "home", language: DEFAULT_LANGUAGE };
+    }
     return getRouteInfo(window.location.pathname);
   }, []);
   const [currentPage, setCurrentPageState] = useState(initialRouteInfo.page);
   const [scrollTarget, setScrollTarget] = useState(initialRouteInfo.sectionId || null);
+  const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
+
   const setCurrentPage = useCallback((page) => {
     setCurrentPageState(page);
     setScrollTarget(null);
 
     if (typeof window !== "undefined") {
       const pagePath = PAGE_ROUTES[page] || "/";
-      window.history.pushState({ page }, "", pagePath);
+      window.history.pushState(
+        { page, language },
+        "",
+        getLocalizedPath(pagePath, language)
+      );
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, []);
-  const [language, setLanguage] = useState(() => {
-    if (typeof window === "undefined") return "bg";
-    const savedLanguage = window.localStorage.getItem("upstruxLanguage");
-    return LANGUAGE_CODES.includes(savedLanguage) ? savedLanguage : "bg";
-  });
+  }, [language]);
+
+  const setLanguage = useCallback((nextLanguage) => {
+    if (!LANGUAGE_CODES.includes(nextLanguage)) return;
+
+    setLanguageState(nextLanguage);
+
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("upstruxLanguage", nextLanguage);
+      const pagePath = PAGE_ROUTES[currentPage] || "/";
+      window.history.pushState(
+        { page: currentPage, language: nextLanguage },
+        "",
+        getLocalizedPath(pagePath, nextLanguage)
+      );
+    }
+  }, [currentPage]);
+
   const t = translations[language];
   useEffect(() => {
     const baseTitle = PAGE_TITLES[language]?.[currentPage] || PAGE_TITLES.en[currentPage] || "UPSTRUX";
@@ -1107,6 +1168,7 @@ export default function UpstruxWebsite() {
       const routeInfo = getRouteInfo(window.location.pathname);
       setCurrentPageState(routeInfo.page);
       setScrollTarget(routeInfo.sectionId || null);
+      setLanguageState(routeInfo.language || DEFAULT_LANGUAGE);
     };
 
     window.addEventListener("popstate", handlePopState);
@@ -1136,6 +1198,7 @@ export default function UpstruxWebsite() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     window.localStorage.setItem("upstruxLanguage", language);
+    document.documentElement.setAttribute("lang", language);
   }, [language]);
 
 
