@@ -1,1 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://upstrux.bg/</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/about</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/areas-of-competence</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/from-concept-to-delivery</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/solutions</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/contact</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/legal</loc>
+  </url>
+
+  <url>
+    <loc>https://upstrux.bg/privacy</loc>
+  </url>
+</urlset>
