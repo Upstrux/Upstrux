@@ -880,8 +880,10 @@ export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(() => {
     if (typeof window === "undefined") return "home";
-    const hashPage = window.location.hash.replace("#", "");
-    return VALID_PAGES.includes(hashPage) ? hashPage : "home";
+    const pathPage = window.location.pathname.replace(/^\/+|\/+$/g, "");
+    const legacyHashPage = window.location.hash.replace("#", "");
+    const page = pathPage || legacyHashPage || "home";
+    return VALID_PAGES.includes(page) ? page : "home";
   });
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "bg";
@@ -903,8 +905,8 @@ export default function UpstruxWebsite() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const pageHash = currentPage === "home" ? "home" : currentPage;
-    window.history.replaceState(null, "", `#${pageHash}`);
+    const pagePath = currentPage === "home" ? "/" : `/${currentPage}`;
+    window.history.replaceState(null, "", pagePath);
   }, [currentPage]);
 
   useEffect(() => {
