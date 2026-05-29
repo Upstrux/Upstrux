@@ -78,6 +78,33 @@ const SOCIAL_LINKS = {
 const LANGUAGE_CODES = ["bg", "en", "de"];
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
 const VALID_PAGES = ["home", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
+const PAGE_TITLES = {
+  bg: {
+    home: "Начало | UPSTRUX",
+    about: "За нас | UPSTRUX",
+    solutions: "Решения | UPSTRUX",
+    contact: "Контакти | UPSTRUX",
+    legal: "Правно | UPSTRUX",
+    privacy: "Поверителност | UPSTRUX",
+  },
+  en: {
+    home: "Home | UPSTRUX",
+    about: "About Us | UPSTRUX",
+    solutions: "Solutions | UPSTRUX",
+    contact: "Contacts | UPSTRUX",
+    legal: "Legal | UPSTRUX",
+    privacy: "Privacy | UPSTRUX",
+  },
+  de: {
+    home: "Start | UPSTRUX",
+    about: "Über uns | UPSTRUX",
+    solutions: "Lösungen | UPSTRUX",
+    contact: "Kontakt | UPSTRUX",
+    legal: "Rechtliches | UPSTRUX",
+    privacy: "Datenschutz | UPSTRUX",
+  },
+};
+
 const HERO_TRANSITION = {
   duration: 36,
   repeat: Infinity,
@@ -920,6 +947,19 @@ export default function UpstruxWebsite() {
     return LANGUAGE_CODES.includes(savedLanguage) ? savedLanguage : "bg";
   });
   const t = translations[language];
+  useEffect(() => {
+    const baseTitle = PAGE_TITLES[language]?.[currentPage] || PAGE_TITLES.en[currentPage] || "UPSTRUX";
+
+    if (SERVICE_PAGE_KEYS.includes(currentPage)) {
+      const serviceIndex = SERVICE_PAGE_KEYS.indexOf(currentPage);
+      const serviceTitle = t.services?.[serviceIndex]?.title;
+      document.title = serviceTitle ? `${serviceTitle} | UPSTRUX` : baseTitle;
+      return;
+    }
+
+    document.title = baseTitle;
+  }, [currentPage, language, t]);
+
   const currentServices = useMemo(
     () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
     [t.services]
