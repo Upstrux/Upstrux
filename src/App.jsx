@@ -104,8 +104,11 @@ const PAGE_TITLES = {
     privacy: "Datenschutz | UPSTRUX",
   },
 };
-
-
+const META_DESCRIPTIONS = {
+  en: "UPSTRUX provides integrated engineering and design services, and project management throughout project development and execution, with expertise in architecture, structural design, assessment and testing of structures and facilities, seismic engineering, transport infrastructure, geotechnical engineering, WSS and hydrotechnical engineering, geodesy, and pre-investment planning.",
+  bg: "UPSTRUX предоставя интегрирани инженерни и проектантски услуги, както и управление на проекти през целия процес на разработване и изпълнение, с експертиза в областта на архитектурата, проектирането, обследването и изпитването на строителни конструкции и съоръжения, сеизмичното инженерство, транспортната инфраструктура, геотехническото инженерство, ВиК и хидротехническото инженерство, геодезията и инвестиционното планиране.",
+  de: "UPSTRUX bietet integrierte Ingenieur- und Planungsleistungen sowie Projektmanagement über den gesamten Projektentwicklungs- und Realisierungsprozess hinweg. Das Unternehmen verfügt über umfassende Expertise in den Bereichen Architektur, Tragwerksplanung, Bauwerksbewertung und -prüfung, Erdbebeningenieurwesen, Verkehrsinfrastruktur, Geotechnik, Wasserver- und Abwasserentsorgung (WSS), Wasserbauingenieurwesen, Geodäsie sowie vorinvestive Planung."
+};
 const SECTION_TITLES = {
   bg: {
     about: "За нас | UPSTRUX",
@@ -1010,6 +1013,24 @@ export default function UpstruxWebsite() {
       window.removeEventListener("resize", updateTitleByScroll);
     };
   }, [currentPage, language]);
+
+  useEffect(() => {
+    let metaDescription = document.querySelector(
+      'meta[name="description"]'
+    );
+
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+
+    metaDescription.setAttribute(
+      "content",
+      META_DESCRIPTIONS[language] || META_DESCRIPTIONS.en
+    );
+  }, [language]);
+
 
 
   const currentServices = useMemo(
