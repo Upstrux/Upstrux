@@ -982,36 +982,33 @@ export default function UpstruxWebsite() {
     if (typeof window === "undefined") return;
     if (currentPage !== "home" && currentPage !== "about") return;
 
-    const sectionIds = ["about", "competence", "methodology"];
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+    const updateTitleByScroll = () => {
+      const sectionIds = ["about", "competence", "methodology"];
+      const activeSectionId = sectionIds.reduce((activeId, sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (!section) return activeId;
 
-    if (!sections.length) return;
+        const rect = section.getBoundingClientRect();
+        return rect.top <= window.innerHeight * 0.45 ? sectionId : activeId;
+      }, "home");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      const sectionTitle = SECTION_TITLES[language]?.[activeSectionId];
 
-        if (!visibleEntry) return;
-
-        const sectionTitle = SECTION_TITLES[language]?.[visibleEntry.target.id];
-        if (sectionTitle) {
-          document.title = sectionTitle;
-        }
-      },
-      {
-        root: null,
-        threshold: [0.35, 0.5, 0.65],
-        rootMargin: "-25% 0px -45% 0px",
+      if (sectionTitle) {
+        document.title = sectionTitle;
+      } else {
+        document.title = PAGE_TITLES[language]?.home || PAGE_TITLES.en.home;
       }
-    );
+    };
 
-    sections.forEach((section) => observer.observe(section));
+    updateTitleByScroll();
+    window.addEventListener("scroll", updateTitleByScroll, { passive: true });
+    window.addEventListener("resize", updateTitleByScroll);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", updateTitleByScroll);
+      window.removeEventListener("resize", updateTitleByScroll);
+    };
   }, [currentPage, language]);
 
 
