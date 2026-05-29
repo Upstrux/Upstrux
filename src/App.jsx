@@ -447,22 +447,176 @@ function HeroSlide({ image, index }) {
     />
   );
 }
+function MenuIcon({ open, colorClass = "text-slate-900" }) {
+  if (open) {
+    return (
+      <span className="text-[34px] font-light leading-none text-blue-600">
+        X
+      </span>
+    );
+  }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={colorClass}
+      aria-hidden="true"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+  );
+}
+
+function BulletList({ text, className = "mt-5 space-y-2 text-[15px] leading-6 text-slate-700" }) {
   const bulletItems = useMemo(
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
   );
+
+  return (
+    <ul className={className}>
+      {bulletItems.map((item) => (
+        <li key={item} className="flex gap-3">
+          <span className="mt-0.5 text-base text-blue-600">✓</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function LanguageSwitcher({ language, setLanguage, setMobileMenuOpen, activeClass, inactiveClass, hoverClass }) {
+  return (
+    <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
+      {LANGUAGE_CODES.map((lang) => (
+        <button
+          key={lang}
+          type="button"
+          onClick={() => {
+            setLanguage(lang);
+            setMobileMenuOpen(false);
+          }}
+          className={`cursor-pointer uppercase transition ${hoverClass} ${
+            language === lang ? activeClass : inactiveClass
+          }`}
+        >
+          {lang}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function PageHeader({
+  variant = "light",
+  logoMode = "button",
+  mobileMenuOpen,
+  setMobileMenuOpen,
+  language,
+  setLanguage,
+  navItems,
+  setCurrentPage,
+}) {
+  const isHero = variant === "hero";
+  const headerClass = isHero
+    ? "absolute left-0 right-0 top-0 z-50 pt-12 text-white"
+    : "relative bg-white px-6 pt-12 pb-8";
+  const navClass = isHero
+    ? `${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-4 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`
+    : `${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`;
+  const hoverClass = isHero ? "hover:text-blue-300" : "hover:text-blue-600";
+  const inactiveClass = isHero ? "text-white" : "text-slate-900";
+  const activeClass = isHero ? "text-blue-300" : "text-blue-600";
+
+  const handleNavigate = useCallback((item) => {
+    if (item.key === "solutions") {
+      setCurrentPage("solutions");
+    } else if (item.key === "contacts") {
+      setCurrentPage("contact");
+    } else {
+      setCurrentPage("home");
+      setTimeout(() => {
+        document.querySelector(item.href)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 50);
+    }
+
+    setMobileMenuOpen(false);
+  }, [setCurrentPage, setMobileMenuOpen]);
+
+  const logo = logoMode === "anchor" ? (
+    <a href="#home" aria-label="UPSTRUX home">
+      <Logo />
+    </a>
+  ) : (
+    <button type="button" onClick={() => setCurrentPage("home")}>
+      <Logo footer />
+    </button>
+  );
+
+  return (
+    <header className={headerClass}>
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+        {logo}
+
+        <div className="mt-6 flex justify-center md:hidden">
+          <button
+            type="button"
+            className="cursor-pointer p-2"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label="Toggle navigation"
+            aria-expanded={mobileMenuOpen}
+          >
+            <MenuIcon open={mobileMenuOpen} colorClass={isHero ? "text-white" : "text-slate-900"} />
+          </button>
+        </div>
+
+        <nav className={navClass}>
+          {navItems.map((item) => (
+            <button
+              key={item.key}
+              type="button"
+              onClick={() => handleNavigate(item)}
+              className={`uppercase tracking-[0.14em] transition-colors ${hoverClass}`}
+            >
+              {item.label}
+            </button>
+          ))}
+
+          <LanguageSwitcher
+            language={language}
+            setLanguage={setLanguage}
+            setMobileMenuOpen={setMobileMenuOpen}
+            activeClass={activeClass}
+            inactiveClass={inactiveClass}
+            hoverClass={hoverClass}
+          />
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
   const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
 
   const textBlock = (
     <div className="max-w-[640px]">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
-      <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
-        {bulletItems.map((item) => (
-          <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
-        ))}
-      </ul>
+      <BulletList text={text} />
       {hasServicePage && (
         <button
           type="button"
@@ -513,87 +667,18 @@ function ProcessStep({ step, index }) {
 
 
 function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
-  const bulletItems = useMemo(
-    () => service.text.split(";").map((item) => item.trim()).filter(Boolean),
-    [service.text]
-  );
-
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-    <div className="flex justify-center mt-6 md:hidden">
-  <button
-    type="button"
-    className="cursor-pointer p-2"
-    onClick={() => setMobileMenuOpen((open) => !open)}
-  >
-    {mobileMenuOpen ? (
-      <span className="text-[34px] font-light leading-none text-blue-600">
-        X
-      </span>
-    ) : (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="text-slate-900"
-      >
-        <line x1="4" x2="20" y1="12" y2="12" />
-        <line x1="4" x2="20" y1="6" y2="6" />
-        <line x1="4" x2="20" y1="18" y2="18" />
-      </svg>
-    )}
-  </button>
-</div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.key === "contacts" ? "#contact-page" : item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.key === "solutions") {
-                    setCurrentPage("solutions");
-                  } else if (item.key === "contacts") {
-                    setCurrentPage("contact");
-                  } else {
-                    setCurrentPage("home");
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-                    }, 50);
-                  }
-                  setMobileMenuOpen(false);
-                }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
-              >
-                {item.label}
-              </a>
-            ))}
-            <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-              {LANGUAGE_CODES.map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
-                  onClick={() => {
-                    setLanguage(lang);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`cursor-pointer uppercase transition hover:text-blue-600 ${language === lang ? "text-blue-600" : "text-slate-900"}`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
-          </nav>
-        </div>
-      </header>
+      <PageHeader
+        variant="light"
+        logoMode="button"
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        language={language}
+        setLanguage={setLanguage}
+        navItems={navItems}
+        setCurrentPage={setCurrentPage}
+      />
 
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
@@ -615,11 +700,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
               />
             </div>
             <div className="max-w-[640px]">
-              <ul className="space-y-2 text-[15px] leading-6 text-slate-700">
-                {bulletItems.map((item) => (
-                  <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
-                ))}
-              </ul>
+              <BulletList text={service.text} className="space-y-2 text-[15px] leading-6 text-slate-700" />
               <button
                 type="button"
                 onClick={() => setCurrentPage("solutions")}
@@ -635,6 +716,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     </div>
   );
 }
+
 
 function LegalContentPage({ page, onBack, backLabel }) {
   return (
@@ -789,97 +871,25 @@ function SiteFooter({ t, setCurrentPage }) {
 function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-          <button type="button" onClick={() => setCurrentPage("home")}>
-            <Logo footer />
-          </button>
-          <div className="flex justify-center mt-6 md:hidden">
-  <button
-    type="button"
-    className="cursor-pointer p-2"
-    onClick={() => setMobileMenuOpen((open) => !open)}
-  >
-    {mobileMenuOpen ? (
-      <span className="text-[34px] font-light leading-none text-blue-600">
-        X
-      </span>
-    ) : (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="text-slate-900"
-      >
-        <line x1="4" x2="20" y1="12" y2="12" />
-        <line x1="4" x2="20" y1="6" y2="6" />
-        <line x1="4" x2="20" y1="18" y2="18" />
-      </svg>
-    )}
-  </button>
-</div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            {navItems.map((item) => (
-              <button
-                key={item.key}
-                type="button"
-                onClick={() => {
-                  if (item.key === "solutions") {
-                    setCurrentPage("solutions");
-                  } else if (item.key === "contacts") {
-                    setCurrentPage("contact");
-                  } else {
-                    setCurrentPage("home");
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }, 50);
-                  }
+      <PageHeader
+        variant="light"
+        logoMode="button"
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        language={language}
+        setLanguage={setLanguage}
+        navItems={navItems}
+        setCurrentPage={setCurrentPage}
+      />
 
-                  setMobileMenuOpen(false);
-                }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
-              >
-                {item.label}
-              </button>
-            ))}
-
-            <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-              {LANGUAGE_CODES.map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
-                  onClick={() => {
-                    setLanguage(lang);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`cursor-pointer uppercase transition hover:text-blue-600 ${
-                    language === lang ? "text-blue-600" : "text-slate-900"
-                  }`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
-          </nav>
-        </div>
-      </header>
-    
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-          {t.contactPage.eyebrow}
+            {t.contactPage.eyebrow}
           </p>
 
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
-           {t.contactPage.title}
+            {t.contactPage.title}
           </h1>
 
           <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
@@ -891,32 +901,42 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
           <div className="mt-20 grid gap-8 md:grid-cols-3">
             <a
               href="mailto:info@upstrux.bg"
-              className="p-2"
+              className="group flex min-h-[170px] flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
             >
-              <MailIcon className="text-blue-600" />
-              <p className="mt-5 text-[15px] leading-6 text-slate-700">
-                info@upstrux.bg
-              </p>
-            </a>
-            <div className="p-2">
-                <PinIcon className="text-blue-600" />
-                <p className="mt-5 text-[15px] leading-6 text-slate-700">
-                  {t.footer.location}
-                </p>
+              <MailIcon className="text-blue-600" size={28} />
+              <div>
+                <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Email</p>
+                <p className="mt-2 text-lg text-slate-900">info@upstrux.bg</p>
               </div>
-            <a>
-              <PhoneIcon className="hidden text-blue-600" />
-              <p className="hidden mt-5 text-[15px] leading-6 text-slate-700">
-                +359 888 000 000
-              </p>
             </a>
+
+            <a
+              href="tel:+359888000000"
+              className="group flex min-h-[170px] flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+            >
+              <PhoneIcon className="text-blue-600" size={28} />
+              <div>
+                <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Phone</p>
+                <p className="mt-2 text-lg text-slate-900">+359 888 000 000</p>
+              </div>
+            </a>
+
+            <div className="group flex min-h-[170px] flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+              <PinIcon className="text-blue-600" size={28} />
+              <div>
+                <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Location</p>
+                <p className="mt-2 text-lg text-slate-900">{t.footer.location}</p>
+              </div>
+            </div>
           </div>
         </div>
       </main>
-    <SiteFooter t={t} setCurrentPage={setCurrentPage} />
+
+      <SiteFooter t={t} setCurrentPage={setCurrentPage} />
     </div>
   );
 }
+
 export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(() => {
@@ -991,89 +1011,16 @@ export default function UpstruxWebsite() {
   if (currentPage === "solutions") {
   return (
     <div className="min-h-screen bg-white text-slate-950">
-       <header className="relative bg-white px-6 pt-12 pb-8">
-  <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-    <button type="button" onClick={() => setCurrentPage("home")}>
-      <Logo footer />
-    </button>
-   <div className="flex justify-center mt-6 md:hidden">
-  <button
-    type="button"
-    className="cursor-pointer p-2"
-    onClick={() => setMobileMenuOpen((open) => !open)}
-  >
-    {mobileMenuOpen ? (
-      <span className="text-[34px] font-light leading-none text-blue-600">
-        X
-      </span>
-    ) : (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="text-slate-900"
-      >
-        <line x1="4" x2="20" y1="12" y2="12" />
-        <line x1="4" x2="20" y1="6" y2="6" />
-        <line x1="4" x2="20" y1="18" y2="18" />
-      </svg>
-    )}
-  </button>
-</div>
-    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-  {navItems.map((item) => (
-  <a
-    key={item.key}
-    href={item.key === "contacts" ? "#contact-page" : item.href}
-    onClick={(e) => {
-      e.preventDefault();
-
-      if (item.key === "solutions") {
-        setCurrentPage("solutions");
-      } else if (item.key === "contacts") {
-        setCurrentPage("contact");
-      } else {
-        setCurrentPage("home");
-        setTimeout(() => {
-          document.querySelector(item.href)?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 50);
-      }
-
-      setMobileMenuOpen(false);
-    }}
-    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
-  >
-    {item.label}
-  </a>
-))}
-  <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-    {LANGUAGE_CODES.map((lang) => (
-      <button
-        key={lang}
-        type="button"
-        onClick={() => {
-          setLanguage(lang);
-          setMobileMenuOpen(false);
-        }}
-        className={`cursor-pointer uppercase transition hover:text-blue-600 ${
-          language === lang ? "text-blue-600" : "text-slate-900"
-        }`}
-      >
-        {lang}
-      </button>
-    ))}
-  </div>
-</nav>
-  </div>
-</header>
+       <PageHeader
+        variant="light"
+        logoMode="button"
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        language={language}
+        setLanguage={setLanguage}
+        navItems={navItems}
+        setCurrentPage={setCurrentPage}
+      />
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
@@ -1110,87 +1057,16 @@ export default function UpstruxWebsite() {
 
   return (
     <div className="min-h-screen bg-white text-slate-950">
-    <header className="absolute left-0 right-0 top-0 z-50 pt-12 text-white">
-  <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-    <a href="#home" aria-label="UPSTRUX home">
-      <Logo />
-    </a>
-<div className="flex justify-center mt-6 md:hidden">
-  <button
-    type="button"
-    className="cursor-pointer p-2"
-    onClick={() => setMobileMenuOpen((open) => !open)}
-  >
-    {mobileMenuOpen ? (
-      <span className="text-[34px] font-light leading-none text-blue-600">
-        X
-      </span>
-    ) : (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="text-slate-900"
-      >
-        <line x1="4" x2="20" y1="12" y2="12" />
-        <line x1="4" x2="20" y1="6" y2="6" />
-        <line x1="4" x2="20" y1="18" y2="18" />
-      </svg>
-    )}
-  </button>
-</div>
-    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-4 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
-    {navItems.map((item) => (
-  <button
-    key={item.key}
-    type="button"
-    onClick={() => {
-      if (item.key === "solutions") {
-        setCurrentPage("solutions");
-      } else if (item.key === "contacts") {
-        setCurrentPage("contact");
-      } else {
-        setCurrentPage("home");
-        setTimeout(() => {
-          document.querySelector(item.href)?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 50);
-      }
-
-      setMobileMenuOpen(false);
-    }}
-    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
-  >
-    {item.label}
-  </button>
-))}
-      <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-        {LANGUAGE_CODES.map((lang) => (
-          <button
-            key={lang}
-            type="button"
-            onClick={() => {
-              setLanguage(lang);
-              setMobileMenuOpen(false);
-            }}
-            className={`cursor-pointer uppercase transition hover:text-blue-300 ${
-              language === lang ? "text-blue-300" : "text-white"
-            }`}
-          >
-            {lang}
-          </button>
-        ))}
-      </div>
-    </nav>
-  </div>
-</header>
+    <PageHeader
+        variant="hero"
+        logoMode="anchor"
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        language={language}
+        setLanguage={setLanguage}
+        navItems={navItems}
+        setCurrentPage={setCurrentPage}
+      />
       <main>
 <section id="home" className="relative h-[1080px] overflow-hidden bg-slate-900"><div className="absolute inset-0">{heroSlides.map((image, index) => <HeroSlide key={String(image)} image={image} index={index} />)}</div><div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent" /><div className="relative mx-auto flex h-full max-w-7xl items-end px-6 pb-20"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl text-white"><h1 className="text-3xl font-light leading-[1.05] tracking-[-0.025em] md:text-5xl">{t.heroTitle.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</h1></motion.div></div></section>
 <section id="about" className="bg-white px-6 py-28"><div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2"><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.aboutLabel}</p><h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.aboutTitle}</h2><p className="mt-8 text-lg leading-8 text-slate-700">{t.aboutP1}</p><p className="mt-5 text-lg leading-8 text-slate-700">{t.aboutP2}</p><div className="mt-7 border-l-4 border-blue-600 bg-white px-8 py-5"><p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">{t.aboutHighlight}</p></div></div><div className="overflow-hidden bg-white w-full max-w-[900px]"><img src={about1} alt="UPSTRUX engineering" className="h-[650px] w-full object-cover object-center md:h-[720px]"/></div></div></section>
