@@ -78,6 +78,52 @@ const SOCIAL_LINKS = {
 const LANGUAGE_CODES = ["bg", "en", "de"];
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
 const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
+const PAGE_ROUTES = {
+  home: "/",
+  about: "/about",
+  solutions: "/solutions",
+  contact: "/contact",
+  legal: "/legal",
+  privacy: "/privacy",
+  service1: "/solutions/structural-assessments-diagnostics-in-situ-and-laboratory-testing",
+  service2: "/solutions/architecture-and-structural-engineering",
+  service3: "/solutions/wss-hydrotechnical-and-hydro-reclamation-engineering",
+  service4: "/solutions/geotechnical-engineering-design",
+  service5: "/solutions/transport-infrastructure-engineering-and-design",
+  service6: "/solutions/geodesy-cadastre-gis-and-photogrammetry",
+  service7: "/solutions/project-management-and-coordination",
+  service8: "/solutions/pre-investment-studies-and-tender-planning",
+};
+
+const ROUTE_PAGES = {
+  "/": { page: "home" },
+  "/about": { page: "about", sectionId: "about" },
+  "/areas-of-competence": { page: "about", sectionId: "competence" },
+  "/from-concept-to-delivery": { page: "about", sectionId: "methodology" },
+  "/solutions": { page: "solutions" },
+  "/contact": { page: "contact" },
+  "/legal": { page: "legal" },
+  "/privacy": { page: "privacy" },
+  "/solutions/structural-assessments-diagnostics-in-situ-and-laboratory-testing": { page: "service1" },
+  "/solutions/architecture-and-structural-engineering": { page: "service2" },
+  "/solutions/wss-hydrotechnical-and-hydro-reclamation-engineering": { page: "service3" },
+  "/solutions/geotechnical-engineering-design": { page: "service4" },
+  "/solutions/transport-infrastructure-engineering-and-design": { page: "service5" },
+  "/solutions/geodesy-cadastre-gis-and-photogrammetry": { page: "service6" },
+  "/solutions/project-management-and-coordination": { page: "service7" },
+  "/solutions/pre-investment-studies-and-tender-planning": { page: "service8" },
+};
+
+function normalizePath(pathname) {
+  const normalized = pathname.replace(/\/+$/, "");
+  return normalized || "/";
+}
+
+function getRouteInfo(pathname) {
+  const normalizedPath = normalizePath(pathname);
+  return ROUTE_PAGES[normalizedPath] || { page: "home" };
+}
+
 const PAGE_TITLES = {
   bg: {
     home: "Начало | UPSTRUX",
@@ -955,13 +1001,22 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 }
 export default function UpstruxWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(() => {
-    if (typeof window === "undefined") return "home";
-    const pathPage = window.location.pathname.replace(/^\/+|\/+$/g, "");
-    const legacyHashPage = window.location.hash.replace("#", "");
-    const page = pathPage || legacyHashPage || "home";
-    return VALID_PAGES.includes(page) ? page : "home";
-  });
+  const initialRouteInfo = useMemo(() => {
+    if (typeof window === "undefined") return { page: "home" };
+    return getRouteInfo(window.location.pathname);
+  }, []);
+  const [currentPage, setCurrentPageState] = useState(initialRouteInfo.page);
+  const [scrollTarget, setScrollTarget] = useState(initialRouteInfo.sectionId || null);
+  const setCurrentPage = useCallback((page) => {
+    setCurrentPageState(page);
+    setScrollTarget(null);
+
+    if (typeof window !== "undefined") {
+      const pagePath = PAGE_ROUTES[page] || "/";
+      window.history.pushState({ page }, "", pagePath);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, []);
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "bg";
     const savedLanguage = window.localStorage.getItem("upstruxLanguage");
@@ -1047,9 +1102,36 @@ export default function UpstruxWebsite() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const pagePath = currentPage === "home" ? "/" : `/${currentPage}`;
-    window.history.replaceState(null, "", pagePath);
-  }, [currentPage]);
+
+    const handlePopState = () => {
+      const routeInfo = getRouteInfo(window.location.pathname);
+      setCurrentPageState(routeInfo.page);
+      setScrollTarget(routeInfo.sectionId || null);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !scrollTarget) return;
+    if (currentPage !== "home" && currentPage !== "about") return;
+
+    const timeoutId = window.setTimeout(() => {
+      document.getElementById(scrollTarget)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      setScrollTarget(null);
+    }, 120);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [currentPage, scrollTarget]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
