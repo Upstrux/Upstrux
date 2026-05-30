@@ -1241,6 +1241,39 @@ export default function UpstruxWebsite() {
   }, [language]);
 
   useEffect(() => {
+    const existingSchema = document.getElementById(
+    "upstrux-organization-schema"
+    );
+
+    if (existingSchema) {
+    existingSchema.remove();
+    }
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "upstrux-organization-schema";
+
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "UPSTRUX",
+      url: "https://upstrux.bg",
+      email: "info@upstrux.bg",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Sofia",
+        addressCountry: "BG"
+      }
+    });
+
+    document.head.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+  
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
     const canonicalPageKey = getCanonicalPageKey(
