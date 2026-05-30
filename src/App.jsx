@@ -1016,7 +1016,7 @@ function SiteFooter({ t, setCurrentPage }) {
             {t.footer.follow}
           </h3>
 
-          <div className="flex items-center gap-3 pt-1 leading-none">
+          <div className="flex items-center gap-1 pt-1 leading-none">
             <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <LinkedInIcon size={24} />
             </a>
