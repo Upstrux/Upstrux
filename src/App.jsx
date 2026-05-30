@@ -549,7 +549,7 @@ const translations = {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
     aboutLabel: "Civil, structural and site engineers",
-    aboutTitle: "About us",
+    aboutTitle: "About Us",
     aboutP1: "UPSTRUX brings together civil, structural, site and project engineers with expertise in coordinating complex projects requiring effective collaboration between multiple technical disciplines, specialized expert teams, and stakeholders throughout the entire project lifecycle — from initiation and planning through execution, monitoring and control, and project close-out.",
     aboutP2: "Through an integrated approach and oversight across all stages of project delivery, we provide sustainable engineering solutions, resource optimization, and effective management of the project’s scope, technical, financial, and schedule parameters.",
     aboutP3: "We understand that a project is successful when it complies with legal and regulatory requirements, meets the client’s expectations and remains economically efficient.",
