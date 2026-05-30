@@ -1260,7 +1260,7 @@ export default function UpstruxWebsite() {
       url: "https://upstrux.bg",
       email: "info@upstrux.bg",
       address: {
-        "@type": "1000",
+        "@type": "PostalAddress",
         addressLocality: "Sofia",
         addressCountry: "BG"
       }
