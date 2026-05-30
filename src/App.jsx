@@ -1017,14 +1017,14 @@ function SiteFooter({ t, setCurrentPage }) {
           </h3>
 
           <div className="flex items-center gap-1 pt-1 leading-none">
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-7 w-7 items-center justify-center text-blue-600 hover:text-blue-700">
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <LinkedInIcon size={24} />
             </a>
 
-            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-7 w-7 items-center justify-center text-blue-600 hover:text-blue-700">
+            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <FacebookIcon size={24} />
             </a>
-            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-7 w-7 items-center justify-center">
+            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 w-8 items-center justify-center">
               <XingIcon height={24} />
             </a>
           </div>
