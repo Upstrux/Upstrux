@@ -57,6 +57,16 @@ const FacebookIcon = ({ size = 24 }) => (
   <span aria-hidden="true" className="pointer-events-none inline-flex items-center justify-center font-sans font-bold leading-none text-blue-600" style={{ width: size, height: size, fontSize: size * 0.95 }}>f</span>
 );
 
+const XingIcon = ({ size = 24 }) => (
+  <span
+    aria-hidden="true"
+    className="pointer-events-none inline-flex items-center justify-center font-sans font-bold leading-none text-green-600"
+    style={{ width: size, height: size, fontSize: size * 0.9 }}
+  >
+    X
+  </span>
+);
+
 function Logo({ footer = false }) {
   const textColor = footer ? "text-slate-800" : "text-white";
   const subColor = footer ? "text-slate-500" : "text-white";
@@ -73,6 +83,7 @@ function Logo({ footer = false }) {
 const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/",
   facebook: "https://www.facebook.com/",
+  xing: "https://www.xing.com/pages/upstrux",
 };
 
 const LANGUAGE_CODES = ["bg", "en", "de"];
@@ -991,6 +1002,9 @@ function SiteFooter({ t, setCurrentPage }) {
 
             <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <FacebookIcon size={24} />
+            </a>
+            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
+              <XingIcon size={24} />
             </a>
           </div>
         </div>
