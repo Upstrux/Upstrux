@@ -58,49 +58,34 @@ const FacebookIcon = ({ size = 24 }) => (
 );
 
 const XingIcon = ({ height = 24 }) => (
-  <div className="flex items-center gap-1.5">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 28 31"
-      height={height}
-      aria-hidden="true"
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 28 31"
+    height={height}
+    aria-hidden="true"
+  >
+    <g
+      fillRule="evenodd"
+      clipPath="url(#clip0_47_1357)"
+      clipRule="evenodd"
     >
-      <g
-        fillRule="evenodd"
-        clipPath="url(#clip0_47_1357)"
-        clipRule="evenodd"
-      >
-        <path
-          fill="#0698A0"
-          d="m1.81 5.986 3.655 6.479L0 22.021h6.515l5.429-9.556-3.656-6.479z"
-        />
-        <path
-          fill="#B7DF4B"
-          d="M21.207 0 10.67 18.644 17.464 31h6.151l-6.905-12.356L27.713 0z"
-        />
-      </g>
+      <path
+        fill="#0698A0"
+        d="m1.81 5.986 3.655 6.479L0 22.021h6.515l5.429-9.556-3.656-6.479z"
+      />
+      <path
+        fill="#B7DF4B"
+        d="M21.207 0 10.67 18.644 17.464 31h6.151l-6.905-12.356L27.713 0z"
+      />
+    </g>
 
-      <defs>
-        <clipPath id="clip0_47_1357">
-          <path fill="#fff" d="M0 0h28v31H0z" />
-        </clipPath>
-      </defs>
-    </svg>
-
-    <span
-      style={{
-        color: "#0698A0",
-        fontSize: "19px",
-        fontWeight: 800,
-        letterSpacing: "-0.02em",
-        lineHeight: 1,
-        fontFamily: "Arial, Helvetica, sans-serif",
-            }}
-        >
-          XING
-    </span>
-  </div>
+    <defs>
+      <clipPath id="clip0_47_1357">
+        <path fill="#fff" d="M0 0h28v31H0z" />
+      </clipPath>
+    </defs>
+  </svg>
 );
 
 function Logo({ footer = false }) {
@@ -1039,8 +1024,8 @@ function SiteFooter({ t, setCurrentPage }) {
             <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <FacebookIcon size={24} />
             </a>
-            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 items-center justify-center">
-              <XingIcon height={20} />
+            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 w-8 items-center justify-center">
+              <XingIcon height={24} />
             </a>
           </div>
         </div>
