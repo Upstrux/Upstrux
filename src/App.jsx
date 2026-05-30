@@ -58,13 +58,15 @@ const FacebookIcon = ({ size = 24 }) => (
 );
 
 const XingIcon = ({ size = 24 }) => (
-  <span
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
     aria-hidden="true"
-    className="pointer-events-none inline-flex items-center justify-center font-sans font-bold leading-none text-green-600"
-    style={{ width: size, height: size, fontSize: size * 0.9 }}
   >
-    X
-  </span>
+    <path d="M14.59 0 9.75 8.62l3.08 5.33H9.15L6.07 8.62 10.91 0h3.68Zm3.34 24h-3.68l-4.84-8.62L17.93 0h3.68l-8.52 15.38L17.93 24Z" />
+  </svg>
 );
 
 function Logo({ footer = false }) {
