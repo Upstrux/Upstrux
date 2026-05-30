@@ -284,7 +284,7 @@ const PAGE_TITLES = {
   },
 };
 const META_DESCRIPTIONS = {
-  en: "UPSTRUX provides integrated engineering and design services, and project management throughout project development and execution, with expertise in architecture, structural design, assessment and testing of structures and facilities, seismic engineering, transport infrastructure, geotechnical engineering, WSS and hydrotechnical engineering, geodesy, and pre-investment planning.",
+  en: "UPSTRUX provides integrated engineering, design and project management services throughout project development and execution, with expertise in architecture, structural design, assessment and testing of structures and facilities, seismic engineering, transport infrastructure, geotechnical engineering, WSS and hydrotechnical engineering, geodesy, and pre-investment planning.",
   bg: "UPSTRUX предоставя интегрирани инженерни и проектантски услуги, както и управление на проекти през целия процес на разработване и изпълнение, с експертиза в областта на архитектурата, проектирането, обследването и изпитването на строителни конструкции и съоръжения, сеизмичното инженерство, транспортната инфраструктура, геотехническото инженерство, ВиК и хидротехническото инженерство, геодезията и инвестиционното планиране.",
   de: "UPSTRUX bietet integrierte Ingenieur- und Planungsleistungen sowie Projektmanagement über den gesamten Projektentwicklungs- und Realisierungsprozess hinweg. Das Unternehmen verfügt über umfassende Expertise in den Bereichen Architektur, Tragwerksplanung, Bauwerksbewertung und -prüfung, Erdbebeningenieurwesen, Verkehrsinfrastruktur, Geotechnik, Wasserver- und Abwasserentsorgung (WSS), Wasserbauingenieurwesen, Geodäsie sowie vorinvestive Planung."
 };
