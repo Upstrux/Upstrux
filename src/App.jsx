@@ -243,6 +243,20 @@ function getRouteInfo(pathname) {
   };
 }
 
+function getCanonicalPageKey(page, pathname) {
+  const { path } = getLanguageAndPath(pathname);
+  const routeInfo = ROUTE_PAGES[path];
+
+  if (routeInfo?.sectionId === "competence") return "competence";
+  if (routeInfo?.sectionId === "methodology") return "methodology";
+
+  return routeInfo?.page || page || "home";
+}
+
+function getAbsoluteUrl(path) {
+  return `https://upstrux.bg${path === "/" ? "" : path}`;
+}
+
 const PAGE_TITLES = {
   bg: {
     home: "Начало | UPSTRUX",
@@ -549,7 +563,7 @@ const translations = {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
     aboutLabel: "Civil, structural and site engineers",
-    aboutTitle: "About Us",
+    aboutTitle: "About us",
     aboutP1: "UPSTRUX brings together civil, structural, site and project engineers with expertise in coordinating complex projects requiring effective collaboration between multiple technical disciplines, specialized expert teams, and stakeholders throughout the entire project lifecycle — from initiation and planning through execution, monitoring and control, and project close-out.",
     aboutP2: "Through an integrated approach and oversight across all stages of project delivery, we provide sustainable engineering solutions, resource optimization, and effective management of the project’s scope, technical, financial, and schedule parameters.",
     aboutP3: "We understand that a project is successful when it complies with legal and regulatory requirements, meets the client’s expectations and remains economically efficient.",
@@ -1222,6 +1236,49 @@ export default function UpstruxWebsite() {
       META_DESCRIPTIONS[language] || META_DESCRIPTIONS.en
     );
   }, [language]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const canonicalPageKey = getCanonicalPageKey(
+      currentPage,
+      window.location.pathname
+    );
+
+    document
+      .querySelectorAll('link[data-upstrux-seo-link="true"]')
+      .forEach((link) => link.remove());
+
+    const addSeoLink = (attributes) => {
+      const link = document.createElement("link");
+
+      Object.entries(attributes).forEach(([key, value]) => {
+        link.setAttribute(key, value);
+      });
+
+      link.setAttribute("data-upstrux-seo-link", "true");
+      document.head.appendChild(link);
+    };
+
+    addSeoLink({
+      rel: "canonical",
+      href: getAbsoluteUrl(getLocalizedPath(canonicalPageKey, language)),
+    });
+
+    LANGUAGE_CODES.forEach((lang) => {
+      addSeoLink({
+        rel: "alternate",
+        hreflang: lang,
+        href: getAbsoluteUrl(getLocalizedPath(canonicalPageKey, lang)),
+      });
+    });
+
+    addSeoLink({
+      rel: "alternate",
+      hreflang: "x-default",
+      href: getAbsoluteUrl(getLocalizedPath(canonicalPageKey, DEFAULT_LANGUAGE)),
+    });
+  }, [currentPage, language]);
 
 
 
