@@ -1254,17 +1254,19 @@ export default function UpstruxWebsite() {
     script.id = "upstrux-organization-schema";
 
     script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "UPSTRUX",
-      url: "https://upstrux.bg",
-      email: "info@upstrux.bg",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Sofia",
-        addressCountry: "BG"
-      }
-    });
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "UPSTRUX",
+    url: "https://upstrux.bg",
+     email: "info@upstrux.bg",
+    address: {
+      "@type": "PostalAddress",
+      postalCode: "1000",
+      addressLocality: "Sofia",
+      addressRegion: "Sofia City",
+      addressCountry: "BG"
+    }
+  });
 
     document.head.appendChild(script);
 
