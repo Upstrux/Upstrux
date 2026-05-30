@@ -62,10 +62,16 @@ const XingIcon = ({ size = 24 }) => (
     width={size}
     height={size}
     viewBox="0 0 24 24"
-    fill="currentColor"
     aria-hidden="true"
   >
-    <path d="M14.59 0 9.75 8.62l3.08 5.33H9.15L6.07 8.62 10.91 0h3.68Zm3.34 24h-3.68l-4.84-8.62L17.93 0h3.68l-8.52 15.38L17.93 24Z" />
+    <path
+      fill="#C7D300"
+      d="M6.593 5.625H3.455c-.135 0-.27.068-.338.203L.068 11.25c-.068.135-.068.27 0 .405l3.05 5.423c.068.135.203.202.338.202h3.137c.203 0 .338-.27.203-.405L3.848 11.25l2.948-5.22c.135-.135.067-.405-.203-.405Z"
+    />
+    <path
+      fill="#006567"
+      d="M18.188 0h-3.137c-.135 0-.27.07-.338.203L9.75 8.985l3.15 5.625-4.95 8.985c-.067.133 0 .405.203.405h3.138c.135 0 .27-.068.338-.203l4.95-8.985-3.15-5.625L18.39.405C18.458.27 18.39 0 18.188 0Z"
+    />
   </svg>
 );
 
@@ -1005,7 +1011,7 @@ function SiteFooter({ t, setCurrentPage }) {
             <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <FacebookIcon size={24} />
             </a>
-            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
+            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 w-8 items-center justify-center">
               <XingIcon size={24} />
             </a>
           </div>
