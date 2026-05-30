@@ -89,14 +89,16 @@ const XingIcon = ({ height = 24 }) => (
     </svg>
 
     <span
-      className="font-semibold tracking-tight"
       style={{
         color: "#0698A0",
-        fontSize: "18px",
+        fontSize: "19px",
+        fontWeight: 800,
+        letterSpacing: "-0.02em",
         lineHeight: 1,
-      }}
-    >
-      XING
+        fontFamily: "Arial, Helvetica, sans-serif",
+            }}
+        >
+          XING
     </span>
   </div>
 );
