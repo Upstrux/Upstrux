@@ -1039,51 +1039,54 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            {navItems.map((item) => (
-              <button
-                key={item.key}
-                type="button"
-                onClick={() => {
-                  if (item.key === "solutions") {
-                    setCurrentPage("solutions");
-                  } else if (item.key === "contacts") {
-                    setCurrentPage("contact");
-                  } else {
-                    setCurrentPage("home");
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }, 50);
-                  }
+<nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
+  {navItems.map((item) => (
+    <a
+      key={item.key}
+      href={item.key === "contacts" ? "#contact-page" : item.href}
+      onClick={(e) => {
+        e.preventDefault();
 
-                  setMobileMenuOpen(false);
-                }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
-              >
-                {item.label}
-              </button>
-            ))}
+        if (item.key === "solutions") {
+          setCurrentPage("solutions");
+        } else if (item.key === "contacts") {
+          setCurrentPage("contact");
+        } else {
+          setCurrentPage(item.key === "about" ? "about" : "home");
 
-            <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-              {LANGUAGE_CODES.map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
-                  onClick={() => {
-                    setLanguage(lang);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`cursor-pointer uppercase transition hover:text-blue-600 ${
-                    language === lang ? "text-blue-600" : "text-slate-900"
-                  }`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
-          </nav>
+          setTimeout(() => {
+            document.querySelector(item.href)?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }, 50);
+        }
+
+        setMobileMenuOpen(false);
+      }}
+      className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
+    >
+      {item.label}
+    </a>
+  ))}
+
+  <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
+    {LANGUAGE_CODES.map((lang) => (
+      <button
+        key={lang}
+        type="button"
+        onClick={() => {
+          setLanguage(lang);
+          setMobileMenuOpen(false);
+        }}
+        className={`cursor-pointer uppercase transition hover:text-blue-600 ${
+          language === lang ? "text-blue-600" : "text-slate-900"
+        }`}
+      >
+        {lang}
+      </button>
+    ))}
+  </div>
+</nav>
         </div>
       </header>
     
