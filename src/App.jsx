@@ -57,21 +57,31 @@ const FacebookIcon = ({ size = 24 }) => (
   <span aria-hidden="true" className="pointer-events-none inline-flex items-center justify-center font-sans font-bold leading-none text-blue-600" style={{ width: size, height: size, fontSize: size * 0.95 }}>f</span>
 );
 
-const XingIcon = ({ size = 24 }) => (
+const XingIcon = ({ height = 24 }) => (
   <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
+    height={height}
+    viewBox="0 0 119 35"
     aria-hidden="true"
   >
     <path
       fill="#C7D300"
-      d="M6.593 5.625H3.455c-.135 0-.27.068-.338.203L.068 11.25c-.068.135-.068.27 0 .405l3.05 5.423c.068.135.203.202.338.202h3.137c.203 0 .338-.27.203-.405L3.848 11.25l2.948-5.22c.135-.135.067-.405-.203-.405Z"
+      d="M14.2 8.2H7.8L0 17.5l7.8 9.3h6.4l-7.8-9.3 7.8-9.3Z"
     />
     <path
-      fill="#006567"
-      d="M18.188 0h-3.137c-.135 0-.27.07-.338.203L9.75 8.985l3.15 5.625-4.95 8.985c-.067.133 0 .405.203.405h3.138c.135 0 .27-.068.338-.203l4.95-8.985-3.15-5.625L18.39.405C18.458.27 18.39 0 18.188 0Z"
+      fill="#008C95"
+      d="M24.7 0h-6.6L9.7 17.5 18.1 35h6.6l-8.4-17.5L24.7 0Z"
     />
+    <text
+      x="34"
+      y="25.5"
+      fill="#008C95"
+      fontFamily="Arial, Helvetica, sans-serif"
+      fontSize="25"
+      fontWeight="700"
+      letterSpacing="1"
+    >
+      XING
+    </text>
   </svg>
 );
 
@@ -1011,8 +1021,8 @@ function SiteFooter({ t, setCurrentPage }) {
             <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center text-blue-600 hover:text-blue-700">
               <FacebookIcon size={24} />
             </a>
-            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 w-8 items-center justify-center">
-              <XingIcon size={24} />
+            <a href={SOCIAL_LINKS.xing} target="_blank" rel="noopener noreferrer" aria-label="Xing" className="flex h-8 items-center justify-center">
+              <XingIcon height={24} />
             </a>
           </div>
         </div>
