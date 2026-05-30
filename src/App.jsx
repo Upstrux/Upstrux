@@ -260,7 +260,7 @@ function getAbsoluteUrl(path) {
 const PAGE_TITLES = {
   bg: {
     home: "Начало | UPSTRUX",
-    about: "За нас | UPSTRUX",
+    about: "За Нас | UPSTRUX",
     solutions: "Решения | UPSTRUX",
     contact: "Контакти | UPSTRUX",
     legal: "Правно | UPSTRUX",
@@ -290,7 +290,7 @@ const META_DESCRIPTIONS = {
 };
 const SECTION_TITLES = {
   bg: {
-    about: "За нас | UPSTRUX",
+    about: "За Нас | UPSTRUX",
     competence: "Области на компетентност | UPSTRUX",
     methodology: "От концепцията до реализация | UPSTRUX",
   },
@@ -526,7 +526,7 @@ const translations = {
     nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", contacts: "Контакти" },
     heroTitle: ["Инженерство, което свързва", "визията с реалността"],
     aboutLabel: "Строителни инженери, проектанти и технически ръководители",
-    aboutTitle: "За нас",
+    aboutTitle: "За Нас",
     aboutP1: "UPSTRUX обединиява инженери в областта на гражданското строителство, проектирането, обследването, техническото ръководене и управлението на проекти, изискващи ефективно взаимодействие между различни технически дисциплини, специализирани експертни екипи и участници в строително-инвестиционния процес през целия жизнен цикъл на проекта — от иницииране и планиране до изпълнение, мониторинг и контрол и финално зактиване на проекта.",
     aboutP2: "Чрез интегриран подход и контрол върху всички етапи на проектната реализация осигуряваме устойчиви инженерни решения, оптимизация на ресурси и ефективно управление на техническите, финансовите и времевите параметри на проекта.",
     aboutP3: "Разбираме, че един проект е успешен, когато отговаря на законовите и нормативните изисквания, очакванията на клиента, като същевременно остава икономически ефективен.",
@@ -563,7 +563,7 @@ const translations = {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
     aboutLabel: "Civil, structural and site engineers",
-    aboutTitle: "About us",
+    aboutTitle: "About Us",
     aboutP1: "UPSTRUX brings together civil, structural, site and project engineers with expertise in coordinating complex projects requiring effective collaboration between multiple technical disciplines, specialized expert teams, and stakeholders throughout the entire project lifecycle — from initiation and planning through execution, monitoring and control, and project close-out.",
     aboutP2: "Through an integrated approach and oversight across all stages of project delivery, we provide sustainable engineering solutions, resource optimization, and effective management of the project’s scope, technical, financial, and schedule parameters.",
     aboutP3: "We understand that a project is successful when it complies with legal and regulatory requirements, meets the client’s expectations and remains economically efficient.",
