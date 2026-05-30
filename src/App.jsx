@@ -791,7 +791,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-4 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
             {navItems.map((item) => (
               <a
                 key={item.key}
