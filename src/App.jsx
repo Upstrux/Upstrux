@@ -102,7 +102,7 @@ function Logo({ footer = false }) {
 }
 
 const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/company/upstrux/",
   facebook: "https://www.facebook.com/",
   xing: "https://www.xing.com/pages/upstrux",
 };
