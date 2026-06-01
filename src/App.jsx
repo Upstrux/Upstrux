@@ -557,7 +557,7 @@ const translations = {
   bg: {
     nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", contacts: "Контакти" },
     heroTitle: ["Инженерство, което свързва", "визията с реалността"],
-    aboutLabel: "Строителни инженери, проектанти и технически ръководители",
+    aboutLabel: "Интегрирано Инженерство и Управление на Проекти",
     aboutTitle: "За Нас",
     aboutP1: "UPSTRUX предоставя услуги в областта на интегрираното инженерство и цялостното разработване и реализиране на проекти, обединявайки инженерна експертиза, специализирани технически мрежи и мултидисциплинарни екипи в подкрепа на комплексни проекти през целия им жизнен цикъл в Европа и Близкия изток.",
     aboutP2: "Чрез нашия интегриран подход към инженеринга и управлението на проекти, техническа експертиза и цялостен надзор на всички етапи по разработването и изпълнението на проекта, ние предоставяме устойчиви инженерни решения и управление на жизнения цикъл, създавайки дългосрочна стойност за нашите клиенти.",
@@ -593,7 +593,7 @@ const translations = {
   en: {
     nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
-    aboutLabel: "Civil, structural and site engineers",
+    aboutLabel: "Integrated Engineering & Project Management",
     aboutTitle: "About Us",
     aboutP1: "UPSTRUX is an integrated engineering and project delivery services provider, bringing together engineering expertise, specialized technical networks and multidisciplinary teams, supporting complex projects throughout their entire lifecycle across Europe and the Middle East.",
     aboutP2: "Through our integrated engineering and project management approach, technical expertise, and end-to-end oversight across all stages of project delivery, we provide sustainable engineering solutions and lifecycle management, creating long-term value for our clients.",
@@ -628,7 +628,7 @@ const translations = {
   de: {
     nav: { home: "Start", about: "Über Uns", solutions: "LÖSUNGEN", contacts: "Kontakt" },
     heroTitle: ["Ingenieurwesen, das Vision", "mit Realität verbindet"],
-    aboutLabel: "Bau-, Tragwerksplanungs- und Bauleitungsingenieure",
+    aboutLabel: "Integriertes Ingenieurwesen & Projektmanagement",
     aboutTitle: "Über Uns",
     aboutP1: "UPSTRUX bietet integrierte Ingenieur- und Projektabwicklungsdienstleistungen, wobei technische Expertise, spezialisierte Fachnetzwerke und interdisziplinäre Teams vereint werden, um komplexe Projekte über ihren gesamten Lebenszyklus hinweg in Europa und dem Nahen Osten erfolgreich zu unterstützen.",
     aboutP2: "Durch unseren integrierten Ansatz im Ingenieurwesen und Projektmanagement, fundierte technische Expertise sowie die durchgängige Steuerung und Überwachung aller Phasen der Projektabwicklung bieten wir nachhaltige Ingenieurlösungen und ein ganzheitliches Lebenszyklusmanagement, die langfristigen Mehrwert für unsere Kunden schaffen.",
