@@ -637,7 +637,6 @@ const translations = {
 
     projectsPage: {
       eyebrow: "Проекти в областта на инфраструктурата, индустрията, енергетиката, сградното строителство и съоръженията",
-      eyebrow2: "Проекти в областта на инфраструктурата, индустрията, енергетиката, сградното строителство и съоръженията",
       title: "Проекти",
       intro: "UPSTRUX обединява инженерен опит, специализирани технически мрежи и мултидисциплинарни екипи в подкрепа на успешната реализация на комплексни проекти. Представените по-долу проекти демонстрират инженерен и технически опит в изпълнението на проекти в областта на инфраструктурата, индустрията, енергетиката, водностопанската инфраструктура, сградното строителство и съоръженията.",
       pdfLabel: "Отвори PDF референция",
@@ -680,8 +679,7 @@ const translations = {
     footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
 
     projectsPage: {
-      eyebrow: "Projects Across Infrastructure, Industry, Energy, Buildings and Facilities",
-      eyebrow2: "Projects",
+      eyebrow: "Projects Across Infrastructure, Industry, Energy, Buildings and Facilities Projects",
       title: "Projects",
       intro: "UPSTRUX brings together engineering expertise, specialized technical networks and multidisciplinary teams to support the successful delivery of complex projects. The projects presented below demonstrate engineering and technical experience in the execution of projects across infrastructure, industry, energy, water infrastructure, building construction and facilities.",
       pdfLabel: "Отвори PDF референция",
@@ -723,12 +721,9 @@ const translations = {
     footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
 
     projectsPage: {
-      eyebrow: "Проекти",
-      eyebrow2: "Проекти 2",
-      title: "Реализирани проекти с национално и международно значение",
-      intro: "ЦНИП участва в разработването, анализа и реализацията на широк спектър от инженерни, научни и приложни проекти в България и чужбина.",
-      p1: "Проектната дейност на центъра обхваща инфраструктурни, строителни, геодезически, хидротехнически, лабораторни и научно-приложни разработки, реализирани в партньорство с държавни институции, общини, индустриални организации и международни партньори.",
-      p2: "Центърът комбинира академична експертиза, високотехнологична материална база и интердисциплинарен подход за изпълнение на комплексни задачи с висока обществена, икономическа и инженерна стойност.",
+      eyebrow: "Projekte in den Bereichen Infrastruktur, Industrie, Energie, Hoch-, Tief- und Anlagenbau",
+      title: "Projekte",
+      intro: "UPSTRUX vereint ingenieurtechnische Expertise, spezialisierte technische Netzwerke und multidisziplinäre Teams, um die erfolgreiche Umsetzung komplexer Projekte zu unterstützen. Die nachfolgend dargestellten Projekte veranschaulichen ingenieurtechnische und fachliche Erfahrung in den Bereichen Infrastruktur, Industrie, Energie, Wasserwirtschaft, Hoch-, Tief- und Anlagenbau.",
       pdfLabel: "Отвори PDF референция",
     },
     learnMore: "Mehr erfahren →",
@@ -1217,7 +1212,7 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-            {activePage === 1 ? t.projectsPage.eyebrow : t.projectsPage.eyebrow2}
+            {activePage === 1 ? t.projectsPage.eyebrow}
           </p>
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
             {t.projectsPage.title}
