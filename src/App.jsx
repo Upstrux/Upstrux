@@ -461,9 +461,6 @@ const bgProjects2=[
   }
 ];
 
-............................................................................................
-
-
 const enProjects = [
   {
     title: "Executive Agency - Military Clubs and Military Recreation Activities",
