@@ -338,7 +338,7 @@ const PAGE_TITLES = {
     about: "Über Uns | UPSTRUX",
     solutions: "Lösungen | UPSTRUX",
     projects: "Projekte | UPSTRUX",
-    projects2: "Projekte 2 | UPSTRUX",
+    projects2: "Projekte | UPSTRUX",
     contact: "Kontakt | UPSTRUX",
     legal: "Rechtliches | UPSTRUX",
     privacy: "Datenschutz | UPSTRUX",
