@@ -816,7 +816,7 @@ const translations = {
     projectsPage: {
       eyebrow: "Проекти в областта на инфраструктурата, индустрията, енергетиката, сградното строителство и съоръженията",
       title: "Проекти",
-      intro: "UPSTRUX обединява инженерен опит, специализирани технически мрежи и мултидисциплинарни екипи в подкрепа на успешната реализация на комплексни проекти. Представените по-долу проекти демонстрират инженерен и технически опит в изпълнението на проекти в областта на инфраструктурата, индустрията, енергетиката, водностопанската инфраструктура, сградното строителство и съоръженията.",
+      intro: "UPSTRUX обединява инженерен опит, специализирани технически мрежи и мултидисциплинарни екипи в подкрепа на успешната реализация на комплексни проекти. Представените по-долу проекти демонстрират релевантен инженерен и технически опит в изпълнението на проекти в областта на инфраструктурата, индустрията, енергетиката, водностопанската инфраструктура, сградното строителство и съоръженията.",
     },
     learnMore: "Научете повече →",
     services: bgServices,
@@ -860,7 +860,7 @@ const translations = {
     projectsPage: {
       eyebrow: "Projects Across Infrastructure, Industry, Energy, Buildings and Facilities Projects",
       title: "Projects",
-      intro: "UPSTRUX brings together engineering expertise, specialized technical networks and multidisciplinary teams to support the successful delivery of complex projects. The projects presented below demonstrate engineering and technical experience in the execution of projects across infrastructure, industry, energy, water infrastructure, building construction and facilities.",
+      intro: "UPSTRUX brings together engineering expertise, specialized technical networks and multidisciplinary teams to support the successful delivery of complex projects. The projects presented below demonstrate relevant engineering and technical experience in the execution of projects across infrastructure, industry, energy, water infrastructure, building construction and facilities.",
     },
     learnMore: "Learn more →",
     services: enServices,
@@ -903,7 +903,7 @@ const translations = {
     projectsPage: {
       eyebrow: "Projekte in den Bereichen Infrastruktur, Industrie, Energie, Hoch-, Tief- und Anlagenbau",
       title: "Projekte",
-      intro: "UPSTRUX vereint ingenieurtechnische Expertise, spezialisierte technische Netzwerke und multidisziplinäre Teams, um die erfolgreiche Umsetzung komplexer Projekte zu unterstützen. Die nachfolgend dargestellten Projekte veranschaulichen ingenieurtechnische und fachliche Erfahrung in den Bereichen Infrastruktur, Industrie, Energie, Wasserwirtschaft, Hoch-, Tief- und Anlagenbau.",
+      intro: "UPSTRUX vereint ingenieurtechnische Expertise, spezialisierte technische Netzwerke und multidisziplinäre Teams, um die erfolgreiche Umsetzung komplexer Projekte zu unterstützen. Die nachfolgend dargestellten Projekte veranschaulichen relevante ingenieurtechnische und fachliche Erfahrung in den Bereichen Infrastruktur, Industrie, Energie, Wasserwirtschaft, Hoch-, Tief- und Anlagenbau.",
     },
     learnMore: "Mehr erfahren →",
     services: deServices,
