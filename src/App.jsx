@@ -817,7 +817,6 @@ const translations = {
       eyebrow: "Проекти в областта на инфраструктурата, индустрията, енергетиката, сградното строителство и съоръженията",
       title: "Проекти",
       intro: "UPSTRUX обединява инженерен опит, специализирани технически мрежи и мултидисциплинарни екипи в подкрепа на успешната реализация на комплексни проекти. Представените по-долу проекти демонстрират инженерен и технически опит в изпълнението на проекти в областта на инфраструктурата, индустрията, енергетиката, водностопанската инфраструктура, сградното строителство и съоръженията.",
-      pdfLabel: "Отвори PDF референция",
     },
     learnMore: "Научете повече →",
     services: bgServices,
@@ -862,7 +861,6 @@ const translations = {
       eyebrow: "Projects Across Infrastructure, Industry, Energy, Buildings and Facilities Projects",
       title: "Projects",
       intro: "UPSTRUX brings together engineering expertise, specialized technical networks and multidisciplinary teams to support the successful delivery of complex projects. The projects presented below demonstrate engineering and technical experience in the execution of projects across infrastructure, industry, energy, water infrastructure, building construction and facilities.",
-      pdfLabel: "Отвори PDF референция",
     },
     learnMore: "Learn more →",
     services: enServices,
@@ -906,7 +904,6 @@ const translations = {
       eyebrow: "Projekte in den Bereichen Infrastruktur, Industrie, Energie, Hoch-, Tief- und Anlagenbau",
       title: "Projekte",
       intro: "UPSTRUX vereint ingenieurtechnische Expertise, spezialisierte technische Netzwerke und multidisziplinäre Teams, um die erfolgreiche Umsetzung komplexer Projekte zu unterstützen. Die nachfolgend dargestellten Projekte veranschaulichen ingenieurtechnische und fachliche Erfahrung in den Bereichen Infrastruktur, Industrie, Energie, Wasserwirtschaft, Hoch-, Tief- und Anlagenbau.",
-      pdfLabel: "Отвори PDF референция",
     },
     learnMore: "Mehr erfahren →",
     services: deServices,
@@ -1426,14 +1423,6 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
                 <p className="mt-5 flex-1 text-base leading-7 text-slate-700">
                   {project.description}
                 </p>
-                <a
-                  href={project.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex w-fit items-center border border-blue-600 px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-blue-600 transition hover:bg-blue-50"
-                >
-                  {t.projectsPage.pdfLabel}
-                </a>
               </article>
             ))}
           </div>
