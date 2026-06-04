@@ -1212,7 +1212,7 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
       <main className="bg-white px-6 pt-32 pb-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-            {activePage === 1 ? t.projectsPage.eyebrow}
+            {activePage === 1 ? t.projectsPage.eyebrow : ""}
           </p>
           <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
             {t.projectsPage.title}
