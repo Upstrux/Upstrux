@@ -115,7 +115,7 @@ const LANGUAGE_ROUTE_PREFIXES = {
   de: "/de",
 };
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
-const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
+const VALID_PAGES = ["home", "about", "solutions", "projects", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
 const PAGE_ROUTES_BY_LANGUAGE = {
   en: {
     home: "/",
@@ -123,6 +123,7 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     competence: "/areas-of-competence",
     methodology: "/from-concept-to-delivery",
     solutions: "/solutions",
+    projects: "/projects",
     contact: "/contact",
     legal: "/legal",
     privacy: "/privacy",
@@ -141,6 +142,7 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     competence: "/oblasti-na-kompetentnost",
     methodology: "/ot-kontseptsiyata-do-realizatsiya",
     solutions: "/resheniya",
+    projects: "/proekti",
     contact: "/kontakti",
     legal: "/pravno",
     privacy: "/poveritelnost",
@@ -159,6 +161,7 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     competence: "/kompetenzbereiche",
     methodology: "/vom-konzept-bis-zur-umsetzung",
     solutions: "/losungen",
+    projects: "/projekte",
     contact: "/kontakt",
     legal: "/rechtliches",
     privacy: "/datenschutz",
@@ -181,6 +184,7 @@ const ROUTE_PAGES = {
   "/areas-of-competence": { page: "about", sectionId: "competence" },
   "/from-concept-to-delivery": { page: "about", sectionId: "methodology" },
   "/solutions": { page: "solutions" },
+  "/projects": { page: "projects" },
   "/contact": { page: "contact" },
   "/legal": { page: "legal" },
   "/privacy": { page: "privacy" },
@@ -189,6 +193,7 @@ const ROUTE_PAGES = {
   "/oblasti-na-kompetentnost": { page: "about", sectionId: "competence" },
   "/ot-kontseptsiyata-do-realizatsiya": { page: "about", sectionId: "methodology" },
   "/resheniya": { page: "solutions" },
+  "/proekti": { page: "projects" },
   "/kontakti": { page: "contact" },
   "/pravno": { page: "legal" },
   "/poveritelnost": { page: "privacy" },
@@ -197,6 +202,7 @@ const ROUTE_PAGES = {
   "/kompetenzbereiche": { page: "about", sectionId: "competence" },
   "/vom-konzept-bis-zur-umsetzung": { page: "about", sectionId: "methodology" },
   "/losungen": { page: "solutions" },
+  "/projekte": { page: "projects" },
   "/kontakt": { page: "contact" },
   "/rechtliches": { page: "legal" },
   "/datenschutz": { page: "privacy" },
@@ -303,6 +309,7 @@ const PAGE_TITLES = {
     home: "Начало | UPSTRUX",
     about: "За Нас | UPSTRUX",
     solutions: "Решения | UPSTRUX",
+    projects: "Проекти | UPSTRUX",
     contact: "Контакти | UPSTRUX",
     legal: "Правно | UPSTRUX",
     privacy: "Поверителност | UPSTRUX",
@@ -311,6 +318,7 @@ const PAGE_TITLES = {
     home: "Home | UPSTRUX",
     about: "About Us | UPSTRUX",
     solutions: "Solutions | UPSTRUX",
+    projects: "Projects | UPSTRUX",
     contact: "Contacts | UPSTRUX",
     legal: "Legal | UPSTRUX",
     privacy: "Privacy | UPSTRUX",
@@ -319,6 +327,7 @@ const PAGE_TITLES = {
     home: "Start | UPSTRUX",
     about: "Über Uns | UPSTRUX",
     solutions: "Lösungen | UPSTRUX",
+    projects: "Projekte | UPSTRUX",
     contact: "Kontakt | UPSTRUX",
     legal: "Rechtliches | UPSTRUX",
     privacy: "Datenschutz | UPSTRUX",
@@ -564,7 +573,7 @@ const legalPages = {
 
 const translations = {
   bg: {
-    nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", contacts: "Контакти" },
+    nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", projects: "Проекти", contacts: "Контакти" },
     heroTitle: ["Инженерство, което свързва", "визията с реалността"],
     aboutLabel: "Интегрирано Инженерство и Управление на Проекти",
     aboutTitle: "За Нас",
@@ -592,7 +601,7 @@ const translations = {
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
-    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
+    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", projects: "Проекти", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
     learnMore: "Научете повече →",
     services: bgServices,
     processSteps: bgProcessSteps,
@@ -628,14 +637,14 @@ const translations = {
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
-    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
+    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", projects: "Projects", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
     learnMore: "Learn more →",
     services: enServices,
     processSteps: enProcessSteps,
     legalPages: legalPages.en,
   },
   de: {
-    nav: { home: "Start", about: "Über Uns", solutions: "LÖSUNGEN", contacts: "Kontakt" },
+    nav: { home: "Start", about: "Über Uns", solutions: "LÖSUNGEN", projects: "Projekte", contacts: "Kontakt" },
     heroTitle: ["Ingenieurwesen, das Vision", "mit Realität verbindet"],
     aboutLabel: "Integriertes Ingenieurwesen & Projektmanagement",
     aboutTitle: "Über Uns",
@@ -663,7 +672,7 @@ const translations = {
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
-    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
+    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", projects: "Projekte", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
     learnMore: "Mehr erfahren →",
     services: deServices,
     processSteps: deProcessSteps,
@@ -835,6 +844,8 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
                   e.preventDefault();
                   if (item.key === "solutions") {
                     setCurrentPage("solutions");
+                  } else if (item.key === "projects") {
+                    setCurrentPage("projects");
                   } else if (item.key === "contacts") {
                     setCurrentPage("contact");
                   } else {
@@ -992,6 +1003,10 @@ function SiteFooter({ t, setCurrentPage }) {
               {t.footer.solutions}
             </button>
 
+            <button type="button" onClick={() => setCurrentPage("projects")} className="text-left hover:text-blue-600">
+              {t.footer.projects}
+            </button>
+
             <button type="button" onClick={() => setCurrentPage("contact")} className="text-left hover:text-blue-600">
               {t.footer.contacts}
             </button>
@@ -1087,6 +1102,8 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 
         if (item.key === "solutions") {
           setCurrentPage("solutions");
+        } else if (item.key === "projects") {
+          setCurrentPage("projects");
         } else if (item.key === "contacts") {
           setCurrentPage("contact");
         } else {
@@ -1184,6 +1201,23 @@ export default function UpstruxWebsite() {
   const [currentPage, setCurrentPageState] = useState(initialRouteInfo.page);
   const [scrollTarget, setScrollTarget] = useState(initialRouteInfo.sectionId || null);
   const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const { language: routeLanguage, path } = getLanguageAndPath(window.location.pathname);
+    const routeInfo = ROUTE_PAGES[path];
+
+    if (SERVICE_PAGE_KEYS.includes(routeInfo?.page)) {
+      window.history.replaceState(
+        { page: "solutions", language: routeLanguage },
+        "",
+        getLocalizedPath("solutions", routeLanguage)
+      );
+      setCurrentPageState("solutions");
+      setLanguageState(routeLanguage);
+    }
+  }, []);
 
   const setCurrentPage = useCallback((page) => {
     setCurrentPageState(page);
@@ -1367,8 +1401,9 @@ export default function UpstruxWebsite() {
     { key: "home", label: t.nav.home, href: "#home" },
     { key: "about", label: t.nav.about, href: "#about" },
     { key: "solutions", label: t.nav.solutions, href: "solutions" },
+    { key: "projects", label: t.nav.projects, href: "projects" },
     { key: "contacts", label: t.nav.contacts, href: "contact" },
-  ], [t.nav.about, t.nav.contacts, t.nav.home, t.nav.solutions]);
+  ], [t.nav.about, t.nav.contacts, t.nav.home, t.nav.projects, t.nav.solutions]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -1467,6 +1502,8 @@ export default function UpstruxWebsite() {
 
       if (item.key === "solutions") {
         setCurrentPage("solutions");
+      } else if (item.key === "projects") {
+        setCurrentPage("projects");
       } else if (item.key === "contacts") {
         setCurrentPage("contact");
       } else {
@@ -1560,6 +1597,8 @@ export default function UpstruxWebsite() {
     onClick={() => {
       if (item.key === "solutions") {
         setCurrentPage("solutions");
+      } else if (item.key === "projects") {
+        setCurrentPage("projects");
       } else if (item.key === "contacts") {
         setCurrentPage("contact");
       } else {
