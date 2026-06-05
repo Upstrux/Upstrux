@@ -760,7 +760,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   );
 
   const textBlock = (
-    <div className="max-w-[640px] transition-transform duration-300 group-hover:translate-x-1">
+    <div className="max-w-[640px] transition-transform duration-700 ease-out group-hover:translate-x-1">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
@@ -802,12 +802,12 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       viewport={{ once: true }}
       whileHover={{ y: -6 }}
       whileTap={{ y: -2 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       onClick={openServicePage}
       onKeyDown={handleCardKeyDown}
       role={hasServicePage ? "button" : undefined}
       tabIndex={hasServicePage ? 0 : undefined}
-      className="group scroll-mt-28 grid cursor-pointer items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-300 hover:border-slate-200 focus:outline-none focus-visible:border-blue-300 sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
+      className="group scroll-mt-28 grid cursor-pointer items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-700 ease-out hover:border-slate-200 focus:outline-none focus-visible:border-blue-300 sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
     >
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
