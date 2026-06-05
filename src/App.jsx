@@ -999,14 +999,14 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
   const bulletItems = useMemo(
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
   );
 
   const textBlock = (
-    <div className="max-w-[640px] transition-all duration-500 group-hover:translate-x-1">
+    <div className="max-w-[640px] p-4 transition-all duration-500 group-hover:translate-x-1 sm:p-5 lg:p-6">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
@@ -1022,13 +1022,13 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   );
 
   const imageBlock = (
-    <div className="overflow-hidden bg-white">
+    <div className="h-full min-h-[420px] overflow-hidden sm:min-h-[560px] lg:min-h-[620px]">
       <img
         src={image}
         alt={title}
         loading="lazy"
         decoding="async"
-        className="aspect-[2/1] w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        className={`h-full w-full object-cover ${imagePosition} transition-transform duration-700 ease-out group-hover:scale-105`}
       />
     </div>
   );
@@ -1049,9 +1049,9 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       } : undefined}
       role={SOLUTION_CARDS_CLICKABLE ? "button" : undefined}
       tabIndex={SOLUTION_CARDS_CLICKABLE ? 0 : undefined}
-      className={`group scroll-mt-28 grid items-center gap-0 rounded-none border border-transparent bg-transparent p-4 transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-5 lg:grid-cols-2 lg:gap-0 lg:p-6 ${SOLUTION_CARDS_CLICKABLE ? "cursor-pointer" : ""}`}
+      className={`group scroll-mt-28 grid items-stretch gap-0 overflow-hidden rounded-none border border-transparent bg-transparent transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] lg:grid-cols-2 ${SOLUTION_CARDS_CLICKABLE ? "cursor-pointer" : ""}`}
     >
-      {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
+      {reverse ? <><div className="order-2 h-full lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}<div className="h-full">{imageBlock}</div></>}
     </motion.div>
   );
 });
@@ -1947,6 +1947,7 @@ export default function UpstruxWebsite() {
               title={service.title}
               text={service.text}
               image={service.image}
+              imagePosition={index === 2 ? "object-center" : "object-right"}
               reverse={index % 2 === 1}
               servicePage={`service${index + 1}`}
               setCurrentPage={setCurrentPage}
