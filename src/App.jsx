@@ -115,7 +115,6 @@ const LANGUAGE_ROUTE_PREFIXES = {
   de: "/de",
 };
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
-const ENABLE_SERVICE_PAGES = false;
 const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
 const PAGE_ROUTES_BY_LANGUAGE = {
   en: {
@@ -270,18 +269,9 @@ function getLocalizedPath(page, language) {
 
 function getRouteInfo(pathname) {
   const { language, path } = getLanguageAndPath(pathname);
-  const routeInfo = ROUTE_PAGES[path] || { page: "home" };
-
-  if (!ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(routeInfo.page)) {
-    return {
-      language,
-      page: "solutions",
-    };
-  }
-
   return {
     language,
-    ...routeInfo,
+    ...(ROUTE_PAGES[path] || { page: "home" }),
   };
 }
 
@@ -291,8 +281,6 @@ function getCanonicalPageKey(page, pathname) {
 
   if (routeInfo?.sectionId === "competence") return "competence";
   if (routeInfo?.sectionId === "methodology") return "methodology";
-  if (!ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(routeInfo?.page)) return "solutions";
-  if (!ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(page)) return "solutions";
 
   return routeInfo?.page || page || "home";
 }
@@ -754,7 +742,22 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
   );
-  const hasServicePage = ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(servicePage);
+  const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
+
+  const openServicePage = useCallback(() => {
+    if (hasServicePage) setCurrentPage(servicePage);
+  }, [hasServicePage, servicePage, setCurrentPage]);
+
+  const handleCardKeyDown = useCallback(
+    (event) => {
+      if (!hasServicePage) return;
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openServicePage();
+      }
+    },
+    [hasServicePage, openServicePage]
+  );
 
   const textBlock = (
     <div className="max-w-[640px] transition-all duration-500 group-hover:translate-x-1">
@@ -767,6 +770,10 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       {hasServicePage && (
         <button
           type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            openServicePage();
+          }}
           className={LEARN_MORE_BUTTON_CLASS}
         >
           {learnMoreLabel}
@@ -782,7 +789,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
         alt={title}
         loading="lazy"
         decoding="async"
-        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px] transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px] transition-transform duration-700 ease-out group-hover:scale-105"
       />
     </div>
   );
@@ -794,7 +801,11 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="group scroll-mt-28 grid cursor-default items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-slate-200 focus:outline-none sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
+      onClick={openServicePage}
+      onKeyDown={handleCardKeyDown}
+      role={hasServicePage ? "button" : undefined}
+      tabIndex={hasServicePage ? 0 : undefined}
+      className="group scroll-mt-28 grid cursor-pointer items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] focus:outline-none focus-visible:border-blue-300 focus-visible:bg-slate-50/80 focus-visible:shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
     >
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
@@ -1198,18 +1209,14 @@ export default function UpstruxWebsite() {
   const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
 
   const setCurrentPage = useCallback((page) => {
-    const nextPage = !ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(page)
-      ? "solutions"
-      : page;
-
-    setCurrentPageState(nextPage);
+    setCurrentPageState(page);
     setScrollTarget(null);
 
     if (typeof window !== "undefined") {
       window.history.pushState(
-        { page: nextPage, language },
+        { page, language },
         "",
-        getLocalizedPath(nextPage, language)
+        getLocalizedPath(page, language)
       );
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1427,7 +1434,7 @@ export default function UpstruxWebsite() {
   }, [language]);
 
 
-  const servicePageIndex = ENABLE_SERVICE_PAGES ? SERVICE_PAGE_KEYS.indexOf(currentPage) : -1;
+  const servicePageIndex = SERVICE_PAGE_KEYS.indexOf(currentPage);
   if (servicePageIndex !== -1) {
     return (
       <ServiceDetailPage
