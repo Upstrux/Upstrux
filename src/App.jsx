@@ -353,7 +353,7 @@ const HERO_TRANSITION = {
   ease: "linear",
 };
 const NAV_LINK_BUTTON_CLASS = "inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
-const LEARN_MORE_BUTTON_CLASS = `mt-6 ${NAV_LINK_BUTTON_CLASS}`;
+const LEARN_MORE_BUTTON_CLASS = `hidden mt-6 ${NAV_LINK_BUTTON_CLASS}`;
 const BACK_BUTTON_CLASS = `mt-8 ${NAV_LINK_BUTTON_CLASS}`;
 
 const heroSlides = [
