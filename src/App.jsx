@@ -760,7 +760,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   );
 
   const textBlock = (
-    <div className="max-w-[640px] transition-all duration-500 group-hover:translate-x-1">
+    <div className="max-w-[640px]">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
@@ -789,7 +789,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
         alt={title}
         loading="lazy"
         decoding="async"
-        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px] transition-transform duration-700 ease-out group-hover:scale-105"
+        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px]"
       />
     </div>
   );
@@ -805,7 +805,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       onKeyDown={handleCardKeyDown}
       role={hasServicePage ? "button" : undefined}
       tabIndex={hasServicePage ? 0 : undefined}
-      className="group scroll-mt-28 grid cursor-pointer items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] focus:outline-none focus-visible:border-blue-300 focus-visible:bg-slate-50/80 focus-visible:shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
+      className="group scroll-mt-28 grid cursor-pointer items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-300 hover:border-slate-200 focus:outline-none focus-visible:border-blue-300 sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
     >
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
@@ -838,20 +838,18 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
 
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <header className="relative z-50 bg-white px-6 pt-12 pb-8">
+      <header className="relative bg-white px-6 pt-12 pb-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
           <button type="button" onClick={() => setCurrentPage("home")}>
             <Logo footer />
           </button>
-
-          <div className="flex justify-center mt-1 md:hidden">
-            <MobileMenuButton
-              mobileMenuOpen={mobileMenuOpen}
-              setMobileMenuOpen={setMobileMenuOpen}
-            />
-          </div>
-
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
+    <div className="flex justify-center mt-1 md:hidden">
+  <MobileMenuButton
+    mobileMenuOpen={mobileMenuOpen}
+    setMobileMenuOpen={setMobileMenuOpen}
+  />
+</div>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
             {navItems.map((item) => (
               <a
                 key={item.key}
@@ -870,7 +868,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
                   }
                   setMobileMenuOpen(false);
                 }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
+                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
               >
                 {item.label}
               </a>
