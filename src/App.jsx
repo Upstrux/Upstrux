@@ -760,7 +760,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   );
 
   const textBlock = (
-    <div className="max-w-[640px]">
+    <div className="max-w-[640px] transition-transform duration-300 group-hover:translate-x-1">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
@@ -800,6 +800,8 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      whileHover={{ y: -6 }}
+      whileTap={{ y: -2 }}
       transition={{ duration: 0.6 }}
       onClick={openServicePage}
       onKeyDown={handleCardKeyDown}
