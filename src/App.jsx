@@ -746,7 +746,7 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse }) {
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right" }) {
   const bulletItems = useMemo(
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
@@ -770,7 +770,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse 
         alt={title}
         loading="lazy"
         decoding="async"
-        className="h-full w-full object-cover object-right transition-transform duration-700 ease-out group-hover:scale-105"
+        className={`h-full w-full object-cover ${imagePosition} transition-transform duration-700 ease-out group-hover:scale-105`}
       />
     </div>
   );
@@ -1526,6 +1526,7 @@ export default function UpstruxWebsite() {
               text={service.text}
               image={service.image}
               reverse={index % 2 === 1}
+              imagePosition={index === 2 ? "object-center" : "object-right"}
               servicePage={`service${index + 1}`}
               setCurrentPage={setCurrentPage}
               learnMoreLabel={t.learnMore}
