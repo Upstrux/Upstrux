@@ -764,13 +764,13 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse 
   );
 
   const imageBlock = (
-    <div className="h-full min-h-[420px] overflow-hidden bg-white sm:min-h-[560px] lg:min-h-full">
+    <div className="h-full min-h-[420px] overflow-hidden sm:min-h-[560px] lg:min-h-[620px]">
       <img
         src={image}
         alt={title}
         loading="lazy"
         decoding="async"
-        className="h-full min-h-[420px] w-full object-cover object-right sm:min-h-[560px] lg:min-h-full transition-transform duration-700 ease-out group-hover:scale-105"
+        className="h-full w-full object-cover object-right transition-transform duration-700 ease-out group-hover:scale-105"
       />
     </div>
   );
@@ -784,7 +784,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse 
       transition={{ duration: 0.6 }}
       className="group scroll-mt-28 grid items-stretch gap-0 overflow-hidden rounded-none border border-transparent bg-transparent transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] lg:grid-cols-2"
     >
-      {reverse ? <><div className="order-2 h-full lg:order-1">{imageBlock}</div><div className="order-1 flex items-center lg:order-2">{textBlock}</div></> : <><div className="flex items-center">{textBlock}</div><div className="h-full">{imageBlock}</div></>}
+      {reverse ? <><div className="order-2 h-full lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}<div className="h-full">{imageBlock}</div></>}
     </motion.div>
   );
 });
