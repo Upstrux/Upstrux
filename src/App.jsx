@@ -745,7 +745,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
 
   const textBlock = (
-    <div className="max-w-[640px]">
+    <div className="max-w-[640px] transition-all duration-500 group-hover:translate-x-1">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
@@ -771,13 +771,13 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
         alt={title}
         loading="lazy"
         decoding="async"
-        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px]"
+        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px] transition-transform duration-700 ease-out group-hover:scale-105"
       />
     </div>
   );
 
   return (
-    <motion.div id={`service-${slugify(title)}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="scroll-mt-28 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <motion.div id={`service-${slugify(title)}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group cursor-pointer scroll-mt-28 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
   );
