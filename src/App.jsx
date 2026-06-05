@@ -115,7 +115,6 @@ const LANGUAGE_ROUTE_PREFIXES = {
   de: "/de",
 };
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
-const ENABLE_SERVICE_PAGES = false;
 const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
 const PAGE_ROUTES_BY_LANGUAGE = {
   en: {
@@ -270,18 +269,9 @@ function getLocalizedPath(page, language) {
 
 function getRouteInfo(pathname) {
   const { language, path } = getLanguageAndPath(pathname);
-  const routeInfo = ROUTE_PAGES[path] || { page: "home" };
-
-  if (!ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(routeInfo.page)) {
-    return {
-      language,
-      page: "solutions",
-    };
-  }
-
   return {
     language,
-    ...routeInfo,
+    ...(ROUTE_PAGES[path] || { page: "home" }),
   };
 }
 
@@ -291,8 +281,6 @@ function getCanonicalPageKey(page, pathname) {
 
   if (routeInfo?.sectionId === "competence") return "competence";
   if (routeInfo?.sectionId === "methodology") return "methodology";
-  if (!ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(routeInfo?.page)) return "solutions";
-  if (!ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(page)) return "solutions";
 
   return routeInfo?.page || page || "home";
 }
@@ -754,7 +742,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
   );
-  const hasServicePage = ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(servicePage);
+  const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
 
   const textBlock = (
     <div className="max-w-[640px] transition-all duration-500 group-hover:translate-x-1">
@@ -767,6 +755,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       {hasServicePage && (
         <button
           type="button"
+          onClick={() => setCurrentPage(servicePage)}
           className={LEARN_MORE_BUTTON_CLASS}
         >
           {learnMoreLabel}
@@ -782,20 +771,13 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
         alt={title}
         loading="lazy"
         decoding="async"
-        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px] transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+        className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px] transition-transform duration-700 ease-out group-hover:scale-105"
       />
     </div>
   );
 
   return (
-    <motion.div
-      id={`service-${slugify(title)}`}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="group scroll-mt-28 grid cursor-default items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-slate-200 focus:outline-none sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
-    >
+    <motion.div id={`service-${slugify(title)}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group cursor-pointer scroll-mt-28 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
   );
@@ -838,7 +820,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
             {navItems.map((item) => (
               <a
                 key={item.key}
@@ -857,7 +839,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
                   }
                   setMobileMenuOpen(false);
                 }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
+                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
               >
                 {item.label}
               </a>
@@ -1198,18 +1180,14 @@ export default function UpstruxWebsite() {
   const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
 
   const setCurrentPage = useCallback((page) => {
-    const nextPage = !ENABLE_SERVICE_PAGES && SERVICE_PAGE_KEYS.includes(page)
-      ? "solutions"
-      : page;
-
-    setCurrentPageState(nextPage);
+    setCurrentPageState(page);
     setScrollTarget(null);
 
     if (typeof window !== "undefined") {
       window.history.pushState(
-        { page: nextPage, language },
+        { page, language },
         "",
-        getLocalizedPath(nextPage, language)
+        getLocalizedPath(page, language)
       );
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1427,7 +1405,7 @@ export default function UpstruxWebsite() {
   }, [language]);
 
 
-  const servicePageIndex = ENABLE_SERVICE_PAGES ? SERVICE_PAGE_KEYS.indexOf(currentPage) : -1;
+  const servicePageIndex = SERVICE_PAGE_KEYS.indexOf(currentPage);
   if (servicePageIndex !== -1) {
     return (
       <ServiceDetailPage
