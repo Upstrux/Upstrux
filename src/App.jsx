@@ -269,9 +269,18 @@ function getLocalizedPath(page, language) {
 
 function getRouteInfo(pathname) {
   const { language, path } = getLanguageAndPath(pathname);
+  const routeInfo = ROUTE_PAGES[path] || { page: "home" };
+
+  if (SERVICE_PAGE_KEYS.includes(routeInfo.page)) {
+    return {
+      language,
+      page: "solutions",
+    };
+  }
+
   return {
     language,
-    ...(ROUTE_PAGES[path] || { page: "home" }),
+    ...routeInfo,
   };
 }
 
@@ -737,26 +746,10 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse }) {
   const bulletItems = useMemo(
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
-  );
-  const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
-
-  const openServicePage = useCallback(() => {
-    if (hasServicePage) setCurrentPage(servicePage);
-  }, [hasServicePage, servicePage, setCurrentPage]);
-
-  const handleCardKeyDown = useCallback(
-    (event) => {
-      if (!hasServicePage) return;
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openServicePage();
-      }
-    },
-    [hasServicePage, openServicePage]
   );
 
   const textBlock = (
@@ -767,18 +760,6 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
           <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
         ))}
       </ul>
-      {hasServicePage && (
-        <button
-          type="button"
-          onClick={(event) => {
-            event.stopPropagation();
-            openServicePage();
-          }}
-          className={LEARN_MORE_BUTTON_CLASS}
-        >
-          {learnMoreLabel}
-        </button>
-      )}
     </div>
   );
 
@@ -801,11 +782,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      onClick={openServicePage}
-      onKeyDown={handleCardKeyDown}
-      role={hasServicePage ? "button" : undefined}
-      tabIndex={hasServicePage ? 0 : undefined}
-      className="group scroll-mt-28 grid cursor-pointer items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] focus:outline-none focus-visible:border-blue-300 focus-visible:bg-slate-50/80 focus-visible:shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
+      className="group scroll-mt-28 grid items-center gap-12 rounded-none border border-transparent bg-transparent p-4 transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
     >
       {reverse ? <><div className="order-2 lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}{imageBlock}</>}
     </motion.div>
