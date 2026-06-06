@@ -448,7 +448,7 @@ const legalPages = {
     },
     {
       heading: "3. Интелектуална собственост",
-      body: "Всички текстове, структура, дизайн, графични елементи, търговски обозначения и друго съдържание на сайта са собственост на UPSTRUX или се използват на законно основание. Част от визуалното съдържание, техническите изображения, инженерните среди и специализираната инфраструктура, представени на сайта, могат да бъдат използвани с разрешение, в рамките на партньорски, академични, професионални или договорни отношения. Публикуването на подобно съдържание не следва да се тълкува като твърдение за собственост върху съответната инфраструктура, лаборатории или технически съоръжения, освен ако изрично не е посочено друго. Не се разрешава копиране, възпроизвеждане, изменение, разпространение или използване за търговски цели без предварително писмено съгласие."
+      body: "Всички текстове, структура, дизайн, графични елементи, търговски обозначения и друго съдържание на сайта са собственост на UPSTRUX или се използват на законно основание. Част от визуалното съдържание, техническите изображения, инженерните среди и специализираната инфраструктура, представени на сайта, могат да бъдат използвани с разрешение, в рамките на партньорски, академични, професионални или договорни отношения. Публикуването на подобно съдържание не следва да се тълкува като твърдение за собственост или изключителна принадлежност върху представения професионален опит, проекти, инфраструктура, лаборатории или технически съоръжения, освен ако изрично не е посочено друго. Не се разрешава копиране, възпроизвеждане, изменение, разпространение или използване за търговски цели без предварително писмено съгласие."
     },
     {
       heading: "4. Външни връзки",
@@ -490,7 +490,7 @@ const legalPages = {
       },
       {
         heading: "3. Intellectual property",
-        body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Certain visual materials, technical imagery, engineering environments and specialized infrastructure presented on this website may be used with permission within the framework of partner, academic, professional or contractual relationships. The publication of such content shall not be interpreted as a claim of ownership over the respective infrastructure, laboratories or technical facilities unless explicitly stated otherwise. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent."
+        body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Certain visual materials, technical imagery, engineering environments and specialized infrastructure presented on this website may be used with permission within the framework of partner, academic, professional or contractual relationships. The publication of such content shall not be interpreted as a claim of ownership or exclusive affiliation with the professional experience, projects, infrastructure, laboratories or technical facilities presented, unless explicitly stated otherwise. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent."
       },
       {
         heading: "4. External links",
@@ -532,7 +532,7 @@ const legalPages = {
       },
       {
         heading: "3. Geistiges Eigentum",
-        body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte dieser Website sind Eigentum von UPSTRUX oder werden auf rechtmäßiger Grundlage verwendet. Bestimmte visuelle Inhalte, technische Darstellungen, ingenieurtechnische Umgebungen und spezialisierte Infrastrukturen, die auf dieser Website dargestellt werden, können im Rahmen partnerschaftlicher, akademischer, professioneller oder vertraglicher Beziehungen mit Genehmigung verwendet werden. Die Veröffentlichung solcher Inhalte darf nicht als Eigentumsanspruch auf die jeweilige Infrastruktur, Labore oder technischen Einrichtungen ausgelegt werden, sofern nicht ausdrücklich etwas anderes angegeben ist. Eine Vervielfältigung, Verbreitung, Änderung oder kommerzielle Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet."
+        body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte dieser Website sind Eigentum von UPSTRUX oder werden auf rechtmäßiger Grundlage verwendet. Bestimmte visuelle Inhalte, technische Darstellungen, ingenieurtechnische Umgebungen und spezialisierte Infrastrukturen, die auf dieser Website dargestellt werden, können im Rahmen partnerschaftlicher, akademischer, professioneller oder vertraglicher Beziehungen mit Genehmigung verwendet werden. Die Veröffentlichung solcher Inhalte darf nicht als Anspruch auf Eigentum oder ausschließige Zuordnung der dargestellten beruflichen Erfahrung, Projekte, Infrastruktur, Labore oder technischen Einrichtungen ausgelegt werden, sofern nicht ausdrücklich etwas anderes angegeben ist. Eine Vervielfältigung, Verbreitung, Änderung oder kommerzielle Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet."
       },
       {
         heading: "4. Externe Links",
