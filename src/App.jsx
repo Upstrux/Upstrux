@@ -870,7 +870,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
       </header>
 
       <main className="bg-white px-6 pt-32 pb-28">
-        <div className="w-full">
+        <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
             {t.solutionsTitle}
           </p>
@@ -1362,6 +1362,27 @@ export default function UpstruxWebsite() {
     () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
     [t.services]
   );
+  const navigateToService = useCallback((serviceTitle) => {
+    const targetId = `service-${slugify(serviceTitle)}`;
+
+    setCurrentPageState("solutions");
+    setScrollTarget(null);
+
+    if (typeof window !== "undefined") {
+      window.history.pushState(
+        { page: "solutions", language },
+        "",
+        `${getLocalizedPath("solutions", language)}#${targetId}`
+      );
+
+      window.setTimeout(() => {
+        document.getElementById(targetId)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 120);
+    }
+  }, [language]);
   const currentProcessSteps = t.processSteps;
   const navItems = useMemo(() => [
     { key: "home", label: t.nav.home, href: "#home" },
@@ -1615,31 +1636,36 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-      {currentServices.map((service, index) => (
-        <button
-          key={service.title}
-          type="button"
-          onClick={() => setCurrentPage(`service${index + 1}`)}
-          className="group relative h-[320px] overflow-hidden text-left"
-        >
-          <img
-            src={service.image}
-            alt={service.title}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {currentServices.map((service) => {
+        const targetId = `service-${slugify(service.title)}`;
 
-          <div className="absolute inset-0 bg-slate-950/45 transition group-hover:bg-slate-950/55" />
-
-          <div className="absolute inset-x-0 bottom-0 p-5">
-            <h4 className="text-lg font-light leading-tight tracking-[-0.02em] text-white">
-              {service.title}
-            </h4>
-          </div>
-        </button>
-      ))}
+        return (
+          <a
+            key={service.title}
+            href={`${getLocalizedPath("solutions", language)}#${targetId}`}
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToService(service.title);
+            }}
+            className="group relative block h-[190px] overflow-hidden bg-slate-900 transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/25 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <h4 className="text-lg font-light leading-[1.12] tracking-[-0.025em] text-white">
+                {service.title}
+              </h4>
+            </div>
+          </a>
+        );
+      })}
     </div>
 
   </div>
