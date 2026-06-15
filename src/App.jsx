@@ -870,7 +870,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
       </header>
 
       <main className="bg-white px-6 pt-32 pb-28">
-        <div className="mx-auto max-w-7xl">
+        <div className="w-full">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
             {t.solutionsTitle}
           </p>
@@ -1615,13 +1615,13 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
       {currentServices.map((service, index) => (
         <button
           key={service.title}
           type="button"
           onClick={() => setCurrentPage(`service${index + 1}`)}
-          className="group relative h-[210px] overflow-hidden text-left shadow-sm"
+          className="group relative h-[320px] overflow-hidden text-left"
         >
           <img
             src={service.image}
