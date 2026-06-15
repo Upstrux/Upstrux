@@ -2039,7 +2039,7 @@ export default function UpstruxWebsite() {
             alt={service.title}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-slate-950/35 transition duration-500 group-hover:bg-slate-950/20" />
+          <div className="absolute inset-0 bg-slate-950/15 transition duration-500 group-hover:bg-slate-950/20" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent px-5 py-5">
             <h4 className="text-sm font-semibold uppercase leading-5 tracking-[0.12em] text-white">
               {service.title}
