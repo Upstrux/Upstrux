@@ -821,7 +821,7 @@ const translations = {
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
-    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", projects: "Проекти", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
+    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", projects: "Проекти", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно" },
 
     projectsPage: {
       eyebrow: "Проекти в областта на инфраструктурата, индустрията, енергетиката, сградното строителство и съоръженията",
@@ -865,7 +865,7 @@ const translations = {
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
-    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", projects: "Projects", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
+    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", projects: "Projects", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back" },
 
     projectsPage: {
       eyebrow: "Projects Across Infrastructure, Industry, Energy, Buildings and Facilities Projects",
@@ -908,7 +908,7 @@ const translations = {
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
-    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", projects: "Projekte", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
+    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", projects: "Projekte", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück" },
 
     projectsPage: {
       eyebrow: "Projekte in den Bereichen Infrastruktur, Industrie, Energie, Hoch-, Tief- und Anlagenbau",
