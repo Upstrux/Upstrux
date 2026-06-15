@@ -389,8 +389,8 @@ const HERO_TRANSITION = {
   ease: "linear",
 };
 const NAV_LINK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
-const SOLUTION_CARDS_CLICKABLE = false;
-const PROJECTS_ENABLED = false;
+const SOLUTION_CARDS_CLICKABLE = true;
+const PROJECTS_ENABLED = true;
 const LEARN_MORE_BUTTON_CLASS = "mt-6 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const BACK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 
@@ -2007,7 +2007,7 @@ export default function UpstruxWebsite() {
 </header>
       <main>
 <section id="home" className="relative h-[1080px] overflow-hidden bg-slate-900"><div className="absolute inset-0">{heroSlides.map((image, index) => <HeroSlide key={String(image)} image={image} index={index} />)}</div><div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent" /><div className="relative mx-auto flex h-full max-w-7xl items-end px-6 pb-20"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl text-white"><h1 className="text-3xl font-light leading-[1.05] tracking-[-0.025em] md:text-5xl">{t.heroTitle.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</h1></motion.div></div></section>
-<section id="about" className="bg-white px-6 py-24"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.aboutLabel}</p><h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.aboutTitle}</h2><div className="mt-10"><div className="max-w-3xl"><p className="text-lg leading-8 text-slate-700">{t.aboutP1}</p></div><div className="mt-10 ml-auto max-w-3xl"><p className="text-lg leading-8 text-slate-700">{t.aboutP2}</p></div></div><div className="mt-12 max-w-6xl border-l-4 border-blue-600 bg-white px-8 py-5"><p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">{t.aboutHighlight}</p></div></div></section>
+<section id="about" className="bg-white px-6 py-24"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">{t.aboutLabel}</p><h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">{t.aboutTitle}</h2><div className="mt-10"><div className="max-w-3xl"><p className="text-lg leading-8 text-slate-700">{t.aboutP1}</p></div><div className={`ml-auto max-w-3xl ${language === "de" ? "mt-6" : language === "bg" ? "mt-8" : "mt-10"}`}><p className="text-lg leading-8 text-slate-700">{t.aboutP2}</p></div></div><div className={`max-w-6xl border-l-4 border-blue-600 bg-white px-8 py-5 ${language === "de" ? "mt-8" : language === "bg" ? "mt-10" : "mt-12"}`}><p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">{t.aboutHighlight}</p></div></div></section>
 <section id="competence" className="bg-white px-6 py-20">
   <div className="mx-auto max-w-7xl">
 
