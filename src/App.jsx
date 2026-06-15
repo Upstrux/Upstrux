@@ -301,6 +301,13 @@ function getRouteInfo(pathname) {
     };
   }
 
+  if (!PROJECTS_ENABLED && (routeInfo.page === "projects" || routeInfo.page === "projects2")) {
+    return {
+      language,
+      page: "projectsUnavailable",
+    };
+  }
+
   return {
     language,
     ...routeInfo,
@@ -383,6 +390,7 @@ const HERO_TRANSITION = {
 };
 const NAV_LINK_BUTTON_CLASS = "inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const SOLUTION_CARDS_CLICKABLE = true;
+const PROJECTS_ENABLED = false;
 const LEARN_MORE_BUTTON_CLASS = `mt-6 ${NAV_LINK_BUTTON_CLASS}`;
 const BACK_BUTTON_CLASS = `mt-8 ${NAV_LINK_BUTTON_CLASS}`;
 
@@ -1585,7 +1593,7 @@ export default function UpstruxWebsite() {
   const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
 
   const setCurrentPage = useCallback((page) => {
-    const nextPage = !SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(page) ? "solutions" : page;
+    const nextPage = !SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(page) ? "solutions" : !PROJECTS_ENABLED && (page === "projects" || page === "projects2") ? "projectsUnavailable" : page;
 
     setCurrentPageState(nextPage);
     setScrollTarget(null);
@@ -1603,7 +1611,7 @@ export default function UpstruxWebsite() {
   const setLanguage = useCallback((nextLanguage) => {
     if (!LANGUAGE_CODES.includes(nextLanguage)) return;
 
-    const nextPage = SERVICE_PAGE_KEYS.includes(currentPage) ? "solutions" : currentPage;
+    const nextPage = SERVICE_PAGE_KEYS.includes(currentPage) ? "solutions" : !PROJECTS_ENABLED && (currentPage === "projects" || currentPage === "projects2") ? "projectsUnavailable" : currentPage;
 
     setLanguageState(nextLanguage);
 
@@ -1770,7 +1778,7 @@ export default function UpstruxWebsite() {
     { key: "home", label: t.nav.home, href: "#home" },
     { key: "about", label: t.nav.about, href: "#about" },
     { key: "solutions", label: t.nav.solutions, href: "solutions" },
-    { key: "projects", label: t.nav.projects, href: "projects" },
+    ...(PROJECTS_ENABLED ? [{ key: "projects", label: t.nav.projects, href: "projects" }] : []),
     { key: "contacts", label: t.nav.contacts, href: "contact" },
   ], [t.nav.about, t.nav.contacts, t.nav.home, t.nav.projects, t.nav.solutions]);
 
@@ -1832,6 +1840,19 @@ export default function UpstruxWebsite() {
   }
 
 
+
+  if (currentPage === "projectsUnavailable") {
+    return (
+      <div className="min-h-screen bg-white text-slate-950">
+        <main className="flex min-h-screen items-center justify-center px-6">
+          <div className="text-center">
+            <div className="text-5xl font-bold tracking-[0.18em] text-slate-950 md:text-6xl">НЕДОСТЪПНИ</div>
+            <div className="mx-auto mt-6 h-px w-32 bg-slate-200" />
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   if (currentPage === "projects" || currentPage === "projects2") {
     return (
