@@ -269,18 +269,9 @@ function getLocalizedPath(page, language) {
 
 function getRouteInfo(pathname) {
   const { language, path } = getLanguageAndPath(pathname);
-  const routeInfo = ROUTE_PAGES[path] || { page: "home" };
-
-  if (SERVICE_PAGE_KEYS.includes(routeInfo.page)) {
-    return {
-      language,
-      page: "solutions",
-    };
-  }
-
   return {
     language,
-    ...routeInfo,
+    ...(ROUTE_PAGES[path] || { page: "home" }),
   };
 }
 
@@ -380,7 +371,7 @@ const bgServices = [
   { title: "Архитектура и проектиране на сгради", text: "Архитектурно проектиране на жилищни, обществени, административни и промишлени сгради; Проектиране на сгради и съоръжения; Интериорни и функционално-пространствени решения; Концептуални, идейни, технически и работни инвестиционни проекти; Градоустройствени и устройствени разработки — ПУП, РУП, концепции и устройствени схеми; Урбанистични анализи и пространствено планиране; Урбанистични анализи и пространствено планиране; BIM (Building Information Modeling) проектиране и координация; 3D моделиране, визуализации и дигитални проектни решения; Консултиране при прилагане на нормативни изисквания и инвестиционно проектиране." },
   { title: "ВиК, Хидротехническо и хидромелиоративно проектиране", text: "Изготвяне на инженерно-хидроложки доклади и водостопански изследвания за оптимално управление на водните ресурси.; Моделиране и проектиране на водоснабдителни и канализационни системи, мрежи и съоръжения.; Проектиране на пречиствателни станции и стратегически хидротехнически съоражения — ВЕЦ, ПАВЕЦ и прилежаща инфраструктура.; Проектиране на язовири, водохващания, деривации, тунели и прилежащи съоръжения.; Проектиране и обследване на хидромелиоративни, напоителни и отводнителни системи.; Проектиране на диги и защитни системи срещу наводнения и ерозия.; Анализ на хидравличен удар и проектиране на защити за тръбопроводни системи.; Оценка на техническото състояние, експлоатационната надеждност и безопасността на хидротехнически съоръжения.; Обследване и анализ на хидротехнически съоръжения при аварийни и експлоатационни режими.; Хидравлични и инженерни анализи на водопроводни системи и съоръжения.; Консултации по нормативни изисквания, технически стандарти и инженерни решения в хидротехническото строителство.; Изготвяне на технически експертизи, становища и инвестиционни проекти за ВиК и хидротехническа инфраструктура."},
   { title: "Геотехническо проектиране", text: "Геотехнически проучвания и инженерно-геоложки анализи; Проектиране на фундиране за сгради и инженерни съоръжения; Анализ и оценка на земната основа и носимоспособността на почвите; Проектиране на подпорни стени, укрепителни и противосвлачищни съоръжения; Геотехническо осигуряване при изкопи, дълбоки изкопи и строителство в урбанизирани територии; Проектиране и обследване на пилотни, плитки и комбинирани фундирания; Оценка на свлачищни, ерозионни и геодинамични процеси; Геотехнически анализи при транспортно, промишлено и хидротехническо строителство; Мониторинг и обследване на деформации и слягания на сгради и съоръжения; Изготвяне на инженерно-геоложки и геотехнически доклади, експертизи и становища; Консултиране при прилагане на нормативни изисквания и инженерни стандарти в областта на геотехниката."},
-  { title: "Проектиране на транспортнa инфраструктура", text: "Проектиране на пътища, мостове, тунели и транспортни съоръжения; Проектиране на железопътна инфраструктура и прилежащи съоръжения; Транспортно-комуникационни решения и организация на движението; Инженерни разработки за градска и междуградска транспортна инфраструктура; Проектиране на отводнителни и укрепителни системи към транспортни обекти; Анализи и оценки на експлоатационното състояние на транспортни съоръжения; Инженерни решения за рехабилитация и модернизация на транспортна инфраструктура; Технически и инвестиционни проекти в областта на транспортното строителство; Инженерно осигуряване при изграждане и експлоатация на транспортни обекти."},
+  { title: "Проектиране на транспортното инфраструктура", text: "Проектиране на пътища, мостове, тунели и транспортни съоръжения; Проектиране на железопътна инфраструктура и прилежащи съоръжения; Транспортно-комуникационни решения и организация на движението; Инженерни разработки за градска и междуградска транспортна инфраструктура; Проектиране на отводнителни и укрепителни системи към транспортни обекти; Анализи и оценки на експлоатационното състояние на транспортни съоръжения; Инженерни решения за рехабилитация и модернизация на транспортна инфраструктура; Технически и инвестиционни проекти в областта на транспортното строителство; Инженерно осигуряване при изграждане и експлоатация на транспортни обекти."},
   { title: "Геодезия, кадастър, ГИС и фотограметрия", text: " Геодезически и фотограметрични измервания; Геодезическо заснемане на поземлени имоти и строителни обекти; Заснемане и анализ на терени чрез GPS, LiDAR и безпилотни летателни апарати (UAV); 3D моделиране на терени, сгради и инженерни съоръжения; Изчисляване на обеми на земно-насипни материали и суровини; Трасиране на сгради, съоръжения и регулационни линии; Вертикално планиране и нивелация; Контролни геодезически измервания по време на строителството; Геодезическо заснемане за узаконяване и въвеждане в експлоатация; Изготвяне на кадастрални планове и карти; Кадастрални услуги и техническа документация; Изработване на комбинирани скици и ситуационни планове;  GIS базирани пространствени анализи и дигитални териториални модели; Геодезическо и кадастрално консултиране при инвестиционни и инфраструктурни проекти."},
   { title: "Управлението и координацията на проекти", text: "Управление на пълния жизнен цикъл на инвестиционни проекти; Координация на междудисциплинарни екипи при комплексни инженерни и строителни проекти; Планиране, организация и контрол на проектантски и строителни дейности; Контрол на качеството и техническото изпълнение по време на строителството; Управление на срокове, ресурси и проектна документация; Инженерно-консултантски услуги при подготовка и реализация на инвестиционни проекти; Координация между възложители, проектанти, изпълнители и административни органи; Мониторинг и оценка на изпълнението на проекти; Подготовка на техническа документация, доклади и експертни становища; Консултиране при прилагане на нормативни изисквания и добри практики в управлението на проекти." },
   { title: "Прединвестиционни проучвания и офертно планиране", text: "Изготвяне на предофертни проучвания и технически анализи.; Подготовка на количествено-стойностни сметки и бюджетни разчети.; Разработване на офертна, тръжна и техническа документация.; Анализ на срокове, ресурси, разходи и рискове.; Проучване и оценка на технически и технологични решения.; Сравнителен анализ и оптимизация на проектни варианти.; Анализ на пазарни условия, доставчици и подизпълнители.; Подготовка на графици, ресурсни планове и финансови оценки.; Технико-икономически анализи и оценка на инвестиционна ефективност.; Консултации при участие в обществени поръчки и търгове.; Анализ на нормативни и технически изисквания.; Подготовка на концептуални и предварителни проектни решения."}
@@ -448,7 +439,7 @@ const legalPages = {
     },
     {
       heading: "3. Интелектуална собственост",
-      body: "Всички текстове, структура, дизайн, графични елементи, търговски обозначения и друго съдържание на сайта са собственост на UPSTRUX или се използват на законно основание. Част от визуалното съдържание, техническите изображения, инженерните среди и специализираната инфраструктура, представени на сайта, могат да бъдат използвани с разрешение, в рамките на партньорски, академични, професионални или договорни отношения. Публикуването на подобно съдържание не следва да се тълкува като твърдение за собственост или изключителна принадлежност върху представения професионален опит, проекти, инфраструктура, лаборатории или технически съоръжения, освен ако изрично не е посочено друго. Не се разрешава копиране, възпроизвеждане, изменение, разпространение или използване за търговски цели без предварително писмено съгласие."
+      body: "Всички текстове, структура, дизайн, графични елементи, търговски обозначения и друго съдържание на сайта са собственост на UPSTRUX или се използват на законно основание. Част от визуалното съдържание, техническите изображения, инженерните среди и специализираната инфраструктура, представени на сайта, могат да бъдат използвани с разрешение, в рамките на партньорски, академични, професионални или договорни отношения. Публикуването на подобно съдържание не следва да се тълкува като твърдение за собственост върху съответната инфраструктура, лаборатории или технически съоръжения, освен ако изрично не е посочено друго. Не се разрешава копиране, възпроизвеждане, изменение, разпространение или използване за търговски цели без предварително писмено съгласие."
     },
     {
       heading: "4. Външни връзки",
@@ -490,7 +481,7 @@ const legalPages = {
       },
       {
         heading: "3. Intellectual property",
-        body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Certain visual materials, technical imagery, engineering environments and specialized infrastructure presented on this website may be used with permission within the framework of partner, academic, professional or contractual relationships. The publication of such content shall not be interpreted as a claim of ownership or exclusive affiliation with the professional experience, projects, infrastructure, laboratories or technical facilities presented, unless explicitly stated otherwise. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent."
+        body: "All text, structure, design, graphic elements, trade designations and other website content are owned by UPSTRUX or used on a lawful basis. Certain visual materials, technical imagery, engineering environments and specialized infrastructure presented on this website may be used with permission within the framework of partner, academic, professional or contractual relationships. The publication of such content shall not be interpreted as a claim of ownership over the respective infrastructure, laboratories or technical facilities unless explicitly stated otherwise. Copying, reproduction, modification, distribution or commercial use is not permitted without prior written consent."
       },
       {
         heading: "4. External links",
@@ -532,7 +523,7 @@ const legalPages = {
       },
       {
         heading: "3. Geistiges Eigentum",
-        body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte dieser Website sind Eigentum von UPSTRUX oder werden auf rechtmäßiger Grundlage verwendet. Bestimmte visuelle Inhalte, technische Darstellungen, ingenieurtechnische Umgebungen und spezialisierte Infrastrukturen, die auf dieser Website dargestellt werden, können im Rahmen partnerschaftlicher, akademischer, professioneller oder vertraglicher Beziehungen mit Genehmigung verwendet werden. Die Veröffentlichung solcher Inhalte darf nicht als Anspruch auf Eigentum oder ausschließige Zuordnung der dargestellten beruflichen Erfahrung, Projekte, Infrastruktur, Labore oder technischen Einrichtungen ausgelegt werden, sofern nicht ausdrücklich etwas anderes angegeben ist. Eine Vervielfältigung, Verbreitung, Änderung oder kommerzielle Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet."
+        body: "Alle Texte, Strukturen, Designs, grafischen Elemente, Kennzeichen und sonstigen Inhalte dieser Website sind Eigentum von UPSTRUX oder werden auf rechtmäßiger Grundlage verwendet. Bestimmte visuelle Inhalte, technische Darstellungen, ingenieurtechnische Umgebungen und spezialisierte Infrastrukturen, die auf dieser Website dargestellt werden, können im Rahmen partnerschaftlicher, akademischer, professioneller oder vertraglicher Beziehungen mit Genehmigung verwendet werden. Die Veröffentlichung solcher Inhalte darf nicht als Eigentumsanspruch auf die jeweilige Infrastruktur, Labore oder technischen Einrichtungen ausgelegt werden, sofern nicht ausdrücklich etwas anderes angegeben ist. Eine Vervielfältigung, Verbreitung, Änderung oder kommerzielle Nutzung ohne vorherige schriftliche Zustimmung ist nicht gestattet."
       },
       {
         heading: "4. Externe Links",
@@ -746,31 +737,61 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right" }) {
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, servicePage, setCurrentPage, learnMoreLabel }) {
   const bulletItems = useMemo(
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
   );
+  const hasServicePage = SERVICE_PAGE_KEYS.includes(servicePage);
+
+  const openServicePage = useCallback(() => {
+    if (hasServicePage) setCurrentPage(servicePage);
+  }, [hasServicePage, servicePage, setCurrentPage]);
+
+  const handleCardKeyDown = useCallback(
+    (event) => {
+      if (!hasServicePage) return;
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openServicePage();
+      }
+    },
+    [hasServicePage, openServicePage]
+  );
 
   const textBlock = (
-    <div className="max-w-[640px] p-4 transition-all duration-500 group-hover:translate-x-1 sm:p-5 lg:p-6">
+    <div className="max-w-[640px] transition-all duration-500 group-hover:translate-x-1">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
           <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
         ))}
       </ul>
+      {hasServicePage && (
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            openServicePage();
+          }}
+          className={LEARN_MORE_BUTTON_CLASS}
+        >
+          {learnMoreLabel}
+        </button>
+      )}
     </div>
   );
 
+  const imageObjectPositionClass = image === activity3 ? "object-center" : "object-right";
+
   const imageBlock = (
-    <div className="h-full min-h-[420px] overflow-hidden sm:min-h-[560px] lg:min-h-[620px]">
+    <div className="-m-4 h-[calc(100%+2rem)] overflow-hidden bg-white sm:-m-5 sm:h-[calc(100%+2.5rem)] lg:-m-6 lg:h-[calc(100%+3rem)]">
       <img
         src={image}
         alt={title}
         loading="lazy"
         decoding="async"
-        className={`h-full w-full object-cover ${imagePosition} transition-transform duration-700 ease-out group-hover:scale-105`}
+        className={`h-full w-full min-h-[420px] object-cover ${imageObjectPositionClass} transition-transform duration-700 ease-out group-hover:scale-105 sm:min-h-[560px] lg:min-h-[620px]`}
       />
     </div>
   );
@@ -782,7 +803,11 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="group scroll-mt-28 grid items-stretch gap-0 overflow-hidden rounded-none border border-transparent bg-transparent transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] lg:grid-cols-2"
+      onClick={openServicePage}
+      onKeyDown={handleCardKeyDown}
+      role={hasServicePage ? "button" : undefined}
+      tabIndex={hasServicePage ? 0 : undefined}
+      className="group scroll-mt-28 grid cursor-pointer items-stretch gap-12 overflow-hidden rounded-none border border-transparent bg-transparent p-4 transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] focus:outline-none focus-visible:border-blue-300 focus-visible:bg-slate-50/80 focus-visible:shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:p-5 lg:grid-cols-2 lg:gap-16 lg:p-6"
     >
       {reverse ? <><div className="order-2 h-full lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}<div className="h-full">{imageBlock}</div></>}
     </motion.div>
@@ -1362,27 +1387,6 @@ export default function UpstruxWebsite() {
     () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
     [t.services]
   );
-  const navigateToService = useCallback((serviceTitle) => {
-    const targetId = `service-${slugify(serviceTitle)}`;
-
-    setCurrentPageState("solutions");
-    setScrollTarget(null);
-
-    if (typeof window !== "undefined") {
-      window.history.pushState(
-        { page: "solutions", language },
-        "",
-        `${getLocalizedPath("solutions", language)}#${targetId}`
-      );
-
-      window.setTimeout(() => {
-        document.getElementById(targetId)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 120);
-    }
-  }, [language]);
   const currentProcessSteps = t.processSteps;
   const navItems = useMemo(() => [
     { key: "home", label: t.nav.home, href: "#home" },
@@ -1547,7 +1551,6 @@ export default function UpstruxWebsite() {
               text={service.text}
               image={service.image}
               reverse={index % 2 === 1}
-              imagePosition={index === 2 ? "object-center" : "object-right"}
               servicePage={`service${index + 1}`}
               setCurrentPage={setCurrentPage}
               learnMoreLabel={t.learnMore}
@@ -1636,36 +1639,21 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
-      {currentServices.map((service) => {
-        const targetId = `service-${slugify(service.title)}`;
+    <div className="grid gap-x-14 gap-y-4 md:grid-cols-2">
+      {t.competences.map((item) => (
+        <div
+          key={item}
+          className="flex items-start gap-3"
+        >
+          <span className="mt-[2px] text-lg text-blue-600">
+            ✓
+          </span>
 
-        return (
-          <a
-            key={service.title}
-            href={`${getLocalizedPath("solutions", language)}#${targetId}`}
-            onClick={(e) => {
-              e.preventDefault();
-              navigateToService(service.title);
-            }}
-            className="group relative block h-[280px] overflow-hidden bg-slate-900 transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              loading="lazy"
-              decoding="async"
-              className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/25 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-5">
-              <h4 className="text-lg font-light leading-[1.12] tracking-[-0.025em] text-white">
-                {service.title}
-              </h4>
-            </div>
-          </a>
-        );
-      })}
+          <p className="text-[15px] leading-6 text-slate-700">
+            {item}
+          </p>
+        </div>
+      ))}
     </div>
 
   </div>
