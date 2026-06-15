@@ -2074,7 +2074,7 @@ export default function UpstruxWebsite() {
               });
             }, 120);
           }}
-          className="group relative block h-[240px] overflow-hidden bg-slate-900 text-left transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
+          className="group relative block h-[290px] overflow-hidden bg-slate-900 text-left transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
         >
           <img
             src={service.image}
