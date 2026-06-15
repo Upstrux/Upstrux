@@ -1648,7 +1648,7 @@ export default function UpstruxWebsite() {
               e.preventDefault();
               navigateToService(service.title);
             }}
-            className="group relative block h-[320px] overflow-hidden bg-slate-900 transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
+            className="group relative block h-[240px] overflow-hidden bg-slate-900 transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
           >
             <img
               src={service.image}
