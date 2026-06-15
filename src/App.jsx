@@ -49,17 +49,6 @@ const MailIcon = (props) => (
   </IconBase>
 );
 
-
-const FileTextIcon = (props) => (
-  <IconBase {...props}>
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-    <path d="M14 2v6h6" />
-    <path d="M8 13h8" />
-    <path d="M8 17h8" />
-    <path d="M8 9h2" />
-  </IconBase>
-);
-
 const LinkedInIcon = ({ size = 24 }) => (
   <span aria-hidden="true" className="pointer-events-none inline-flex items-center justify-center font-sans font-bold leading-none text-blue-600" style={{ width: size, height: size, fontSize: size * 0.98 }}>in</span>
 );
@@ -126,7 +115,7 @@ const LANGUAGE_ROUTE_PREFIXES = {
   de: "/de",
 };
 const SERVICE_PAGE_KEYS = Array.from({ length: 8 }, (_, index) => `service${index + 1}`);
-const VALID_PAGES = ["home", "about", "solutions", "projects", "projects2", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
+const VALID_PAGES = ["home", "about", "solutions", "contact", "legal", "privacy", ...SERVICE_PAGE_KEYS];
 const PAGE_ROUTES_BY_LANGUAGE = {
   en: {
     home: "/",
@@ -134,8 +123,6 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     competence: "/areas-of-competence",
     methodology: "/from-concept-to-delivery",
     solutions: "/solutions",
-    projects: "/projects",
-    projects2: "/projects-2",
     contact: "/contact",
     legal: "/legal",
     privacy: "/privacy",
@@ -154,8 +141,6 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     competence: "/oblasti-na-kompetentnost",
     methodology: "/ot-kontseptsiyata-do-realizatsiya",
     solutions: "/resheniya",
-    projects: "/proekti",
-    projects2: "/proekti-2",
     contact: "/kontakti",
     legal: "/pravno",
     privacy: "/poveritelnost",
@@ -174,8 +159,6 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     competence: "/kompetenzbereiche",
     methodology: "/vom-konzept-bis-zur-umsetzung",
     solutions: "/losungen",
-    projects: "/projekte",
-    projects2: "/projekte-2",
     contact: "/kontakt",
     legal: "/rechtliches",
     privacy: "/datenschutz",
@@ -198,8 +181,6 @@ const ROUTE_PAGES = {
   "/areas-of-competence": { page: "about", sectionId: "competence" },
   "/from-concept-to-delivery": { page: "about", sectionId: "methodology" },
   "/solutions": { page: "solutions" },
-  "/projects": { page: "projects" },
-  "/projects-2": { page: "projects2" },
   "/contact": { page: "contact" },
   "/legal": { page: "legal" },
   "/privacy": { page: "privacy" },
@@ -208,8 +189,6 @@ const ROUTE_PAGES = {
   "/oblasti-na-kompetentnost": { page: "about", sectionId: "competence" },
   "/ot-kontseptsiyata-do-realizatsiya": { page: "about", sectionId: "methodology" },
   "/resheniya": { page: "solutions" },
-  "/proekti": { page: "projects" },
-  "/proekti-2": { page: "projects2" },
   "/kontakti": { page: "contact" },
   "/pravno": { page: "legal" },
   "/poveritelnost": { page: "privacy" },
@@ -218,8 +197,6 @@ const ROUTE_PAGES = {
   "/kompetenzbereiche": { page: "about", sectionId: "competence" },
   "/vom-konzept-bis-zur-umsetzung": { page: "about", sectionId: "methodology" },
   "/losungen": { page: "solutions" },
-  "/projekte": { page: "projects" },
-  "/projekte-2": { page: "projects2" },
   "/kontakt": { page: "contact" },
   "/rechtliches": { page: "legal" },
   "/datenschutz": { page: "privacy" },
@@ -294,17 +271,10 @@ function getRouteInfo(pathname) {
   const { language, path } = getLanguageAndPath(pathname);
   const routeInfo = ROUTE_PAGES[path] || { page: "home" };
 
-  if (!SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(routeInfo.page)) {
+  if (SERVICE_PAGE_KEYS.includes(routeInfo.page)) {
     return {
       language,
       page: "solutions",
-    };
-  }
-
-  if (!PROJECTS_ENABLED && (routeInfo.page === "projects" || routeInfo.page === "projects2")) {
-    return {
-      language,
-      page: "projectsUnavailable",
     };
   }
 
@@ -333,8 +303,6 @@ const PAGE_TITLES = {
     home: "Начало | UPSTRUX",
     about: "За Нас | UPSTRUX",
     solutions: "Решения | UPSTRUX",
-    projects: "Проекти | UPSTRUX",
-    projects2: "Проекти | UPSTRUX",
     contact: "Контакти | UPSTRUX",
     legal: "Правно | UPSTRUX",
     privacy: "Поверителност | UPSTRUX",
@@ -343,8 +311,6 @@ const PAGE_TITLES = {
     home: "Home | UPSTRUX",
     about: "About Us | UPSTRUX",
     solutions: "Solutions | UPSTRUX",
-    projects: "Projects | UPSTRUX",
-    projects2: "Projects | UPSTRUX",
     contact: "Contacts | UPSTRUX",
     legal: "Legal | UPSTRUX",
     privacy: "Privacy | UPSTRUX",
@@ -353,8 +319,6 @@ const PAGE_TITLES = {
     home: "Start | UPSTRUX",
     about: "Über Uns | UPSTRUX",
     solutions: "Lösungen | UPSTRUX",
-    projects: "Projekte | UPSTRUX",
-    projects2: "Projekte | UPSTRUX",
     contact: "Kontakt | UPSTRUX",
     legal: "Rechtliches | UPSTRUX",
     privacy: "Datenschutz | UPSTRUX",
@@ -388,11 +352,9 @@ const HERO_TRANSITION = {
   times: [0, 0.04, 0.14, 0.18],
   ease: "linear",
 };
-const NAV_LINK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
-const SOLUTION_CARDS_CLICKABLE = true;
-const PROJECTS_ENABLED = true;
-const LEARN_MORE_BUTTON_CLASS = "mt-6 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
-const BACK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
+const NAV_LINK_BUTTON_CLASS = "inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
+const LEARN_MORE_BUTTON_CLASS = `hidden mt-6 ${NAV_LINK_BUTTON_CLASS}`;
+const BACK_BUTTON_CLASS = `mt-8 ${NAV_LINK_BUTTON_CLASS}`;
 
 const heroSlides = [
   hero1,
@@ -413,211 +375,12 @@ const serviceImages = [
   activity8,  
 ];
 
-const bgProjects=[
-  {
-    title:"Изпълнителна агенция Военни клубове и военно-почивно дело",
-    description:"Цялостно конструктивно обследване на две сгради. Проектантските дейности са изпълнени с високо качество, в срок и в съответствие с български и европейски нормативни стандарти.",
-  },
-  {
-    title:"Национален институт на правосъдието",
-    description:"Конструктивно обследване и конструктивно заснемане на три сгради, изградени на етап „груб строеж“ в имот – публична държавна собственост.",
-  },
-  {
-    title:"И КЮ И България АД",
-    description:"Сеизмична квалификация на оборудване за АЕЦ Козлодуй. Изпълнени поръчки: Детектор за маслени пари тип VISATRON VN215/87. Електрически шкафове и табла.",
-  },
-  {
-    title:"АЕЦ Козлодуй ЕАД",
-    description:"Обследване на функционалната приложимост на съществуващ детайл за ремонт на фуги в слабонапорни канали.",
-  },
-  {
-    title:"Национален археологически институт с музей",
-    description:"Техническа експертиза за оценка състоянието на носещата конструкция на сградата на Археологически музей.",
-  },
-  {
-    title:"ГБС-Инфраструктурно строителство АД",
-    description:"Техническа експертиза за определяне характеристиките на бетона и армировката на мост над р. Джерман след пожар.",
-  },
-  {
-    title:"Асарел-Медет АД",
-    description:"Изработване на идеен проект за хвостохранилище „Люляковица“ и лабораторни изследвания.",
-  },
-  {
-    title:"Аурубис България АД",
-    description:"Консултантска помощ за изготвяне на техническо задание за демпфер (TMD) и анализ на безопасния експлоатационен срок.",
-  },
-  {
-    title:"РИСК ИНЖЕНЕРИНГ АД",
-    description:"Оценка на техническото състояние и обосновка на остатъчния ресурс на сградите и съоръженията, както и на оборудването и тръбопроводите, за продължаването на срока на експлоатация на блок № 6 на АЕЦ Козлодуй до 60 години. Изготвяне на обосновка за продължаване на експлоатационния срок на блок №6.",
-  }
-];
-
-const bgProjects2=[
-  {
-    title:"Национална Електрическа Компания ЕАД",
-    description:"Изготвяне на работен проект за ремонт на бързотока на преливника на язовирна стена „Кърджали“.",
-  },
-  {
-    title:"Щрабаг ЕАД",
-    description:"Извършени технически експертизи и проектни дейности.",
-  },
-  {
-    title:"Летище София ЕАД",
-    description:"Техническа експертиза по възлагателно писмо изх. № 100-20477/19.10.2017г.",
-  },
-  {
-    title:"Елаците-Мед АД",
-    description:"Обучение на служители и персонал на тема „Управление и контрол на хидротехнически съоръжения и хвостохранилища.",
-  },
-  {
-    title:"Дънди Прешъс Металс Челопеч“ ЕАД",
-    description:"Обучение на служители и персонал на тема „Хвостохранилища и хидротранспорт“",
-  },
-  {
-    title:"Ипсилон Консулт ЕООД ",
-    description:"Анализ и оценка на състоянието на строителни конструкции на язовир „Луда Яна“ и хидравлични изследвания",
-  }
-];
-
-const enProjects = [
-  {
-    title: "Executive Agency - Military Clubs and Military Recreation Activities",
-    description: "Comprehensive structural condition assessment of two buildings. All engineering design services were delivered to the highest professional standards, within the contractual schedule, and in full compliance with Bulgarian and European codes and regulations.",
-  },
-  {
-    title: "National Institute of Justice",
-    description: "Structural condition assessment and as-built structural survey of three buildings constructed to shell-and-core stage on publicly owned state property.",
-  },
-  {
-    title: "EQE Bulgaria AD",
-    description: "Seismic qualification of equipment for Kozloduy Nuclear Power Plant (NPP). Completed assignments included the VISATRON VN215/87 oil mist detector, electrical cabinets, and control panels.",
-  },
-  {
-    title: "Kozloduy NPP EAD",
-    description: "Engineering assessment of the serviceability and functional performance of an existing joint repair detail in low-head hydraulic channels.",
-  },
-  {
-    title: "National Archaeological Institute with Museum",
-    description: "Structural engineering assessment of the load-bearing system of the Archaeological Museum building.",
-  },
-  {
-    title: "GBS Infrastructure Construction AD",
-    description: "Forensic engineering investigation to determine the properties and condition of concrete and reinforcing steel in a bridge structure over the Dzherman River following fire exposure.",
-  },
-  {
-    title: "Asarel-Medet AD",
-    description: "Development of a conceptual design for the Lyulyakovitsa Tailings Storage Facility (TSF), including laboratory testing and geotechnical investigations.",
-  },
-  {
-    title: "Aurubis Bulgaria AD",
-    description: "Technical consultancy for the preparation of design specifications for a Tuned Mass Damper (TMD) system and assessment of the remaining service life of the structure.",
-  },
-  {
-    title: "Risk Engineering AD",
-    description: "Comprehensive condition assessment and residual life evaluation of structures, systems, and components (SSCs), including buildings, equipment, and piping systems, in support of the Long-Term Operation (LTO) programme for Unit 6 of Kozloduy Nuclear Power Plant. Preparation of engineering justification for the extension of the operational lifetime of Unit 6.",
-  }
-];
-
-const enProjects2 = [
-  {
-    title: "National Electric Company EAD",
-    description: "Preparation of detailed engineering design documentation for the rehabilitation of the spillway chute at Kardzhali Dam.",
-  },
-  {
-    title: "STRABAG EAD",
-    description: "Provision of engineering consultancy, technical assessments, and design services under various contractual assignments.",
-  },
-  {
-    title: "Sofia Airport EAD",
-    description: "Technical engineering assessment performed in accordance with Assignment Letter Ref. No. 100-20477/19.10.2017.",
-  },
-  {
-    title: "Elatzite-Med AD",
-    description: "Professional training programme for operational personnel on the management, monitoring, and safety control of hydraulic structures and tailings storage facilities.",
-  },
-  {
-    title: "Dundee Precious Metals Chelopech EAD",
-    description: "Professional training programme for operational personnel on tailings storage facilities and hydraulic tailings transport systems.",
-  },
-  {
-    title: "Ypsilon Consult EOOD",
-    description: "Structural condition assessment of dam-related civil structures at Luda Yana Dam, including hydraulic modelling and analysis.",
-  }
-];
-
-
-const deProjects = [
-  {
-    title: "Executive Agency - Military Clubs and Military Recreation Activities",
-    description: "Umfassende statische Zustandsbewertung von zwei Gebäuden. Sämtliche Planungs- und Ingenieurleistungen wurden nach höchsten fachlichen Standards, innerhalb der vertraglich vereinbarten Fristen sowie in voller Übereinstimmung mit den bulgarischen und europäischen Normen und Vorschriften erbracht.",
-  },
-  {
-    title: "National Institute of Justice",
-    description: "Statische Zustandsbewertung und Bestandsaufnahme der Tragwerkskonstruktion von drei Gebäuden im Rohbauzustand auf einem Grundstück in öffentlichem Staatseigentum.",
-  },
-  {
-    title: "EQE Bulgaria AD",
-    description: "Seismische Qualifizierung von Ausrüstungen für das Kernkraftwerk Kozloduy. Zu den ausgeführten Leistungen gehörten der Ölnebelmelder VISATRON VN215/87 sowie elektrische Schaltschränke und Verteileranlagen.",
-  },
-  {
-    title: "Kozloduy NPP EAD",
-    description: "Ingenieurtechnische Bewertung der Gebrauchstauglichkeit und funktionalen Leistungsfähigkeit eines bestehenden Fugensanierungsdetails in hydraulischen Gerinnen mit geringer Fallhöhe.",
-  },
-  {
-    title: "National Archaeological Institute with Museum",
-    description: "Tragwerkstechnische Bewertung des Zustands des tragenden Konstruktionssystems des Gebäudes des Archäologischen Museums.",
-  },
-  {
-    title: "GBS Infrastructure Construction AD",
-    description: "Forensisch-technische Untersuchung zur Ermittlung der Eigenschaften und des Zustands von Beton und Bewehrungsstahl in einem Brückenbauwerk über den Fluss Dzherman nach Brandbeanspruchung.",
-  },
-  {
-    title: "Asarel-Medet AD",
-    description: "Erarbeitung eines Vorentwurfs für die Tailings Storage Facility (TSF) Lyulyakovitsa einschließlich Laborprüfungen und geotechnischer Untersuchungen.",
-  },
-  {
-    title: "Aurubis Bulgaria AD",
-    description: "Technische Beratungsleistungen zur Erstellung von Planungsvorgaben für ein Schwingungstilgungssystem (Tuned Mass Damper – TMD) sowie zur Bewertung der verbleibenden Nutzungsdauer der Konstruktion.",
-  },
-  {
-    title: "Risk Engineering AD",
-    description: "Umfassende Zustandsbewertung und Restlebensdaueranalyse von Bauwerken, Systemen und Komponenten (SSCs), einschließlich Gebäuden, Ausrüstungen und Rohrleitungssystemen, zur Unterstützung des Langzeitbetriebsprogramms (Long-Term Operation – LTO) für Block 6 des Kernkraftwerks Kozloduy. Erstellung der ingenieurtechnischen Begründung für die Verlängerung der Betriebsdauer von Block 6.",
-  }
-];
-
-const deProjects2 = [
-  {
-    title: "National Electric Company EAD",
-    description: "Erstellung der Ausführungsplanung für die Instandsetzung der Hochwasserentlastungsrinne des Kardzhali-Staudamms.",
-  },
-  {
-    title: "STRABAG EAD",
-    description: "Erbringung von Ingenieurberatungsleistungen, technischen Bewertungen und Planungsleistungen im Rahmen verschiedener vertraglicher Aufträge.",
-  },
-  {
-    title: "Sofia Airport EAD",
-    description: "Ingenieurtechnische Begutachtung gemäß Auftragsschreiben Ref.-Nr. 100-20477 vom 19.10.2017.",
-  },
-  {
-    title: "Elatsite-Med AD",
-    description: "Fachschulung für Betriebs- und Fachpersonal zum Management, zur Überwachung und zur sicherheitstechnischen Kontrolle wasserbaulicher Anlagen und Tailings Storage Facilities (TSF).",
-  },
-  {
-    title: "Dundee Precious Metals Chelopech EAD",
-    description: "Fachschulung für Betriebs- und Fachpersonal zu Tailings Storage Facilities (TSF) und hydraulischen Transportanlagen für Aufbereitungsrückstände.",
-  },
-  {
-    title: "Ypsilon Consult EOOD",
-    description: "Statische Zustandsbewertung von wasserbaulichen Ingenieurbauwerken des Luda-Yana-Staudamms einschließlich hydraulischer Modellierung und Analyse.",
-  }
-];
-
 const bgServices = [
   { title: "Обследвания, in-situ и лабораторни изпитвания", text: "In-situ обследвания  на строителните конструкции и съоръжения; In-situ изпитвания (стаични и динамични) на строителните конструкции и съоръжения; Оценка на строителни конструкции, носещата способност и коравина; Оценка на сеизмичната осигуреност и конструктивна безопасност на конструкции и суоражения; Обследване на аварии в строителството; Оценка на динамичното поведение на строителните конструкции и съоръжения, с оглед осигуряване на нормалната им експлоатация; Обследване при сеизмична оценка, възстановяване и усилване на сгради съгласно EN 1998-3; Консултиране при прилагане на нормативни изисквания, технически стандарти и строителни технологии; Изпитване (Разрушително и безразрушително) на физико-механични характеристики на  строителни материали."},
   { title: "Архитектура и проектиране на сгради", text: "Архитектурно проектиране на жилищни, обществени, административни и промишлени сгради; Проектиране на сгради и съоръжения; Интериорни и функционално-пространствени решения; Концептуални, идейни, технически и работни инвестиционни проекти; Градоустройствени и устройствени разработки — ПУП, РУП, концепции и устройствени схеми; Урбанистични анализи и пространствено планиране; Урбанистични анализи и пространствено планиране; BIM (Building Information Modeling) проектиране и координация; 3D моделиране, визуализации и дигитални проектни решения; Консултиране при прилагане на нормативни изисквания и инвестиционно проектиране." },
   { title: "ВиК, Хидротехническо и хидромелиоративно проектиране", text: "Изготвяне на инженерно-хидроложки доклади и водостопански изследвания за оптимално управление на водните ресурси.; Моделиране и проектиране на водоснабдителни и канализационни системи, мрежи и съоръжения.; Проектиране на пречиствателни станции и стратегически хидротехнически съоражения — ВЕЦ, ПАВЕЦ и прилежаща инфраструктура.; Проектиране на язовири, водохващания, деривации, тунели и прилежащи съоръжения.; Проектиране и обследване на хидромелиоративни, напоителни и отводнителни системи.; Проектиране на диги и защитни системи срещу наводнения и ерозия.; Анализ на хидравличен удар и проектиране на защити за тръбопроводни системи.; Оценка на техническото състояние, експлоатационната надеждност и безопасността на хидротехнически съоръжения.; Обследване и анализ на хидротехнически съоръжения при аварийни и експлоатационни режими.; Хидравлични и инженерни анализи на водопроводни системи и съоръжения.; Консултации по нормативни изисквания, технически стандарти и инженерни решения в хидротехническото строителство.; Изготвяне на технически експертизи, становища и инвестиционни проекти за ВиК и хидротехническа инфраструктура."},
   { title: "Геотехническо проектиране", text: "Геотехнически проучвания и инженерно-геоложки анализи; Проектиране на фундиране за сгради и инженерни съоръжения; Анализ и оценка на земната основа и носимоспособността на почвите; Проектиране на подпорни стени, укрепителни и противосвлачищни съоръжения; Геотехническо осигуряване при изкопи, дълбоки изкопи и строителство в урбанизирани територии; Проектиране и обследване на пилотни, плитки и комбинирани фундирания; Оценка на свлачищни, ерозионни и геодинамични процеси; Геотехнически анализи при транспортно, промишлено и хидротехническо строителство; Мониторинг и обследване на деформации и слягания на сгради и съоръжения; Изготвяне на инженерно-геоложки и геотехнически доклади, експертизи и становища; Консултиране при прилагане на нормативни изисквания и инженерни стандарти в областта на геотехниката."},
-  { title: "Проектиране на транспортното инфраструктура", text: "Проектиране на пътища, мостове, тунели и транспортни съоръжения; Проектиране на железопътна инфраструктура и прилежащи съоръжения; Транспортно-комуникационни решения и организация на движението; Инженерни разработки за градска и междуградска транспортна инфраструктура; Проектиране на отводнителни и укрепителни системи към транспортни обекти; Анализи и оценки на експлоатационното състояние на транспортни съоръжения; Инженерни решения за рехабилитация и модернизация на транспортна инфраструктура; Технически и инвестиционни проекти в областта на транспортното строителство; Инженерно осигуряване при изграждане и експлоатация на транспортни обекти."},
+  { title: "Проектиране на транспортнa инфраструктура", text: "Проектиране на пътища, мостове, тунели и транспортни съоръжения; Проектиране на железопътна инфраструктура и прилежащи съоръжения; Транспортно-комуникационни решения и организация на движението; Инженерни разработки за градска и междуградска транспортна инфраструктура; Проектиране на отводнителни и укрепителни системи към транспортни обекти; Анализи и оценки на експлоатационното състояние на транспортни съоръжения; Инженерни решения за рехабилитация и модернизация на транспортна инфраструктура; Технически и инвестиционни проекти в областта на транспортното строителство; Инженерно осигуряване при изграждане и експлоатация на транспортни обекти."},
   { title: "Геодезия, кадастър, ГИС и фотограметрия", text: " Геодезически и фотограметрични измервания; Геодезическо заснемане на поземлени имоти и строителни обекти; Заснемане и анализ на терени чрез GPS, LiDAR и безпилотни летателни апарати (UAV); 3D моделиране на терени, сгради и инженерни съоръжения; Изчисляване на обеми на земно-насипни материали и суровини; Трасиране на сгради, съоръжения и регулационни линии; Вертикално планиране и нивелация; Контролни геодезически измервания по време на строителството; Геодезическо заснемане за узаконяване и въвеждане в експлоатация; Изготвяне на кадастрални планове и карти; Кадастрални услуги и техническа документация; Изработване на комбинирани скици и ситуационни планове;  GIS базирани пространствени анализи и дигитални териториални модели; Геодезическо и кадастрално консултиране при инвестиционни и инфраструктурни проекти."},
   { title: "Управлението и координацията на проекти", text: "Управление на пълния жизнен цикъл на инвестиционни проекти; Координация на междудисциплинарни екипи при комплексни инженерни и строителни проекти; Планиране, организация и контрол на проектантски и строителни дейности; Контрол на качеството и техническото изпълнение по време на строителството; Управление на срокове, ресурси и проектна документация; Инженерно-консултантски услуги при подготовка и реализация на инвестиционни проекти; Координация между възложители, проектанти, изпълнители и административни органи; Мониторинг и оценка на изпълнението на проекти; Подготовка на техническа документация, доклади и експертни становища; Консултиране при прилагане на нормативни изисквания и добри практики в управлението на проекти." },
   { title: "Прединвестиционни проучвания и офертно планиране", text: "Изготвяне на предофертни проучвания и технически анализи.; Подготовка на количествено-стойностни сметки и бюджетни разчети.; Разработване на офертна, тръжна и техническа документация.; Анализ на срокове, ресурси, разходи и рискове.; Проучване и оценка на технически и технологични решения.; Сравнителен анализ и оптимизация на проектни варианти.; Анализ на пазарни условия, доставчици и подизпълнители.; Подготовка на графици, ресурсни планове и финансови оценки.; Технико-икономически анализи и оценка на инвестиционна ефективност.; Консултации при участие в обществени поръчки и търгове.; Анализ на нормативни и технически изисквания.; Подготовка на концептуални и предварителни проектни решения."}
@@ -801,7 +564,7 @@ const legalPages = {
 
 const translations = {
   bg: {
-    nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", projects: "Проекти", contacts: "Контакти" },
+    nav: { home: "Начало", about: "За нас", solutions: "РЕШЕНИЯ", contacts: "Контакти" },
     heroTitle: ["Инженерство, което свързва", "визията с реалността"],
     aboutLabel: "Интегрирано Инженерство и Управление на Проекти",
     aboutTitle: "За Нас",
@@ -829,23 +592,15 @@ const translations = {
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
-    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", projects: "Проекти", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно" },
-
-    projectsPage: {
-      eyebrow: "Проекти в областта на инфраструктурата, индустрията, енергетиката, сградното строителство и съоръженията",
-      title: "Проекти",
-      intro: "UPSTRUX обединява инженерен опит, специализирани технически мрежи и мултидисциплинарни екипи в подкрепа на успешната реализация на комплексни проекти. Представените по-долу проекти демонстрират релевантен опит в областта на инфраструктурата, индустрията, енергетиката, водностопанската инфраструктура, сградното строителство и съоръженията.",
-    },
+    footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Решения", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно към началната страница" },
     learnMore: "Научете повече →",
     services: bgServices,
     processSteps: bgProcessSteps,
-    projects: bgProjects,
-    projects2: bgProjects2,
     legalPages: legalPages.bg,
   },
 
   en: {
-    nav: { home: "Home", about: "About", solutions: "SOLUTIONS", projects: "Projects", contacts: "Contacts" },
+    nav: { home: "Home", about: "About", solutions: "SOLUTIONS", contacts: "Contacts" },
     heroTitle: ["Engineering that connects", "vision with reality"],
     aboutLabel: "Integrated Engineering & Project Management",
     aboutTitle: "About Us",
@@ -873,22 +628,14 @@ const translations = {
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
-    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", projects: "Projects", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back" },
-
-    projectsPage: {
-      eyebrow: "Projects Across Infrastructure, Industry, Energy, Buildings and Facilities Projects",
-      title: "Projects",
-      intro: "UPSTRUX brings together engineering expertise, specialized technical networks and multidisciplinary teams to support the successful delivery of complex projects. The projects presented below demonstrates relevant experience in projects across infrastructure, industry, energy, water infrastructure, building construction and facilities.",
-    },
+    footer: { quick: "Quick links", follow: "Follow", solutions: "Solutions", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back to homepage" },
     learnMore: "Learn more →",
     services: enServices,
     processSteps: enProcessSteps,
-    projects: enProjects,
-    projects2: enProjects2,
     legalPages: legalPages.en,
   },
   de: {
-    nav: { home: "Start", about: "Über Uns", solutions: "LÖSUNGEN", projects: "Projekte", contacts: "Kontakt" },
+    nav: { home: "Start", about: "Über Uns", solutions: "LÖSUNGEN", contacts: "Kontakt" },
     heroTitle: ["Ingenieurwesen, das Vision", "mit Realität verbindet"],
     aboutLabel: "Integriertes Ingenieurwesen & Projektmanagement",
     aboutTitle: "Über Uns",
@@ -916,18 +663,10 @@ const translations = {
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
-    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", projects: "Projekte", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück" },
-
-    projectsPage: {
-      eyebrow: "Projekte in den Bereichen Infrastruktur, Industrie, Energie, Hoch-, Tief- und Anlagenbau",
-      title: "Projekte",
-      intro: "UPSTRUX vereint ingenieurtechnische Expertise, spezialisierte technische Netzwerke und multidisziplinäre Teams, um die erfolgreiche Umsetzung komplexer Projekte zu unterstützen. Die nachfolgend dargestellten Projekte veranschaulichen einschlägige Erfahrung in den Bereichen Infrastruktur, Industrie, Energie, Wasserwirtschaft, Hoch-, Tief- und Anlagenbau.",
-    },
+    footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Lösungen", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück zur Startseite" },
     learnMore: "Mehr erfahren →",
     services: deServices,
     processSteps: deProcessSteps,
-    projects: deProjects,
-    projects2: deProjects2,
     legalPages: legalPages.de,
   },
 };
@@ -1007,7 +746,7 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right" }) {
   const bulletItems = useMemo(
     () => text.split(";").map((item) => item.trim()).filter(Boolean),
     [text]
@@ -1021,11 +760,6 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
           <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
         ))}
       </ul>
-      {SOLUTION_CARDS_CLICKABLE && (
-        <span className={LEARN_MORE_BUTTON_CLASS}>
-          {learnMoreLabel}
-        </span>
-      )}
     </div>
   );
 
@@ -1048,16 +782,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      onClick={SOLUTION_CARDS_CLICKABLE ? () => setCurrentPage(servicePage) : undefined}
-      onKeyDown={SOLUTION_CARDS_CLICKABLE ? (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          setCurrentPage(servicePage);
-        }
-      } : undefined}
-      role={SOLUTION_CARDS_CLICKABLE ? "button" : undefined}
-      tabIndex={SOLUTION_CARDS_CLICKABLE ? 0 : undefined}
-      className={`group scroll-mt-28 grid items-stretch gap-0 overflow-hidden rounded-none border border-transparent bg-transparent transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] lg:grid-cols-2 ${SOLUTION_CARDS_CLICKABLE ? "cursor-pointer" : ""}`}
+      className="group scroll-mt-28 grid items-stretch gap-0 overflow-hidden rounded-none border border-transparent bg-transparent transition-all duration-500 hover:border-slate-200 hover:bg-slate-50/80 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)] lg:grid-cols-2"
     >
       {reverse ? <><div className="order-2 h-full lg:order-1">{imageBlock}</div><div className="order-1 lg:order-2">{textBlock}</div></> : <>{textBlock}<div className="h-full">{imageBlock}</div></>}
     </motion.div>
@@ -1101,7 +826,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-3 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
             {navItems.map((item) => (
               <a
                 key={item.key}
@@ -1110,12 +835,10 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
                   e.preventDefault();
                   if (item.key === "solutions") {
                     setCurrentPage("solutions");
-                  } else if (item.key === "projects") {
-                    setCurrentPage("projects");
                   } else if (item.key === "contacts") {
                     setCurrentPage("contact");
                   } else {
-                    setCurrentPage(item.key === "about" ? "about" : "home");
+                    setCurrentPage("home");
                     setTimeout(() => {
                       document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
                     }, 50);
@@ -1269,10 +992,6 @@ function SiteFooter({ t, setCurrentPage }) {
               {t.footer.solutions}
             </button>
 
-            <button type="button" onClick={() => setCurrentPage("projects")} className="text-left hover:text-blue-600">
-              {t.footer.projects}
-            </button>
-
             <button type="button" onClick={() => setCurrentPage("contact")} className="text-left hover:text-blue-600">
               {t.footer.contacts}
             </button>
@@ -1344,130 +1063,6 @@ function SiteFooter({ t, setCurrentPage }) {
     </footer>
   );
 }
-
-function ProjectPagination({ activePage, setCurrentPage }) {
-  return (
-    <nav className="mt-12 flex justify-center gap-3" aria-label="Страници с проекти">
-      {[1, 2].map((pageNumber) => (
-        <button
-          key={pageNumber}
-          type="button"
-          onClick={() => setCurrentPage(pageNumber === 1 ? "projects" : "projects2")}
-          className={`inline-flex h-11 w-11 items-center justify-center border border-blue-600 text-sm font-semibold transition hover:bg-blue-50 ${
-            activePage === pageNumber ? "bg-blue-600 text-white" : "bg-transparent text-blue-600"
-          }`}
-          aria-current={activePage === pageNumber ? "page" : undefined}
-        >
-          {pageNumber}
-        </button>
-      ))}
-    </nav>
-  );
-}
-
-function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems, activePage }) {
-  const pageProjects = activePage === 1 ? t.projects : t.projects2;
-
-  return (
-    <div className="min-h-screen bg-white text-slate-950">
-      <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
-          <button type="button" onClick={() => setCurrentPage("home")}>
-            <Logo footer />
-          </button>
-          <div className="flex justify-center mt-1 md:hidden">
-            <MobileMenuButton mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-          </div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.key === "contacts" ? "#contact-page" : item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.key === "solutions") {
-                    setCurrentPage("solutions");
-                  } else if (item.key === "projects") {
-                    setCurrentPage("projects");
-                  } else if (item.key === "contacts") {
-                    setCurrentPage("contact");
-                  } else {
-                    setCurrentPage(item.key === "about" ? "about" : "home");
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-                    }, 50);
-                  }
-                  setMobileMenuOpen(false);
-                }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
-              >
-                {item.label}
-              </a>
-            ))}
-            <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
-              {LANGUAGE_CODES.map((lang) => (
-                <button
-                  key={lang}
-                  type="button"
-                  onClick={() => {
-                    setLanguage(lang);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`cursor-pointer uppercase transition hover:text-blue-600 ${language === lang ? "text-blue-600" : "text-slate-900"}`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      <main className="bg-white px-6 pt-32 pb-28">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-              {t.projectsPage.eyebrow}
-          </p>
-          <h1 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
-            {t.projectsPage.title}
-          </h1>
-          <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-600">
-            {t.projectsPage.intro}
-          </p>
-          <SectionDivider className="my-10" />
-
-          <div className="max-w-5xl space-y-6 text-lg leading-8 text-slate-700">
-            <p>{t.projectsPage.p1}</p>
-            <p>{t.projectsPage.p2}</p>
-          </div>
-
-          <div className="mt-16 grid gap-6 lg:grid-cols-3">
-            {pageProjects.map((project, index) => (
-              <article key={project.title} className="flex min-h-[260px] flex-col bg-white p-7 transition hover:shadow-sm">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-blue-600">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <FileTextIcon size={22} className="text-blue-600" />
-                </div>
-                <h2 className="mt-5 text-2xl font-light leading-tight tracking-[-0.02em] text-blue-600">
-                  {project.title}
-                </h2>
-                <p className="mt-5 flex-1 text-base leading-7 text-slate-700">
-                  {project.description}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <ProjectPagination activePage={activePage} setCurrentPage={setCurrentPage} />
-        </div>
-      </main>
-      <SiteFooter t={t} setCurrentPage={setCurrentPage} />
-    </div>
-  );
-}
-
 function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
   return (
     <div className="min-h-screen bg-white text-slate-950">
@@ -1492,8 +1087,6 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
 
         if (item.key === "solutions") {
           setCurrentPage("solutions");
-        } else if (item.key === "projects") {
-          setCurrentPage("projects");
         } else if (item.key === "contacts") {
           setCurrentPage("contact");
         } else {
@@ -1593,16 +1186,14 @@ export default function UpstruxWebsite() {
   const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
 
   const setCurrentPage = useCallback((page) => {
-    const nextPage = !SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(page) ? "solutions" : !PROJECTS_ENABLED && (page === "projects" || page === "projects2") ? "projectsUnavailable" : page;
-
-    setCurrentPageState(nextPage);
+    setCurrentPageState(page);
     setScrollTarget(null);
 
     if (typeof window !== "undefined") {
       window.history.pushState(
-        { page: nextPage, language },
+        { page, language },
         "",
-        getLocalizedPath(nextPage, language)
+        getLocalizedPath(page, language)
       );
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1611,16 +1202,14 @@ export default function UpstruxWebsite() {
   const setLanguage = useCallback((nextLanguage) => {
     if (!LANGUAGE_CODES.includes(nextLanguage)) return;
 
-    const nextPage = SERVICE_PAGE_KEYS.includes(currentPage) ? "solutions" : !PROJECTS_ENABLED && (currentPage === "projects" || currentPage === "projects2") ? "projectsUnavailable" : currentPage;
-
     setLanguageState(nextLanguage);
 
     if (typeof window !== "undefined") {
       window.localStorage.setItem("upstruxLanguage", nextLanguage);
       window.history.pushState(
-        { page: nextPage, language: nextLanguage },
+        { page: currentPage, language: nextLanguage },
         "",
-        getLocalizedPath(nextPage, nextLanguage)
+        getLocalizedPath(currentPage, nextLanguage)
       );
     }
   }, [currentPage]);
@@ -1773,14 +1362,34 @@ export default function UpstruxWebsite() {
     () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
     [t.services]
   );
+  const navigateToService = useCallback((serviceTitle) => {
+    const targetId = `service-${slugify(serviceTitle)}`;
+
+    setCurrentPageState("solutions");
+    setScrollTarget(null);
+
+    if (typeof window !== "undefined") {
+      window.history.pushState(
+        { page: "solutions", language },
+        "",
+        `${getLocalizedPath("solutions", language)}#${targetId}`
+      );
+
+      window.setTimeout(() => {
+        document.getElementById(targetId)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 120);
+    }
+  }, [language]);
   const currentProcessSteps = t.processSteps;
   const navItems = useMemo(() => [
     { key: "home", label: t.nav.home, href: "#home" },
     { key: "about", label: t.nav.about, href: "#about" },
     { key: "solutions", label: t.nav.solutions, href: "solutions" },
-    ...(PROJECTS_ENABLED ? [{ key: "projects", label: t.nav.projects, href: "projects" }] : []),
     { key: "contacts", label: t.nav.contacts, href: "contact" },
-  ], [t.nav.about, t.nav.contacts, t.nav.home, t.nav.projects, t.nav.solutions]);
+  ], [t.nav.about, t.nav.contacts, t.nav.home, t.nav.solutions]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -1840,35 +1449,6 @@ export default function UpstruxWebsite() {
   }
 
 
-
-  if (currentPage === "projectsUnavailable") {
-    return (
-      <div className="min-h-screen bg-white text-slate-950">
-        <main className="flex min-h-screen items-center justify-center px-6">
-          <div className="text-center">
-            <div className="text-5xl font-bold tracking-[0.18em] text-slate-950 md:text-6xl">НЕДОСТЪПНИ</div>
-            <div className="mx-auto mt-6 h-px w-32 bg-slate-200" />
-          </div>
-        </main>
-      </div>
-    );
-  }
-
-  if (currentPage === "projects" || currentPage === "projects2") {
-    return (
-      <ProjectsContentPage
-        t={t}
-        setCurrentPage={setCurrentPage}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-        language={language}
-        setLanguage={setLanguage}
-        navItems={navItems}
-        activePage={currentPage === "projects" ? 1 : 2}
-      />
-    );
-  }
-
   if (currentPage === "legal") return <LegalContentPage page={t.legalPages.legal} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
   if (currentPage === "privacy") return <LegalContentPage page={t.legalPages.privacy} onBack={() => setCurrentPage("home")} backLabel={t.footer.backHome} />;
   if (currentPage === "contact") {
@@ -1908,8 +1488,6 @@ export default function UpstruxWebsite() {
 
       if (item.key === "solutions") {
         setCurrentPage("solutions");
-      } else if (item.key === "projects") {
-        setCurrentPage("projects");
       } else if (item.key === "contacts") {
         setCurrentPage("contact");
       } else {
@@ -1968,8 +1546,8 @@ export default function UpstruxWebsite() {
               title={service.title}
               text={service.text}
               image={service.image}
-              imagePosition={index === 2 ? "object-center" : "object-right"}
               reverse={index % 2 === 1}
+              imagePosition={index === 2 ? "object-center" : "object-right"}
               servicePage={`service${index + 1}`}
               setCurrentPage={setCurrentPage}
               learnMoreLabel={t.learnMore}
@@ -2004,8 +1582,6 @@ export default function UpstruxWebsite() {
     onClick={() => {
       if (item.key === "solutions") {
         setCurrentPage("solutions");
-      } else if (item.key === "projects") {
-        setCurrentPage("projects");
       } else if (item.key === "contacts") {
         setCurrentPage("contact");
       } else {
@@ -2060,21 +1636,36 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-x-14 gap-y-4 md:grid-cols-2">
-      {t.competences.map((item) => (
-        <div
-          key={item}
-          className="flex items-start gap-3"
-        >
-          <span className="mt-[2px] text-lg text-blue-600">
-            ✓
-          </span>
+    <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
+      {currentServices.map((service) => {
+        const targetId = `service-${slugify(service.title)}`;
 
-          <p className="text-[15px] leading-6 text-slate-700">
-            {item}
-          </p>
-        </div>
-      ))}
+        return (
+          <a
+            key={service.title}
+            href={`${getLocalizedPath("solutions", language)}#${targetId}`}
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToService(service.title);
+            }}
+            className="group relative block h-[280px] overflow-hidden bg-slate-900 transition-all duration-500 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/25 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <h4 className="text-lg font-light leading-[1.12] tracking-[-0.025em] text-white">
+                {service.title}
+              </h4>
+            </div>
+          </a>
+        );
+      })}
     </div>
 
   </div>
