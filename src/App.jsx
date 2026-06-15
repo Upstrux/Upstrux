@@ -1615,20 +1615,30 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-x-14 gap-y-4 md:grid-cols-2">
-      {t.competences.map((item) => (
-        <div
-          key={item}
-          className="flex items-start gap-3"
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {currentServices.map((service, index) => (
+        <button
+          key={service.title}
+          type="button"
+          onClick={() => setCurrentPage(`service${index + 1}`)}
+          className="group relative h-[210px] overflow-hidden text-left shadow-sm"
         >
-          <span className="mt-[2px] text-lg text-blue-600">
-            ✓
-          </span>
+          <img
+            src={service.image}
+            alt={service.title}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
 
-          <p className="text-[15px] leading-6 text-slate-700">
-            {item}
-          </p>
-        </div>
+          <div className="absolute inset-0 bg-slate-950/45 transition group-hover:bg-slate-950/55" />
+
+          <div className="absolute inset-x-0 bottom-0 p-5">
+            <h4 className="text-lg font-light leading-tight tracking-[-0.02em] text-white">
+              {service.title}
+            </h4>
+          </div>
+        </button>
       ))}
     </div>
 
