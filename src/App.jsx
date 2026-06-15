@@ -1636,7 +1636,7 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
       {currentServices.map((service) => {
         const targetId = `service-${slugify(service.title)}`;
 
