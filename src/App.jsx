@@ -389,8 +389,8 @@ const HERO_TRANSITION = {
   ease: "linear",
 };
 const NAV_LINK_BUTTON_CLASS = "inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
-const SOLUTION_CARDS_CLICKABLE = false;
-const PROJECTS_ENABLED = false;
+const SOLUTION_CARDS_CLICKABLE = true;
+const PROJECTS_ENABLED = true;
 const LEARN_MORE_BUTTON_CLASS = `mt-6 ${NAV_LINK_BUTTON_CLASS}`;
 const BACK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 
