@@ -1,9 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
-//About
-import about1 from"./assets/about/about.webp";
-
 //hero
 import hero1 from "./assets/hero/hero1.webp";
 import hero2 from "./assets/hero/hero2.webp";
