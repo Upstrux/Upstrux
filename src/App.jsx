@@ -389,8 +389,8 @@ const HERO_TRANSITION = {
   ease: "linear",
 };
 const NAV_LINK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
-const SOLUTION_CARDS_CLICKABLE = true;
-const PROJECTS_ENABLED = true;
+const SOLUTION_CARDS_CLICKABLE = false;
+const PROJECTS_ENABLED = false;
 const LEARN_MORE_BUTTON_CLASS = "mt-6 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const BACK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 
@@ -813,19 +813,6 @@ const translations = {
     engineeringCycle: "UPSTRUX координира и управлява комплексни инженерни и инвестиционни проекти, които изискват взаимодействие между различни технически дисциплини, специализирани експертни екипи и заинтересовани страни в рамките на инвестиционния и строителния процес. Нашият подход се простира отвъд разработването на отделни проектни решения и се основава на ефективната интеграция на архитекти, инженери, проектанти, консултанти и мениджъри в единна проектна среда. Чрез нашия интегриран подход към инженерството и управлението на проекти, техническа експертиза и цялостен контрол върху всички етапи на реализацията — от разработването на концепцията до окончателното изпълнение на проекта — UPSTRUX предоставя устойчиви инженерни решения и управление на жизнения цикъл на проектите, създавайки дългосрочна стойност за своите клиенти.",
     competenceTitle: "Области на компетентност",
     competenceIntro: "UPSTRUX съчетава експертиза в областта на архитектурата, инженерството, дизайна, планирането, управлението, строителството и консултирането в ключови области на строително-инвестиционния процес.",
-    competences: [
-    "Архитектура, урбанизъм, пространствено планиране и управление на територията.",
-    "Проектиране на сгради и съоръжения.",
-    "Обследване и изпитване на строителни конструкции, съоръжения и мостове.",
-    "Сеизмична оценка, усилване, реконструкция и възстановяване на строителни конструкции.",
-    "Транспортно строителство, пътна инфраструктура, транспортни съоръжения и железопътно инженерство.",
-    "Геодезия, геоинформатика, кадастър, инженерно заснемане и управление на пространствени данни.",
-    "Геотехническо инженерство, строителни материали, лабораторни изпитвания, технически експертизи и устойчиво строителство.",
-    "Водоснабдяване и канализация, хидротехническо строителство, хидрология, инженерна екология и опазване на околната среда.",
-    "Технология и механизация на строителството, BIM, дигитализация и информационни технологии в строителството.",
-    "Организация, управление и икономика на строителството, инвестиционно планиране и управление на строителни проекти.",
-    "Нормативно съответствие, технически консултации, експертна дейност и консултиране в строително-инвестиционния сектор.",
-    ],
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
@@ -857,19 +844,6 @@ const translations = {
     engineeringCycle: "UPSTRUX coordinates and manage complex engineering and investment projects requiring interaction between multiple technical disciplines, specialized expert teams and stakeholders throughout the investment and construction process. Our approach extends beyond the development of individual design solutions and is based on the effective integration of architects, engineers, planners, consultants and managers within a unified project environment. Through our integrated engineering and project management approach, technical expertise, and end-to-end oversight across all stages of project delivery — from concept development to project delivery — UPSTRUX provides sustainable engineering solutions and lifecycle management, creating long-term value for our clients.",
     competenceTitle: "Areas of Competence",
     competenceIntro: "UPSTRUX combines architecture, engineering, design, planning, management, construction and consulting expertise across key areas of the construction and investment process.",
-    competences: [
-    "Architecture, urban planning, spatial planning and territorial management.",
-    "Structural design and engineering of buildings and facilities.",
-    "Assessment and testing of structures, facilities and bridges.",
-    "Seismic assessment, strengthening and retrofitting of structures.",
-    "Transport and road infrastructure construction, transport facilities and railway engineering.",
-    "Geodesy, geoinformatics, cadastre, engineering surveying and spatial data management.",
-    "Geotechnical engineering, building physics, construction materials, laboratory testing, technical expertise and sustainable construction.",
-    "Water supply and sewerage, hydraulic engineering, hydrology, environmental engineering and environmental protection.",
-    "Construction technology and mechanization, BIM, digitalization and information technologies in construction.",
-    "Construction organization, management and economics, investment planning and construction project management.",
-    "Regulatory compliance, technical consulting, expert services and consulting in the construction investment sector.",
-    ],
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
@@ -900,19 +874,6 @@ const translations = {
     engineeringCycle: "UPSTRUX koordiniert und steuert komplexe Ingenieur- und Investitionsprojekte, die eine enge Zusammenarbeit verschiedener technischer Fachdisziplinen, spezialisierter Expertenteams und relevanter Stakeholder entlang des gesamten Investitions- und Bauprozesses erfordern. Unser Ansatz geht über die Entwicklung einzelner Planungslösungen hinaus und basiert auf der effektiven Integration von Architekten, Ingenieuren, Fachplanern, Beratern und Projektmanagern in einer gemeinsamen Projektumgebung. Durch unseren integrierten Ansatz im Ingenieurwesen und Projektmanagement, technische Expertise sowie die durchgängige Steuerung und Überwachung aller Phasen der Projektabwicklung – von der Konzeptentwicklung bis zur Projektrealisierung – bietet UPSTRUX nachhaltige Ingenieurlösungen und ein ganzheitliches Lifecycle-Management, wodurch wir langfristigen Mehrwert für unsere Kunden schaffen.",
     competenceTitle: "Kompetenzbereiche",
     competenceIntro: "UPSTRUX vereint Kompetenzen in den Bereichen Architektur, Ingenieurwesen, Entwurfs- und Fachplanung, Projektmanagement, Bauausführung und Fachberatung entlang der wesentlichen Phasen des Bau- und Investitionsprozesses.",
-    competences:[ 
-    "Architektur, Städtebau, Raumplanung und Flächenmanagement.",
-    "Tragwerksplanung und konstruktives Ingenieurwesen für Gebäude und Bauwerke.",
-    "Bewertung, Untersuchung und Prüfung von Tragwerken, Bauwerken und Brücken.",
-    "Seismische Bewertung, Verstärkung und Nachrüstung von Tragwerken.",
-    "Verkehrswegebau, Straßeninfrastruktur, Verkehrsbauwerke und Eisenbahningenieurwesen.",
-    "Geodäsie, Geoinformatik, Katasterwesen, Ingenieurvermessung und Management räumlicher Daten.",
-    "Geotechnik, Bauphysik, Baustofftechnik, Laborprüfungen, technische Gutachten und nachhaltiges Bauen.",
-    "Wasserversorgung und Abwassertechnik, Wasserbau, Hydrologie, Umwelttechnik und Umweltschutz.",
-    "Bautechnologie und Baumechanisierung, BIM, Digitalisierung und Informationstechnologien im Bauwesen.",
-    "Bauorganisation, Baumanagement und Bauökonomie, Investitionsplanung sowie Bauprojektmanagement.",
-    "Regulatorische Compliance, technische Beratung, Gutachtertätigkeiten und Consulting im Bau- und Investitionssektor.",
-    ],
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
