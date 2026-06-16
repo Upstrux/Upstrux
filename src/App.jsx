@@ -1639,7 +1639,7 @@ export default function UpstruxWebsite() {
     if (currentPage !== "home" && currentPage !== "about") return;
 
     const updateTitleByScroll = () => {
-      const sectionIds = ["about", "competence", "methodology"];
+      const sectionIds = ["about", "competence", "team", "methodology"];
       const activeSectionId = sectionIds.reduce((activeId, sectionId) => {
         const section = document.getElementById(sectionId);
         if (!section) return activeId;
