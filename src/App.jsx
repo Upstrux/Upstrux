@@ -1134,12 +1134,13 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
             <div key={item.key} className="group relative">
               <button
                 type="button"
-                className={`${itemClass} cursor-default`}
+                className={`${itemClass} cursor-default inline-flex items-center gap-1`}
               >
                 {item.label}
+                <span className="text-[10px] leading-none">▾</span>
               </button>
 
-              <div className="hidden min-w-[230px] flex-col gap-3 rounded-xl bg-white px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
+              <div className="hidden min-w-[230px] flex-col gap-3 bg-white/85 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
                 {aboutDropdownItems.map((dropdownItem) => (
                   <button
                     key={dropdownItem.key}
