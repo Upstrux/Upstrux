@@ -2239,19 +2239,21 @@ export default function UpstruxWebsite() {
   </div>
 </section>
 )}
-<section id="methodology" className="bg-white px-6 py-20">
+<section id="methodology" className="bg-white px-6 py-24">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-20 text-left">
-      <h3 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
-        {t.methodologyTitle}
-      </h3>
+    <h2 className="mt-3 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
+      {t.methodologyTitle}
+    </h2>
 
-      <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-600">
-        {t.methodologyIntro}
-      </p>
+    <div className="mt-10">
+      <div className="max-w-3xl">
+        <p className="text-lg leading-8 text-slate-700">
+          {t.methodologyIntro}
+        </p>
+      </div>
     </div>
 
-    <div className="flex flex-col gap-4">
+    <div className="mt-12 flex flex-col gap-4">
       {currentProcessSteps.map((step, index) => (
         <ProcessStep
           key={step.title}
