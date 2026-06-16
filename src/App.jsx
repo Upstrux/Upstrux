@@ -1203,6 +1203,28 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     () => service.text.split(";").map((item) => item.trim()).filter(Boolean),
     [service.text]
   );
+  const galleryItems = useMemo(
+    () => bulletItems.slice(0, 3).map((item, index) => ({
+      image: service.image,
+      description: item,
+      index,
+    })),
+    [bulletItems, service.image]
+  );
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(null);
+  const activeGalleryItem = activeGalleryIndex !== null ? galleryItems[activeGalleryIndex] : null;
+
+  const showPreviousGalleryItem = () => {
+    setActiveGalleryIndex((current) =>
+      current === null ? 0 : (current - 1 + galleryItems.length) % galleryItems.length
+    );
+  };
+
+  const showNextGalleryItem = () => {
+    setActiveGalleryIndex((current) =>
+      current === null ? 0 : (current + 1) % galleryItems.length
+    );
+  };
 
   return (
     <div className="min-h-screen bg-white text-slate-950">
@@ -1247,37 +1269,98 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
             {service.title}
           </h1>
           <SectionDivider className="my-10" />
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[service.image, service.image, service.image].map((image, index) => (
-                <div key={`${service.title}-${index}`} className="overflow-hidden bg-white">
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {galleryItems.map((item, index) => (
+              <article key={`${service.title}-${index}`} className="bg-white">
+                <button
+                  type="button"
+                  onClick={() => setActiveGalleryIndex(index)}
+                  className="group block w-full overflow-hidden bg-white text-left"
+                >
                   <img
-                    src={image}
+                    src={item.image}
                     alt={service.title}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-[4/3] w-full object-cover min-h-[260px] sm:min-h-[320px] lg:min-h-[360px]"
+                    className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                </div>
+                </button>
+
+                <p className="mt-4 line-clamp-3 text-[15px] leading-6 text-slate-700">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-14 max-w-5xl">
+            <ul className="space-y-2 text-[15px] leading-6 text-slate-700">
+              {bulletItems.map((item) => (
+                <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
               ))}
-            </div>
-            <div className="max-w-[640px]">
-              <ul className="space-y-2 text-[15px] leading-6 text-slate-700">
-                {bulletItems.map((item) => (
-                  <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
-                ))}
-              </ul>
-              <button
-                type="button"
-                onClick={() => setCurrentPage("solutions")}
-                className={BACK_BUTTON_CLASS}
-              >
-                {t.footer.backHome}
-              </button>
-            </div>
+            </ul>
+            <button
+              type="button"
+              onClick={() => setCurrentPage("solutions")}
+              className={BACK_BUTTON_CLASS}
+            >
+              {t.footer.backHome}
+            </button>
           </div>
         </div>
       </main>
+
+      {activeGalleryItem && (
+        <div className="fixed inset-0 z-[100] bg-slate-950/80 px-6 py-8 backdrop-blur-sm">
+          <div className="mx-auto flex h-full max-w-7xl flex-col bg-white lg:grid lg:grid-cols-[0.38fr_0.62fr]">
+            <div className="flex flex-col justify-between p-8 lg:p-10">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+                  {service.title}
+                </p>
+                <p className="mt-8 text-lg leading-8 text-slate-700">
+                  {activeGalleryItem.description}
+                </p>
+              </div>
+
+              <div className="mt-8 flex items-center gap-6">
+                <button
+                  type="button"
+                  onClick={showPreviousGalleryItem}
+                  className="inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700"
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="button"
+                  onClick={showNextGalleryItem}
+                  className="inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
+
+            <div className="relative min-h-[360px] bg-slate-100 lg:min-h-0">
+              <button
+                type="button"
+                onClick={() => setActiveGalleryIndex(null)}
+                className="absolute right-5 top-5 z-10 inline-flex h-10 w-10 items-center justify-center bg-white/90 text-2xl font-light text-slate-900 transition hover:text-blue-600"
+                aria-label="Close gallery"
+              >
+                ×
+              </button>
+              <img
+                src={activeGalleryItem.image}
+                alt={service.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <SiteFooter t={t} setCurrentPage={setCurrentPage} />
     </div>
   );
