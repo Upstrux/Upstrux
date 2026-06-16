@@ -903,7 +903,7 @@ const translations = {
     teamShowMore: "Show more",
     teamShowLess: "Show less",
     methodologyTitle: "Our Approach",
-    methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
+    methodologyIntro: "Founded on best project management practices, our approach ensures structured delivery, seamless coordination, and successful outcomes throughout every stage of the project lifecycle.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
     footer: { quick: "Quick links", follow: "Follow", solutions: "Services", projects: "Projects", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back" },
 
@@ -2250,8 +2250,8 @@ export default function UpstruxWebsite() {
     </h2>
 
     <div className="mt-10">
-      <div className="max-w-3xl">
-        <p className="text-lg leading-8 text-slate-700">
+      <div className={`max-w-6xl border-l-4 border-blue-600 bg-white px-8 py-5 ${language === "de" ? "mt-8" : language === "bg" ? "mt-10" : "mt-12"}`}>
+        <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
           {t.methodologyIntro}
         </p>
       </div>
