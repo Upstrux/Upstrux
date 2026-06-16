@@ -1137,7 +1137,18 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
                 className={`${itemClass} cursor-default inline-flex items-center gap-1`}
               >
                 {item.label}
-                <span className="text-[10px] leading-none">▾</span>
+                <svg
+    className="h-3 w-3"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      fillRule="evenodd"
+      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+      clipRule="evenodd"
+    />
+  </svg>
               </button>
 
               <div className="hidden min-w-[230px] flex-col gap-3 bg-white/85 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
