@@ -1157,7 +1157,7 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
                     key={dropdownItem.key}
                     type="button"
                     onClick={() => navigateToSection(dropdownItem.sectionId)}
-                    className="text-left uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
+                    className={`text-left uppercase tracking-[0.14em] transition-colors ${currentPage === "home" ? "text-white hover:text-blue-400" : "text-slate-900 hover:text-blue-600"}`}
                   >
                     {dropdownItem.label}
                   </button>
