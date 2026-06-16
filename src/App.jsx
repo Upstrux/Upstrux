@@ -1151,13 +1151,13 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
   </svg>
               </button>
 
-              <div className="hidden min-w-[230px] flex-col gap-3 bg-slate-950/90/85 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
+              <div className="hidden min-w-[230px] flex-col gap-3 bg-slate-950/90 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
                 {aboutDropdownItems.map((dropdownItem) => (
                   <button
                     key={dropdownItem.key}
                     type="button"
                     onClick={() => navigateToSection(dropdownItem.sectionId)}
-                    className="text-left uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
+                    className="text-left uppercase tracking-[0.14em] text-white transition-colors hover:text-blue-400"
                   >
                     {dropdownItem.label}
                   </button>
