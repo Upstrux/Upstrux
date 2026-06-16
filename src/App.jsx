@@ -316,7 +316,7 @@ function getRouteInfo(pathname) {
   if (!PROJECTS_ENABLED && (routeInfo.page === "projects" || routeInfo.page === "projects2")) {
     return {
       language,
-      page: "projectsUnavailable",
+      page: "home",
     };
   }
 
@@ -1460,9 +1460,11 @@ function SiteFooter({ t, setCurrentPage }) {
               {t.footer.solutions}
             </button>
 
-            <button type="button" onClick={() => setCurrentPage("projects")} className="text-left hover:text-blue-600">
-              {t.footer.projects}
-            </button>
+            {PROJECTS_ENABLED && (
+              <button type="button" onClick={() => setCurrentPage("projects")} className="text-left hover:text-blue-600">
+                {t.footer.projects}
+              </button>
+            )}
 
             <button type="button" onClick={() => setCurrentPage("contact")} className="text-left hover:text-blue-600">
               {t.footer.contacts}
@@ -1732,7 +1734,7 @@ export default function UpstruxWebsite() {
   const [expandedTeamMembers, setExpandedTeamMembers] = useState({});
 
   const setCurrentPage = useCallback((page) => {
-    const nextPage = !SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(page) ? "solutions" : !PROJECTS_ENABLED && (page === "projects" || page === "projects2") ? "projectsUnavailable" : page;
+    const nextPage = !SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(page) ? "solutions" : !PROJECTS_ENABLED && (page === "projects" || page === "projects2") ? "home" : page;
 
     setCurrentPageState(nextPage);
     setScrollTarget(null);
@@ -1750,7 +1752,7 @@ export default function UpstruxWebsite() {
   const setLanguage = useCallback((nextLanguage) => {
     if (!LANGUAGE_CODES.includes(nextLanguage)) return;
 
-    const nextPage = SERVICE_PAGE_KEYS.includes(currentPage) ? "solutions" : !PROJECTS_ENABLED && (currentPage === "projects" || currentPage === "projects2") ? "projectsUnavailable" : currentPage;
+    const nextPage = SERVICE_PAGE_KEYS.includes(currentPage) ? "solutions" : !PROJECTS_ENABLED && (currentPage === "projects" || currentPage === "projects2") ? "home" : currentPage;
 
     setLanguageState(nextLanguage);
 
@@ -1980,19 +1982,6 @@ export default function UpstruxWebsite() {
   }
 
 
-
-  if (currentPage === "projectsUnavailable") {
-    return (
-      <div className="min-h-screen bg-white text-slate-950">
-        <main className="flex min-h-screen items-center justify-center px-6">
-          <div className="text-center">
-            <div className="text-5xl font-bold tracking-[0.18em] text-slate-950 md:text-6xl">НЕДОСТЪПНИ</div>
-            <div className="mx-auto mt-6 h-px w-32 bg-slate-200" />
-          </div>
-        </main>
-      </div>
-    );
-  }
 
   if (currentPage === "projects" || currentPage === "projects2") {
     return (
