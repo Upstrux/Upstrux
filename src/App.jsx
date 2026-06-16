@@ -383,19 +383,19 @@ const SECTION_TITLES = {
     about: "За Нас | UPSTRUX",
     competence: "Области на Eкспертиза | UPSTRUX",
     team: "Екип | UPSTRUX",
-    methodology: "Управление на Проекти | UPSTRUX",
+    methodology: "Нашият Подход | UPSTRUX",
   },
   en: {
     about: "About Us | UPSTRUX",
     competence: "Areas of Expertise | UPSTRUX",
     team: "Team | UPSTRUX",
-    methodology: "Project Management | UPSTRUX",
+    methodology: "Our Approach | UPSTRUX",
   },
   de: {
     about: "Über Uns | UPSTRUX",
     competence: "Fachgebiete | UPSTRUX",
     team: "Team | UPSTRUX",
-    methodology: "Projektmanagement | UPSTRUX",
+    methodology: "Unser Ansatz | UPSTRUX",
   },
 };
 const HERO_TRANSITION = {
