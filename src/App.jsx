@@ -1248,14 +1248,18 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
           </h1>
           <SectionDivider className="my-10" />
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="overflow-hidden bg-white">
-              <img
-                src={service.image}
-                alt={service.title}
-                loading="lazy"
-                decoding="async"
-                className="aspect-[2/1] w-full object-cover min-h-[420px] sm:min-h-[560px] lg:min-h-[620px]"
-              />
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[service.image, service.image, service.image].map((image, index) => (
+                <div key={`${service.title}-${index}`} className="overflow-hidden bg-white">
+                  <img
+                    src={image}
+                    alt={service.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/3] w-full object-cover min-h-[260px] sm:min-h-[320px] lg:min-h-[360px]"
+                  />
+                </div>
+              ))}
             </div>
             <div className="max-w-[640px]">
               <ul className="space-y-2 text-[15px] leading-6 text-slate-700">
