@@ -1098,7 +1098,7 @@ function ProcessStep({ step, index }) {
       transition={{ duration: 0.5, delay: index * 0.05 }}
       className={`max-w-3xl ${isRight ? "ml-auto" : ""}`}
     >
-      <h4 className="text-xl font-light leading-[1.15] tracking-[-0.02em] text-[#111111]">
+      <h4 className="text-xl font-semibold leading-[1.15] tracking-[-0.02em] text-[#111111]">
         {step.title}
       </h4>
       <p className="mt-4 text-lg leading-8 text-slate-700">
