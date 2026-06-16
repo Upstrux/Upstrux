@@ -1575,6 +1575,7 @@ export default function UpstruxWebsite() {
   const [currentPage, setCurrentPageState] = useState(initialRouteInfo.page);
   const [scrollTarget, setScrollTarget] = useState(initialRouteInfo.sectionId || null);
   const [language, setLanguageState] = useState(initialRouteInfo.language || DEFAULT_LANGUAGE);
+  const [expandedTeamMembers, setExpandedTeamMembers] = useState({});
 
   const setCurrentPage = useCallback((page) => {
     const nextPage = !SOLUTION_CARDS_CLICKABLE && SERVICE_PAGE_KEYS.includes(page) ? "solutions" : !PROJECTS_ENABLED && (page === "projects" || page === "projects2") ? "projectsUnavailable" : page;
@@ -2092,34 +2093,51 @@ export default function UpstruxWebsite() {
     </div>
 
     <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-      {Team.map((member) => (
-        <article
-          key={member.name}
-          className="group bg-white"
-        >
-          <div className="overflow-hidden bg-slate-100">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="h-[420px] w-full object-cover object-top transition duration-500 group-hover:scale-105"
-            />
-          </div>
+      {Team.map((member) => {
+        const isExpanded = expandedTeamMembers[member.name];
 
-          <div className="border-l-4 border-blue-600 px-6 py-6">
-            <h4 className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
-              {member.name}
-            </h4>
+        return (
+          <article
+            key={member.name}
+            className="group bg-white"
+          >
+            <div className="overflow-hidden bg-slate-100">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="h-[420px] w-full object-cover object-top transition duration-500 group-hover:scale-105"
+              />
+            </div>
 
-            <p className="mt-2 text-sm font-semibold uppercase leading-5 tracking-[0.12em] text-blue-700">
-              {member.role}
-            </p>
+            <div className="px-6 py-6">
+              <h4 className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
+                {member.name}
+              </h4>
 
-            <p className="mt-5 text-[15px] leading-6 text-slate-700">
-              {member.bio}
-            </p>
-          </div>
-        </article>
-      ))}
+              <p className="mt-2 text-sm font-semibold uppercase leading-5 tracking-[0.12em] text-blue-700">
+                {member.role}
+              </p>
+
+              <p className={`mt-5 text-[15px] leading-6 text-slate-700 ${isExpanded ? "" : "line-clamp-3"}`}>
+                {member.bio}
+              </p>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setExpandedTeamMembers((current) => ({
+                    ...current,
+                    [member.name]: !current[member.name],
+                  }))
+                }
+                className="mt-4 inline-flex items-center gap-2 text-sm font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700"
+              >
+                {isExpanded ? "Show less" : "Show more"}
+              </button>
+            </div>
+          </article>
+        );
+      })}
     </div>
   </div>
 </section>
