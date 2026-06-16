@@ -1105,7 +1105,7 @@ function ProcessStep({ step, index }) {
 }
 
 
-function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemClass }) {
+function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemClass, dropdownVariant = "light" }) {
   const navigateToSection = (sectionId) => {
     setCurrentPage(sectionId === "home" ? "home" : "about");
 
@@ -1125,6 +1125,7 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
     ...(TEAM_ENABLED ? [{ key: "team", label: t.teamTitle, sectionId: "team" }] : []),
     { key: "project-management", label: t.methodologyTitle, sectionId: "methodology" },
   ];
+  const aboutDropdownIsDark = dropdownVariant === "dark";
 
   return (
     <>
@@ -1151,13 +1152,13 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
   </svg>
               </button>
 
-              <div className="hidden min-w-[230px] flex-col gap-3 bg-white/85 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
+              <div className={`${aboutDropdownIsDark ? "bg-slate-950/85 text-white" : "bg-white/85 text-slate-900"} hidden min-w-[230px] flex-col gap-3 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2`}>
                 {aboutDropdownItems.map((dropdownItem) => (
                   <button
                     key={dropdownItem.key}
                     type="button"
                     onClick={() => navigateToSection(dropdownItem.sectionId)}
-                    className="text-left uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
+                    className={`${aboutDropdownIsDark ? "hover:text-blue-300" : "hover:text-blue-600"} text-left uppercase tracking-[0.14em] transition-colors`}
                   >
                     {dropdownItem.label}
                   </button>
@@ -2104,7 +2105,7 @@ export default function UpstruxWebsite() {
   />
 </div>
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:min-w-0 md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
-    <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
+    <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" dropdownVariant="dark" />
       <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
         {LANGUAGE_CODES.map((lang) => (
           <button
