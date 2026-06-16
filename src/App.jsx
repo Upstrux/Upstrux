@@ -19,13 +19,13 @@ import activity7 from "./assets/activities/activity7.webp";
 import activity8 from "./assets/activities/activity8.webp";
 
 //Team
-import member01 from "./assets/board/member-01.png";
-import member02 from "./assets/board/member-02.jpg";
-import member03 from "./assets/board/member-03.jpg";
-import member04 from "./assets/board/member-04.jpg";
-import member05 from "./assets/board/member-05.png";
-import member06 from "./assets/board/member-06.jpg";
-import member07 from "./assets/board/member-07.png";
+const member01 = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80";
+const member02 = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80";
+const member03 = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80";
+const member04 = "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=1200&q=80";
+const member05 = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80";
+const member06 = "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=1200&q=80";
+const member07 = "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80";
 
 function IconBase({ children, className = "", size = 24 }) {
   return (
