@@ -1308,7 +1308,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
 
       {activeGalleryItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 px-6 py-10 backdrop-blur-sm">
-          <div className="mx-auto flex max-h-[88vh] max-w-[78rem] flex-col bg-white lg:grid lg:grid-cols-[0.42fr_0.58fr]">
+          <div className="mx-auto flex max-h-[92vh] max-w-[92rem] flex-col bg-white lg:grid lg:grid-cols-[0.40fr_0.60fr]">
             <div className="flex flex-col justify-between p-7 lg:p-8">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
@@ -1337,7 +1337,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
               </div>
             </div>
 
-            <div className="relative min-h-[320px] bg-slate-100 lg:min-h-[560px]">
+            <div className="relative min-h-[380px] bg-slate-100 lg:min-h-[700px]">
               <button
                 type="button"
                 onClick={() => setActiveGalleryIndex(null)}
