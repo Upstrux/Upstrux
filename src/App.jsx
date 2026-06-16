@@ -138,6 +138,7 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     home: "/",
     about: "/about",
     competence: "/areas-of-expertise",
+    team: "/team",
     methodology: "/from-concept-to-delivery",
     solutions: "/services",
     projects: "/projects",
@@ -158,6 +159,7 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     home: "/",
     about: "/za-nas",
     competence: "/oblasti-na-ekspertiza",
+    team: "/ekip",
     methodology: "/ot-kontseptsiyata-do-realizatsiya",
     solutions: "/uslugi",
     projects: "/proekti",
@@ -178,6 +180,7 @@ const PAGE_ROUTES_BY_LANGUAGE = {
     home: "/",
     about: "/uber-uns",
     competence: "/fachgebiete",
+    team: "/team",
     methodology: "/vom-konzept-bis-zur-umsetzung",
     solutions: "/leistungen",
     projects: "/projekte",
@@ -202,6 +205,7 @@ const ROUTE_PAGES = {
 
   "/about": { page: "about", sectionId: "about" },
   "/areas-of-expertise": { page: "about", sectionId: "competence" },
+  "/team": { page: "about", sectionId: "team" },
   "/from-concept-to-delivery": { page: "about", sectionId: "methodology" },
   "/services": { page: "solutions" },
   "/projects": { page: "projects" },
@@ -212,6 +216,7 @@ const ROUTE_PAGES = {
 
   "/za-nas": { page: "about", sectionId: "about" },
   "/oblasti-na-ekspertiza": { page: "about", sectionId: "competence" },
+  "/ekip": { page: "about", sectionId: "team" },
   "/ot-kontseptsiyata-do-realizatsiya": { page: "about", sectionId: "methodology" },
   "/uslugi": { page: "solutions" },
   "/proekti": { page: "projects" },
@@ -222,6 +227,7 @@ const ROUTE_PAGES = {
 
   "/uber-uns": { page: "about", sectionId: "about" },
   "/fachgebiete": { page: "about", sectionId: "competence" },
+  "/team": { page: "about", sectionId: "team" },
   "/vom-konzept-bis-zur-umsetzung": { page: "about", sectionId: "methodology" },
   "/leistungen": { page: "solutions" },
   "/projekte": { page: "projects" },
@@ -325,6 +331,7 @@ function getCanonicalPageKey(page, pathname) {
   const routeInfo = ROUTE_PAGES[path];
 
   if (routeInfo?.sectionId === "competence") return "competence";
+  if (routeInfo?.sectionId === "team") return "team";
   if (routeInfo?.sectionId === "methodology") return "methodology";
 
   return routeInfo?.page || page || "home";
@@ -375,16 +382,19 @@ const SECTION_TITLES = {
   bg: {
     about: "За Нас | UPSTRUX",
     competence: "Области на експертиза | UPSTRUX",
+    team: "Екип | UPSTRUX",
     methodology: "От концепцията до реализация | UPSTRUX",
   },
   en: {
     about: "About Us | UPSTRUX",
     competence: "Areas of Expertise | UPSTRUX",
+    team: "Team | UPSTRUX",
     methodology: "From concept to delivery | UPSTRUX",
   },
   de: {
     about: "Über Uns | UPSTRUX",
     competence: "Fachgebiete | UPSTRUX",
+    team: "Team | UPSTRUX",
     methodology: "Vom Konzept bis zur Umsetzung | UPSTRUX",
   },
 };
@@ -2092,7 +2102,7 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
       {Team.map((member) => {
         const isExpanded = expandedTeamMembers[member.name];
 
