@@ -1101,7 +1101,7 @@ function ProcessStep({ step, index }) {
       <h4 className="text-xl font-semibold leading-[1.15] tracking-[-0.02em] text-[#111111]">
         {step.title}
       </h4>
-      <p className="mt-4 text-lg leading-8 text-slate-700">
+      <p className="mt-6 text-lg leading-8 text-slate-700">
         {step.body}
       </p>
     </motion.div>
