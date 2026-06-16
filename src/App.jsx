@@ -1105,7 +1105,7 @@ function ProcessStep({ step, index }) {
 }
 
 
-function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemClass, currentPage }) {
+function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemClass }) {
   const navigateToSection = (sectionId) => {
     setCurrentPage(sectionId === "home" ? "home" : "about");
 
@@ -1151,13 +1151,13 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
   </svg>
               </button>
 
-              <div className="hidden min-w-[230px] flex-col gap-3 bg-slate-950/90 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
+              <div className="hidden min-w-[230px] flex-col gap-3 bg-white/85 px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg backdrop-blur group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
                 {aboutDropdownItems.map((dropdownItem) => (
                   <button
                     key={dropdownItem.key}
                     type="button"
                     onClick={() => navigateToSection(dropdownItem.sectionId)}
-                    className={`text-left uppercase tracking-[0.14em] transition-colors ${currentPage === "home" ? "text-white hover:text-blue-400" : "text-slate-900 hover:text-blue-600"}`}
+                    className="text-left uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
                   >
                     {dropdownItem.label}
                   </button>
@@ -1240,7 +1240,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
   />
 </div>
           <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" currentPage={currentPage} />
+            <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" />
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
               {LANGUAGE_CODES.map((lang) => (
                 <button
@@ -1565,7 +1565,7 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
             <MobileMenuButton mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
           </div>
           <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" currentPage={currentPage} />
+            <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" />
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
               {LANGUAGE_CODES.map((lang) => (
                 <button
@@ -1645,7 +1645,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
   />
 </div>
 <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-  <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" currentPage={currentPage} />
+  <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
 
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
     {LANGUAGE_CODES.map((lang) => (
@@ -2034,7 +2034,7 @@ export default function UpstruxWebsite() {
   />
 </div>
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-  <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" currentPage={currentPage} />
+  <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
     {LANGUAGE_CODES.map((lang) => (
       <button
@@ -2104,7 +2104,7 @@ export default function UpstruxWebsite() {
   />
 </div>
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:min-w-0 md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
-    <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" currentPage={currentPage} />
+    <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
       <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
         {LANGUAGE_CODES.map((lang) => (
           <button
