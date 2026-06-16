@@ -1307,8 +1307,8 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
       </main>
 
       {activeGalleryItem && (
-        <div className="fixed inset-0 z-[100] bg-slate-950/80 px-6 py-10 backdrop-blur-sm">
-          <div className="mx-auto flex max-h-[82vh] max-w-5xl flex-col bg-white lg:grid lg:grid-cols-[0.42fr_0.58fr]">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 px-6 py-10 backdrop-blur-sm">
+          <div className="mx-auto flex max-h-[88vh] max-w-[78rem] flex-col bg-white lg:grid lg:grid-cols-[0.42fr_0.58fr]">
             <div className="flex flex-col justify-between p-7 lg:p-8">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
@@ -1341,7 +1341,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
               <button
                 type="button"
                 onClick={() => setActiveGalleryIndex(null)}
-                className="absolute right-5 top-5 z-10 inline-flex h-9 w-9 items-center justify-center border border-white/70 bg-slate-950/45 text-white backdrop-blur transition hover:bg-blue-600 hover:text-white"
+                className="absolute right-5 top-5 z-10 inline-flex h-9 w-9 items-center justify-center bg-slate-950/45 text-white backdrop-blur transition hover:bg-blue-600 hover:text-white"
                 aria-label="Close gallery"
               >
                 <svg
