@@ -1307,14 +1307,14 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
       </main>
 
       {activeGalleryItem && (
-        <div className="fixed inset-0 z-[100] bg-slate-950/80 px-6 py-8 backdrop-blur-sm">
-          <div className="mx-auto flex h-full max-w-7xl flex-col bg-white lg:grid lg:grid-cols-[0.38fr_0.62fr]">
-            <div className="flex flex-col justify-between p-8 lg:p-10">
+        <div className="fixed inset-0 z-[100] bg-slate-950/80 px-6 py-10 backdrop-blur-sm">
+          <div className="mx-auto flex max-h-[82vh] max-w-5xl flex-col bg-white lg:grid lg:grid-cols-[0.42fr_0.58fr]">
+            <div className="flex flex-col justify-between p-7 lg:p-8">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
                   {service.title}
                 </p>
-                <p className="mt-8 text-lg leading-8 text-slate-700">
+                <p className="mt-6 text-base leading-7 text-slate-700">
                   {activeGalleryItem.description}
                 </p>
               </div>
@@ -1337,14 +1337,26 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
               </div>
             </div>
 
-            <div className="relative min-h-[360px] bg-slate-100 lg:min-h-0">
+            <div className="relative min-h-[320px] bg-slate-100 lg:min-h-[560px]">
               <button
                 type="button"
                 onClick={() => setActiveGalleryIndex(null)}
-                className="absolute right-5 top-5 z-10 inline-flex h-10 w-10 items-center justify-center bg-white/90 text-2xl font-light text-slate-900 transition hover:text-blue-600"
+                className="absolute right-5 top-5 z-10 inline-flex h-9 w-9 items-center justify-center border border-white/70 bg-slate-950/45 text-white backdrop-blur transition hover:bg-blue-600 hover:text-white"
                 aria-label="Close gallery"
               >
-                ×
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
               </button>
               <img
                 src={activeGalleryItem.image}
