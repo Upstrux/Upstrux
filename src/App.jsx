@@ -868,7 +868,7 @@ const translations = {
     teamShowMore: "Покажи повече",
     teamShowLess: "Покажи по-малко",
     methodologyTitle: "Нашият Подход",
-    methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
+    methodologyIntro: "Изграден върху утвърдени практики в управлението на проекти, нашият подход осигурява структурирано управление, ефективна координация и успешно изпълнение през всички етапи от жизнения цикъл на проекта.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
     footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Услуги", projects: "Проекти", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно" },
 
@@ -937,7 +937,7 @@ const translations = {
     teamShowMore: "Mehr anzeigen",
     teamShowLess: "Weniger anzeigen",
     methodologyTitle: "Unser Ansatz",
-    methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
+    methodologyIntro: "Basierend auf bewährten Projektmanagementmethoden gewährleistet unser Ansatz eine strukturierte Projektabwicklung, nahtlose Koordination und erfolgreiche Projektergebnisse über sämtliche Phasen des Projektlebenszyklus hinweg.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
     footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Leistungen", projects: "Projekte", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück" },
 
