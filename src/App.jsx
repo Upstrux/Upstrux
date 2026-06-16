@@ -18,6 +18,15 @@ import activity6 from "./assets/activities/activity6.webp";
 import activity7 from "./assets/activities/activity7.webp";
 import activity8 from "./assets/activities/activity8.webp";
 
+//Team
+import member01 from "./assets/board/member-01.png";
+import member02 from "./assets/board/member-02.jpg";
+import member03 from "./assets/board/member-03.jpg";
+import member04 from "./assets/board/member-04.jpg";
+import member05 from "./assets/board/member-05.png";
+import member06 from "./assets/board/member-06.jpg";
+import member07 from "./assets/board/member-07.png";
+
 function IconBase({ children, className = "", size = 24 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
@@ -410,6 +419,16 @@ const serviceImages = [
   activity7,
   activity8,  
 ];
+
+const boardMembers = [
+  ["доц. д-р арх. Гичка Кутова-Каменова","Председател на управителния съвет","Първата жена-ректор и първият архитект-ректор на УАСГ, избрана през 2023 г., с дългогодишен академичен и управленски опит. Завършва УАСГ и защитава докторска дисертация през 2009 г., а през 2012 г. се хабилитира като доцент. Заемала е длъжностите ръководител катедра, заместник-декан и заместник-ректор по научна и приложна дейност. Научните ѝ интереси са в областта на енергийната ефективност, възобновяемите енергийни източници и слънчевата архитектура. Автор е на над 20 научни публикации и участник в редица научноизследователски проекти и международни форуми. Под нейно ръководство УАСГ разширява партньорствата си с бизнеса и международните институции.",member01],
+  ["проф. д-р инж. Елена Пенева-Златкова","Зам.-председател и член на управителния съвет","Професор по обща, висша и приложна геодезия към катедра „Висша геодезия“ на Геодезическия факултет при УАСГ. От 2024 г. е зам.-ректор по научна и приложна дейност, ръководеща ЦНИП и редица университетски научни и експертни структури. Била е декан и ръководител на катедра „Висша геодезия“, както и зам.-декан на факултета. Автор е на над 50 научни публикации и участник в повече от 20 проекта. Има дългогодишен опит в академичното управление, научноизследователската дейност и развитието на висшето инженерно образование.",member02],
+  ["доц. д-р инж. Емад Абдулахад","Член на управителния съвет","Строителен инженер-конструктор, декан на Строителния факултет при УАСГ и доцент в катедра „Масивни конструкции“ по дисциплината „Обследване и изпитване на строителни конструкции и съоръжения“. Научната и преподавателската му дейност е насочена към обследване и изпитване на строителни конструкции, сеизмична оценка и усилване на сгради, анализ на дефекти и аварии, както и разработване на технологии за усилване с композитни материали. Ръководи проекти и специализирани обучения, свързани с устойчивостта, безопасността и възстановяването на съществуващия строителен фонд.",member03],
+  ["проф. д-р арх. Орлин Давчев","Член на управителния съвет","Академичен ръководител и преподавател в катедра „Интериор и дизайн за архитектурата“ при УАСГ и бивш декан на Архитектурния факултет. Има дългогодишен опит в областта на архитектурния и интериорния дизайн, с реализирани множество проекти и академични инициативи. Под негово ръководство Архитектурният факултет се утвърждава като модерна образователна и научна институция с над 70-годишна история, насочена към иновации, съвременни педагогически подходи и устойчиво развитие на архитектурното образование.",member04],
+  ["доц. д-р инж. Иван Кунчев","Член на управителния съвет","Декан на Геодезическия факултет при УАСГ от 2024 г. и доцент в катедра „Геодезия и геоинформатика“. Работи активно за развитието на факултета като водещ академичен център в областта на геодезията, кадастъра, картографията и геоинформационните технологии. Научната и професионалната му дейност е насочена към пространствените информационни системи, геодезическите технологии и интеграцията на строително-информационни модели. Ръководи научни проекти и международни партньорства, а от 2005 г. притежава пълна проектантска правоспособност в областта на геодезията и приложните инженерни дейности.",member05],
+  ["доц. д-р инж. геол. Ивайло Иванов","Член на управителния съвет","Декан на Факултета по транспортно строителство при УАСГ и преподавател с над 20 години опит в областта на инженерната геология и хидрогеологията. Професионалната му дейност е насочена към развитието на транспортната инфраструктура, съвременните инженерни технологии и практическото приложение на геоложките изследвания в строителството. Работи активно за внедряване на иновативни методи и модерни образователни подходи в подготовката на висококвалифицирани специалисти за нуждите на строителния и инфраструктурния сектор.",member06],
+  ["доц. д-р инж. Петър Филков","Член на управителния съвет","Декан на Хидротехническия факултет при УАСГ и доцент в областта на водоснабдяването, канализационните системи и хидростроителството. Работи активно за модернизирането на инженерното образование и развитието на международното академично сътрудничество. Под негово ръководство е въведена специалността „Инженерна екология“ с двойно дипломиране съвместно с Университета „Федерико II“ – Неапол. Организира научни и професионални форуми с международно участие и поддържа активно партньорство с Камарата на строителите в България за практическата подготовка на студентите и връзката между образованието и инженерната практика.",member07]
+].map(([name,role,bio,image])=>({name,role,bio,image}));
 
 const bgProjects=[
   {
@@ -812,12 +831,7 @@ const translations = {
     competenceTitle: "Области на експертиза",
     competenceIntro: "UPSTRUX съчетава експертиза в областта на архитектурата, инженерството, дизайна, планирането, управлението, строителството и консултирането в ключови области на строително-инвестиционния процес.",
     teamTitle: "Екип",
-    teamIntro: "UPSTRUX работи чрез мултидисциплинарни инженерни, проектантски, консултантски и управленски екипи, обединени около една цел — надеждно, устойчиво и професионално реализиране на комплексни инвестиционни и строителни проекти.",
-    teamItems: [
-      { title: "Инженерна експертиза", text: "Опитни инженери, проектанти и технически специалисти, ангажирани с разработването на надеждни и практически приложими инженерни решения." },
-      { title: "Управление на проекти", text: "Координация между възложители, проектанти, консултанти, изпълнители и административни органи през всички етапи на проекта." },
-      { title: "Специализирани технически мрежи", text: "Достъп до партньорски експертни екипи, лаборатории и специализирани технически ресурси за комплексни инженерни задачи." },
-    ],
+    teamIntro: "Мултидисциплинарен екип от академични, инженерни и управленски специалисти, обединяващ експертиза, опит и професионална отговорност при реализацията на комплексни инженерни и инвестиционни проекти.",
     methodologyTitle: "От концепцията до реализация",
     methodologyIntro: "Нашата рамка за управление и изпълнение на проекти е изградена върху международно признатите практики, които гарантират успешно иницииране, детайлно планиране, ефективно изпълнение, контрол и успешно завършване на всеки проект. Тази структурирана методология осигурява пълно съответствие с най-добрите практики в областта на управлението на проекти.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
@@ -850,12 +864,7 @@ const translations = {
     competenceTitle: "Areas of Expertise",
     competenceIntro: "UPSTRUX combines architecture, engineering, design, planning, management, construction and consulting expertise across key areas of the construction and investment process.",
     teamTitle: "Team",
-    teamIntro: "UPSTRUX works through multidisciplinary engineering, design, consulting and project management teams united by one objective — reliable, sustainable and professional delivery of complex investment and construction projects.",
-    teamItems: [
-      { title: "Engineering Expertise", text: "Experienced engineers, designers and technical specialists focused on developing reliable and practically applicable engineering solutions." },
-      { title: "Project Management", text: "Coordination between clients, designers, consultants, contractors and administrative authorities throughout all project stages." },
-      { title: "Specialized Technical Networks", text: "Access to partner expert teams, laboratories and specialized technical resources for complex engineering assignments." },
-    ],
+    teamIntro: "A multidisciplinary team of academic, engineering and management specialists, bringing together expertise, experience and professional responsibility in the delivery of complex engineering and investment projects.",
     methodologyTitle: "From concept to delivery",
     methodologyIntro: "Our project management and delivery framework is based on internationally recognized practices that support successful initiation, detailed planning, efficient execution, monitoring and successful completion of each project. This structured methodology ensures alignment with best practices in project management.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
@@ -887,12 +896,7 @@ const translations = {
     competenceTitle: "Fachgebiete",
     competenceIntro: "UPSTRUX vereint Kompetenzen in den Bereichen Architektur, Ingenieurwesen, Entwurfs- und Fachplanung, Projektmanagement, Bauausführung und Fachberatung entlang der wesentlichen Phasen des Bau- und Investitionsprozesses.",
     teamTitle: "Team",
-    teamIntro: "UPSTRUX arbeitet mit multidisziplinären Ingenieur-, Planungs-, Beratungs- und Projektmanagementteams, die durch ein gemeinsames Ziel verbunden sind — die zuverlässige, nachhaltige und professionelle Umsetzung komplexer Investitions- und Bauprojekte.",
-    teamItems: [
-      { title: "Ingenieurtechnische Expertise", text: "Erfahrene Ingenieure, Planer und technische Fachleute, die zuverlässige und praxisorientierte Ingenieurlösungen entwickeln." },
-      { title: "Projektmanagement", text: "Koordination zwischen Auftraggebern, Planern, Beratern, Auftragnehmern und Behörden über alle Projektphasen hinweg." },
-      { title: "Spezialisierte technische Netzwerke", text: "Zugang zu Partnerexpertenteams, Laboren und spezialisierten technischen Ressourcen für komplexe Ingenieuraufgaben." },
-    ],
+    teamIntro: "Ein multidisziplinäres Team aus akademischen, ingenieurtechnischen und Management-Fachleuten, das Expertise, Erfahrung und professionelle Verantwortung bei der Umsetzung komplexer Ingenieur- und Investitionsprojekte vereint.",
     methodologyTitle: "Vom Konzept bis zur Umsetzung",
     methodologyIntro: "Unser Rahmen für Projektmanagement und Projektausführung basiert auf international anerkannten Praktiken für Initiierung, detaillierte Planung, effiziente Ausführung, Kontrolle und erfolgreichen Projektabschluss.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
@@ -2087,22 +2091,34 @@ export default function UpstruxWebsite() {
       </p>
     </div>
 
-    <div className="grid gap-6 md:grid-cols-3">
-      {t.teamItems.map((item, index) => (
-        <div
-          key={item.title}
-          className="border-l-4 border-blue-600 bg-white px-8 py-6"
+    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      {boardMembers.map((member) => (
+        <article
+          key={member.name}
+          className="group bg-white"
         >
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-            {String(index + 1).padStart(2, "0")}
-          </p>
-          <h4 className="mt-4 text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
-            {item.title}
-          </h4>
-          <p className="mt-4 text-[15px] leading-6 text-slate-700">
-            {item.text}
-          </p>
-        </div>
+          <div className="overflow-hidden bg-slate-100">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="h-[420px] w-full object-cover object-top transition duration-500 group-hover:scale-105"
+            />
+          </div>
+
+          <div className="border-l-4 border-blue-600 px-6 py-6">
+            <h4 className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
+              {member.name}
+            </h4>
+
+            <p className="mt-2 text-sm font-semibold uppercase leading-5 tracking-[0.12em] text-blue-700">
+              {member.role}
+            </p>
+
+            <p className="mt-5 text-[15px] leading-6 text-slate-700">
+              {member.bio}
+            </p>
+          </div>
+        </article>
       ))}
     </div>
   </div>
