@@ -407,6 +407,7 @@ const HERO_TRANSITION = {
 const NAV_LINK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const SOLUTION_CARDS_CLICKABLE = false;
 const PROJECTS_ENABLED = false;
+const ABOUT_ENABLED = true;
 const TEAM_ENABLED = true;
 const LEARN_MORE_BUTTON_CLASS = "mt-6 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const BACK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
@@ -1104,6 +1105,87 @@ function ProcessStep({ step, index }) {
 }
 
 
+function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemClass }) {
+  const navigateToSection = (sectionId) => {
+    setCurrentPage(sectionId === "home" ? "home" : "about");
+
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+
+    setMobileMenuOpen(false);
+  };
+
+  const aboutDropdownItems = [
+    { key: "about-us", label: t.aboutTitle, sectionId: "about" },
+    { key: "areas-of-expertise", label: t.competenceTitle, sectionId: "competence" },
+    ...(TEAM_ENABLED ? [{ key: "team", label: t.teamTitle, sectionId: "team" }] : []),
+    { key: "project-management", label: t.methodologyTitle, sectionId: "methodology" },
+  ];
+
+  return (
+    <>
+      {navItems.map((item) => {
+        if (item.key === "about" && ABOUT_ENABLED) {
+          return (
+            <div key={item.key} className="group relative">
+              <button
+                type="button"
+                className={`${itemClass} cursor-default`}
+              >
+                {item.label}
+              </button>
+
+              <div className="hidden min-w-[230px] flex-col gap-3 rounded-xl bg-white px-5 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg group-hover:flex group-focus-within:flex md:absolute md:left-1/2 md:top-full md:mt-4 md:-translate-x-1/2">
+                {aboutDropdownItems.map((dropdownItem) => (
+                  <button
+                    key={dropdownItem.key}
+                    type="button"
+                    onClick={() => navigateToSection(dropdownItem.sectionId)}
+                    className="text-left uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
+                  >
+                    {dropdownItem.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <button
+            key={item.key}
+            type="button"
+            onClick={() => {
+              if (item.key === "solutions") {
+                setCurrentPage("solutions");
+                setMobileMenuOpen(false);
+              } else if (item.key === "projects") {
+                setCurrentPage("projects");
+                setMobileMenuOpen(false);
+              } else if (item.key === "contacts") {
+                setCurrentPage("contact");
+                setMobileMenuOpen(false);
+              } else if (item.key === "about") {
+                navigateToSection("about");
+              } else {
+                navigateToSection("home");
+              }
+            }}
+            className={itemClass}
+          >
+            {item.label}
+          </button>
+        );
+      })}
+    </>
+  );
+}
+
+
 function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
   const bulletItems = useMemo(
     () => service.text.split(";").map((item) => item.trim()).filter(Boolean),
@@ -1124,31 +1206,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
   />
 </div>
           <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.key === "contacts" ? "#contact-page" : item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.key === "solutions") {
-                    setCurrentPage("solutions");
-                  } else if (item.key === "projects") {
-                    setCurrentPage("projects");
-                  } else if (item.key === "contacts") {
-                    setCurrentPage("contact");
-                  } else {
-                    setCurrentPage(item.key === "about" ? "about" : "home");
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-                    }, 50);
-                  }
-                  setMobileMenuOpen(false);
-                }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
-              >
-                {item.label}
-              </a>
-            ))}
+            <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" />
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
               {LANGUAGE_CODES.map((lang) => (
                 <button
@@ -1401,31 +1459,7 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
             <MobileMenuButton mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
           </div>
           <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.key === "contacts" ? "#contact-page" : item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.key === "solutions") {
-                    setCurrentPage("solutions");
-                  } else if (item.key === "projects") {
-                    setCurrentPage("projects");
-                  } else if (item.key === "contacts") {
-                    setCurrentPage("contact");
-                  } else {
-                    setCurrentPage(item.key === "about" ? "about" : "home");
-                    setTimeout(() => {
-                      document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-                    }, 50);
-                  }
-                  setMobileMenuOpen(false);
-                }}
-                className="uppercase tracking-[0.14em] transition-colors hover:text-blue-600"
-              >
-                {item.label}
-              </a>
-            ))}
+            <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" />
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
               {LANGUAGE_CODES.map((lang) => (
                 <button
@@ -1505,36 +1539,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
   />
 </div>
 <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-  {navItems.map((item) => (
-    <a
-      key={item.key}
-      href={item.key === "contacts" ? "#contact-page" : item.href}
-      onClick={(e) => {
-        e.preventDefault();
-
-        if (item.key === "solutions") {
-          setCurrentPage("solutions");
-        } else if (item.key === "projects") {
-          setCurrentPage("projects");
-        } else if (item.key === "contacts") {
-          setCurrentPage("contact");
-        } else {
-          setCurrentPage(item.key === "about" ? "about" : "home");
-
-          setTimeout(() => {
-            document.querySelector(item.href)?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }, 50);
-        }
-
-        setMobileMenuOpen(false);
-      }}
-      className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
-    >
-      {item.label}
-    </a>
-  ))}
+  <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
 
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
     {LANGUAGE_CODES.map((lang) => (
@@ -1923,35 +1928,7 @@ export default function UpstruxWebsite() {
   />
 </div>
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col gap-3 rounded-xl bg-white px-6 py-4 text-sm font-light uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:text-slate-900 md:shadow-none`}>
-  {navItems.map((item) => (
-  <a
-    key={item.key}
-    href={item.key === "contacts" ? "#contact-page" : item.href}
-    onClick={(e) => {
-      e.preventDefault();
-
-      if (item.key === "solutions") {
-        setCurrentPage("solutions");
-      } else if (item.key === "projects") {
-        setCurrentPage("projects");
-      } else if (item.key === "contacts") {
-        setCurrentPage("contact");
-      } else {
-        setCurrentPage(item.key === "about" ? "about" : "home");
-        setTimeout(() => {
-          document.querySelector(item.href)?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 50);
-      }
-
-      setMobileMenuOpen(false);
-    }}
-    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
-  >
-    {item.label}
-  </a>
-))}
+  <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
     {LANGUAGE_CODES.map((lang) => (
       <button
@@ -2021,33 +1998,7 @@ export default function UpstruxWebsite() {
   />
 </div>
     <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-left text-sm font-light uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:min-w-0 md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
-    {navItems.map((item) => (
-  <button
-    key={item.key}
-    type="button"
-    onClick={() => {
-      if (item.key === "solutions") {
-        setCurrentPage("solutions");
-      } else if (item.key === "projects") {
-        setCurrentPage("projects");
-      } else if (item.key === "contacts") {
-        setCurrentPage("contact");
-      } else {
-        setCurrentPage(item.key === "about" ? "about" : "home");
-        setTimeout(() => {
-          document.querySelector(item.href)?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }, 50);
-      }
-
-      setMobileMenuOpen(false);
-    }}
-    className="uppercase tracking-[0.14em] transition-colors hover:text-blue-300"
-  >
-    {item.label}
-  </button>
-))}
+    <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
       <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
         {LANGUAGE_CODES.map((lang) => (
           <button
