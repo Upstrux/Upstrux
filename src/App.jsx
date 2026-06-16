@@ -1089,18 +1089,22 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
 
 function ProcessStep({ step, index }) {
   const isRight = index === 1 || index === 3;
-  const isCompact = index > 0;
-  const sizeClass = index === 0 ? "w-full max-w-[620px] min-h-[260px] p-5 sm:min-h-[230px] lg:min-h-[230px]" : index === 1 ? "w-full max-w-[620px] min-h-[240px] p-5 sm:min-h-[210px] lg:min-h-[210px]" : "w-full max-w-[620px] min-h-[220px] p-5 sm:min-h-[190px] lg:min-h-[190px]";
+
   return (
-    <div className={`relative flex ${isRight ? "justify-end" : "justify-start"}`}>
-      <div className={`pointer-events-none absolute top-1/2 hidden h-px bg-gradient-to-r from-blue-500 via-indigo-500 to-red-500 lg:block ${isRight ? "left-0 right-[78%]" : "left-[78%] right-0"}`} />
-      <span className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 whitespace-nowrap text-2xl font-light leading-[1.1] tracking-[-0.025em] text-[#111111] md:text-3xl lg:block ${index === 3 ? "left-[24%]" : isRight ? "left-[28%]" : "right-[28%]"}`}>{step.title}</span>
-      <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.05 }} className={`${sizeClass} relative z-10 flex h-auto flex-col justify-center overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-blue-600 via-indigo-700 to-red-500 transition duration-300 hover:-translate-y-1`}>
-        <div className={`flex flex-1 flex-col justify-center text-white/90 ${isCompact ? "gap-3" : "gap-4"}`}>
-          <p className="text-sm leading-5 sm:text-[18px]">{step.body}</p>
-        </div>
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
+      className={`max-w-3xl ${isRight ? "ml-auto" : ""}`}
+    >
+      <h4 className="text-xl font-light leading-[1.15] tracking-[-0.02em] text-[#111111]">
+        {step.title}
+      </h4>
+      <p className="mt-4 text-lg leading-8 text-slate-700">
+        {step.body}
+      </p>
+    </motion.div>
   );
 }
 
@@ -2251,16 +2255,16 @@ export default function UpstruxWebsite() {
           {t.methodologyIntro}
         </p>
       </div>
-    </div>
 
-    <div className="mt-12 flex flex-col gap-4">
-      {currentProcessSteps.map((step, index) => (
-        <ProcessStep
-          key={step.title}
-          step={step}
-          index={index}
-        />
-      ))}
+      <div className="mt-10 space-y-10">
+        {currentProcessSteps.map((step, index) => (
+          <ProcessStep
+            key={step.title}
+            step={step}
+            index={index}
+          />
+        ))}
+      </div>
     </div>
   </div>
 </section>
