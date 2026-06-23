@@ -1043,7 +1043,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   {bulletItems.map((item) => (
     <p
       key={item}
-      className="text-[18px] leading-8 font-light text-slate-700"
+      className="text-lg font-light leading-8 text-slate-600"
     >
       {item}
     </p>
