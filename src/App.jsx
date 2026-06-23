@@ -1281,9 +1281,6 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
           <SectionDivider className="my-10" />
 
           <div className="mt-12">
-            <h2 className="text-2xl font-light tracking-[-0.02em] text-[#111111]">
-              Services
-            </h2>
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {bulletItems.map((item, index) => (
                 <div
