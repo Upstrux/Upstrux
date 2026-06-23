@@ -1280,24 +1280,28 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
           </h1>
           <SectionDivider className="my-10" />
 
-          <div className="mt-12">
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {bulletItems.map((item, index) => (
-                <div
-                  key={item}
-                  className="border border-slate-200 bg-white p-6 transition hover:border-blue-600"
-                >
-                <div className="text-xs uppercase tracking-[0.15em] text-blue-600">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+<div className="mt-12">
+  <h2 className="text-2xl font-light tracking-[-0.02em] text-[#111111]">
+    Engineering Services
+  </h2>
 
-                <h3 className="mt-3 text-xl font-light leading-7 text-[#111111]">
-                  {item}
-                </h3>
-              </div>
-            ))}
-          </div>
+  <div className="mt-8 grid gap-5 md:grid-cols-2">
+    {bulletItems.map((item, index) => (
+      <div
+        key={`${service.title}-${index}`}
+        className="bg-blue-50/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/40"
+      >
+        <div className="text-sm font-medium tracking-[0.15em] text-blue-600">
+          {String(index + 1).padStart(2, "0")}
         </div>
+
+        <h3 className="mt-4 text-xl font-light leading-8 tracking-[-0.01em] text-[#111111]">
+          {item}
+        </h3>
+      </div>
+    ))}
+  </div>
+</div
 
           <div className="mt-14 max-w-5xl">
             <button
