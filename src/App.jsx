@@ -868,7 +868,7 @@ const translations = {
     teamShowMore: "Покажи повече",
     teamShowLess: "Покажи по-малко",
     methodologyTitle: "Нашият Подход",
-    methodologyIntro: "Изграден върху утвърдени практики в управлението на проекти, нашият подход осигурява структурирано управление, ефективна координация и успешно изпълнение през всички етапи от жизнения цикъл на проекта.",
+    methodologyIntro: "Изграден върху утвърдени практики в управлението на проекти, нашият подход осигурява структурирано управление, ефективна координация и успешно изпълнение през всички етапи от жизнения цикъл на проекта. Помагаме на клиентите си да намалят техническия риск, да оптимизират изпълнението на проектите и да вземат уверени решения на всеки етап от жизнения цикъл на проекта.",
     contactPage: {eyebrow: "Контакти", title: "Свържете се с UPSTRUX", intro: "Свържете се с UPSTRUX за консултации, инженерни, проектантски и координационни запитвания.",},
     footer: { quick: "Бързи линкове", follow: "Последвай", solutions: "Услуги", projects: "Проекти", contacts: "Контакти", rights: "© 2026 UPSTRUX. Всички права запазени.", location: "гр. София 1000", legalTitle: "Условия за ползване", legalInfo: "Правно", privacy: "Поверителност", backHome: "← Обратно" },
 
@@ -903,7 +903,7 @@ const translations = {
     teamShowMore: "Show more",
     teamShowLess: "Show less",
     methodologyTitle: "Our Approach",
-    methodologyIntro: "Founded on best project management practices, our approach ensures structured delivery, seamless coordination, and successful outcomes throughout every stage of the project lifecycle.",
+    methodologyIntro: "Founded on best project management practices, our approach ensures structured delivery, seamless coordination, and successful outcomes throughout every stage of the project lifecycle. We help clients reduce technical risk, streamline execution, and maintain confidence at every stage of the project lifecycle.",
     contactPage: {eyebrow: "Contacts", title: "Get in touch with UPSTRUX", intro: "Get in touch with UPSTRUX for consultations, engineering, design and project coordination inquiries.",},
     footer: { quick: "Quick links", follow: "Follow", solutions: "Services", projects: "Projects", contacts: "Contacts", rights: "© 2026 UPSTRUX. All rights reserved.", location: "Sofia 1000, Bulgaria", legalTitle: "Terms of Use", legalInfo: "Legal", privacy: "Privacy", backHome: "← Back" },
 
@@ -937,7 +937,7 @@ const translations = {
     teamShowMore: "Mehr anzeigen",
     teamShowLess: "Weniger anzeigen",
     methodologyTitle: "Unser Ansatz",
-    methodologyIntro: "Basierend auf bewährten Projektmanagementmethoden gewährleistet unser Ansatz eine strukturierte Projektabwicklung, nahtlose Koordination und erfolgreiche Projektergebnisse über sämtliche Phasen des Projektlebenszyklus hinweg.",
+    methodologyIntro: "Basierend auf bewährten Projektmanagementmethoden gewährleistet unser Ansatz eine strukturierte Projektabwicklung, nahtlose Koordination und erfolgreiche Projektergebnisse über sämtliche Phasen des Projektlebenszyklus hinweg. Wir unterstützen unsere Kunden dabei, technische Risiken zu reduzieren, die Projektausführung effizient zu gestalten und in jeder Phase des Projektlebenszyklus fundierte Entscheidungen mit Zuversicht zu treffen.",
     contactPage: {eyebrow: "Kontakt", title: "Kontaktieren Sie UPSTRUX", intro: "Kontaktieren Sie UPSTRUX für Beratungs-, Ingenieur-, Planungs- und Projektkoordinationsanfragen.",},
     footer: { quick: "Schnellzugriff", follow: "Folgen", solutions: "Leistungen", projects: "Projekte", contacts: "Kontakt", rights: "© 2026 UPSTRUX. Alle Rechte vorbehalten.", location: "Sofia 1000, Bulgarien", legalTitle: "Nutzungsbedingungen", legalInfo: "Rechtliche", privacy: "Datenschutz", backHome: "← Zurück" },
 
