@@ -678,8 +678,8 @@ const enServices = [
   title: "Asset Assessments, Diagnostics & Structural Verification",
   intro: "Existing structures often face increasing performance demands, aging materials, changing regulations, and evolving operational requirements. Whether the objective is asset rehabilitation, change of use, regulatory compliance, investment due diligence, or long-term asset management, reliable engineering evidence is essential for informed decision-making.",
   services: [
-    "Structural Condition Assessment (EN 1990 / EN 1991)",
-    "Static and Dynamic Load Test Documentation, incl. Structural Response Analysis and Measured Deflection/Acceleration Records",
+    "In-situe Structural Condition Assessment (EN 1990 / EN 1991)",
+    "In-situe Static and Dynamic Load Test Documentation, incl. Structural Response Analysis and Measured Deflection/Acceleration Records",
     "Structural Performance and Code Compliance Assessment (Load Capacity, Stiffness, Stability, and Serviceability Verification)",
     "Seismic Vulnerability Assessment and Structural Safety Evaluation (EN 1998 and Applicable National Annexes)",
     "Structural Failure Investigation and Forensic Engineering Assessment",
@@ -689,8 +689,44 @@ const enServices = [
     "Engineering Compliance Statement"
   ]
 },
-  {title: "Building Design & Development Engineering", text: "Successful development projects require more than technical design—they require solutions that balance functionality, constructability, regulatory compliance, long-term value, and stakeholder expectations. We support developers, investors, public authorities, and asset owners throughout the planning and design process, transforming project concepts into coordinated, buildable, and compliant engineering solutions. From architectural and structural design to spatial planning, BIM coordination, visualization, and permitting support, our multidisciplinary approach helps clients reduce project uncertainty, accelerate approvals, optimize investment outcomes, and achieve sustainable development objectives."},
-  {title: "WSS, Hydraulic & Hydro-Reclamation Engineering", text: "Water infrastructure must operate safely, efficiently, and reliably throughout its lifecycle while meeting increasing environmental, operational, and regulatory requirements. We help utilities, municipalities, developers, industrial operators, and public agencies plan, design, assess, rehabilitate, and modernize water supply systems, wastewater facilities, hydraulic structures, irrigation networks, flood protection infrastructure, and hydropower assets. Our engineering solutions support regulatory approvals, investment planning, operational resilience, asset longevity, and risk reduction while ensuring that water resources and infrastructure systems perform effectively under both normal and extreme operating conditions."},
+{
+
+title: "Building Design & Development Engineering",
+intro: "Coordinated solutions that balance functionality, technical performance, regulatory compliance, constructability, long-term value, and stakeholder expectations are essential for successful development projects. We support developers, investors, public authorities, and asset owners throughout the planning, design, approval, and development process, transforming project concepts into buildable, compliant, and economically viable solutions. By integrating architectural design, structural engineering, spatial planning, BIM coordination, visualization, and development advisory services, we help clients reduce project uncertainty, improve multidisciplinary coordination, accelerate permitting procedures, and maximize project value throughout the entire development lifecycle",
+services: [
+
+"Architectural Design Documentation.",
+"Structural Engineering & Design (calculations, structural drawings, technical specifications and Design Basis Documentation).",
+"Functional Spatial Planning and Interior Design.",
+"Multi-Stage Design Set (Concept Design / Preliminary Design / Technical & Detailed Design).",
+"Spatial Planning (Master Plan / Detailed Development Plan / Zoning and Planning Compliance).",
+"Urban Planning and Development Assessment (land use, density, infrastructure integration, planning constraints).",
+"BIM Coordination Model & Clash Detection (ISO 19650).",
+"3D Architectural and Structural Visualization.",
+"Planning and Development Compliance Assessment (incl. Planning Permission Support and Investment Feasibility Assessment)."
+]
+},
+{
+title: "WSS, Hydraulic & Hydro-Reclamation Engineering",
+intro: "Reliable water infrastructure is essential for public health, economic development, environmental protection, and long-term operational resilience. We support the planning, design, assessment, rehabilitation, and modernization of water supply systems, wastewater infrastructure, hydraulic structures, irrigation networks, flood protection systems, and hydropower facilities. Our engineering solutions help clients improve operational reliability, support regulatory approvals, reduce hydraulic risks, optimize lifecycle costs, and ensure that water infrastructure performs safely and efficiently under both normal operating conditions and extreme events.",
+services: [
+"Hydrological Study and Water Balance Assessment.",
+"Water Supply and Sewerage Network Design.",
+"Wastewater Treatment Plant and strategic hydraulic structures — hydropower plants (HPPs), pumped-storage hydropower plants (PSHPPs), and associated infrastructure.",
+"Hydraulic Structures Design (dams, water intake structures, diversion systems, tunnels, and associated hydraulic facilities).",
+"Hydro-Reclamation and Irrigation, and Drainage System Design.",
+"Flood Risk Management and Protection Infrastructure Design (levees, flood protection systems, and erosion control structures.",
+"Transient Hydraulic (water hammer) and Design of Protection Systems for Pipeline Networks.",
+"Hydraulic Structure Safety Assessment (technical condition, structural integrity, operational reliability).",
+"Hydraulic Emergency & Operationl Condition Assessment.",
+"Hydraulic System Performance Analysis (steady-state and unsteady flow conditions).",
+"Hydraulic Engineering Compliance Statement (regulatory & technical standards conformity).",
+"Design supervision, Author's supervisionm Technical Support during Construction.",
+"Rehabilitation design, Upgrade and modernization studies, Remaining Service Life Assessments.",
+"Commissioning Support, Testing, Performance Verification, and Operational Readiness Assessment.",
+"Hydraulic Infrastructure Expert Assessment for Investment Approval and Permitting Procedures."
+]
+}
   {title: "Geotechnical Engineering & Design", text: "Ground conditions are often among the largest sources of technical uncertainty and financial risk in construction and infrastructure projects. Understanding subsurface conditions early enables better design decisions, improved constructability, reduced project delays, and more efficient allocation of construction resources. Our geotechnical engineering services provide the investigations, analyses, and design solutions needed to manage ground-related risks, optimize foundation systems, support excavation and earthworks activities, and ensure the long-term stability of structures and infrastructure. We help clients make informed decisions based on reliable geotechnical data, engineering judgment, and compliance with applicable standards."},
   {title: "Transportation Infrastructure Engineering & Design", text: "Transportation infrastructure must provide safe, efficient, and resilient mobility while meeting the needs of users, operators, communities, and regulatory authorities. We support public authorities, infrastructure operators, developers, and investors with the planning, assessment, design, rehabilitation, and modernization of roads, bridges, tunnels, railways, and urban transportation systems. Our multidisciplinary engineering approach focuses on improving safety, extending asset service life, enhancing operational performance, supporting sustainable mobility, and delivering infrastructure solutions that remain effective throughout their intended lifecycle."},
   {title: "Geospatial Engineering & Digital Surveying", text: "Reliable engineering decisions depend on accurate spatial information. From project planning and design to construction, commissioning, and asset management, geospatial data forms the foundation for informed decision-making. We provide geodetic surveying, cadastral services, topographic mapping, GIS analysis, digital terrain modelling, deformation monitoring, and advanced geospatial data management solutions that support engineering, infrastructure, and development projects. By combining modern surveying technologies, digital workflows, and precise spatial control, we help clients reduce uncertainty, improve project accuracy, and maintain confidence in project execution and asset records."},
