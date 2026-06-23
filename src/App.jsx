@@ -1041,7 +1041,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
       <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
         {bulletItems.map((item) => (
-          <li key={item} className="flex gap-3"><span className="mt-0.5 text-base text-blue-600">✓</span><span>{item}</span></li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
       {SOLUTION_CARDS_CLICKABLE && (
