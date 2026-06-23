@@ -692,9 +692,8 @@ const enServices = [
 {
 
 title: "Building Design & Development Engineering",
-intro: "Coordinated solutions that balance functionality, technical performance, regulatory compliance, constructability, long-term value, and stakeholder expectations are essential for successful development projects. We support developers, investors, public authorities, and asset owners throughout the planning, design, approval, and development process, transforming project concepts into buildable, compliant, and economically viable solutions. By integrating architectural design, structural engineering, spatial planning, BIM coordination, visualization, and development advisory services, we help clients reduce project uncertainty, improve multidisciplinary coordination, accelerate permitting procedures, and maximize project value throughout the entire development lifecycle",
+intro: "Coordinated solutions that balance functionality, technical performance, regulatory compliance, constructability, long-term value, and stakeholder expectations are essential for successful development projects. We provide planning, design, approval, and development services, transforming project concepts into buildable, compliant, and economically viable solutions. We help clients reduce project uncertainty, improve multidisciplinary coordination, accelerate permitting procedures, and maximize project value throughout the entire development lifecycle.",
 services: [
-
 "Architectural Design Documentation.",
 "Structural Engineering & Design (calculations, structural drawings, technical specifications and Design Basis Documentation).",
 "Functional Spatial Planning and Interior Design.",
@@ -708,7 +707,7 @@ services: [
 },
 {
 title: "WSS, Hydraulic & Hydro-Reclamation Engineering",
-intro: "Reliable water infrastructure is essential for public health, economic development, environmental protection, and long-term operational resilience. We support the planning, design, assessment, rehabilitation, and modernization of water supply systems, wastewater infrastructure, hydraulic structures, irrigation networks, flood protection systems, and hydropower facilities. Our engineering solutions help clients improve operational reliability, support regulatory approvals, reduce hydraulic risks, optimize lifecycle costs, and ensure that water infrastructure performs safely and efficiently under both normal operating conditions and extreme events.",
+intro: "Reliable water infrastructure is essential for public health, economic development, environmental protection, and long-term operational resilience. We provide planning, design, assessment, rehabilitation design, and modernization solutions for water supply systems, wastewater infrastructure, hydraulic structures, irrigation networks, flood protection systems, and hydropower facilities. We help clients improve operational reliability, support regulatory approvals, reduce hydraulic risks, optimize lifecycle costs, and ensure that water infrastructure performs safely and efficiently under both normal operating conditions and extreme conditions.",
 services: [
 "Hydrological Study and Water Balance Assessment.",
 "Water Supply and Sewerage Network Design.",
@@ -727,11 +726,104 @@ services: [
 "Hydraulic Infrastructure Expert Assessment for Investment Approval and Permitting Procedures."
 ]
 },
-  {title: "Geotechnical Engineering & Design", text: "Ground conditions are often among the largest sources of technical uncertainty and financial risk in construction and infrastructure projects. Understanding subsurface conditions early enables better design decisions, improved constructability, reduced project delays, and more efficient allocation of construction resources. Our geotechnical engineering services provide the investigations, analyses, and design solutions needed to manage ground-related risks, optimize foundation systems, support excavation and earthworks activities, and ensure the long-term stability of structures and infrastructure. We help clients make informed decisions based on reliable geotechnical data, engineering judgment, and compliance with applicable standards."},
-  {title: "Transportation Infrastructure Engineering & Design", text: "Transportation infrastructure must provide safe, efficient, and resilient mobility while meeting the needs of users, operators, communities, and regulatory authorities. We support public authorities, infrastructure operators, developers, and investors with the planning, assessment, design, rehabilitation, and modernization of roads, bridges, tunnels, railways, and urban transportation systems. Our multidisciplinary engineering approach focuses on improving safety, extending asset service life, enhancing operational performance, supporting sustainable mobility, and delivering infrastructure solutions that remain effective throughout their intended lifecycle."},
-  {title: "Geospatial Engineering & Digital Surveying", text: "Reliable engineering decisions depend on accurate spatial information. From project planning and design to construction, commissioning, and asset management, geospatial data forms the foundation for informed decision-making. We provide geodetic surveying, cadastral services, topographic mapping, GIS analysis, digital terrain modelling, deformation monitoring, and advanced geospatial data management solutions that support engineering, infrastructure, and development projects. By combining modern surveying technologies, digital workflows, and precise spatial control, we help clients reduce uncertainty, improve project accuracy, and maintain confidence in project execution and asset records."},
-  {title: "Project Management & Delivery", text: "Complex engineering and infrastructure projects require effective coordination, transparent decision-making, rigorous project controls, and continuous stakeholder alignment. We provide project management, technical governance, project controls, construction supervision, and multidisciplinary coordination services that help clients manage risk, maintain project objectives, and improve delivery performance. Our role is to provide the structure, oversight, and technical leadership necessary to keep projects aligned with scope, schedule, budget, quality, and regulatory requirements from project initiation through commissioning and operational handover."},
-  {title: "Pre-Investment Studies & Tender Planning", text: "Major investment decisions should be supported by clear technical, economic, and regulatory understanding before significant resources are committed. Our pre-investment and tender planning services help clients evaluate project feasibility, compare technical alternatives, estimate costs, assess risks, define procurement strategies, and establish a reliable basis for decision-making. By providing objective engineering analysis and structured planning support, we help investors, developers, utilities, and public authorities improve project viability, strengthen business cases, reduce procurement risks, and create a solid foundation for successful project delivery."}
+{
+title: "Geotechnical Engineering & Design",
+intro: "Ground conditions are often among the largest sources of technical uncertainty and financial risk in construction and infrastructure projects. Early understanding of subsurface conditions enables better design decisions, improved constructability, reduced project delays, and more efficient allocation of construction resources. We provide geotechnical investigations, analyses, and engineering solutions that help clients manage ground-related risks, optimize foundation systems, support excavation and earthworks activities, and ensure the long-term stability and performance of structures and infrastructure. Our work supports informed decision-making, sound engineering judgment, and compliance with applicable standards and regulatory requirements.", 
+services: [
+"Geotechnical Investigation and Analysis (Eurocode 7 and National Annexes).",
+"Foundation Engineering & Design (Shallow, Deep, and Combined Foundation Systems; Bearing Capacity, Settlement, Uplift and Lateral Resistance Analysis; Pile, Raft, and Foundation System Design; Geotechnical Design Justification).",
+"Soil Bearing Capacity and Subsoil Characterisation.",
+"Geotechnical Retaining Structure and Slope Stabilization Design (Retaining Walls, Anchored Systems, Reinforced Soil Structures, and Slope Protection Measures).",
+"Excavation Stability and Construction Safety Design.",
+"Temporary Works and Deep Excavation Support System Design Package (Sheet Piles, Diaphragm Walls, Secant Piles, Soldier Piles, Anchoring and Bracing Systems).",
+"Earthworks and Embankment Design Report (Cut-and-Fill Design, Engineered Fills, Embankments, and Compaction Specifications).",
+"Geohazard Assessment (Landslide, Erosion, Subsidence, Sinkhole, and Ground Movement Risk Analysis).",
+"Geotechnical Design for Tunnels, Shafts, and Underground Structures.",
+"Settlement, Deformation, and Ground Movement Assessment.",
+"Geotechnical Monitoring and Deformation Measurement.",
+"Engineering Geological Report + Geotechnical Expert Opinion.",
+"Geotechnical Compliance Statement (Eurocode 7 & national annex conformity)."
+]
+},
+{
+title: "Transportation Infrastructure Engineering & Design",
+intro: "Transportation infrastructure plays a critical role in connecting communities, supporting economic development, and ensuring the safe and efficient movement of people and goods. We provide the planning, assessment, design, rehabilitation & modernization solutions of roads, bridges, tunnels, railways, and urban transport systems. We help clients improve safety, optimize operational performance, extend asset service life, support sustainable mobility objectives, and deliver infrastructure solutions that remain reliable, resilient, and cost-effective throughout their lifecycle.",
+services: [
+"Transport Infrastructure Design (Road, Bridge, Tunnel Structural and Geometric Design).",
+"Road Alignment and Geometric Design.",
+"Pavement Engineering & Design.",
+"Railway Infrastructure and Associated Structures Engineering & Design.",
+"Traffic Engineering Analysis and Traffic Management Plan.",
+"Transport Planning, Mobility Studies, Demand Forecasting, and Multimodal Transport Assessment Report.",
+"Urban and Interurban Transport Infrastructure Design.",
+"Transport Infrastructure Drainage and Slope Stabilization Design.",
+"Road Safety Audit, Road Safety Inspection, and Traffic Safety Assessment.",
+"Bridge Inspection, Structural Assessment, Load Rating, Rehabilitation, and Strengthening Design.",
+"Transport Infrastructure Condition Assessment.",
+"Rehabilitation and Modernisation Design Package (Structural and Functional Upgrading).",
+"Transport Infrastructure Investment Project Approval and Permitting Procedures.",
+"Construction Phase Engineering Support."
+]
+},
+{
+title: "Geospatial Engineering & Digital Surveying",
+intro: "Reliable engineering decisions depend on accurate spatial information. From project planning and design through construction, commissioning, and asset management, geospatial data provides the foundation for effective decision-making and project control. We deliver surveying, mapping, geospatial analysis, digital terrain modelling, deformation monitoring, and advanced spatial data management solutions that support engineering, infrastructure, and development projects. We help clients reduce uncertainty, improve project accuracy, support efficient project delivery, and maintain confidence in asset records throughout the project lifecycle.",
+services: [
+"Geodetic Survey (GNSS, Total Station, and Photogrammetric Datasets).",
+"Topographic Survey and Engineering Mapping.",
+"Cadastral Survey, Plan Preparation, and Technical Documentation.",
+"Digital Terrain Model (DTM/DSM) and 3D Engineering Model Dataset.",
+"Earthworks Quantification (Cut-and-Fill Volume Calculations).",
+"Construction Setting-Out Report (Geometric Control).",
+"Levelling and Vertical Alignment Control.",
+"Construction Geodetic Control (Deformation and Alignment Verification).",
+"Geodetic Deformation Monitoring and Structural Movement Analysis.",
+"As-Built Geodetic Documentation for Commissioning and Legalisation.",
+"Underground Utility Detection, Mapping, and Infrastructure Survey.",
+"Combined Situational Plan (Survey and Design Integration Sheet).",
+"GIS Spatial Analysis, Spatial Database Development, and Asset Mapping.",
+"BIM-Compatible Survey Model and Digital Twin Geospatial Dataset.",
+"Geospatial Compliance and Investment Support."
+]
+},
+{
+title: "Project Management & Delivery",
+intro: "Complex engineering and infrastructure projects require effective coordination, transparent decision-making, rigorous project controls, and continuous stakeholder alignment. We provide project management, technical governance, project controls, construction supervision, and multidisciplinary coordination services that help clients manage risk, maintain project objectives, and improve delivery performance. Our work helps clients maintain control over scope, schedule, budget, quality, and regulatory requirements while improving communication, reducing project uncertainty, and supporting successful project delivery from initiation through commissioning and operational handover.",
+services: [
+"Integrated Project Execution Framework (Lifecycle Management Plan).",
+"Interface Management and Multidisciplinary Coordination.",
+"Project Execution Plan (PEP) incl. WBS and Master Schedule.",
+"Construction Quality Assurance and Supervision Report.",
+"Project Control and Monitoring (Schedule, Cost, Progress, and Documentation Control).",
+"Construction Quality Assurance and Supervision.",
+"Engineering Advisory and Technical Governance.",
+"Stakeholder Coordination and Authority Communication.",
+"Project Performance Monitoring (KPIs and Progress Tracking).",
+"Project Compliance and Governance Report.",
+"Commissioning, Handover, and Operational Readiness Support.",
+"Technical Due Diligence and Independent Engineering Reviews."
+]
+},
+{
+title: "Pre-Investment Studies & Tender Planning",
+intro: "Major investment decisions should be supported by clear technical, economic, and regulatory understanding before significant resources are committed. We provide the analyses, evaluations, planning studies, and procurement documentation needed to assess project feasibility, compare technical alternatives, estimate costs, identify risks, define procurement strategies, and establish a reliable basis for decision-making. Our work helps clients improve project viability, strengthen business cases, reduce procurement and investment risks, and create a solid foundation for successful project delivery.",
+services: [
+"Project Screening and Investment Prioritisation (Pre-Investment Analysis Report).",
+"Feasibility Study (Pre-Investment Analysis).",
+"Techno-Economic Feasibility (Investment Appraisal).",
+"Conceptual Design (Pre-Planning Approval Basis).",
+"Technical Solution Evaluation and Design Alternatives Comparative Analysis.",
+"Value Engineering and Cost Optimisation.",
+"Bill of Quantities (BoQ) and Cost Estimation (Class A/B/C Estimates).",
+"Life-Cycle Cost Analysis (CAPEX/OPEX).",
+"Project Planning and Risk Analysis.",
+"Project Scheduling and Resource Allocation.",
+"Market and Procurement Analysis.",
+"Tender Documentation Package (Technical Specifications and Contract Annexes).",
+"Public Procurement Compliance and Tender Participation.",
+"Regulatory Requirements Compliance."
+]
+}
 ];
 
 const deServices = [
