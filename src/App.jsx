@@ -1039,7 +1039,7 @@ const ZigZagService = memo(function ZigZagService({ title, text, image, reverse,
   const textBlock = (
     <div className="max-w-[640px] p-4 transition-all duration-500 group-hover:translate-x-1 sm:p-5 lg:p-6">
       <h3 className="text-2xl font-light leading-[1.12] tracking-[-0.025em] text-[#111111] md:text-3xl">{title}</h3>
-      <ul className="mt-5 space-y-2 text-[15px] leading-6 text-slate-700">
+      <ul className="mt-5 space-y-3 text-lg leading-8 text-slate-700">
         {bulletItems.map((item) => (
           <li key={item}>{item}</li>
         ))}
