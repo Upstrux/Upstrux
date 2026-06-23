@@ -1046,9 +1046,9 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
 
 const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
   const bulletItems = useMemo(
-    () => text.split(";").map((item) => item.trim()).filter(Boolean),
-    [text]
-  );
+  () => text?.split(";").map((item) => item.trim()).filter(Boolean) || [],
+  [text]
+);
 
   const textBlock = (
     <div className="flex h-full flex-col justify-center max-w-[640px] p-4 transition-all duration-500 group-hover:translate-x-1 sm:p-5 lg:p-6">
