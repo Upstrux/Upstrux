@@ -1421,7 +1421,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
 
 <div className="mt-12">
  
-  <div className="mt-8 grid gap-5 md:grid-cols-2">
+  <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
     {bulletItems.map((item, index) => (
       <div
         key={`${service.title}-${index}`}
