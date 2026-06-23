@@ -1044,7 +1044,7 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text={service.intro || service.text}, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
+const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
   const bulletItems = useMemo(
   () => text?.split(";").map((item) => item.trim()).filter(Boolean) || [],
   [text]
@@ -2079,7 +2079,7 @@ export default function UpstruxWebsite() {
             <ZigZagService
               key={service.title}
               title={service.title}
-              text={service.text}
+              text={service.intro || service.text}
               image={service.image}
               imagePosition={index === 2 ? "object-center" : "object-right"}
               reverse={index % 2 === 1}
