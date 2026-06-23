@@ -1044,7 +1044,7 @@ function MobileMenuButton({ mobileMenuOpen, setMobileMenuOpen }) {
   );
 }
 
-const ZigZagService = memo(function ZigZagService({ title, text, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
+const ZigZagService = memo(function ZigZagService({ title, text={service.intro || service.text}, image, reverse, imagePosition = "object-right", servicePage, setCurrentPage, learnMoreLabel }) {
   const bulletItems = useMemo(
   () => text?.split(";").map((item) => item.trim()).filter(Boolean) || [],
   [text]
