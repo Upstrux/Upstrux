@@ -1224,7 +1224,6 @@ function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemC
 
 function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, language, setLanguage, navItems }) {
   const bulletItems = service.services || [];
-  );
   const galleryItems = useMemo(
     () => bulletItems.slice(0, 3).map((item, index) => ({
       image: service.image,
