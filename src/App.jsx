@@ -1280,28 +1280,8 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
           </h1>
           <SectionDivider className="my-10" />
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {galleryItems.map((item, index) => (
-              <article key={`${service.title}-${index}`} className="bg-white">
-                <button
-                  type="button"
-                  onClick={() => setActiveGalleryIndex(index)}
-                  className="group block w-full overflow-hidden bg-white text-left"
-                >
-                  <img
-                    src={item.image}
-                    alt={service.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </button>
-
-                <p className="mt-4 line-clamp-3 text-[15px] leading-6 text-slate-700">
-                  {item.description}
-                </p>
-              </article>
-            ))}
+         <div className="mt-10">
+          TEST
           </div>
 
           <div className="mt-14 max-w-5xl">
