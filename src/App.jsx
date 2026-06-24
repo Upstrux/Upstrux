@@ -663,14 +663,158 @@ const deProjects2 = [
 ];
 
 const bgServices = [
-  { title: "Архитектура и Проектиране на Сгради", text: "Архитектурно проектиране на жилищни, обществени, административни и промишлени сгради; Проектиране на сгради и съоръжения; Интериорна и ландшафтна архитектура и функционално-пространствено планиране; Концептуални, идейни, технически и работни проекти; Градоустройствени и устройствени разработки — ПУП, РУП, концепции и устройствени схеми; Урбанистични анализи и пространствено планиране; BIM (Building Information Modeling) проектиране и координация; 3D моделиране, визуализации и дигитални проектни решения; Консултиране при прилагане на нормативни изисквания и инвестиционно проектиране." },
-  { title: "Архитектура и Проектиране на Сгради", text: "Архитектурно проектиране на жилищни, обществени, административни и промишлени сгради; Проектиране на сгради и съоръжения; Интериорна и ландшафтна архитектура и функционално-пространствено планиране; Концептуални, идейни, технически и работни проекти; Градоустройствени и устройствени разработки — ПУП, РУП, концепции и устройствени схеми; Урбанистични анализи и пространствено планиране; BIM (Building Information Modeling) проектиране и координация; 3D моделиране, визуализации и дигитални проектни решения; Консултиране при прилагане на нормативни изисквания и инвестиционно проектиране." },
-  { title: "ВиК, Хидротехническо и Хидромелиоративно Проектиране", text: "Изготвяне на инженерно-хидроложки доклади и водостопански изследвания за оптимално управление на водните ресурси.; Моделиране и проектиране на водоснабдителни и канализационни системи, мрежи и съоръжения.; Проектиране на пречиствателни станции и стратегически хидротехнически съоражения — ВЕЦ, ПАВЕЦ и прилежаща инфраструктура.; Проектиране на язовири, водохващания, деривации, тунели и прилежащи съоръжения.; Проектиране и обследване на хидромелиоративни, напоителни и отводнителни системи.; Проектиране на диги и защитни системи срещу наводнения и ерозия.; Анализ на хидравличен удар и проектиране на защити за тръбопроводни системи.; Оценка на техническото състояние, експлоатационната надеждност и безопасността на хидротехнически съоръжения.; Обследване и анализ на хидротехнически съоръжения при аварийни и експлоатационни режими.; Хидравлични и инженерни анализи на водопроводни системи и съоръжения.; Консултации по нормативни изисквания, технически стандарти и инженерни решения в хидротехническото строителство.; Изготвяне на технически експертизи, становища и инвестиционни проекти за ВиК и хидротехническа инфраструктура."},
-  { title: "Геотехническо Проектиране", text: "Геотехнически проучвания и инженерно-геоложки анализи; Проектиране на фундиране за сгради и инженерни съоръжения; Анализ и оценка на земната основа и носимоспособността на почвите; Проектиране на подпорни стени, укрепителни и противосвлачищни съоръжения; Геотехническо осигуряване при изкопи, дълбоки изкопи и строителство в урбанизирани територии; Проектиране и обследване на пилотни, плитки и комбинирани фундирания; Оценка на свлачищни, ерозионни и геодинамични процеси; Геотехнически анализи при транспортно, промишлено и хидротехническо строителство; Мониторинг и обследване на деформации и слягания на сгради и съоръжения; Изготвяне на инженерно-геоложки и геотехнически доклади, експертизи и становища; Консултиране при прилагане на нормативни изисквания и инженерни стандарти в областта на геотехниката."},
-  { title: "Проектиране на Транспортното Инфраструктура", text: "Проектиране на пътища, мостове, тунели и транспортни съоръжения; Проектиране на железопътна инфраструктура и прилежащи съоръжения; Транспортно-комуникационни решения и организация на движението; Инженерни разработки за градска и междуградска транспортна инфраструктура; Проектиране на отводнителни и укрепителни системи към транспортни обекти; Анализи и оценки на експлоатационното състояние на транспортни съоръжения; Инженерни решения за рехабилитация и модернизация на транспортна инфраструктура; Технически и инвестиционни проекти в областта на транспортното строителство; Инженерно осигуряване при изграждане и експлоатация на транспортни обекти."},
-  { title: "Геодезия, кадастър, ГИС и фотограметрия", text: " Геодезически и фотограметрични измервания; Геодезическо заснемане на поземлени имоти и строителни обекти; Заснемане и анализ на терени чрез GPS, LiDAR и безпилотни летателни апарати (UAV); 3D моделиране на терени, сгради и инженерни съоръжения; Изчисляване на обеми на земно-насипни материали и суровини; Трасиране на сгради, съоръжения и регулационни линии; Вертикално планиране и нивелация; Контролни геодезически измервания по време на строителството; Геодезическо заснемане за узаконяване и въвеждане в експлоатация; Изготвяне на кадастрални планове и карти; Кадастрални услуги и техническа документация; Изработване на комбинирани скици и ситуационни планове;  GIS базирани пространствени анализи и дигитални териториални модели; Геодезическо и кадастрално консултиране при инвестиционни и инфраструктурни проекти."},
-  { title: "Управлението и Координацията на Проекти", text: "Управление на пълния жизнен цикъл на инвестиционни проекти; Координация на междудисциплинарни екипи при комплексни инженерни и строителни проекти; Планиране, организация и контрол на проектантски и строителни дейности; Контрол на качеството и техническото изпълнение по време на строителството; Управление на срокове, ресурси и проектна документация; Инженерно-консултантски услуги при подготовка и реализация на инвестиционни проекти; Координация между възложители, проектанти, изпълнители и административни органи; Мониторинг и оценка на изпълнението на проекти; Подготовка на техническа документация, доклади и експертни становища; Консултиране при прилагане на нормативни изисквания и добри практики в управлението на проекти." },
-  { title: "Прединвестиционни Проучвания и Офертно Планиране", text: "Изготвяне на предофертни проучвания и технически анализи.; Подготовка на количествено-стойностни сметки и бюджетни разчети.; Разработване на офертна, тръжна и техническа документация.; Анализ на срокове, ресурси, разходи и рискове.; Проучване и оценка на технически и технологични решения.; Сравнителен анализ и оптимизация на проектни варианти.; Анализ на пазарни условия, доставчици и подизпълнители.; Подготовка на графици, ресурсни планове и финансови оценки.; Технико-икономически анализи и оценка на инвестиционна ефективност.; Консултации при участие в обществени поръчки и търгове.; Анализ на нормативни и технически изисквания.; Подготовка на концептуални и предварителни проектни решения."}
+  {
+    title: "Оценка на Активи, Диагностика и Конструктивна Верификация",
+    intro: "Съществуващите сгради и инженерни съоръжения са подложени на разнообразни въздействия през целия си експлоатационен живот – от стареене и деградация на материалите и увеличени експлоатационни натоварвания до промени в нормативната уредба, сеизмичен риск и изменящи се експлоатационни изисквания. Независимо дали планирате рехабилитация и усилване на конструкцията, промяна на предназначението, проверка за нормативно съответствие, технически due diligence при инвестиции или дългосрочно управление на активи, ние предоставяме ясни и основани на факти експертни оценки, които ви помагат да определите действителното състояние на актива, да управлявате риска и да вземате информирани решения с увереност.",
+    services: [ "Натурни Обследвания на Строителни Конструкции и Съоражения.", 
+		"Натурни Статически и Динамични Изпитвания на Строителни конструкции и Съоражения.", 
+		"Оценка на Строителни Конструктивните и Нормативното Съответствие (Верификация на Носимоспособност, Коравина, Устойчивост и Експлоатационна Годност).", 
+		"Оценка на Сеизмичната Осигуреност и Конструктивна Безопасност (EN 1998 и Приложимите Национални Приложения).", 
+		"Обследване на Аварий в Строителството.", 
+		"Оценка на Динамичното Поведение на Строителни Конструкции и Съоражения.", 
+		"Обследване при Сейзмична Оценка, Възстановяване и Усилване на Сгради (EN 1998-3).", 
+		"Определяне на Физико-механичните характеристики на Строителни Материали (Безразрушителни и Разрушителни Методи за Изпитване).", 
+		"Инженерно Становища и консултиране при Прилагане на Нормативните изисквания, Технически Стандарти и Строителни Технологии." 
+]
+},
+  {
+  title: "Архитектурно и Инженерно Проектиране на Сгради",
+  intro: "Успешната реализация на инвестиционни проекти изисква ефективна координация между устройствените цели, инженерните изисквания, нормативните задължения и строителните аспекти на проекта. Ние предоставяме интегрирани архитектурни, конструктивни, устройствено-планировъчни и BIM услуги през всички етапи на концептуалното разработване, техническото проектиране и детайлното проектиране, изготвяйки необходимата проектна документация, технически оценки и инженерни разработки, необходими за съгласуване, одобрение, възлагане и изпълнение на строителството.",
+  services: [
+    "Архитектурни Проекти.",
+    "Проектиране на Строителни Конструкции (Статически и Динамични Изчисления, Конструктивни Чертежи и Планове, Технически Спецификации и Пълна проектна Документация).",
+    "Функционално Пространствено Планиране и Интериорен Дизайн.",
+    "Многоетапно Проектиране (Идеен Проект / Технически и Работен Проект).",
+    "Устройствено Планиране (Общ Устройствен План / Подробен Устройствен План / Съответствие с Устройствените и Регулационните Изисквания).",
+    "Градоустройствен Анализ и Оценка на Развитието (Предназначение на Територията, Интензивност на Застрояване, Инфраструктурна Осигуреност и Устройствени Ограничения).",
+    "BIM Координационен Модел и Откриване на Конфликтни Пресичания(ISO 19650).",
+    "3D Архитектурна и Конструктивна Визуализация.",
+    "Оценка на Съответствието с Устройствените и Инвестиционните Изисквания (вкл. Подкрепа при Процедури за Разрешаване на Строителство и Оценка на Инвестиционната Осъществимост)."
+  ]
+},
+  {
+  title: "ВиК, Хидротехническо и Хидромелиоративно Инженерство",
+  intro: "Надеждното функциониране на водната инфраструктура зависи от качественото хидравлично проектиране, експлоатационната надеждност, съответствието с нормативните изисквания и дългосрочната устойчивост на активите. Ние предоставяме услуги по инженерно планиране, хидравлични анализи, оценка на техническото състояние, проектиране на рехабилитация и модернизация на водоснабдителни системи, канализационни мрежи, хидротехнически съоръжения, хидромелиоративна инфраструктура, съоръжения за защита от наводнения и хидроенергийни обекти. Чрез инженерни оценки, базирани на данни, и практически проектни решения подпомагаме нашите клиенти при преодоляване на ограничения в капацитета, намаляване на експлоатационните рискове, вземане на инвестиционни решения и подобряване на дългосрочната ефективност на критичната водна инфраструктура.",
+  services: [
+    "Хидроложки Проучвания, Оценка на Водния Баланс и Инженерно-хидроложки Доклади.",
+    "Моделиране и Проектиране на Водоснабдителни и Канализационни системи, Мрежи и съоражения.",
+    "Проектиране на Пречиствателни Станции за Отпадъчни Води и Стратегически Хидротехнически Съоръжения – ВЕЦ, ПАВЕЦ и Съпътстваща с тях Инфраструктура.",
+    "Проектиране на Хидротехнически Съоръжения (Язовири, Водохващания, Деривационни Системи, Тунели и Съпътстващи Хидротехнически Съоражения).",
+    "Проектиране на Хидромелиоративни, Напоителни и Отводнителни Системи.",
+    "Управление на Риска от Наводнения и Проектиране на Защитна Инфраструктура (Диги, Съоръжения за Защита от Наводнения и Брегозащитни Съоръжения).",
+    "Анализ на Преходни Хидравлични Режими (Хидравличен Удар) и Проектиране на Защитни Системи за Тръбопроводни Мрежи.",
+    "Оценка на Безопасността на Хидротехнически Съоръжения (Техническо Състояние, Конструктивна Цялост и Експлоатационна Надеждност).",
+    "Оценка на Аварийни и Експлоатационни Режими на Хидравлични Системи.",
+    "Анализ на Експлоатационните Характеристики на Хидравлични Системи (при Условия на Стационарен и Нестационарен Поток).",
+    "Инженерни Становища за Съответствие на Хидротехнически Обекти и Съоражения (Съответствие с Нормативните и Техническите Изисквания).",
+    "Проектантски Надзор, Авторски Надзор и Техническа Подкрепа по Време на Строителството.",
+    "Проектиране на Рехабилитация, Проучвания за Модернизация и Повишаване на Капацитета, Оценка на Остатъчния Експлоатационен Живот.",
+    "Подкрепа при Въвеждане в Експлоатация, Изпитвания, Верификация на Експлоатационните Показатели и Оценка на Оперативната Готовност.",
+    "Експертни Оценки на Хидротехническа Инфраструктура за Инвестиционно Одобрение и Разрешителни Процедури."
+  ]
+},
+  {
+  title: "Геотехническо Проектиране и Инженеринг",
+  intro: "Инженерно-геоложките и геотехническите условия често представляват един от най-съществените източници на техническа неопределеност и финансов риск при строителни и инфраструктурни проекти. Ранното и надеждно определяне на условията в земната основа създава предпоставки за оптимални проектни решения, по-добра изпълнимост на строителството, ограничаване на закъсненията и по-ефективно управление на строителните ресурси. Ние предоставяме геотехнически проучвания, анализи и инженерни решения, които подпомагат възложителите при управлението на геотехническите рискове, оптимизирането на фундаментните системи, изпълнението на изкопни и земни работи и осигуряването на дълготрайна устойчивост и експлоатационна надеждност на сгради, съоръжения и инфраструктурни обекти. Нашата дейност подпомага вземането на информирани инженерни решения, прилагането на добри инженерни практики и съответствието с приложимите нормативни и технически изисквания.",
+  services: [
+    "Геотехнически Проучвания и Инженерно-геоложки Анализи (Еврокод 7 и Приложимите Национални Анекси).",
+    "Фундиране и Геотехническо Проектиране (Плитко, Дълбоко и Комбинирано Фундиране; Анализ на Носимоспособност, Слягания, Подем и Хоризонтални Натоварвния; Проектиране на Пилотни, Фундаментни Плочи и Комбинирани Фундаментни Системи; Геотехнически Изчисления и Обосновка на Проектните Решения).",
+    "Определяне на Носимоспособността на Земната Основа и Геотехническа Характеристика на Почвите и Скалните Масиви.",
+    "Проектиране на Подпорни, Укрепване и Противосвлащищни Съоряжения (Подпорни Стени, Анкерни Системи, Армоземни Подпорни Конструкции и Защитни Мерки срещу Свлачища).",
+    "Проектиране на Устойчивостта на Изкопи и Мерки за Безопасност по Време на Строителството.",
+    "Проектиране на Временни Конструкции и Системи за Укрепване на Дълбоки Изкопи (Шпунтови Стени, Шлицови Стени, Секантни Пилоти, Берлински Стени, Анкерни и Разпорни Системи).",
+    "Доклади и Проектни Решения за Земни Работи и Насипи (Баланс на Изкопи и Насипи, Инженерни Насипи, Пътни и Защитни Насипи, Изисквания за Уплътняване).",
+    "Оценка на Геоложки и Геотехнически Опасности (Свлачища, Ерозия, Слягания, Карстови Процеси, Суфозия и Деформации на Земната Основа).",
+    "Геотехническо Проектиране на Тунели, Шахти и Подземни Съоръжения.",
+    "Оценка на Слягания, Деформации и Премествания на Земната Основа.",
+    "Геотехнически Мониторинг и Измерване на Деформации.",
+    "Инженерно-Геоложки Доклад и Геотехнически Експертни Становища.",
+    "Становища за Геотехническо Съответствие (Съответствие с Еврокод 7 и Приложимите Национални Приложения)."
+  ]
+},
+  {
+  title: "Транспортна Инфраструктура – Проектиране и Инженеринг",
+  intro: "Транспортната инфраструктура има ключова роля за свързаността между населените места, икономическото развитие и безопасното и ефективно придвижване на хора и товари. Ние предоставяме услуги по планиране, обследване, проектиране, рехабилитация и модернизация на пътна, мостова, тунелна, железопътна и градска транспортна инфраструктура. Подпомагаме нашите клиенти при повишаване на безопасността, удължаване на експлоатационния живот на инфраструктурните активи, постигане на целите за устойчива мобилност и реализиране на надеждни, устойчиви и икономически ефективни инфраструктурни решения през целия им жизнен цикъл.",
+  services: [
+    "Проектиране на Транспортна Инфраструктура (Пътища, Мостове, Тунели – Геометрично и Конструктивно Проектиране).",
+    "Трасиране и Геометрично Проектиране на Пътища.",
+    "Пътни Конструкции и Оразмеряване на Пътни Настилки.",
+    "Проектиране на Железопътна Инфраструктура и Съпътстващи Съоръжения.",
+    "Транспортно-Комуникационни Проучвания, Проекти за Организация на Движението и Оценка на Безопасността на Движението.",
+    "Транспортно Планиране, Прогнозиране на Транспортното Търсене и Транспортно Моделиране.",
+    "Проектиране на Градска и Извънградска Транспортна Инфраструктура.",
+    "Проектиране на Отводняване, Укрепване на Откоси и Геотехнически Съоръжения към Транспортната Инфраструктура.",
+    "Одити по Пътна Безопасност, Инспекции по Пътна Безопасност.",
+    "Обследване на Мостови Съоръжения, Оценка на Техническото и Конструктивното Състояние и Определяне на Товароносимостта.",
+    "Оценка на Техническото Състояние на Транспортна Инфраструктура.",
+    "Проектиране на Рехабилитация, Усилване и Модернизация (Конструктивно и Функционално Подобряване).",
+    "Подготовка и Съгласуване на Инвестиционни Проекти за Транспортна Инфраструктура и Подкрепа при Разрешителни Процедури.",
+    "Инженерна Подкрепа по Време на Строителството."
+  ]
+},
+  {
+  title: "Геодезия, Геопространствени Данни и Дигитално Заснемане",
+  intro: "Надеждните инженерни решения се основават на точна и актуална пространствена информация. От инвестиционното планиране и проектирането до строителството, въвеждането в експлоатация и управлението на активи, геодезическите и геопространствените данни осигуряват необходимата основа за ефективен контрол и вземане на технически решения. Ние предоставяме услуги в областта на инженерната геодезия, картографията, геопространствените анализи, цифровото моделиране на терена, мониторинга на деформации и управлението на пространствени данни, подпомагайки реализацията на строителни, инфраструктурни и инвестиционни проекти. Чрез прецизни измервания и съвременни цифрови технологии подпомагаме нашите клиенти при намаляване на несигурността, повишаване на точността на проектите и поддържане на надеждна техническа документация през целия жизнен цикъл на активите.",
+  services: [
+    "Геодезически Измервания (GNSS, Тотални Станции и Фотограметрични Заснемания).",
+    "Топографски Снимки, Геодезически Карти и Планове.",
+    "Кадастрални Заснемания, Изработване на Скици, Схеми и Техническа Документация.",
+    "Цифрови Модели на Терена и Повърхността (DTM/DSM), 3D Моделиране на Терени, Сгради и Съоръжения чрез GNSS, LiDAR и БЛС.",
+    "Изчисляване на Обеми Земни Маси (Изкопи и Насипи).",
+    "Трасиране и Геодезически Контрол на сгради, съоръжения и регулационни линии.",
+    "Нивелация и Вертикално Планиране.",
+    "Инженерно-Геодезически Контрол по Време на Строителството (Контрол на Положението и Геометричните Параметри).",
+    "Мониторинг на Деформации и Анализ на Премествания на Сгради и Съоръжения.",
+    "Екзекутивна Геодезическа Документация за Въвеждане в Експлоатация и Узаконяване.",
+    "Откриване, Заснемане и Картиране на Подземни Комуникации и Инженерна Инфраструктура (Подземен Кадастър).",
+    "Комбинирани Скици и Ситуационни Планове.",
+    "GIS Анализи, Изграждане на Пространствени Бази Данни и Картографиране на Активи.",
+    "Геодезически Модели за BIM Среда и Геопространствени Данни за Дигитални Двойници (Digital Twin).",
+    "Експертни Становища за Съответствие и Подкрепа при Инвестиционни Процедури."
+  ]
+},
+  {
+  title: "Управление и Изпълнение на Проекти",
+
+  intro: "Сложните инженерни и инфраструктурни проекти изискват ефективна координация, прозрачност при вземането на решения, надежден контрол върху изпълнението и постоянно взаимодействие между всички участници в инвестиционния процес. Ние предоставяме услуги по управление на проекти, техническа координация, контрол на изпълнението, междудисциплинарна координация, подпомагайки нашите клиенти при управлението на риска, постигането на проектните цели и подобряването на цялостната ефективност на проекта. Нашият подход осигурява контрол върху обхвата, сроковете, бюджета, качеството и нормативното съответствие, като същевременно подобрява комуникацията между заинтересованите страни, намалява несигурността и подпомага успешната реализация на проекта от първоначалното планиране до въвеждането в експлоатация и предаването на обекта.",
+
+  services: [
+    "Интегрирана Рамка за Управление на Проекти (План за Управление през Целия Жизнен Цикъл).",
+    "Управление на Взаимовръзките и Междудисциплинарна Координация.",
+    "План за Изпълнение на Проекта (PEP), включително Структурна Разбивка на Работите (WBS) и Графици.",
+    "Контрол и Мониторинг на Проекта (Срокове, Разходи, Напредък и Управление на Документацията).",
+    "Осигуряване и Контрол на Качеството по Време на Строителството.",
+    "Техническо Консултиране и Инженерно Управление.",
+    "Координация на Заинтересованите Страни и Комуникация с Компетентните Органи.",
+    "Мониторинг на Изпълнението на Проекта (Ключови Показатели за Пройзводителност и Проследяване на Напредъка).",
+    "Доклади за Управление, Контрол и Съответствие на Проекта.",
+    "Подкрепа при Въвеждане в Експлоатация, Предаване на Обекта и Оценка на Експлоатационната Готовност.",
+    "Технически Due Diligence, Анализи и Независими Инженерни Експертизи."
+  ]
+},
+ {
+  title: "Прединвестиционни Проучвания и Подготовка на Тръжни Процедури",
+  intro: "Значимите инвестиционни решения следва да бъдат подкрепени от ясна техническа, икономическа и нормативна обосновка преди ангажирането на съществени финансови и организационни ресурси. Ние предоставяме анализи, оценки, прединвестиционни проучвания и дейности по планиране, необходими за оценка на техническата и икономическата осъществимост на проектите, сравнение на алтернативни технически решения, прогнозиране на разходите, идентифициране на рисковете и създаване на надеждна основа за вземане на инвестиционни решения. Нашата работа подпомага повишаването на жизнеспособността на проектите, намаляването на инвестиционния и договорния риск и създаването на стабилна основа за тяхната успешна реализация.",
+  services: [
+    "Прединвестиционни Проучвания и Технически Оценки.",
+    "Технико-Икономически Анализи и Оценка на Инвестиционната Ефективност.",
+    "Оценка и Анализ на Капиталови и Оперативни Разходи (CAPEX/OPEX) и Финансово Моделиране на Дисконтирани Парични Потоци (DCF).",
+    "Разработване на Концептуални и Предварителни Проектни Решения.",
+    "Проучване, Анализ и Оценка на Технически и Технологични Решения.",
+    "Сравнителен Анализ и Оптимизация на Проектни Алтернативи.",
+    "Идентифициране на Изискванията и Оценка на Съответствието.",
+    "Разработване на Количествено-Стойностни Сметки (BoQ) и Стойностни Оценки (Клас A/B/C).",
+    "Разработване на Графици за Изпълнение и Планиране на Срокове.",
+    "Планиране и Разпределение на Човешки и Материални Ресурси.",
+    "Оценка и Анализ на Проектните Рискове.",
+    "Планиране на Доставките и Пазарни Анализи.",
+    "Оценка на Доставчици и Подизпълнители.",
+    "Разработване на Офертна, Тръжна и Техническа Документация.",
+    "Консултации по Обществени Поръчки и Подкрепа при Участие в Търгове.",
+    "Планиране на Изпълнението на Проекта.",
+    "Оценка на Съответствието с Нормативните и Техническите Изисквания."
+  ]
+}
 ];
 
 const enServices = [
@@ -678,16 +822,16 @@ const enServices = [
   title: "Asset Assessments, Diagnostics & Structural Verification",
   intro: "Existing structures often face increasing performance demands, aging materials, changing regulations, and evolving operational requirements. Whether the objective is asset rehabilitation, change of use, regulatory compliance, investment due diligence, or long-term asset management, reliable engineering evidence is essential for informed decision-making.",
   services: [
-    "In-situe Structural Condition Assessment (EN 1990 / EN 1991)",
-    "In-situe Static and Dynamic Load Test Documentation, incl. Structural Response Analysis and Measured Deflection/Acceleration Records",
-    "Structural Performance and Code Compliance Assessment (Load Capacity, Stiffness, Stability, and Serviceability Verification)",
-    "Seismic Vulnerability Assessment and Structural Safety Evaluation (EN 1998 and Applicable National Annexes)",
-    "Structural Failure Investigation and Forensic Engineering Assessment",
-    "Structural Dynamic Behaviour Assessment",
-    "Seismic Retrofit Design Basis and Strengthening Concept Design (EN 1998-3)",
-    "Materials Testing (Non-Destructive and Destructive Testing)",
-    "Engineering Compliance Statement"
-  ]
+  "In-Situ Condition Assessment of Structures and Engineering Facilities",
+  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
+  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
+  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
+  "Forensic Investigation of Structural Failures and Construction Accidents",
+  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
+  ""Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)"",
+  "Engineering Expert Witness Services and Technical Consultancy on Regulatory Compliance, Design Standards, and Construction Technologies"
+]
 },
 {
 
@@ -707,23 +851,23 @@ services: [
 },
 {
 title: "WSS, Hydraulic & Hydro-Reclamation Engineering",
-intro: "Reliable water infrastructure is essential for public health, economic development, environmental protection, and long-term operational resilience. We provide planning, design, assessment, rehabilitation design, and modernization solutions for water supply systems, wastewater infrastructure, hydraulic structures, irrigation networks, flood protection systems, and hydropower facilities. We help clients improve operational reliability, support regulatory approvals, reduce hydraulic risks, optimize lifecycle costs, and ensure that water infrastructure performs safely and efficiently under both normal operating conditions and extreme conditions.",
+intro: "The performance of water infrastructure depends on sound hydraulic design, operational reliability, regulatory compliance, and long-term asset resilience. We provide engineering planning, hydraulic analysis, condition assessment, rehabilitation design, and modernization services for water supply systems, wastewater networks, hydraulic structures, irrigation infrastructure, flood protection works, and hydropower facilities. Through data-driven engineering assessments and practical design solutions, we help clients address capacity limitations, reduce operational risks, support investment decisions, and improve the long-term performance of critical water assets.",
 services: [
-"Hydrological Study and Water Balance Assessment.",
-"Water Supply and Sewerage Network Design.",
-"Wastewater Treatment Plant and strategic hydraulic structures — hydropower plants (HPPs), pumped-storage hydropower plants (PSHPPs), and associated infrastructure.",
-"Hydraulic Structures Design (dams, water intake structures, diversion systems, tunnels, and associated hydraulic facilities).",
-"Hydro-Reclamation and Irrigation, and Drainage System Design.",
-"Flood Risk Management and Protection Infrastructure Design (levees, flood protection systems, and erosion control structures.",
-"Transient Hydraulic (water hammer) and Design of Protection Systems for Pipeline Networks.",
-"Hydraulic Structure Safety Assessment (technical condition, structural integrity, operational reliability).",
-"Hydraulic Emergency & Operationl Condition Assessment.",
-"Hydraulic System Performance Analysis (steady-state and unsteady flow conditions).",
-"Hydraulic Engineering Compliance Statement (regulatory & technical standards conformity).",
-"Design supervision, Author's supervisionm Technical Support during Construction.",
-"Rehabilitation design, Upgrade and modernization studies, Remaining Service Life Assessments.",
+"Hydrological Studies, Water Balance Assessment and Hydrologic Reports.",
+"Hydraulic Modelling and Design of Water Supply and Sewerage Systems, Networks, and Facilities.",
+"Design of Wastewater Treatment Plants and Strategic Hydraulic Infrastructure, including HPPs, PSHPPs, and Associated Infrastructure.",
+"Design of Hydraulic Structures (Dams, Water Intake Structures, Diversion Systems, Tunnels, and Associated Hydraulic Facilities).",
+"Design of Hydro-Reclamation, Irrigation, and Drainage Systems.",
+"Flood Risk Management and Design of Flood Protection Infrastructure (Levees, Flood Defence Systems, and Erosion Control Structures).",
+"Transient Hydraulic Analysis (Water Hammer) and Design of Pipeline Protection Systems.",
+"Safety Assessment of Hydraulic Structures (Technical Condition, Structural Integrity, and Operational Reliability).",
+"Assessment of Emergency and Operational Conditions of Hydraulic Systems.",
+"Hydraulic System Performance Analysis under Steady-State and Unsteady Flow Conditions.",
+"Engineering Compliance Statements for Hydraulic Structures and Facilities (Conformity with Regulatory and Technical Requirements).",
+"Design Supervision, Author's Supervision, and Technical Support During Construction.",
+"Rehabilitation Design, Modernization and Capacity Upgrade Studies, and Remaining Service Life Assessments.",
 "Commissioning Support, Testing, Performance Verification, and Operational Readiness Assessment.",
-"Hydraulic Infrastructure Expert Assessment for Investment Approval and Permitting Procedures."
+"Expert Assessment of Hydraulic Infrastructure for Investment Approval and Permitting Procedures."
 ]
 },
 {
@@ -735,7 +879,7 @@ services: [
 "Soil Bearing Capacity and Subsoil Characterisation.",
 "Geotechnical Retaining Structure and Slope Stabilization Design (Retaining Walls, Anchored Systems, Reinforced Soil Structures, and Slope Protection Measures).",
 "Excavation Stability and Construction Safety Design.",
-"Temporary Works and Deep Excavation Support System Design Package (Sheet Piles, Diaphragm Walls, Secant Piles, Soldier Piles, Anchoring and Bracing Systems).",
+"Temporary Works and Deep Excavation Support System Design (Sheet Piles, Diaphragm Walls, Secant Piles, Soldier Piles, Anchoring and Bracing Systems).",
 "Earthworks and Embankment Design Report (Cut-and-Fill Design, Engineered Fills, Embankments, and Compaction Specifications).",
 "Geohazard Assessment (Landslide, Erosion, Subsidence, Sinkhole, and Ground Movement Risk Analysis).",
 "Geotechnical Design for Tunnels, Shafts, and Underground Structures.",
@@ -747,20 +891,20 @@ services: [
 },
 {
 title: "Transportation Infrastructure Engineering & Design",
-intro: "Transportation infrastructure plays a critical role in connecting communities, supporting economic development, and ensuring the safe and efficient movement of people and goods. We provide the planning, assessment, design, rehabilitation & modernization solutions of roads, bridges, tunnels, railways, and urban transport systems. We help clients improve safety, optimize operational performance, extend asset service life, support sustainable mobility objectives, and deliver infrastructure solutions that remain reliable, resilient, and cost-effective throughout their lifecycle.",
+intro: "Transportation infrastructure plays a critical role in connecting communities, supporting economic development, and ensuring the safe and efficient movement of people and goods. We provide the planning, assessment, design, rehabilitation & modernization solutions of roads, bridges, tunnels, railways, and urban transport systems. We help clients improve safety, extend asset service life, support sustainable mobility objectives, and deliver infrastructure solutions that remain reliable, resilient, and cost-effective throughout their lifecycle.",
 services: [
 "Transport Infrastructure Design (Road, Bridge, Tunnel Structural and Geometric Design).",
 "Road Alignment and Geometric Design.",
 "Pavement Engineering & Design.",
 "Railway Infrastructure and Associated Structures Engineering & Design.",
-"Traffic Engineering Analysis and Traffic Management Plan.",
-"Transport Planning, Mobility Studies, Demand Forecasting, and Multimodal Transport Assessment Report.",
+"Traffic Engineering Studies, Traffic Management Plans, and Road Safety Assessments.",
+"Transport Planning, Traffic Demand Forecasting, and Transport Modelling.",
 "Urban and Interurban Transport Infrastructure Design.",
 "Transport Infrastructure Drainage and Slope Stabilization Design.",
 "Road Safety Audit, Road Safety Inspection, and Traffic Safety Assessment.",
-"Bridge Inspection, Structural Assessment, Load Rating, Rehabilitation, and Strengthening Design.",
+"Bridge Inspection, Structural Assessment and Load Rating.",
 "Transport Infrastructure Condition Assessment.",
-"Rehabilitation and Modernisation Design Package (Structural and Functional Upgrading).",
+"Rehabilitation, Strengthening and Modernisation Design (Structural and Functional Upgrading).",
 "Transport Infrastructure Investment Project Approval and Permitting Procedures.",
 "Construction Phase Engineering Support."
 ]
@@ -768,60 +912,63 @@ services: [
 {
 title: "Geospatial Engineering & Digital Surveying",
 intro: "Reliable engineering decisions depend on accurate spatial information. From project planning and design through construction, commissioning, and asset management, geospatial data provides the foundation for effective decision-making and project control. We deliver surveying, mapping, geospatial analysis, digital terrain modelling, deformation monitoring, and advanced spatial data management solutions that support engineering, infrastructure, and development projects. We help clients reduce uncertainty, improve project accuracy, support efficient project delivery, and maintain confidence in asset records throughout the project lifecycle.",
-services: [
-"Geodetic Survey (GNSS, Total Station, and Photogrammetric Datasets).",
-"Topographic Survey and Engineering Mapping.",
-"Cadastral Survey, Plan Preparation, and Technical Documentation.",
-"Digital Terrain Model (DTM/DSM) and 3D Engineering Model Dataset.",
-"Earthworks Quantification (Cut-and-Fill Volume Calculations).",
-"Construction Setting-Out Report (Geometric Control).",
-"Levelling and Vertical Alignment Control.",
-"Construction Geodetic Control (Deformation and Alignment Verification).",
-"Geodetic Deformation Monitoring and Structural Movement Analysis.",
-"As-Built Geodetic Documentation for Commissioning and Legalisation.",
-"Underground Utility Detection, Mapping, and Infrastructure Survey.",
-"Combined Situational Plan (Survey and Design Integration Sheet).",
-"GIS Spatial Analysis, Spatial Database Development, and Asset Mapping.",
-"BIM-Compatible Survey Model and Digital Twin Geospatial Dataset.",
-"Geospatial Compliance and Investment Support."
+services: [ 
+"Geodetic Surveys (GNSS, Total Station, and Photogrammetric Surveys).", 
+"Topographic Surveys and Geodetic Mapping.", 
+"Cadastral Surveys, Preparation of Cadastral Sketches, Plans, and Technical Documentation.", 
+"Digital Terrain and Surface Models (DTM/DSM), 3D Modelling of Terrains, Buildings and Facilities using GNSS, LiDAR and UAV.", 
+"Earthworks Quantity Surveys (Cut-and-Fill Volume Calculations).", 
+"Construction Setting-Out and Geodetic Control of Buildings, Structures, and Property Boundaries.", 
+"Levelling Surveys and Vertical Planning.", 
+"Survey Control and Verification of Geometric Parameters During Construction.", 
+"Deformation Monitoring and Structural Movement Analysis of Buildings and Structures.", 
+"As-Built Survey Documentation for Commissioning and Regulatory Approval.", 
+"Detection, Surveying, and Mapping of Underground Utilities and Infrastructure Networks (Uderground Utilities Cadaster).", 
+"Combined Survey Plans and Site Layout Drawings.", 
+"GIS Spatial Analysis, Geospatial Database Development, and Asset Mapping.", 
+"BIM Survey Models and Geospatial Data for Digital Twin Applications.", 
+"Regulatory Compliance Assessments and Support for Investment and Permitting Procedures." 
 ]
+
 },
 {
 title: "Project Management & Delivery",
-intro: "Complex engineering and infrastructure projects require effective coordination, transparent decision-making, rigorous project controls, and continuous stakeholder alignment. We provide project management, technical governance, project controls, construction supervision, and multidisciplinary coordination services that help clients manage risk, maintain project objectives, and improve delivery performance. Our work helps clients maintain control over scope, schedule, budget, quality, and regulatory requirements while improving communication, reducing project uncertainty, and supporting successful project delivery from initiation through commissioning and operational handover.",
+intro: "Complex engineering and infrastructure projects require effective coordination, transparent decision-making, rigorous project controls, and continuous stakeholder alignment. We provide project management, technical governance, project controls, multidisciplinary coordination services that help clients manage risk, maintain project objectives, and improve delivery performance. Our work helps clients maintain control over scope, schedule, budget, quality, and regulatory requirements while improving communication, reducing project uncertainty, and supporting successful project delivery from initiation through commissioning and operational handover.",
 services: [
 "Integrated Project Execution Framework (Lifecycle Management Plan).",
 "Interface Management and Multidisciplinary Coordination.",
-"Project Execution Plan (PEP) incl. WBS and Master Schedule.",
-"Construction Quality Assurance and Supervision Report.",
+"Project Execution Plan (PEP) incl. WBS and Schedules.",
 "Project Control and Monitoring (Schedule, Cost, Progress, and Documentation Control).",
 "Construction Quality Assurance and Supervision.",
 "Engineering Advisory and Technical Governance.",
 "Stakeholder Coordination and Authority Communication.",
 "Project Performance Monitoring (KPIs and Progress Tracking).",
-"Project Compliance and Governance Report.",
+"Project Compliance and Governance Reports.",
 "Commissioning, Handover, and Operational Readiness Support.",
 "Technical Due Diligence and Independent Engineering Reviews."
 ]
 },
 {
 title: "Pre-Investment Studies & Tender Planning",
-intro: "Major investment decisions should be supported by clear technical, economic, and regulatory understanding before significant resources are committed. We provide the analyses, evaluations, planning studies, and procurement documentation needed to assess project feasibility, compare technical alternatives, estimate costs, identify risks, define procurement strategies, and establish a reliable basis for decision-making. Our work helps clients improve project viability, strengthen business cases, reduce procurement and investment risks, and create a solid foundation for successful project delivery.",
+intro: "Major investment decisions should be supported by a clear technical, economic, and regulatory basis before significant financial and organisational resources are committed. We provide analyses, assessments, pre-investment studies, and planning solutions required to evaluate the technical and economic feasibility of projects, compare alternative technical solutions, forecast costs, identify risks, and establish a reliable basis for informed investment decision-making. Our work helps clients enhance project viability, reduce investment and contractual risks, and create a solid foundation for the successful delivery.",
 services: [
-"Project Screening and Investment Prioritisation (Pre-Investment Analysis Report).",
-"Feasibility Study (Pre-Investment Analysis).",
-"Techno-Economic Feasibility (Investment Appraisal).",
-"Conceptual Design (Pre-Planning Approval Basis).",
-"Technical Solution Evaluation and Design Alternatives Comparative Analysis.",
-"Value Engineering and Cost Optimisation.",
-"Bill of Quantities (BoQ) and Cost Estimation (Class A/B/C Estimates).",
-"Life-Cycle Cost Analysis (CAPEX/OPEX).",
-"Project Planning and Risk Analysis.",
-"Project Scheduling and Resource Allocation.",
-"Market and Procurement Analysis.",
-"Tender Documentation Package (Technical Specifications and Contract Annexes).",
-"Public Procurement Compliance and Tender Participation.",
-"Regulatory Requirements Compliance."
+"Pre-Investment Studies and Technical Assessments.",
+"Techno-Economic Assessments and Investment Appraisal.",
+"Capital and Operating Expenditure (CAPEX/OPEX) Assessment and Analysis, and Discounted Cash Flow (DCF) Financial Modelling.",
+"Conceptual and Preliminary Design Development.",
+"Technical and Technological Solution Assessment and Evaluation.",
+"Comparative Analysis and Optimisation of Design Alternatives.",
+"Requirements Identification and Compliance Assessment.",
+"Bill of Quantities (BoQ) Development and Cost Estimation (Class A/B/C Estimates).",
+"Project Schedule Development and Schedule Planning.",
+"Human and Material Resource Planning and Allocation.",
+"Project Risk Assessment and Analysis.",
+"Procurement Planning and Market Analysis.",
+"Supplier and Subcontractor Evaluation.",
+"Bid, Tender, and Technical Documentation Preparation.",
+"Public Procurement Advisory and Tender Participation Support.",
+"Project Execution Planning.",
+"Regulatory and Technical Requirements Compliance Assessment."
 ]
 }
 ];
