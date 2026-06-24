@@ -829,7 +829,7 @@ const enServices = [
   "Forensic Investigation of Structural Failures and Construction Accidents",
   "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
   "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
-  ""Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)"",
+  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
   "Engineering Expert Witness Services and Technical Consultancy on Regulatory Compliance, Design Standards, and Construction Technologies"
 ]
 },
