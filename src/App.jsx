@@ -1017,11 +1017,81 @@ const deServices = [
   "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
 ]
 }, 
-{title: "Geotechnische Planung", text: "Geotechnische Untersuchungen und ingenieurgeologische Analysen; Gründungsplanung für Gebäude und Ingenieurbauwerke; Analyse und Bewertung von Baugrundverhältnissen und Bodentragfähigkeit; Planung von Stützbauwerken, Hangsicherungen und Maßnahmen zur Rutschungssicherung; Geotechnische Begleitung von Baugruben, Tiefbauarbeiten und Bauprojekten in urbanen Gebieten; Planung und Bewertung von Pfahlgründungen, Flachgründungen und kombinierten Gründungssystemen; Bewertung von Rutschungs-, Erosions- und geodynamischen Prozessen; Geotechnische Analysen für Verkehrs-, Industrie- und Wasserbauprojekte; Monitoring und Bewertung von Verformungen und Setzungen von Bauwerken; Erstellung ingenieurgeologischer und geotechnischer Gutachten, Bewertungen und Stellungnahmen; Beratung zur Anwendung regulatorischer Anforderungen und technischer Normen im Bereich der Geotechnik."},
-{title: "Planung von Verkehrsinfrastruktur",text: "Planung von Straßen, Brücken, Tunneln und Verkehrsbauwerken; Planung von Eisenbahninfrastruktur und zugehörigen Anlagen; Verkehrstechnische Lösungen und Verkehrsmanagementplanung; Ingenieurplanung für städtische und überregionale Verkehrsinfrastruktur; Planung von Entwässerungs- und Stabilisierungsmaßnahmen für Verkehrsanlagen; Analysen und Bewertungen des Betriebszustands von Verkehrsbauwerken; Ingenieurtechnische Lösungen zur Sanierung und Modernisierung von Verkehrsinfrastruktur; Technische und investitionsbezogene Projekte im Verkehrsingenieurwesen; Ingenieurtechnische Unterstützung bei Bau und Betrieb von Verkehrsanlagen."},
-{title: "Geodäsie, Kataster, GIS und Photogrammetrie", text: "Geodätische und photogrammetrische Vermessungen; Vermessung von Grundstücken und Baustellen; Geländeaufnahme und Analyse mittels GPS, LiDAR und unbemannten Luftfahrzeugen (UAV); 3D-Modellierung von Gelände, Gebäuden und Ingenieurbauwerken; Berechnung von Erd- und Schüttgutvolumen; Absteckung von Gebäuden, Ingenieurbauwerken und Grundstücksgrenzen; Höhenplanung und Nivellementsarbeiten; Geodätische Kontrollmessungen während der Bauausführung; Vermessungen für Legalisierungs- und Inbetriebnahmeverfahren; Erstellung von Katasterplänen und Kartenwerken; Katasterdienstleistungen und technische Dokumentation; Erstellung kombinierter Skizzen und Lagepläne; GIS-basierte Raumanalysen und digitale Geländemodelle; Geodätische und katastertechnische Beratung für Investitions- und Infrastrukturprojekte."},
-{title: "Projektmanagement und Projektkoordination", text: "Management des gesamten Lebenszyklus von Investitionsprojekten; Koordination multidisziplinärer Teams bei komplexen Ingenieur- und Bauprojekten; Planung, Organisation und Steuerung von Planungs- und Bauprozessen; Qualitätsmanagement und technische Bauüberwachung; Steuerung von Terminen, Ressourcen und Projektdokumentation; Ingenieurtechnische Beratungsleistungen bei der Vorbereitung und Umsetzung von Investitionsprojekten; Koordination zwischen Auftraggebern, Planern, Auftragnehmern und Behörden; Monitoring und Bewertung der Projektumsetzung; Erstellung technischer Dokumentationen, Berichte und Sachverständigenstellungen; Beratung hinsichtlich regulatorischer Compliance und bewährter Verfahren im Projektmanagement."},
-{title: "Vorinvestitionsstudien und Ausschreibungsplanung", text: "Erstellung von Vorstudien für Ausschreibungen und technischen Analysen.; Erstellung von Leistungsverzeichnissen (LV), Kostenkalkulationen und Budgetberechnungen.; Ausarbeitung von Ausschreibungs-, Angebots- und technischen Unterlagen.; Analyse von Projektterminplänen, Ressourcen, Kosten und Risiken.; Untersuchung und Bewertung technischer sowie technologischer Lösungen.; Vergleichende Analyse und Optimierung von Planungsvarianten.; Analyse von Marktbedingungen, Lieferanten und Nachunternehmern.; Erstellung von Terminplänen, Ressourcenplanungen und finanziellen Bewertungen.; Technisch-wirtschaftliche Analysen und Bewertung der Investitionseffizienz.; Beratungsleistungen bei der Teilnahme an öffentlichen Vergabeverfahren und Ausschreibungen.; Analyse regulatorischer und technischer Anforderungen.; Erstellung konzeptioneller und vorläufiger Planungslösungen."}
+{
+  title: "Geotechnik und Geotechnische Planung",
+  intro: "Baugrund- und Untergrundverhältnisse zählen zu den wesentlichen Quellen technischer Unsicherheiten und wirtschaftlicher Risiken bei Bau- und Infrastrukturprojekten. Eine frühzeitige Kenntnis der geotechnischen Randbedingungen schafft die Grundlage für fundierte Planungsentscheidungen und die Reduzierung von Termin- und Kostenrisiken. Mit geotechnischen Untersuchungen, Analysen und Planungsleistungen unterstützen wir unsere Auftraggeber bei der Beherrschung geotechnischer Risiken, der Optimierung von Gründungs- und Baugrubenkonzepten sowie der Sicherstellung der langfristigen Standsicherheit von Bauwerken und Infrastrukturanlagen.",
+  services: [
+  "In-Situ Condition Assessment of Structures and Engineering Facilities",
+  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
+  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
+  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
+  "Forensic Investigation of Structural Failures and Construction Accidents",
+  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
+  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
+  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+]
+}, 
+{
+  title: "Verkehrsinfrastrukturplanung",
+  intro: "Eine leistungsfähige Verkehrsinfrastruktur ist eine wesentliche Voraussetzung für wirtschaftliche Entwicklung, regionale Vernetzung sowie den sicheren und effizienten Transport von Personen und Gütern. Wir begleiten unsere Auftraggeber bei der Planung, Bewertung, Projektierung sowie der Entwicklung von Instandsetzungs- und Modernisierungskonzepten für Straßen, Brücken, Tunnel, Eisenbahninfrastrukturen und urbane Verkehrssysteme. Dabei tragen wir zur Erhöhung der Verkehrssicherheit, zur Verlängerung der Nutzungsdauer von Infrastrukturanlagen sowie zur Entwicklung nachhaltiger und wirtschaftlicher Mobilitätslösungen bei.",
+  services: [
+  "In-Situ Condition Assessment of Structures and Engineering Facilities",
+  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
+  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
+  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
+  "Forensic Investigation of Structural Failures and Construction Accidents",
+  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
+  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
+  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+]
+},
+{
+  title: "Geodäsie, Geoinformation & Digitale Vermessung",
+  intro: "Fundierte ingenieurtechnische Entscheidungen basieren auf präzisen räumlichen Informationen. Von der Projektentwicklung und Planung über die Bauausführung bis hin zur Inbetriebnahme bilden Geodaten die Grundlage für eine zuverlässige Projektsteuerung und Entscheidungsfindung. Mit Vermessung, Kartierung, Geodatenanalyse, digitalen Gelände- und Oberflächenmodellen, Deformationsmonitoring sowie modernem Geodatenmanagement unterstützen wir Bau-, Infrastruktur- und Entwicklungsprojekte, schaffen Transparenz, reduzieren Unsicherheiten und sichern eine verlässliche Datengrundlage über den gesamten Projektlebenszyklus.",
+  services: [
+  "In-Situ Condition Assessment of Structures and Engineering Facilities",
+  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
+  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
+  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
+  "Forensic Investigation of Structural Failures and Construction Accidents",
+  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
+  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
+  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+]
+},
+{
+  title: "Projektmanagement & Projektabwicklung",
+  intro: "Komplexe Ingenieur- und Infrastrukturprojekte erfordern eine wirksame Koordination, transparente Entscheidungsprozesse, konsequentes Projektcontrolling und die kontinuierliche Abstimmung aller Projektbeteiligten. Mit Leistungen in den Bereichen Projektmanagement, technische Projektsteuerung und interdisziplinäre Koordination begleiten wir unsere Auftraggeber bei der Beherrschung von Risiken sowie der Einhaltung von Kosten-, Termin-, Qualitäts- und Projektzielen und schaffen die Grundlage für eine effiziente Projektabwicklung von der Projektinitiierung bis zur Inbetriebnahme und Übergabe.",
+  services: [
+  "In-Situ Condition Assessment of Structures and Engineering Facilities",
+  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
+  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
+  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
+  "Forensic Investigation of Structural Failures and Construction Accidents",
+  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
+  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
+  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+]
+},
+{
+  title: "Machbarkeitsstudien, Investitionsplanung & Ausschreibungsplanung",
+  intro: "Fundierte Investitionsentscheidungen erfordern eine belastbare technische, wirtschaftliche und regulatorische Grundlage, bevor wesentliche finanzielle und organisatorische Ressourcen gebunden werden. Mit Analysen, Bewertungen, Machbarkeitsstudien und Planungsleistungen begleiten wir unsere Auftraggeber bei der Beurteilung der technischen und wirtschaftlichen Realisierbarkeit von Projekten, der Bewertung alternativer Lösungsansätze, der Prognose von Kosten sowie der Identifikation potenzieller Risiken und schaffen damit die Grundlage für fundierte Investitionsentscheidungen, reduzieren Investitions- und Vertragsrisiken und stärken die Voraussetzungen für eine erfolgreiche Projektumsetzung.",
+  services: [
+  "In-Situ Condition Assessment of Structures and Engineering Facilities",
+  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
+  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
+  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
+  "Forensic Investigation of Structural Failures and Construction Accidents",
+  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
+  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
+  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+]
+}
 ];
 
 const bgProcessSteps = [
