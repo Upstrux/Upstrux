@@ -689,7 +689,7 @@ const bgServices = [
     "Градоустройствен Анализ и Оценка на Развитието (Предназначение на Територията, Интензивност на Застрояване, Инфраструктурна Осигуреност и Устройствени Ограничения).",
     "BIM Координационен Модел и Откриване на Конфликтни Пресичания(ISO 19650).",
     "3D Архитектурна и Конструктивна Визуализация.",
-    "Оценка на Съответствието с Устройствените Изисквания и Подкрепа при Процедури по Съгласуване и Разрешителни."
+    "Оценка на Съответствието с Устройствените Изисквания, Подкрепа при Разрешителни и Съгласувателни Процедури."
   ]
 },
   {
@@ -844,7 +844,7 @@ services: [
 "Urban Planning and Development Assessment (land use, density, infrastructure integration, planning constraints).",
 "BIM Coordination Model & Clash Detection (ISO 19650).",
 "3D Architectural and Structural Visualization.",
-"Planning and Development Compliance Assessment, Permitting and Approvals Support."
+"Planning Compliance, Permitting and Development Approvals Support."
 ]
 },
 {
