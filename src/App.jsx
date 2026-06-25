@@ -382,9 +382,9 @@ const HERO_TRANSITION = {
 };
 const NAV_LINK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const SOLUTION_CARDS_CLICKABLE = true;
-const PROJECTS_ENABLED = false;
-const ABOUT_ENABLED = false;
-const TEAM_ENABLED = false;
+const PROJECTS_ENABLED = true;
+const ABOUT_ENABLED = true;
+const TEAM_ENABLED = true;
 const LEARN_MORE_BUTTON_CLASS = "mt-6 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 const BACK_BUTTON_CLASS = "mt-8 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700";
 
@@ -2484,7 +2484,7 @@ export default function UpstruxWebsite() {
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:min-w-0 md:max-w-none md:translate-x-0 md:flex-row md:items-center md:gap-12 md:border-0 md:bg-transparent md:p-0 md:text-white md:backdrop-blur-0`}>
+    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-slate-950/85 px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-white backdrop-blur md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:min-w-0 md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:border-0 md:bg-transparent md:p-0 md:translate-y-10 md:text-white md:backdrop-blur-0`}>
     <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" dropdownVariant="dark" />
       <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
         {LANGUAGE_CODES.map((lang) => (
