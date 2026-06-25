@@ -1901,17 +1901,17 @@ function SiteFooter({ t, setCurrentPage }) {
 
           <div className="space-y-2.5 text-[13px] text-slate-700">
             <div className="flex items-center gap-2.5">
-              <PinIcon size={18} className="shrink-0 text-blue-600" />
+              <PinIcon size={20} className="shrink-0 text-blue-600" />
               <span>{t.footer.location}</span>
             </div>
 
             <div className="hidden flex items-center gap-2.5">
-              <PhoneIcon size={18} className="shrink-0 text-blue-600" />
+              <PhoneIcon size={20} className="shrink-0 text-blue-600" />
               <span>+359 888 000 000</span>
             </div>
 
             <div className="flex items-center gap-2.5">
-              <MailIcon size={18} className="shrink-0 text-blue-600" />
+              <MailIcon size={20} className="shrink-0 text-blue-600" />
               <span>info@upstrux.bg</span>
             </div>
           </div>
