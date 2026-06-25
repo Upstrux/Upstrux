@@ -664,17 +664,17 @@ const deProjects2 = [
 
 const bgServices = [
   {
-    title: "Оценка на Активи, Диагностика и Конструктивна Верификация",
-    intro: "Съществуващите сгради и съоръжения са изправени пред нарастващи експлоатационни натоварвания, стареене на материалите и променящи се нормативни изисквания. Независимо дали целта е рехабилитация, промяна на предназначението, нормативно съответствие или дългосрочно управление на активи, надеждната инженерна оценка е основа за вземането на информирани решения.",
-    services: [ "Натурни Обследвания на Строителни Конструкции и Съоражения.", 
-		"Натурни Статически и Динамични Изпитвания на Строителни конструкции и Съоражения.", 
-		"Оценка на Строителни Конструктивните и Нормативното Съответствие (Верификация на Носимоспособност, Коравина, Устойчивост и Експлоатационна Годност).", 
-		"Оценка на Сеизмичната Осигуреност и Конструктивна Безопасност (EN 1998 и Приложимите Национални Приложения).", 
-		"Обследване на Аварий в Строителството.", 
-		"Оценка на Динамичното Поведение на Строителни Конструкции и Съоражения.", 
-		"Обследване при Сейзмична Оценка, Възстановяване и Усилване на Сгради (EN 1998-3).", 
-		"Определяне на Физико-механичните характеристики на Строителни Материали (Безразрушителни и Разрушителни Методи за Изпитване).", 
-		"Kонсултиране при Прилагане на Нормативните изисквания, Технически Стандарти и Строителни Технологии." 
+title: "Оценка на Активи, Диагностика и Конструктивна Верификация",
+intro: "Съществуващите сгради и съоръжения са изправени пред нарастващи експлоатационни натоварвания, стареене на материалите и променящи се нормативни изисквания. Независимо дали целта е рехабилитация, промяна на предназначението, нормативно съответствие или дългосрочно управление на активи, надеждната инженерна оценка е основа за вземането на информирани решения.",
+services: [ "Натурни Обследвания на Строителни Конструкции и Съоражения.", 
+	"Натурни Статически и Динамични Изпитвания на Строителни конструкции и Съоражения.", 
+	"Оценка на Строителни Конструктивните и Нормативното Съответствие (Верификация на Носимоспособност, Коравина, Устойчивост и Експлоатационна Годност).", 
+	"Оценка на Сеизмичната Осигуреност и Конструктивна Безопасност (EN 1998 и Приложимите Национални Приложения).", 
+	"Обследване на Аварий в Строителството.", 
+	"Оценка на Динамичното Поведение на Строителни Конструкции и Съоражения.", 
+	"Обследване при Сейзмична Оценка, Възстановяване и Усилване на Сгради (EN 1998-3).", 
+	"Определяне на Физико-механичните характеристики на Строителни Материали (Безразрушителни и Разрушителни Методи за Изпитване).", 
+	"Kонсултиране при Прилагане на Нормативните изисквания, Технически Стандарти и Строителни Технологии." 
 ]
 },
   {
@@ -825,7 +825,7 @@ const enServices = [
   "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
   "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
   "Forensic Investigation of Structural Failures and Construction Accidents",
-  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
+  "Assessment of the Dynamic Response Characteristics of Structures and Facilities",
   "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
   "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
   "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
@@ -863,7 +863,7 @@ services: [
 "Hydraulic System Performance Analysis under Steady-State and Unsteady Flow Conditions.",
 "Engineering Compliance Statements for Hydraulic Structures and Facilities (Conformity with Regulatory and Technical Requirements).",
 "Design Supervision, Author's Supervision, and Technical Support During Construction.",
-"Rehabilitation Design, Modernization and Capacity Upgrade Studies, and Remaining Service Life Assessments.",
+"Rehabilitation & Modernization Desings, Capacity Upgrade Studies and Remaining Service Life Assessments.",
 "Commissioning Support, Testing, Performance Verification, and Operational Readiness Assessment.",
 "Expert Assessment of Hydraulic Infrastructure for Investment Approval and Permitting Procedures."
 ]
@@ -976,60 +976,70 @@ const deServices = [
   title: "Zustandsbewertung, Bauwerksdiagnostik, Tragwerksprüfung & Nachweisführung",
   intro: "Bestehende Bauwerke und Anlagen sind zunehmend höheren Nutzungsanforderungen, alternden Baustoffen sowie sich wandelnden regulatorischen und betrieblichen Rahmenbedingungen ausgesetzt. Ob Instandsetzung, Verstärkung, Umnutzung, technische Due Diligence oder langfristige Werterhaltung – fundierte Zustandsbewertungen, Bauwerksdiagnostik und Tragwerksnachweise bilden die Grundlage für fundierte technische und wirtschaftliche Entscheidungen.",
   services: [
-  "In-Situ Condition Assessment of Structures and Engineering Facilities",
-  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
-  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
-  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
-  "Forensic Investigation of Structural Failures and Construction Accidents",
-  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
-  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
-  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
-  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+  "Zustandsbewertung von Bauwerken und Anlagen.", 
+  "Statische und dynamische Belastungsprüfungen von Bauwerken und Anlagen.", 
+  "Bewertung der Tragfähigkeit, Steifigkeit, Standsicherheit und Gebrauchstauglichkeit sowie Nachweis der Regelwerkskonformität.",
+  "Bewertung der Erdbebensicherheit gemäß EN 1998 und den geltenden Nationalen Anhängen.",
+  "Schadensanalysen und Ursachenermittlung bei Bauwerksschäden und Bauunfällen.",
+  "Analyse des dynamischen Tragverhaltens von Bauwerken und Anlagen.",
+  "Tragwerksbewertung sowie Planung von Instandsetzungs- und Verstärkungsmaßnahmen für Bestandsbauwerke gemäß EN 1998-3.",
+  "Ermittlung der physikalischen und mechanischen Eigenschaften von Baustoffen mittels zerstörungsfreier und zerstörender Prüfverfahren (NDT/DT).",
+  "Ingenieurtechnische Beratung zur Anwendung regulatorischer Anforderungen, technischer Regelwerke und Bauverfahren."
 ]
 },
 {
   title: "Hochbau- und Ingenieurplanung & Projektentwicklung",
   intro: "Erfolgreiche Bau- und Entwicklungsprojekte erfordern die frühzeitige Abstimmung von Planung, Technik, Genehmigungen und Wirtschaftlichkeit. Wir begleiten unsere Auftraggeber von der Projektentwicklung bis zur Ausführungsreife und schaffen die Grundlage für eine technisch belastbare, regelwerkskonforme und wirtschaftlich tragfähige Umsetzung. Dabei reduzieren wir Projektrisiken, optimieren die interdisziplinäre Koordination und unterstützen eine effiziente Abwicklung von Genehmigungs- und Planungsprozessen.",
-  services: [
-  "In-Situ Condition Assessment of Structures and Engineering Facilities",
-  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
-  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
-  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
-  "Forensic Investigation of Structural Failures and Construction Accidents",
-  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
-  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
-  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
-  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+ services: [
+  "Architekturplanung und Planungsdokumentation.",
+  "Tragwerksplanung und Tragwerksentwurf (statische Berechnungen, Schal- und Bewehrungspläne sowie technische Planungsgrundlagen).",
+  "Funktionsplanung und Innenarchitektur.",
+  "Planungsleistungen in allen Phasen (Grundlagenermittlung, Vorplanung, Entwurfsplanung, Genehmigungsplanung und Ausführungsplanung).",
+  "Raumplanung (Masterplanung, Rahmenplanung, Bebauungsplanung sowie planungsrechtliche Prüfung).",
+  "Stadtplanung und Projektentwicklung (Flächennutzungsanalyse, Bebauungsdichte, Infrastrukturintegration und planungsrechtliche Rahmenbedingungen).",
+  "BIM-Koordination, Koordinationsmodelle und Kollisionsprüfung gemäß ISO 19650.",
+  "3D-Visualisierung für Architektur und Tragwerksplanung.",
+  "Beratung und Unterstützung bei Genehmigungs- und Planungsverfahren."
 ]
 },
 {
   title: "Wasserversorgungs-, Siedlungswasserwirtschafts-, Wasserbau- und Hydro-Meliorationsplanung",
   intro: "Eine zuverlässige Wasserinfrastruktur erfordert nachhaltige technische Lösungen, hohe Betriebssicherheit und langfristige Leistungsfähigkeit. Wir begleiten unsere Auftraggeber bei der Planung, Bewertung sowie der Entwicklung von Instandsetzungs- und Modernisierungskonzepten für wasserwirtschaftliche Anlagen und Infrastrukturen. Durch fundierte Analysen und praxisorientierte Ingenieurlösungen reduzieren wir Risiken, unterstützen Investitionsentscheidungen und sichern die langfristige Leistungsfähigkeit kritischer Wasserinfrastrukturen.",
   services: [
-  "In-Situ Condition Assessment of Structures and Engineering Facilities",
-  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
-  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
-  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
-  "Forensic Investigation of Structural Failures and Construction Accidents",
-  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
-  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
-  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
-  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+  "Hydrologische Studien, Wasserhaushaltsanalysen und hydrologische Gutachten.",
+  "Hydraulische Modellierung und Planung von Wasserversorgungs- und Abwassersystemen, Leitungsnetzen und wasserwirtschaftlichen Anlagen.",
+  "Planung von Abwasserreinigungsanlagen sowie strategischer wasserwirtschaftlicher Infrastruktur einschließlich Wasserkraftwerken (KW), Pumpspeicherkraftwerken (PSW) und zugehöriger Anlagen.",
+  "Planung wasserbaulicher Anlagen (Talsperren, Wasserfassungen, Ausleitungsbauwerke, Druckstollen, Tunnel und zugehörige wasserbauliche Einrichtungen).",
+  "Planung von Bewässerungs-, Entwässerungs- und Meliorationssystemen.",
+  "Hochwasserrisikomanagement sowie Planung von Hochwasserschutz-, Deich- und Erosionsschutzanlagen.",
+  "Hydraulische Transientenberechnungen (Wasserschlag) sowie Planung von Rohrleitungsschutzsystemen.",
+  "Sicherheitsbewertung wasserbaulicher Anlagen hinsichtlich technischem Zustand, Standsicherheit und Betriebssicherheit.",
+  "Bewertung von Betriebs- und Störfallszenarien wasserwirtschaftlicher Systeme.",
+  "Hydraulische Leistungsanalysen von Wassersystemen unter stationären und instationären Strömungsbedingungen.",
+  "Ingenieurtechnische Stellungnahmen zur Einhaltung regulatorischer und technischer Anforderungen für wasserbauliche Anlagen und wasserwirtschaftliche Einrichtungen.",
+  "Planungs- und Bauüberwachung sowie technische Begleitung während der Bauausführung.",
+  "Planung von Instandsetzungs- und Modernisierungsmaßnahmen, Kapazitätserweiterungsstudien und Bewertungen der Restnutzungsdauer.",
+  "Unterstützung bei der Inbetriebnahme, Funktionsprüfungen, Leistungsnachweisen und der Bewertung der Betriebsbereitschaft.",
+  "Ingenieurgutachten für wasserwirtschaftliche Infrastruktur im Rahmen von Genehmigungs- und Investitionsverfahren."
 ]
 }, 
 {
   title: "Geotechnik und Geotechnische Planung",
   intro: "Baugrund- und Untergrundverhältnisse zählen zu den wesentlichen Quellen technischer Unsicherheiten und wirtschaftlicher Risiken bei Bau- und Infrastrukturprojekten. Eine frühzeitige Kenntnis der geotechnischen Randbedingungen schafft die Grundlage für fundierte Planungsentscheidungen und die Reduzierung von Termin- und Kostenrisiken. Mit geotechnischen Untersuchungen, Analysen und Planungsleistungen unterstützen wir unsere Auftraggeber bei der Beherrschung geotechnischer Risiken, der Optimierung von Gründungs- und Baugrubenkonzepten sowie der Sicherstellung der langfristigen Standsicherheit von Bauwerken und Infrastrukturanlagen.",
   services: [
-  "In-Situ Condition Assessment of Structures and Engineering Facilities",
-  "In-Situ Static and Dynamic Load Testing of Structures and Engineering Facilities",
-  "Assessment of Structural Performance and Code Compliance (Verification of Load-Carrying Capacity, Stiffness, Stability, and Serviceability)",
-  "Assessment of Seismic Performace and Structural Safety in Accordance with EN 1998 and Applicable National Annexes",
-  "Forensic Investigation of Structural Failures and Construction Accidents",
-  "Assessment of the Dynamic Response Characteristics of Structures and Civil Engineering Works",
-  "Structural Assessment for Seismic Evaluation, Rehabilitation, and Retrofitting of Existing Buildings (EN 1998-3)",
-  "Determination of Physical and Mechanical Properties of Construction Materials (NDT and DT Testing)",
-  "Advisory on the Application of Regulatory Requirements, Technical Standards, and Construction Technologies."
+  "Geotechnische Untersuchungen und Analysen gemäß Eurocode 7 und nationalen Anhängen.",
+  "Gründungsplanung und Gründungsbemessung (Flach-, Tief- und Kombinationsgründungen; Tragfähigkeits-, Setzungs-, Auftriebs- und Horizontallastnachweise; Pfahl-, Platten- und Gründungssysteme).",
+  "Baugrundtragfähigkeit und Baugrundcharakterisierung",
+  "Planung von Stützbauwerken und Böschungssicherungen (Stützwände, Verankerungen, bewehrte Erde und Hangsicherungsmaßnahmen).",
+  "Baugrubenplanung sowie Standsicherheitsnachweise für Baugruben.",
+  "Planung temporärer Baugrubensicherungen (Spundwände, Schlitzwände, Bohrpfahlwände, Trägerbohlwände sowie Verankerungs- und Aussteifungssysteme).",
+  "Erdbau- und Dammbauplanung (Massenbilanz, Bodenverbesserung, Dammbau und Verdichtungskonzepte).",
+  "Georisikoanalysen (Rutschungen, Erosion, Setzungen, Senkungen und Bodenbewegungen).",
+  "Geotechnische Planung für Tunnel-, Schacht- und Ingenieurbauwerke im Untergrund.",
+  "Setzungs-, Verformungs- und Bodenbewegungsanalysen.",
+  "Geotechnisches Monitoring und Deformationsmessungen.",
+  "Ingenieurgeologische Gutachten und geotechnische Stellungnahmen.",
+  "Geotechnische Nachweise und Konformitätserklärungen gemäß Eurocode 7."
 ]
 }, 
 {
