@@ -2095,7 +2095,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
                 </p>
               </div>
             <a>
-              <PhoneIcon size={28} className="mb-5 h-8 w-8 text-blue-600" />
+              <PhoneIcon size={28} className="hidden mb-5 h-8 w-8 text-blue-600" />
               <p className="hidden mt-5 text-[15px] leading-6 text-slate-700">
                 +359 888 000 000
               </p>
