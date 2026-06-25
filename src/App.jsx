@@ -228,7 +228,7 @@ const ROUTE_PAGES = {
   "/uber-uns": { page: "about", sectionId: "about" },
   "/fachgebiete": { page: "about", sectionId: "competence" },
   "/team": { page: "about", sectionId: "team" },
-  "/vunser-ansatz": { page: "about", sectionId: "methodology" },
+  "/unser-ansatz": { page: "about", sectionId: "methodology" },
   "/leistungen": { page: "solutions" },
   "/projekte": { page: "projects" },
   "/projekte-2": { page: "projects2" },
