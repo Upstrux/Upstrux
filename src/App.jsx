@@ -1365,7 +1365,7 @@ if (process.env.NODE_ENV !== "production") {
 function SectionDivider({ className = "" }) {
   return (
     <div
-      className={`mx-auto h-px w-full max-w-7xl bg-blue-600 ${className}`}
+      className={`mx-auto h-px w-full max-w-7xl origin-center scale-y-50 bg-blue-600 ${className}`}
     />
   );
 }
