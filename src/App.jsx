@@ -1694,18 +1694,16 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
       className="bg-blue-50/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/40"
     >
       <div className="flex items-start gap-4">
-        <div className="flex shrink-0 items-start gap-3">
-          <span className="text-2xl font-semibold leading-none tracking-[-0.03em] text-blue-600">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-
-          <span className="h-12 w-px bg-blue-600/45" />
-        </div>
-
-        <h3 className="text-lg font-light leading-7 tracking-[-0.01em] text-[#111111]">
-          {item}
-        </h3>
-      </div>
+  		<div className="flex shrink-0 items-stretch gap-3">
+    		<span className="text-2xl font-semibold leading-none tracking-[-0.03em] text-blue-600">
+      		{String(index + 1).padStart(2, "0")}
+		    </span>
+    		<span className="self-stretch w-px bg-blue-600/45" />
+  		</div>
+		<h3 className="text-lg font-light leading-7 tracking-[-0.01em] text-[#111111]">
+    	{item}
+  		</h3>
+	</div>
     </div>
   ))}
 </div>
