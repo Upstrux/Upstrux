@@ -1621,7 +1621,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <button type="button" onClick={() => setCurrentPage("home")}>
             <Logo footer />
           </button>
@@ -1951,7 +1951,7 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <button type="button" onClick={() => setCurrentPage("home")}>
             <Logo footer />
           </button>
@@ -2028,7 +2028,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
   return (
     <div className="min-h-screen bg-white text-slate-950">
       <header className="relative bg-white px-6 pt-12 pb-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <button type="button" onClick={() => setCurrentPage("home")}>
             <Logo footer />
           </button>
@@ -2404,7 +2404,7 @@ export default function UpstruxWebsite() {
   return (
     <div className="min-h-screen bg-white text-slate-950">
        <header className="relative bg-white px-6 pt-12 pb-8">
-  <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+  <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between">
     <button type="button" onClick={() => setCurrentPage("home")}>
       <Logo footer />
     </button>
@@ -2474,7 +2474,7 @@ export default function UpstruxWebsite() {
   return (
     <div className="min-h-screen bg-white text-slate-950">
     <header className="absolute left-0 right-0 top-0 z-50 pt-12 text-white">
-  <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-start md:justify-between lg:pr-20">
+  <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between">
     <a href="#home" aria-label="UPSTRUX home">
       <Logo />
     </a>
