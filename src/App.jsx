@@ -1631,7 +1631,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-         <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-10 md:text-slate-900 md:shadow-none`}>
+         <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-15 md:text-slate-900 md:shadow-none`}>
             <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" />
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
               {LANGUAGE_CODES.map((lang) => (
@@ -1958,7 +1958,7 @@ function ProjectsContentPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuO
           <div className="flex justify-center mt-1 md:hidden">
             <MobileMenuButton mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
           </div>
-          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-10 md:text-slate-900 md:shadow-none`}>
+          <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-15 md:text-slate-900 md:shadow-none`}>
             <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-600" />
             <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
               {LANGUAGE_CODES.map((lang) => (
@@ -2038,7 +2038,7 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-<nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-10 md:text-slate-900 md:shadow-none`}>
+<nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-15 md:text-slate-900 md:shadow-none`}>
   <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
 
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
@@ -2414,7 +2414,7 @@ export default function UpstruxWebsite() {
     setMobileMenuOpen={setMobileMenuOpen}
   />
 </div>
-    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-10 md:text-slate-900 md:shadow-none`}>
+    <nav className={`${mobileMenuOpen ? "flex" : "hidden"} absolute left-1/2 top-full mt-1 -translate-x-1/2 w-auto flex-col items-start gap-3 rounded-xl bg-white px-6 py-4 text-left text-sm font-medium uppercase tracking-[0.14em] text-slate-900 shadow-lg md:static md:left-auto md:top-auto md:mt-0 md:flex md:w-auto md:max-w-none md:translate-x-0 md:flex-row md:items-end md:gap-12 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:translate-y-15 md:text-slate-900 md:shadow-none`}>
   <NavigationItems navItems={navItems} t={t} setCurrentPage={setCurrentPage} setMobileMenuOpen={setMobileMenuOpen} itemClass="uppercase tracking-[0.14em] transition-colors hover:text-blue-300" />
   <div className="flex items-center gap-2 text-xs font-light tracking-[0.12em]">
     {LANGUAGE_CODES.map((lang) => (
