@@ -2084,13 +2084,13 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               className="p-2"
             >
               <MailIcon className="text-blue-600" />
-              <p className="mt-5 text-[15px] leading-6 text-slate-700">
+              <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
                 info@upstrux.bg
               </p>
             </a>
             <div className="p-2">
                 <PinIcon className="text-blue-600" />
-                <p className="mt-5 text-[15px] leading-6 text-slate-700">
+                <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
                   {t.footer.location}
                 </p>
               </div>
