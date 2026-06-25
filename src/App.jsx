@@ -1695,7 +1695,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
     >
 <div className="flex items-stretch gap-4">
   <div className="flex shrink-0">
-    <div cclassName="flex flex-col items-center pr-4 border-r-2 border-blue-600/40">
+    <div className="flex flex-col items-center pr-4 border-r border-blue-600/40">
       <span className="text-2xl font-normal leading-none tracking-[-0.03em] text-blue-500">
         {String(index + 1).padStart(2, "0")}
       </span>
