@@ -1687,7 +1687,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
           <SectionDivider className="my-10" />
 
 <div className="mt-12">
- <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+ <div className="mt-8 grid gap-0 md:grid-cols-2 xl:grid-cols-3">
   {bulletItems.map((item, index) => (
     <div
       key={`${service.title}-${index}`}
