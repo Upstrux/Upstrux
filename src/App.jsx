@@ -1854,7 +1854,7 @@ function SiteFooter({ t, setCurrentPage }) {
         <div><Logo footer /></div>
 
         <div>
-          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+          <h3 className="mb-4 text-sm font-medium tracking-[0.08em] text-slate-900">
             {t.footer.quick}
           </h3>
 
@@ -1884,7 +1884,7 @@ function SiteFooter({ t, setCurrentPage }) {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+          <h3 className="mb-4 text-sm font-medium tracking-[0.08em] text-slate-900">
             {t.footer.legalTitle}
           </h3>
 
@@ -1900,7 +1900,7 @@ function SiteFooter({ t, setCurrentPage }) {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+          <h3 className="mb-4 text-sm font-medium tracking-[0.08em] text-slate-900">
             {t.footer.follow}
           </h3>
 
@@ -1919,7 +1919,7 @@ function SiteFooter({ t, setCurrentPage }) {
         </div>
 
         <div className="justify-self-start text-left">
-          <h3 className="mb-4 text-sm font-light tracking-[0.08em] text-slate-900">
+          <h3 className="mb-4 text-sm font-medium tracking-[0.08em] text-slate-900">
             {t.footer.contacts}
           </h3>
 
