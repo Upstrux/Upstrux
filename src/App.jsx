@@ -1687,23 +1687,28 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
           <SectionDivider className="my-10" />
 
 <div className="mt-12">
- 
-  <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {bulletItems.map((item, index) => (
-      <div
-        key={`${service.title}-${index}`}
-        className="bg-blue-50/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/40"
-      >
-        <div className="text-sm font-medium tracking-[0.15em] text-blue-600">
-          {String(index + 1).padStart(2, "0")}
+ <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+  {bulletItems.map((item, index) => (
+    <div
+      key={`${service.title}-${index}`}
+      className="bg-blue-50/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/40"
+    >
+      <div className="flex items-start gap-4">
+        <div className="flex shrink-0 items-start gap-3">
+          <span className="text-2xl font-semibold leading-none tracking-[-0.03em] text-blue-600">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <span className="h-12 w-px bg-blue-600/45" />
         </div>
 
-        <h3 className="mt-4 text-xl font-light leading-8 tracking-[-0.01em] text-[#111111]">
+        <h3 className="text-lg font-light leading-7 tracking-[-0.01em] text-[#111111]">
           {item}
         </h3>
       </div>
-    ))}
-  </div>
+    </div>
+  ))}
+</div>
 </div>
 
           <div className="mt-14 max-w-5xl">
