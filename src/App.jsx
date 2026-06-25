@@ -1901,17 +1901,17 @@ function SiteFooter({ t, setCurrentPage }) {
 
           <div className="space-y-2.5 text-[13px] text-slate-700">
             <div className="flex items-center gap-2.5">
-              <PinIcon size={16} className="shrink-0 text-blue-600" />
+              <PinIcon size={18} className="shrink-0 text-blue-600" />
               <span>{t.footer.location}</span>
             </div>
 
             <div className="hidden flex items-center gap-2.5">
-              <PhoneIcon size={16} className="shrink-0 text-blue-600" />
+              <PhoneIcon size={18} className="shrink-0 text-blue-600" />
               <span>+359 888 000 000</span>
             </div>
 
             <div className="flex items-center gap-2.5">
-              <MailIcon size={16} className="shrink-0 text-blue-600" />
+              <MailIcon size={18} className="shrink-0 text-blue-600" />
               <span>info@upstrux.bg</span>
             </div>
           </div>
@@ -2083,13 +2083,13 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               href="mailto:info@upstrux.bg"
               className="p-2"
             >
-              <MailIcon size={40} className="mb-5 h-10 w-10 text-blue-600" />
+              <MailIcon size={32} className="mb-5 h-10 w-10 text-blue-600" />
               <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
                 info@upstrux.bg
               </p>
             </a>
             <div className="p-2">
-                <PinIcon size={40} className="mb-5 h-10 w-10 text-blue-600" />
+                <PinIcon size={32} className="mb-5 h-10 w-10 text-blue-600" />
                 <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
                   {t.footer.location}
                 </p>
