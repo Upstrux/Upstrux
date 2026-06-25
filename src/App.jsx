@@ -110,10 +110,10 @@ function Logo({ footer = false }) {
   const subColor = footer ? "text-slate-500" : "text-white";
   return (
     <div className="flex flex-col items-center text-center">
-      <div className={`inline-flex items-end justify-center text-3xl font-light leading-none tracking-[0.34em] md:text-4xl ${textColor}`}>
+      <div className={`inline-flex items-end justify-center text-5xl font-light leading-none tracking-[0.34em] md:text-5xl ${textColor}`}>
         <span>UPSTRU<span className="text-[1.45em] leading-none text-blue-600">X</span></span>
       </div>
-      <div className={`mt-1 text-[9px] font-light uppercase tracking-[0.48em] md:text-[10px] ${subColor}`}>WE ARE ENGINEERS</div>
+      <div className={`mt-1 text-[11px] font-light uppercase tracking-[0.48em] md:text-[13px] ${subColor}`}>WE ARE ENGINEERS</div>
     </div>
   );
 }
