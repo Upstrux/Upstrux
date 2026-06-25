@@ -1691,7 +1691,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
   {bulletItems.map((item, index) => (
     <div
       key={`${service.title}-${index}`}
-      className="bg-blue-50/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/40"
+      className="p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
     >
 <div className="flex items-stretch gap-4">
   <div className="flex shrink-0">
