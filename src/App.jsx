@@ -50,7 +50,7 @@ const PhoneIcon = (props) => (
 
 const MailIcon = (props) => (
   <IconBase {...props}>
-    <path d="M4 5h16v14H4z" />
+    <path d="M4 5h18v16H4z" />
     <path d="m4 8 8 6 8-6" />
   </IconBase>
 );
