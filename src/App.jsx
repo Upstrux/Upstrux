@@ -2083,19 +2083,19 @@ function ContactPage({ t, setCurrentPage, mobileMenuOpen, setMobileMenuOpen, lan
               href="mailto:info@upstrux.bg"
               className="p-2"
             >
-              <MailIcon size={28} className="mb-5 h-10 w-10 text-blue-600" />
+              <MailIcon size={28} className="mb-5 h-8 w-8 text-blue-600" />
               <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
                 info@upstrux.bg
               </p>
             </a>
             <div className="p-2">
-                <PinIcon size={28} className="mb-5 h-10 w-10 text-blue-600" />
+                <PinIcon size={28} className="mb-5 h-8 w-8 text-blue-600" />
                 <p className="text-xl font-light leading-7 tracking-[-0.02em] text-[#111111]">
                   {t.footer.location}
                 </p>
               </div>
             <a>
-              <PinIcon size={28} className="mb-5 h-10 w-10 text-blue-600" />
+              <PhoneIcon size={28} className="mb-5 h-8 w-8 text-blue-600" />
               <p className="hidden mt-5 text-[15px] leading-6 text-slate-700">
                 +359 888 000 000
               </p>
