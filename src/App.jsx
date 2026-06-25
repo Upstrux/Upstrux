@@ -1698,7 +1698,7 @@ function ServiceDetailPage({ service, t, setCurrentPage, mobileMenuOpen, setMobi
   			<span className="text-2xl font-semibold leading-none tracking-[-0.03em] text-blue-600">
    				 {String(index + 1).padStart(2, "0")}
   					</span>
-  			<span className="absolute right-0 top-0 bottom-0 w-px bg-blue-600/45" />
+  			<span className="absolute right-0 top-3 bottom-3 w-px bg-blue-600" />
 		</div>
 		<h3 className="text-lg font-light leading-7 tracking-[-0.01em] text-[#111111]">
     	{item}
