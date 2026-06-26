@@ -964,7 +964,7 @@ const deServices = [
   "Bewertung der Erdbebensicherheit gemäß EN 1998 und den geltenden Nationalen Anhängen.",
   "Schadensanalysen und Ursachenermittlung bei Bauwerksschäden und Bauunfällen.",
   "Analyse des dynamischen Tragverhaltens von Bauwerken und Anlagen.",
-  "Tragwerksbewertung sowie Planung von Instandsetzungs- und Verstärkungsmaßnahmen für Bestandsbauwerke gemäß EN 1998-3.",
+  "Tragwerksbewertung sowie Planung von Sanierungs- und Verstärkungsmaßnahmen für Bestandsbauwerke gemäß EN 1998-3.",
   "Ermittlung der physikalischen und mechanischen Eigenschaften von Baustoffen mittels zerstörungsfreier und zerstörender Prüfverfahren (NDT/DT).",
   "Ingenieurtechnische Beratung zur Anwendung regulatorischer Anforderungen, technischer Regelwerke und Bauverfahren."
 ]
@@ -986,7 +986,7 @@ const deServices = [
 },
 {
   title: "Wasserversorgungs-, Siedlungswasserwirtschafts-, Wasserbau- und Hydro-Meliorationsplanung",
-  intro: "Eine zuverlässige Wasserinfrastruktur erfordert nachhaltige technische Lösungen, hohe Betriebssicherheit und langfristige Leistungsfähigkeit. Wir begleiten unsere Auftraggeber bei der Planung, Bewertung sowie der Entwicklung von Instandsetzungs- und Modernisierungskonzepten für wasserwirtschaftliche Anlagen und Infrastrukturen. Durch fundierte Analysen und praxisorientierte Ingenieurlösungen reduzieren wir Risiken, unterstützen Investitionsentscheidungen und sichern die langfristige Leistungsfähigkeit kritischer Wasserinfrastrukturen.",
+  intro: "Eine zuverlässige Wasserinfrastruktur erfordert nachhaltige technische Lösungen, hohe Betriebssicherheit und langfristige Leistungsfähigkeit. Wir begleiten unsere Auftraggeber bei der Planung, Bewertung sowie der Entwicklung von Sanierungs- und Modernisierungskonzepten für wasserwirtschaftliche Anlagen und Infrastrukturen. Durch fundierte Analysen und praxisorientierte Ingenieurlösungen reduzieren wir Risiken, unterstützen Investitionsentscheidungen und sichern die langfristige Leistungsfähigkeit kritischer Wasserinfrastrukturen.",
   services: [
   "Hydrologische Studien, Wasserhaushaltsanalysen und hydrologische Gutachten.",
   "Hydraulische Modellierung und Planung von Wasserversorgungs- und Abwassersystemen, Leitungsnetzen und wasserwirtschaftlichen Anlagen.",
@@ -1000,7 +1000,7 @@ const deServices = [
   "Hydraulische Leistungsanalysen von Wassersystemen unter stationären und instationären Strömungsbedingungen.",
   "Ingenieurtechnische Stellungnahmen zur Einhaltung regulatorischer und technischer Anforderungen für wasserbauliche Anlagen und wasserwirtschaftliche Einrichtungen.",
   "Planungs- und Bauüberwachung sowie technische Begleitung während der Bauausführung.",
-  "Planung von Instandsetzungs- und Modernisierungsmaßnahmen, Kapazitätserweiterungsstudien und Bewertungen der Restnutzungsdauer.",
+  "Planung von Sanierungs- und Modernisierungsmaßnahmen, Kapazitätserweiterungsstudien und Bewertungen der Restnutzungsdauer.",
   "Unterstützung bei der Inbetriebnahme, Funktionsprüfungen, Leistungsnachweisen und der Bewertung der Betriebsbereitschaft.",
   "Ingenieurgutachten für wasserwirtschaftliche Infrastruktur im Rahmen von Genehmigungs- und Investitionsverfahren."
 ]
@@ -1026,7 +1026,7 @@ const deServices = [
 }, 
 {
   title: "Verkehrsinfrastrukturplanung",
-  intro: "Eine leistungsfähige Verkehrsinfrastruktur ist eine wesentliche Voraussetzung für wirtschaftliche Entwicklung, regionale Vernetzung sowie den sicheren und effizienten Transport von Personen und Gütern. Wir begleiten unsere Auftraggeber bei der Planung, Bewertung, Projektierung sowie der Entwicklung von Instandsetzungs- und Modernisierungskonzepten für Straßen, Brücken, Tunnel, Eisenbahninfrastrukturen und urbane Verkehrssysteme. Dabei tragen wir zur Erhöhung der Verkehrssicherheit, zur Verlängerung der Nutzungsdauer von Infrastrukturanlagen sowie zur Entwicklung nachhaltiger und wirtschaftlicher Mobilitätslösungen bei.",
+  intro: "Eine leistungsfähige Verkehrsinfrastruktur ist eine wesentliche Voraussetzung für wirtschaftliche Entwicklung, regionale Vernetzung sowie den sicheren und effizienten Transport von Personen und Gütern. Wir begleiten unsere Auftraggeber bei der Planung, Bewertung, Projektierung sowie der Entwicklung von Sanierungs- und Modernisierungskonzepten für Straßen, Brücken, Tunnel, Eisenbahninfrastrukturen und urbane Verkehrssysteme. Dabei tragen wir zur Erhöhung der Verkehrssicherheit, zur Verlängerung der Nutzungsdauer von Infrastrukturanlagen sowie zur Entwicklung nachhaltiger und wirtschaftlicher Mobilitätslösungen bei.",
   services: [
   "Planung von Straßen-, Brücken- und Tunnelbauwerken.",
   "Trassierung sowie Straßenentwurfs- und Straßenplanung.",
