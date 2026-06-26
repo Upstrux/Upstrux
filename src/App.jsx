@@ -2381,6 +2381,14 @@ export default function UpstruxWebsite() {
     document.documentElement.setAttribute("lang", language);
   }, [language]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+	const handleContextMenu = (e) => e.preventDefault();
+	document.addEventListener("contextmenu", handleContextMenu);
+	return () => {
+    document.removeEventListener("contextmenu", handleContextMenu);
+  }; 
+  }, []);
 
   const servicePageIndex = SERVICE_PAGE_KEYS.indexOf(currentPage);
   if (servicePageIndex !== -1) {
