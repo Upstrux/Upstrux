@@ -2382,13 +2382,47 @@ export default function UpstruxWebsite() {
   }, [language]);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-	const handleContextMenu = (e) => e.preventDefault();
-	document.addEventListener("contextmenu", handleContextMenu);
-	return () => {
-    document.removeEventListener("contextmenu", handleContextMenu);
-  }; 
-  }, []);
+  if (typeof window === "undefined") return;
+
+  const prevent = (e) => e.preventDefault();
+
+  const handleKeyDown = (e) => {
+    const key = e.key.toLowerCase();
+
+    // Ctrl/Cmd + C, U, S, P
+    if ((e.ctrlKey || e.metaKey) && ["c", "u", "s", "p"].includes(key)) {
+      e.preventDefault();
+    }
+
+    // Ctrl/Cmd + Shift + I/J/C
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      e.shiftKey &&
+      ["i", "j", "c"].includes(key)
+    ) {
+      e.preventDefault();
+    }
+
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+  };
+
+  document.addEventListener("contextmenu", prevent);
+  document.addEventListener("copy", prevent);
+  document.addEventListener("cut", prevent);
+  document.addEventListener("dragstart", prevent);
+  document.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    document.removeEventListener("contextmenu", prevent);
+    document.removeEventListener("copy", prevent);
+    document.removeEventListener("cut", prevent);
+    document.removeEventListener("dragstart", prevent);
+    document.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
 
   const servicePageIndex = SERVICE_PAGE_KEYS.indexOf(currentPage);
   if (servicePageIndex !== -1) {
