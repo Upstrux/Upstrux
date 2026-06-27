@@ -407,17 +407,6 @@ const serviceImages = [
   activity8,  
 ];
 
-const projectGalleryImages = [
-  activity1,
-  activity2,
-  activity3,
-  activity4,
-  activity5,
-  activity6,
-  activity7,
-  activity8,
-];
-
 const teamMembersByLanguage = {
   bg: [
     ["доц. д-р арх. Гичка Кутова-Каменова","Председател на управителния съвет","Първата жена-ректор и първият архитект-ректор на УАСГ, избрана през 2023 г., с дългогодишен академичен и управленски опит. Завършва УАСГ и защитава докторска дисертация през 2009 г., а през 2012 г. се хабилитира като доцент. Заемала е длъжностите ръководител катедра, заместник-декан и заместник-ректор по научна и приложна дейност. Научните ѝ интереси са в областта на енергийната ефективност, възобновяемите енергийни източници и слънчевата архитектура. Автор е на над 20 научни публикации и участник в редица научноизследователски проекти и международни форуми. Под нейно ръководство УАСГ разширява партньорствата си с бизнеса и международните институции.",member01],
@@ -1540,162 +1529,6 @@ function ProcessStep({ step, index }) {
 }
 
 
-function FeaturedProjectsSlider({ projects }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [expandedProject, setExpandedProject] = useState(null);
-
-  if (!projects?.length) return null;
-
-  const activeProject = projects[activeIndex];
-
-  const goToPreviousProject = () => {
-    setActiveIndex((current) => (current - 1 + projects.length) % projects.length);
-  };
-
-  const goToNextProject = () => {
-    setActiveIndex((current) => (current + 1) % projects.length);
-  };
-
-  return (
-    <>
-      <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 max-w-5xl text-left">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-blue-600" />
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">
-                Featured Projects
-              </p>
-            </div>
-
-            <h3 className="mt-5 text-3xl font-light leading-[1.06] tracking-[-0.028em] text-[#111111] md:text-4xl">
-              Engineering references across the built environment.
-            </h3>
-          </div>
-
-          <article className="grid items-stretch gap-10 lg:grid-cols-[0.34fr_0.66fr]">
-            <div className="flex flex-col justify-center">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-                {activeProject.category}
-              </p>
-
-              <h4 className="mt-5 text-3xl font-light leading-[1.08] tracking-[-0.03em] text-[#111111] md:text-4xl">
-                {activeProject.title}
-              </h4>
-
-              <p className="mt-6 text-lg leading-8 text-slate-700">
-                {activeProject.description}
-              </p>
-
-              <button
-                type="button"
-                onClick={() => setExpandedProject(activeProject)}
-                className="mt-8 inline-flex w-fit items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700"
-              >
-                View details <span aria-hidden="true">→</span>
-              </button>
-            </div>
-
-            <div className="relative h-[420px] overflow-hidden bg-slate-900 md:h-[500px] lg:h-[560px]">
-              <button
-                type="button"
-                onClick={() => setExpandedProject(activeProject)}
-                className="group h-full w-full text-left"
-                aria-label={`Open ${activeProject.title}`}
-              >
-                <img
-                  src={activeProject.image}
-                  alt={activeProject.title}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-950/10 transition duration-500 group-hover:bg-slate-950/20" />
-              </button>
-
-              <button
-                type="button"
-                onClick={goToPreviousProject}
-                className="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/85 text-3xl font-light leading-none text-blue-600 shadow-lg backdrop-blur transition hover:border-blue-600 hover:bg-white hover:text-blue-700"
-                aria-label="Previous project"
-              >
-                ‹
-              </button>
-
-              <button
-                type="button"
-                onClick={goToNextProject}
-                className="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/85 text-3xl font-light leading-none text-blue-600 shadow-lg backdrop-blur transition hover:border-blue-600 hover:bg-white hover:text-blue-700"
-                aria-label="Next project"
-              >
-                ›
-              </button>
-
-              <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
-                {projects.map((project, index) => (
-                  <button
-                    key={`${project.title}-${index}`}
-                    type="button"
-                    onClick={() => setActiveIndex(index)}
-                    className={`h-2 w-2 rounded-full transition ${
-                      activeIndex === index ? "bg-blue-600" : "bg-white/75 hover:bg-white"
-                    }`}
-                    aria-label={`Show project ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {expandedProject && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/85 px-6 py-10 backdrop-blur-sm">
-          <div className="mx-auto grid max-h-[92vh] w-full max-w-7xl overflow-hidden bg-white shadow-2xl lg:grid-cols-[0.34fr_0.66fr]">
-            <div className="flex flex-col overflow-y-auto p-8 md:p-10">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-                {expandedProject.category}
-              </p>
-
-              <h4 className="mt-5 text-3xl font-light leading-[1.08] tracking-[-0.03em] text-[#111111] md:text-4xl">
-                {expandedProject.title}
-              </h4>
-
-              <p className="mt-6 text-lg leading-8 text-slate-700">
-                {expandedProject.description}
-              </p>
-
-              <button
-                type="button"
-                onClick={() => setExpandedProject(null)}
-                className="mt-10 inline-flex items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700"
-              >
-                Close
-              </button>
-            </div>
-
-            <div className="relative min-h-[420px] bg-slate-900 lg:min-h-[720px]">
-              <button
-                type="button"
-                onClick={() => setExpandedProject(null)}
-                className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white/90 text-slate-900 shadow-lg backdrop-blur transition hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-                aria-label="Close project details"
-              >
-                ×
-              </button>
-
-              <img
-                src={expandedProject.image}
-                alt={expandedProject.title}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-
 function NavigationItems({ navItems, t, setCurrentPage, setMobileMenuOpen, itemClass, dropdownVariant = "light" }) {
   const navigateToSection = (sectionId) => {
     setCurrentPage(sectionId === "home" ? "home" : "about");
@@ -2498,15 +2331,6 @@ export default function UpstruxWebsite() {
     () => t.services.map((service, index) => ({ ...service, image: serviceImages[index] })),
     [t.services]
   );
-  const currentProjectGalleryItems = useMemo(
-    () =>
-      [...(t.projects || []), ...(t.projects2 || [])].map((project, index) => ({
-        ...project,
-        category: index < (t.projects || []).length ? t.projectsPage.title : t.projectsPage.secondaryTitle,
-        image: projectGalleryImages[index % projectGalleryImages.length],
-      })),
-    [t.projects, t.projects2, t.projectsPage.title, t.projectsPage.secondaryTitle]
-  );
   const currentProcessSteps = t.processSteps;
   const currentTeam = teamMembersByLanguage[language] || teamMembersByLanguage.en;
   const navItems = useMemo(() => [
@@ -2803,8 +2627,6 @@ export default function UpstruxWebsite() {
 
   </div>
 </section>
-
-<FeaturedProjectsSlider projects={currentProjectGalleryItems} />
 
 {TEAM_ENABLED && (
 <section id="team" className="bg-white px-6 py-20">
