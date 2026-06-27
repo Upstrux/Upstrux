@@ -1573,73 +1573,76 @@ function FeaturedProjectsSlider({ projects }) {
             </h3>
           </div>
 
-          <article className="grid overflow-hidden border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.08)] lg:grid-cols-[0.34fr_0.66fr]">
-            <div className="flex flex-col justify-between p-8 md:p-10">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
-                  {activeProject.category}
-                </p>
+          <article className="grid items-stretch gap-10 lg:grid-cols-[0.34fr_0.66fr]">
+            <div className="flex flex-col justify-center">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+                {activeProject.category}
+              </p>
 
-                <h4 className="mt-5 text-3xl font-light leading-[1.08] tracking-[-0.03em] text-[#111111] md:text-4xl">
-                  {activeProject.title}
-                </h4>
+              <h4 className="mt-5 text-3xl font-light leading-[1.08] tracking-[-0.03em] text-[#111111] md:text-4xl">
+                {activeProject.title}
+              </h4>
 
-                <p className="mt-6 text-lg leading-8 text-slate-700">
-                  {activeProject.description}
-                </p>
-              </div>
+              <p className="mt-6 text-lg leading-8 text-slate-700">
+                {activeProject.description}
+              </p>
 
-              <div className="mt-8 flex items-center gap-5">
-                <button
-                  type="button"
-                  onClick={goToPreviousProject}
-                  className="flex h-11 w-11 items-center justify-center border border-slate-300 text-2xl font-light text-blue-600 transition hover:border-blue-600 hover:text-blue-700"
-                  aria-label="Previous project"
-                >
-                  ‹
-                </button>
-
-                <button
-                  type="button"
-                  onClick={goToNextProject}
-                  className="flex h-11 w-11 items-center justify-center border border-slate-300 text-2xl font-light text-blue-600 transition hover:border-blue-600 hover:text-blue-700"
-                  aria-label="Next project"
-                >
-                  ›
-                </button>
-
-                <div className="flex items-center gap-1.5">
-                  {projects.map((project, index) => (
-                    <button
-                      key={`${project.title}-${index}`}
-                      type="button"
-                      onClick={() => setActiveIndex(index)}
-                      className={`h-1.5 w-1.5 transition ${
-                        activeIndex === index ? "bg-blue-600" : "bg-slate-300 hover:bg-slate-400"
-                      }`}
-                      aria-label={`Show project ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
+              <button
+                type="button"
+                onClick={() => setExpandedProject(activeProject)}
+                className="mt-8 inline-flex w-fit items-center gap-2 text-lg font-light tracking-[0.08em] text-blue-600 transition hover:text-blue-700"
+              >
+                View details <span aria-hidden="true">→</span>
+              </button>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setExpandedProject(activeProject)}
-              className="group relative min-h-[360px] overflow-hidden bg-slate-900 text-left lg:min-h-[520px]"
-              aria-label={`Open ${activeProject.title}`}
-            >
-              <img
-                src={activeProject.image}
-                alt={activeProject.title}
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-slate-950/10 transition duration-500 group-hover:bg-slate-950/20" />
-              <div className="absolute bottom-6 right-6 bg-white/90 px-4 py-2 text-sm font-medium uppercase tracking-[0.12em] text-blue-700">
-                View details
+            <div className="relative h-[420px] overflow-hidden bg-slate-900 md:h-[500px] lg:h-[560px]">
+              <button
+                type="button"
+                onClick={() => setExpandedProject(activeProject)}
+                className="group h-full w-full text-left"
+                aria-label={`Open ${activeProject.title}`}
+              >
+                <img
+                  src={activeProject.image}
+                  alt={activeProject.title}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-slate-950/10 transition duration-500 group-hover:bg-slate-950/20" />
+              </button>
+
+              <button
+                type="button"
+                onClick={goToPreviousProject}
+                className="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/85 text-3xl font-light leading-none text-blue-600 shadow-lg backdrop-blur transition hover:border-blue-600 hover:bg-white hover:text-blue-700"
+                aria-label="Previous project"
+              >
+                ‹
+              </button>
+
+              <button
+                type="button"
+                onClick={goToNextProject}
+                className="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/85 text-3xl font-light leading-none text-blue-600 shadow-lg backdrop-blur transition hover:border-blue-600 hover:bg-white hover:text-blue-700"
+                aria-label="Next project"
+              >
+                ›
+              </button>
+
+              <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
+                {projects.map((project, index) => (
+                  <button
+                    key={`${project.title}-${index}`}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2 w-2 rounded-full transition ${
+                      activeIndex === index ? "bg-blue-600" : "bg-white/75 hover:bg-white"
+                    }`}
+                    aria-label={`Show project ${index + 1}`}
+                  />
+                ))}
               </div>
-            </button>
+            </div>
           </article>
         </div>
       </section>
@@ -1673,7 +1676,7 @@ function FeaturedProjectsSlider({ projects }) {
               <button
                 type="button"
                 onClick={() => setExpandedProject(null)}
-                className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center bg-white/90 text-slate-900 transition hover:bg-blue-600 hover:text-white"
+                className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white/90 text-slate-900 shadow-lg backdrop-blur transition hover:border-blue-600 hover:bg-blue-600 hover:text-white"
                 aria-label="Close project details"
               >
                 ×
